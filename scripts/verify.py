@@ -276,6 +276,7 @@ def sincronizar_e_traduzir():
     print("\n🌐 Iniciando sincronização e tradução automática de idiomas...")
     docs_path = pathlib.Path(DOCS_DIR)
     pt_dir = docs_path / "pt-br"
+    print(f"\npt_dir - {pt_dir}")
 
     if not pt_dir.exists():
         return
@@ -290,6 +291,7 @@ def sincronizar_e_traduzir():
         if not pt_file.is_file():
             continue        
         relative_path = pt_file.relative_to(pt_dir)
+        print(f"\npath - {relative_path}")
         with open(pt_file, "r", encoding="utf-8") as f:
             pt_content = f.read()
             
