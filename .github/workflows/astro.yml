@@ -82,3 +82,29 @@ jobs:
       - name: Deploy para GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+      # ==========================================
+      # ETAPA 3: NOTIFICAÇÕES NO DISCORD
+      # ==========================================
+      - name: Notificar Discord (Sucesso)
+        if: success()
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        run: |
+          curl -H "Content-Type: application/json" \
+          -d '{"content": "✅ **Deploy Concluído!** A documentação da Monsta foi atualizada com sucesso no GitHub Pages e já está no ar."}' \
+          $DISCORD_WEBHOOK
+
+      - name: Notificar Discord (Falha)
+        if: failure()
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        run: |
+          curl -H "Content-Type: application/json" \
+          -d '{"content": "❌ **Erro no Deploy!** A rotina de atualização da documentação falhou no GitHub Actions. Verifique os logs para mais detalhes."}' \
+          $DISCORD_WEBHOOK
+      
+
+      - name: Deploy para GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
