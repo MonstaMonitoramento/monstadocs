@@ -5,6 +5,7 @@ import urllib.request
 import json
 import time
 import pathlib
+import subprocess
 from dotenv import load_dotenv
 from openai import OpenAI
 
@@ -270,14 +271,24 @@ DOCUMENTO:
         relatorio['erros'].append(erro_msg)
         return None
 
+def obter_data_modificacao_git(caminho_arquivo):
+    """Obtém o timestamp do último commit que alterou o arquivo específico."""
+    try:
+        resultado = subprocess.check_output(
+            ['git', 'log', '-1', '--format=%at', '--', str(caminho_arquivo)],
+            stderr=subprocess.STDOUT
+        ).strip()
+        return int(resultado) if resultado else 0
+    except Exception:
+        # Fallback de segurança para a data do sistema caso dê algum erro no Git
+        return caminho_arquivo.stat().st_mtime
 
 def sincronizar_e_traduzir():
     """Gerencia a internacionalização e a correção de links pós-tradução."""
     print("\n🌐 Iniciando sincronização e tradução automática de idiomas...")
     docs_path = pathlib.Path(DOCS_DIR)
     pt_dir = docs_path / "pt-br"
-    print(f"\npt_dir - {pt_dir}")
-
+    
     if not pt_dir.exists():
         return
 
@@ -291,16 +302,20 @@ def sincronizar_e_traduzir():
         if not pt_file.is_file():
             continue        
         relative_path = pt_file.relative_to(pt_dir)
-        print(f"\npath - {relative_path}")
+        
         with open(pt_file, "r", encoding="utf-8") as f:
             pt_content = f.read()
             
-        pt_mtime = pt_file.stat().st_mtime
+        # Puxa a data exata do último commit do arquivo em português
+        pt_mtime = obter_data_modificacao_git(pt_file)
         
         for lang_code, lang_name in target_languages.items():
             target_file = docs_path / lang_code / relative_path
             
-            if not target_file.exists() or pt_mtime > target_file.stat().st_mtime:
+            # Puxa a data do último commit do arquivo de destino
+            target_mtime = obter_data_modificacao_git(target_file) if target_file.exists() else 0
+            
+            if not target_file.exists() or pt_mtime > target_mtime:
                 print(f"🚀 Traduzindo [{lang_code.upper()}]: {relative_path}")
                 
                 conteudo_traduzido = traduzir_conteudo(pt_content, lang_name)
