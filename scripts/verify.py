@@ -207,7 +207,6 @@ def traduzir_conteudo(conteudo_md, idioma_destino):
     Traduz documentação Markdown preservando estrutura,
     código, frontmatter e links.
     """
-    pass
 
     if not OPENAI_API_KEY:
         print("⚠️ Chave API da OpenAI não configurada.")
@@ -290,7 +289,7 @@ def sincronizar_e_traduzir():
     for pt_file in pt_dir.rglob("*.md*"):
         if not pt_file.is_file():
             continue
-
+        break #Teste
         relative_path = pt_file.relative_to(pt_dir)
         with open(pt_file, "r", encoding="utf-8") as f:
             pt_content = f.read()
