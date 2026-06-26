@@ -103,8 +103,3 @@ jobs:
           curl -H "Content-Type: application/json" \
           -d '{"content": "❌ **Erro no Deploy!** A rotina de atualização da documentação falhou no GitHub Actions. Verifique os logs para mais detalhes."}' \
           $DISCORD_WEBHOOK
-      
-
-      - name: Deploy para GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
