@@ -1,0 +1,9 @@
+---
+title: "¿Monsta necesita un agente instalado en cada equipo?"
+---
+
+Para dispositivos de red como routers, *switches*, *firewalls*, impresoras y otros equipos que soportan el protocolo [SNMP](/es/tech/protocolos-coleta/snmp), Monsta puede recopilar información valiosa directamente a través de este estándar de la industria. Esto permite monitorizar el tráfico de red, la utilización de recursos, los niveles de tinta (en impresoras) y otras métricas específicas del dispositivo sin la necesidad de instalar software adicional en el equipo.
+
+En cuanto al sistema operativo Windows, para obtener información detallada sobre el rendimiento y el estado de servidores y estaciones de trabajo, es **necesario instalar una [Sonda](/es/start/instalacao/sonda-windows)** proporcionada por Monsta. La Sonda es un pequeño software que reside en el sistema Windows y funciona como un extractor, recopilando datos internos, como el uso de CPU y memoria, el espacio libre en disco, el estado de los servicios y otros contadores de rendimiento específicos de Windows a través del **[WMI](/es/tech/protocolos-coleta/wmi) (*Windows Management Instrumentation*)**. La instalación de la Sonda garantiza una monitorización profunda y precisa del sistema operativo.
+
+Es decir, no es necesario instalar agentes en los equipos, excepto para monitorizar Windows vía WMI, para lo cual es necesaria la instalación de la Sonda de Monsta. No obstante, Monsta dispone de un [Agente](/es/start/instalacao/agente-instalacao-zero-conf) que puede instalarse para la monitorización; sin embargo, su propósito es proporcionar el acceso de monitorización a redes remotas. [Solo un Agente](/es/faq/conceitos-fundamentais/posso-monitorar-uma-rede-remota-instalando-o-agente-monsta-em-apenas-um-servidor) de Monsta instalado permite monitorizar toda la red remota.

@@ -1,0 +1,9 @@
+---
+title: "Does Monsta Need an Agent Installed on Every Device?"
+---
+
+For network devices such as routers, *switches*, *firewalls*, printers and other equipment that support the [SNMP](/en/tech/protocolos-coleta/snmp) protocol, Monsta can collect valuable information directly through this industry standard. This allows monitoring network traffic, resource utilization, ink levels (in printers) and other device-specific metrics without the need to install additional software on the device.
+
+For the Windows operating system, to obtain detailed information about the performance and status of servers and workstations, it is **necessary to install a [Probe](/en/start/instalacao/sonda-windows)** provided by Monsta. The Probe is a small piece of software that resides on the Windows system and acts as an extractor, collecting internal data such as CPU and memory usage, free disk space, service status and other Windows-specific performance counters via **[WMI](/en/tech/protocolos-coleta/wmi) (*Windows Management Instrumentation*)**. Installing the Probe ensures deep and accurate monitoring of the operating system.
+
+In other words, it is not necessary to install agents on devices, except to monitor Windows via WMI, which requires installing Monsta's Probe. However, Monsta provides an [Agent](/en/start/instalacao/agente-instalacao-zero-conf) that can be installed for monitoring; its purpose is to provide monitoring access to remote networks. [Only one Agent](/en/faq/conceitos-fundamentais/posso-monitorar-uma-rede-remota-instalando-o-agente-monsta-em-apenas-um-servidor) installed on Monsta allows monitoring the entire remote network.

@@ -1,0 +1,961 @@
+local_backend: false
+backend:
+   name: "github"
+   repo: MonstaMonitoramento/monstadocs
+   auth_methods: [oauth]
+   branch: main   
+   automatic_deployments: true
+   commit_messages:
+    create: 'Create {{collection}} "{{slug}}"'
+    update: 'Update {{collection}} "{{slug}}"'
+    delete: 'Delete {{collection}} "{{slug}}"'
+    uploadMedia: 'Upload "{{path}}"'
+    deleteMedia: 'Delete "{{path}}"'
+    openAuthoring: '{{message}}'
+
+# Configuração Global de Mídia
+media_folder: "src/assets/images"
+public_folder: "/src/assets/images"
+
+collections:
+  # ==============================================================================
+  # 🇧🇷 PORTUGUÊS (PT-BR)
+  # ==============================================================================
+
+  # --- PRIMEIRAS PASSOS (START) ---
+  - name: "pt-br_start_conceitos"
+    label: "🇧🇷 Primeiros Passos: Conceitos Iniciais"
+    folder: "src/content/docs/pt-br/start/conceitos-iniciais"
+    create: true
+    media_folder: "/src/assets/images"
+    public_folder: "/src/assets/images"
+    fields:
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Template", name: "template", widget: "hidden", default: "doc" }
+      - { label: "Conteúdo", name: "body", widget: "markdown" }
+
+  - name: "pt-br_start_licenca"
+    label: "🇧🇷 Primeiros Passos: Licença e Assinatura"
+    folder: "src/content/docs/pt-br/start/licenca-assinatura"
+    create: true
+    media_folder: "/src/assets/images"
+    public_folder: "/src/assets/images"
+    fields:
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Template", name: "template", widget: "hidden", default: "doc" }
+      - { label: "Conteúdo", name: "body", widget: "markdown" }
+
+  - name: "pt-br_start_instalacao"
+    label: "🇧🇷 Primeiros Passos: Instalação"
+    folder: "src/content/docs/pt-br/start/instalacao"
+    create: true
+    media_folder: "/src/assets/images"
+    public_folder: "/src/assets/images"
+    fields:
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Template", name: "template", widget: "hidden", default: "doc" }
+      - { label: "Conteúdo", name: "body", widget: "markdown" }
+
+  - name: "pt-br_start_migracao"
+    label: "🇧🇷 Primeiros Passos: Migração de Servidor"
+    folder: "src/content/docs/pt-br/start/migracao"
+    create: true
+    media_folder: "/src/assets/images"
+    public_folder: "/src/assets/images"
+    fields:
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Template", name: "template", widget: "hidden", default: "doc" }
+      - { label: "Conteúdo", name: "body", widget: "markdown" }
+
+  # --- MANUAL DO USUÁRIO ---
+  - name: "pt-br_manual_raiz"
+    label: "🇧🇷 Manual (Raiz)"
+    folder: "src/content/docs/pt-br/manual"
+    create: true
+    media_folder: "/src/assets/images"
+    public_folder: "/src/assets/images"
+    fields:
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Template", name: "template", widget: "hidden", default: "doc" }
+      - { label: "Conteúdo", name: "body", widget: "markdown" }
+
+  - name: "pt-br_manual_barra"
+    label: "🇧🇷 Manual: Barra Superior"
+    folder: "src/content/docs/pt-br/manual/barra-superior"
+    create: true
+    media_folder: "/src/assets/images"
+    public_folder: "/src/assets/images"
+    fields:
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Template", name: "template", widget: "hidden", default: "doc" }
+      - { label: "Conteúdo", name: "body", widget: "markdown" }
+
+  - name: "pt-br_manual_dispositivos"
+    label: "🇧🇷 Manual: Dispositivos"
+    folder: "src/content/docs/pt-br/manual/dispositivos"
+    create: true
+    media_folder: "/src/assets/images"
+    public_folder: "/src/assets/images"
+    fields:
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Template", name: "template", widget: "hidden", default: "doc" }
+      - { label: "Conteúdo", name: "body", widget: "markdown" }
+
+  - name: "pt-br_manual_paineis"
+    label: "🇧🇷 Manual: Painéis"
+    folder: "src/content/docs/pt-br/manual/paineis"
+    create: true
+    media_folder: "/src/assets/images"
+    public_folder: "/src/assets/images"
+    fields:
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Template", name: "template", widget: "hidden", default: "doc" }
+      - { label: "Conteúdo", name: "body", widget: "markdown" }
+
+  - name: "pt-br_manual_linha_tempo"
+    label: "🇧🇷 Manual: Linha do Tempo"
+    folder: "src/content/docs/pt-br/manual/linha-tempo"
+    create: true
+    media_folder: "/src/assets/images"
+    public_folder: "/src/assets/images"
+    fields:
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Template", name: "template", widget: "hidden", default: "doc" }
+      - { label: "Conteúdo", name: "body", widget: "markdown" }
+
+  - name: "pt-br_manual_grupos"
+    label: "🇧🇷 Manual: Grupos de Alertas"
+    folder: "src/content/docs/pt-br/manual/grupos-alertas"
+    create: true
+    media_folder: "/src/assets/images"
+    public_folder: "/src/assets/images"
+    fields:
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Template", name: "template", widget: "hidden", default: "doc" }
+      - { label: "Conteúdo", name: "body", widget: "markdown" }
+
+  - name: "pt-br_manual_configuracoes"
+    label: "🇧🇷 Manual: Configurações"
+    folder: "src/content/docs/pt-br/manual/configuracoes"
+    create: true
+    media_folder: "/src/assets/images"
+    public_folder: "/src/assets/images"
+    fields:
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Template", name: "template", widget: "hidden", default: "doc" }
+      - { label: "Conteúdo", name: "body", widget: "markdown" }
+
+  # --- DOCUMENTAÇÃO TÉCNICA (TECH) ---
+  - name: "pt-br_tech_raiz"
+    label: "🇧🇷 Tech (Raiz)"
+    folder: "src/content/docs/pt-br/tech"
+    create: true
+    media_folder: "/src/assets/images"
+    public_folder: "/src/assets/images"
+    fields:
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Template", name: "template", widget: "hidden", default: "doc" }
+      - { label: "Conteúdo", name: "body", widget: "markdown" }
+
+  - name: "pt-br_tech_protocolos"
+    label: "🇧🇷 Tech: Protocolos de Coleta"
+    folder: "src/content/docs/pt-br/tech/protocolos-coleta"
+    create: true
+    media_folder: "/src/assets/images"
+    public_folder: "/src/assets/images"
+    fields:
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Template", name: "template", widget: "hidden", default: "doc" }
+      - { label: "Conteúdo", name: "body", widget: "markdown" }
+
+  - name: "pt-br_tech_arquitetura"
+    label: "🇧🇷 Tech: Arquitetura e Comunicação"
+    folder: "src/content/docs/pt-br/tech/arquitetura-comunicacao"
+    create: true
+    media_folder: "/src/assets/images"
+    public_folder: "/src/assets/images"
+    fields:
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Template", name: "template", widget: "hidden", default: "doc" }
+      - { label: "Conteúdo", name: "body", widget: "markdown" }
+
+  - name: "pt-br_tech_lua"
+    label: "🇧🇷 Tech: Módulos de Script Lua"
+    folder: "src/content/docs/pt-br/tech/modulos-script"
+    create: true
+    media_folder: "/src/assets/images"
+    public_folder: "/src/assets/images"
+    fields:
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Template", name: "template", widget: "hidden", default: "doc" }
+      - { label: "Conteúdo", name: "body", widget: "markdown" }
+
+  - name: "pt-br_tech_guias"
+    label: "🇧🇷 Tech: Guias Técnicos"
+    folder: "src/content/docs/pt-br/tech/guias-tecnicos"
+    create: true
+    media_folder: "/src/assets/images"
+    public_folder: "/src/assets/images"
+    fields:
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Template", name: "template", widget: "hidden", default: "doc" }
+      - { label: "Conteúdo", name: "body", widget: "markdown" }
+
+  - name: "pt-br_tech_tutoriais"
+    label: "🇧🇷 Tech: Tutoriais do Monsta"
+    folder: "src/content/docs/pt-br/tech/tutoriais-monsta"
+    create: true
+    media_folder: "/src/assets/images"
+    public_folder: "/src/assets/images"
+    fields:
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Template", name: "template", widget: "hidden", default: "doc" }
+      - { label: "Conteúdo", name: "body", widget: "markdown" }
+
+  # --- FAQ ---
+  - name: "pt-br_faq_conceitos"
+    label: "🇧🇷 FAQ: Conceitos Fundamentais"
+    folder: "src/content/docs/pt-br/faq/conceitos-fundamentais"
+    create: true
+    media_folder: "/src/assets/images"
+    public_folder: "/src/assets/images"
+    fields:
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Template", name: "template", widget: "hidden", default: "doc" }
+      - { label: "Conteúdo", name: "body", widget: "markdown" }
+
+  - name: "pt-br_faq_contratacao"
+    label: "🇧🇷 FAQ: Contratação e Licenciamento"
+    folder: "src/content/docs/pt-br/faq/contratacao-licenciamento"
+    create: true
+    media_folder: "/src/assets/images"
+    public_folder: "/src/assets/images"
+    fields:
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Template", name: "template", widget: "hidden", default: "doc" }
+      - { label: "Conteúdo", name: "body", widget: "markdown" }
+
+  - name: "pt-br_faq_alertas"
+    label: "🇧🇷 FAQ: Alertas e Notificações"
+    folder: "src/content/docs/pt-br/faq/alertas-notificacoes"
+    create: true
+    media_folder: "/src/assets/images"
+    public_folder: "/src/assets/images"
+    fields:
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Template", name: "template", widget: "hidden", default: "doc" }
+      - { label: "Conteúdo", name: "body", widget: "markdown" }
+
+  - name: "pt-br_faq_acesso"
+    label: "🇧🇷 FAQ: Problemas de Acesso"
+    folder: "src/content/docs/pt-br/faq/problemas-acesso"
+    create: true
+    media_folder: "/src/assets/images"
+    public_folder: "/src/assets/images"
+    fields:
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Template", name: "template", widget: "hidden", default: "doc" }
+      - { label: "Conteúdo", name: "body", widget: "markdown" }
+
+  - name: "pt-br_faq_coleta"
+    label: "🇧🇷 FAQ: Problemas de Coleta"
+    folder: "src/content/docs/pt-br/faq/problemas-coleta"
+    create: true
+    media_folder: "/src/assets/images"
+    public_folder: "/src/assets/images"
+    fields:
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Template", name: "template", widget: "hidden", default: "doc" }
+      - { label: "Conteúdo", name: "body", widget: "markdown" }
+
+  - name: "pt-br_faq_licenca"
+    label: "🇧🇷 FAQ: Problemas de Licença"
+    folder: "src/content/docs/pt-br/faq/problemas-licenca"
+    create: true
+    media_folder: "/src/assets/images"
+    public_folder: "/src/assets/images"
+    fields:
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Template", name: "template", widget: "hidden", default: "doc" }
+      - { label: "Conteúdo", name: "body", widget: "markdown" }
+
+  # --- EXTRAS ---
+  - name: "pt-br_extra_equipamentos"
+    label: "🇧🇷 Extra: Configuração de Equipamentos"
+    folder: "src/content/docs/pt-br/extra/configuracao-equipamentos"
+    create: true
+    media_folder: "/src/assets/images"
+    public_folder: "/src/assets/images"
+    fields:
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Template", name: "template", widget: "hidden", default: "doc" }
+      - { label: "Conteúdo", name: "body", widget: "markdown" }
+
+  - name: "pt-br_extra_linux"
+    label: "🇧🇷 Extra: Linux"
+    folder: "src/content/docs/pt-br/extra/linux"
+    create: true
+    media_folder: "/src/assets/images"
+    public_folder: "/src/assets/images"
+    fields:
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Template", name: "template", widget: "hidden", default: "doc" }
+      - { label: "Conteúdo", name: "body", widget: "markdown" }
+
+  - name: "pt-br_extra_windows"
+    label: "🇧🇷 Extra: Windows"
+    folder: "src/content/docs/pt-br/extra/windows"
+    create: true
+    media_folder: "/src/assets/images"
+    public_folder: "/src/assets/images"
+    fields:
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Template", name: "template", widget: "hidden", default: "doc" }
+      - { label: "Conteúdo", name: "body", widget: "markdown" }
+
+  - name: "pt-br_extra_hyperv"
+    label: "🇧🇷 Extra: Hyper-V"
+    folder: "src/content/docs/pt-br/extra/hyper-v"
+    create: true
+    media_folder: "/src/assets/images"
+    public_folder: "/src/assets/images"
+    fields:
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Template", name: "template", widget: "hidden", default: "doc" }
+      - { label: "Conteúdo", name: "body", widget: "markdown" }
+
+  - name: "pt-br_extra_mikrotik"
+    label: "🇧🇷 Extra: MikroTik"
+    folder: "src/content/docs/pt-br/extra/mikrotik"
+    create: true
+    media_folder: "/src/assets/images"
+    public_folder: "/src/assets/images"
+    fields:
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Template", name: "template", widget: "hidden", default: "doc" }
+      - { label: "Conteúdo", name: "body", widget: "markdown" }
+
+
+  # ==============================================================================
+  # 🇺🇸 INGLÊS (EN)
+  # ==============================================================================
+
+  - name: "en_start_conceitos"
+    label: "🇺🇸 First Steps: Initial Concepts"
+    folder: "src/content/docs/en/start/conceitos-iniciais"
+    create: true
+    media_folder: "/src/assets/images"
+    public_folder: "/src/assets/images"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Template", name: "template", widget: "hidden", default: "doc" }
+      - { label: "Content", name: "body", widget: "markdown" }
+
+  - name: "en_start_licenca"
+    label: "🇺🇸 First Steps: Subscription and Trial"
+    folder: "src/content/docs/en/start/licenca-assinatura"
+    create: true
+    media_folder: "/src/assets/images"
+    public_folder: "/src/assets/images"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Template", name: "template", widget: "hidden", default: "doc" }
+      - { label: "Content", name: "body", widget: "markdown" }
+
+  - name: "en_start_instalacao"
+    label: "🇺🇸 First Steps: Installation"
+    folder: "src/content/docs/en/start/instalacao"
+    create: true
+    media_folder: "/src/assets/images"
+    public_folder: "/src/assets/images"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Template", name: "template", widget: "hidden", default: "doc" }
+      - { label: "Content", name: "body", widget: "markdown" }
+
+  - name: "en_start_migracao"
+    label: "🇺🇸 First Steps: Migration of Server"
+    folder: "src/content/docs/en/start/migracao"
+    create: true
+    media_folder: "/src/assets/images"
+    public_folder: "/src/assets/images"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Template", name: "template", widget: "hidden", default: "doc" }
+      - { label: "Content", name: "body", widget: "markdown" }
+
+  - name: "en_manual_raiz"
+    label: "🇺🇸 Manual (Root)"
+    folder: "src/content/docs/en/manual"
+    create: true
+    media_folder: "/src/assets/images"
+    public_folder: "/src/assets/images"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Template", name: "template", widget: "hidden", default: "doc" }
+      - { label: "Content", name: "body", widget: "markdown" }
+
+  - name: "en_manual_barra"
+    label: "🇺🇸 Manual: Top Bar"
+    folder: "src/content/docs/en/manual/barra-superior"
+    create: true
+    media_folder: "/src/assets/images"
+    public_folder: "/src/assets/images"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Template", name: "template", widget: "hidden", default: "doc" }
+      - { label: "Content", name: "body", widget: "markdown" }
+
+  - name: "en_manual_dispositivos"
+    label: "🇺🇸 Manual: Devices"
+    folder: "src/content/docs/en/manual/dispositivos"
+    create: true
+    media_folder: "/src/assets/images"
+    public_folder: "/src/assets/images"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Template", name: "template", widget: "hidden", default: "doc" }
+      - { label: "Content", name: "body", widget: "markdown" }
+
+  - name: "en_manual_paineis"
+    label: "🇺🇸 Manual: Dashboards"
+    folder: "src/content/docs/en/manual/paineis"
+    create: true
+    media_folder: "/src/assets/images"
+    public_folder: "/src/assets/images"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Template", name: "template", widget: "hidden", default: "doc" }
+      - { label: "Content", name: "body", widget: "markdown" }
+
+  - name: "en_manual_linha_tempo"
+    label: "🇺🇸 Manual: Timeline"
+    folder: "src/content/docs/en/manual/linha-tempo"
+    create: true
+    media_folder: "/src/assets/images"
+    public_folder: "/src/assets/images"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Template", name: "template", widget: "hidden", default: "doc" }
+      - { label: "Content", name: "body", widget: "markdown" }
+
+  - name: "en_manual_grupos"
+    label: "🇺🇸 Manual: Alert Groups"
+    folder: "src/content/docs/en/manual/grupos-alertas"
+    create: true
+    media_folder: "/src/assets/images"
+    public_folder: "/src/assets/images"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Template", name: "template", widget: "hidden", default: "doc" }
+      - { label: "Content", name: "body", widget: "markdown" }
+
+  - name: "en_manual_configuracoes"
+    label: "🇺🇸 Manual: Settings"
+    folder: "src/content/docs/en/manual/configuracoes"
+    create: true
+    media_folder: "/src/assets/images"
+    public_folder: "/src/assets/images"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Template", name: "template", widget: "hidden", default: "doc" }
+      - { label: "Content", name: "body", widget: "markdown" }
+
+  - name: "en_tech_raiz"
+    label: "🇺🇸 Tech (Root)"
+    folder: "src/content/docs/en/tech"
+    create: true
+    media_folder: "/src/assets/images"
+    public_folder: "/src/assets/images"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Template", name: "template", widget: "hidden", default: "doc" }
+      - { label: "Content", name: "body", widget: "markdown" }
+
+  - name: "en_tech_protocolos"
+    label: "🇺🇸 Tech: Collection Protocols"
+    folder: "src/content/docs/en/tech/protocolos-coleta"
+    create: true
+    media_folder: "/src/assets/images"
+    public_folder: "/src/assets/images"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Template", name: "template", widget: "hidden", default: "doc" }
+      - { label: "Content", name: "body", widget: "markdown" }
+
+  - name: "en_tech_arquitetura"
+    label: "🇺🇸 Tech: Architecture and Communication"
+    folder: "src/content/docs/en/tech/arquitetura-comunicacao"
+    create: true
+    media_folder: "/src/assets/images"
+    public_folder: "/src/assets/images"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Template", name: "template", widget: "hidden", default: "doc" }
+      - { label: "Content", name: "body", widget: "markdown" }
+
+  - name: "en_tech_lua"
+    label: "🇺🇸 Tech: Script Modules with Lua"
+    folder: "src/content/docs/en/tech/modulos-script"
+    create: true
+    media_folder: "/src/assets/images"
+    public_folder: "/src/assets/images"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Template", name: "template", widget: "hidden", default: "doc" }
+      - { label: "Content", name: "body", widget: "markdown" }
+
+  - name: "en_tech_guias"
+    label: "🇺🇸 Tech: Technical Guides"
+    folder: "src/content/docs/en/tech/guias-tecnicos"
+    create: true
+    media_folder: "/src/assets/images"
+    public_folder: "/src/assets/images"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Template", name: "template", widget: "hidden", default: "doc" }
+      - { label: "Content", name: "body", widget: "markdown" }
+
+  - name: "en_tech_tutoriais"
+    label: "🇺🇸 Tech: Monsta Tutorials"
+    folder: "src/content/docs/en/tech/tutoriais-monsta"
+    create: true
+    media_folder: "/src/assets/images"
+    public_folder: "/src/assets/images"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Template", name: "template", widget: "hidden", default: "doc" }
+      - { label: "Content", name: "body", widget: "markdown" }
+
+  - name: "en_faq_conceitos"
+    label: "🇺🇸 FAQ: Fundamental Concepts"
+    folder: "src/content/docs/en/faq/conceitos-fundamentais"
+    create: true
+    media_folder: "/src/assets/images"
+    public_folder: "/src/assets/images"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Template", name: "template", widget: "hidden", default: "doc" }
+      - { label: "Content", name: "body", widget: "markdown" }
+
+  - name: "en_faq_contratacao"
+    label: "🇺🇸 FAQ: Hiring and Licensing"
+    folder: "src/content/docs/en/faq/contratacao-licenciamento"
+    create: true
+    media_folder: "/src/assets/images"
+    public_folder: "/src/assets/images"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Template", name: "template", widget: "hidden", default: "doc" }
+      - { label: "Content", name: "body", widget: "markdown" }
+
+  - name: "en_faq_alertas"
+    label: "🇺🇸 FAQ: Alerts and Notifications"
+    folder: "src/content/docs/en/faq/alertas-notificacoes"
+    create: true
+    media_folder: "/src/assets/images"
+    public_folder: "/src/assets/images"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Template", name: "template", widget: "hidden", default: "doc" }
+      - { label: "Content", name: "body", widget: "markdown" }
+
+  - name: "en_faq_acesso"
+    label: "🇺🇸 FAQ: Access Issues"
+    folder: "src/content/docs/en/faq/problemas-acesso"
+    create: true
+    media_folder: "/src/assets/images"
+    public_folder: "/src/assets/images"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Template", name: "template", widget: "hidden", default: "doc" }
+      - { label: "Content", name: "body", widget: "markdown" }
+
+  - name: "en_faq_coleta"
+    label: "🇺🇸 FAQ: Data Collection Issues"
+    folder: "src/content/docs/en/faq/problemas-coleta"
+    create: true
+    media_folder: "/src/assets/images"
+    public_folder: "/src/assets/images"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Template", name: "template", widget: "hidden", default: "doc" }
+      - { label: "Content", name: "body", widget: "markdown" }
+
+  - name: "en_faq_licenca"
+    label: "🇺🇸 FAQ: License Issues"
+    folder: "src/content/docs/en/faq/problemas-licenca"
+    create: true
+    media_folder: "/src/assets/images"
+    public_folder: "/src/assets/images"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Template", name: "template", widget: "hidden", default: "doc" }
+      - { label: "Content", name: "body", widget: "markdown" }
+
+  - name: "en_extra_equipamentos"
+    label: "🇺🇸 Extra: Equipment Configuration"
+    folder: "src/content/docs/en/extra/configuracao-equipamentos"
+    create: true
+    media_folder: "/src/assets/images"
+    public_folder: "/src/assets/images"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Template", name: "template", widget: "hidden", default: "doc" }
+      - { label: "Content", name: "body", widget: "markdown" }
+
+  - name: "en_extra_linux"
+    label: "🇺🇸 Extra: Linux"
+    folder: "src/content/docs/en/extra/linux"
+    create: true
+    media_folder: "/src/assets/images"
+    public_folder: "/src/assets/images"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Template", name: "template", widget: "hidden", default: "doc" }
+      - { label: "Content", name: "body", widget: "markdown" }
+
+  - name: "en_extra_windows"
+    label: "🇺🇸 Extra: Windows"
+    folder: "src/content/docs/en/extra/windows"
+    create: true
+    media_folder: "/src/assets/images"
+    public_folder: "/src/assets/images"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Template", name: "template", widget: "hidden", default: "doc" }
+      - { label: "Content", name: "body", widget: "markdown" }
+
+  - name: "en_extra_hyperv"
+    label: "🇺🇸 Extra: Hyper-V"
+    folder: "src/content/docs/en/extra/hyper-v"
+    create: true
+    media_folder: "/src/assets/images"
+    public_folder: "/src/assets/images"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Template", name: "template", widget: "hidden", default: "doc" }
+      - { label: "Content", name: "body", widget: "markdown" }
+
+  - name: "en_extra_mikrotik"
+    label: "🇺🇸 Extra: MikroTik"
+    folder: "src/content/docs/en/extra/mikrotik"
+    create: true
+    media_folder: "/src/assets/images"
+    public_folder: "/src/assets/images"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Template", name: "template", widget: "hidden", default: "doc" }
+      - { label: "Content", name: "body", widget: "markdown" }
+
+  # ==============================================================================
+  # 🇪🇸 ESPANHOL (ES)
+  # ==============================================================================
+
+  - name: "es_start_conceitos"
+    label: "🇪🇸 Primeros Pasos: Conceptos Iniciales"
+    folder: "src/content/docs/es/start/conceitos-iniciais"
+    create: true
+    media_folder: "/src/assets/images"
+    public_folder: "/src/assets/images"
+    fields:
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Template", name: "template", widget: "hidden", default: "doc" }
+      - { label: "Contenido", name: "body", widget: "markdown" }
+
+  - name: "es_start_licenca"
+    label: "🇪🇸 Primeros Pasos: Suscripción y Licencia"
+    folder: "src/content/docs/es/start/licenca-assinatura"
+    create: true
+    media_folder: "/src/assets/images"
+    public_folder: "/src/assets/images"
+    fields:
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Template", name: "template", widget: "hidden", default: "doc" }
+      - { label: "Contenido", name: "body", widget: "markdown" }
+
+  - name: "es_start_instalacao"
+    label: "🇪🇸 Primeros Pasos: Instalación"
+    folder: "src/content/docs/es/start/instalacao"
+    create: true
+    media_folder: "/src/assets/images"
+    public_folder: "/src/assets/images"
+    fields:
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Template", name: "template", widget: "hidden", default: "doc" }
+      - { label: "Contenido", name: "body", widget: "markdown" }
+
+  - name: "es_start_migracao"
+    label: "🇪🇸 Primeros Pasos: Migración de Servidor"
+    folder: "src/content/docs/es/start/migracao"
+    create: true
+    media_folder: "/src/assets/images"
+    public_folder: "/src/assets/images"
+    fields:
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Template", name: "template", widget: "hidden", default: "doc" }
+      - { label: "Contenido", name: "body", widget: "markdown" }
+
+  - name: "es_manual_raiz"
+    label: "🇪🇸 Manual (Raíz)"
+    folder: "src/content/docs/es/manual"
+    create: true
+    media_folder: "/src/assets/images"
+    public_folder: "/src/assets/images"
+    fields:
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Template", name: "template", widget: "hidden", default: "doc" }
+      - { label: "Contenido", name: "body", widget: "markdown" }
+
+  - name: "es_manual_barra"
+    label: "🇪🇸 Manual: Barra Superior"
+    folder: "src/content/docs/es/manual/barra-superior"
+    create: true
+    media_folder: "/src/assets/images"
+    public_folder: "/src/assets/images"
+    fields:
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Template", name: "template", widget: "hidden", default: "doc" }
+      - { label: "Contenido", name: "body", widget: "markdown" }
+
+  - name: "es_manual_dispositivos"
+    label: "🇪🇸 Manual: Dispositivos"
+    folder: "src/content/docs/es/manual/dispositivos"
+    create: true
+    media_folder: "/src/assets/images"
+    public_folder: "/src/assets/images"
+    fields:
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Template", name: "template", widget: "hidden", default: "doc" }
+      - { label: "Contenido", name: "body", widget: "markdown" }
+
+  - name: "es_manual_paineis"
+    label: "🇪🇸 Manual: Paneles"
+    folder: "src/content/docs/es/manual/paineis"
+    create: true
+    media_folder: "/src/assets/images"
+    public_folder: "/src/assets/images"
+    fields:
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Template", name: "template", widget: "hidden", default: "doc" }
+      - { label: "Contenido", name: "body", widget: "markdown" }
+
+  - name: "es_manual_linha_tempo"
+    label: "🇪🇸 Manual: Línea de Tiempo"
+    folder: "src/content/docs/es/manual/linha-tempo"
+    create: true
+    media_folder: "/src/assets/images"
+    public_folder: "/src/assets/images"
+    fields:
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Template", name: "template", widget: "hidden", default: "doc" }
+      - { label: "Contenido", name: "body", widget: "markdown" }
+
+  - name: "es_manual_grupos"
+    label: "🇪🇸 Manual: Grupos de Alertas"
+    folder: "src/content/docs/es/manual/grupos-alertas"
+    create: true
+    media_folder: "/src/assets/images"
+    public_folder: "/src/assets/images"
+    fields:
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Template", name: "template", widget: "hidden", default: "doc" }
+      - { label: "Contenido", name: "body", widget: "markdown" }
+
+  - name: "es_manual_configuracoes"
+    label: "🇪🇸 Manual: Configuraciones"
+    folder: "src/content/docs/es/manual/configuracoes"
+    create: true
+    media_folder: "/src/assets/images"
+    public_folder: "/src/assets/images"
+    fields:
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Template", name: "template", widget: "hidden", default: "doc" }
+      - { label: "Contenido", name: "body", widget: "markdown" }
+
+  - name: "es_tech_raiz"
+    label: "🇪🇸 Tech (Raíz)"
+    folder: "src/content/docs/es/tech"
+    create: true
+    media_folder: "/src/assets/images"
+    public_folder: "/src/assets/images"
+    fields:
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Template", name: "template", widget: "hidden", default: "doc" }
+      - { label: "Contenido", name: "body", widget: "markdown" }
+
+  - name: "es_tech_protocolos"
+    label: "🇪🇸 Tech: Protocolos de Recolección"
+    folder: "src/content/docs/es/tech/protocolos-coleta"
+    create: true
+    media_folder: "/src/assets/images"
+    public_folder: "/src/assets/images"
+    fields:
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Template", name: "template", widget: "hidden", default: "doc" }
+      - { label: "Contenido", name: "body", widget: "markdown" }
+
+  - name: "es_tech_arquitetura"
+    label: "🇪🇸 Tech: Arquitectura y Comunicación"
+    folder: "src/content/docs/es/tech/arquitetura-comunicacao"
+    create: true
+    media_folder: "/src/assets/images"
+    public_folder: "/src/assets/images"
+    fields:
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Template", name: "template", widget: "hidden", default: "doc" }
+      - { label: "Contenido", name: "body", widget: "markdown" }
+
+  - name: "es_tech_lua"
+    label: "🇪🇸 Tech: Módulos de Script con Lua"
+    folder: "src/content/docs/es/tech/modulos-script"
+    create: true
+    media_folder: "/src/assets/images"
+    public_folder: "/src/assets/images"
+    fields:
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Template", name: "template", widget: "hidden", default: "doc" }
+      - { label: "Contenido", name: "body", widget: "markdown" }
+
+  - name: "es_tech_guias"
+    label: "🇪🇸 Tech: Guías Técnicas"
+    folder: "src/content/docs/es/tech/guias-tecnicos"
+    create: true
+    media_folder: "/src/assets/images"
+    public_folder: "/src/assets/images"
+    fields:
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Template", name: "template", widget: "hidden", default: "doc" }
+      - { label: "Contenido", name: "body", widget: "markdown" }
+
+  - name: "es_tech_tutoriais"
+    label: "🇪🇸 Tech: Tutoriales de Monsta"
+    folder: "src/content/docs/es/tech/tutoriais-monsta"
+    create: true
+    media_folder: "/src/assets/images"
+    public_folder: "/src/assets/images"
+    fields:
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Template", name: "template", widget: "hidden", default: "doc" }
+      - { label: "Contenido", name: "body", widget: "markdown" }
+
+  - name: "es_faq_conceitos"
+    label: "🇪🇸 FAQ: Conceptos Fundamentales"
+    folder: "src/content/docs/es/faq/conceitos-fundamentais"
+    create: true
+    media_folder: "/src/assets/images"
+    public_folder: "/src/assets/images"
+    fields:
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Template", name: "template", widget: "hidden", default: "doc" }
+      - { label: "Contenido", name: "body", widget: "markdown" }
+
+  - name: "es_faq_contratacao"
+    label: "🇪🇸 FAQ: Contratación y Licenciamiento"
+    folder: "src/content/docs/es/faq/contratacao-licenciamento"
+    create: true
+    media_folder: "/src/assets/images"
+    public_folder: "/src/assets/images"
+    fields:
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Template", name: "template", widget: "hidden", default: "doc" }
+      - { label: "Contenido", name: "body", widget: "markdown" }
+
+  - name: "es_faq_alertas"
+    label: "🇪🇸 FAQ: Alertas y Notificaciones"
+    folder: "src/content/docs/es/faq/alertas-notificacoes"
+    create: true
+    media_folder: "/src/assets/images"
+    public_folder: "/src/assets/images"
+    fields:
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Template", name: "template", widget: "hidden", default: "doc" }
+      - { label: "Contenido", name: "body", widget: "markdown" }
+
+  - name: "es_faq_acesso"
+    label: "🇪🇸 FAQ: Problemas de Acceso"
+    folder: "src/content/docs/es/faq/problemas-acesso"
+    create: true
+    media_folder: "/src/assets/images"
+    public_folder: "/src/assets/images"
+    fields:
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Template", name: "template", widget: "hidden", default: "doc" }
+      - { label: "Contenido", name: "body", widget: "markdown" }
+
+  - name: "es_faq_coleta"
+    label: "🇪🇸 FAQ: Problemas de Recolección"
+    folder: "src/content/docs/es/faq/problemas-coleta"
+    create: true
+    media_folder: "/src/assets/images"
+    public_folder: "/src/assets/images"
+    fields:
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Template", name: "template", widget: "hidden", default: "doc" }
+      - { label: "Contenido", name: "body", widget: "markdown" }
+
+  - name: "es_faq_licenca"
+    label: "🇪🇸 FAQ: Problemas de Licencia"
+    folder: "src/content/docs/es/faq/problemas-licenca"
+    create: true
+    media_folder: "/src/assets/images"
+    public_folder: "/src/assets/images"
+    fields:
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Template", name: "template", widget: "hidden", default: "doc" }
+      - { label: "Contenido", name: "body", widget: "markdown" }
+
+  - name: "es_extra_equipamentos"
+    label: "🇪🇸 Extra: Configuración de Equipos"
+    folder: "src/content/docs/es/extra/configuracao-equipamentos"
+    create: true
+    media_folder: "/src/assets/images"
+    public_folder: "/src/assets/images"
+    fields:
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Template", name: "template", widget: "hidden", default: "doc" }
+      - { label: "Contenido", name: "body", widget: "markdown" }
+
+  - name: "es_extra_linux"
+    label: "🇪🇸 Extra: Linux"
+    folder: "src/content/docs/es/extra/linux"
+    create: true
+    media_folder: "/src/assets/images"
+    public_folder: "/src/assets/images"
+    fields:
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Template", name: "template", widget: "hidden", default: "doc" }
+      - { label: "Contenido", name: "body", widget: "markdown" }
+
+  - name: "es_extra_windows"
+    label: "🇪🇸 Extra: Windows"
+    folder: "src/content/docs/es/extra/windows"
+    create: true
+    media_folder: "/src/assets/images"
+    public_folder: "/src/assets/images"
+    fields:
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Template", name: "template", widget: "hidden", default: "doc" }
+      - { label: "Contenido", name: "body", widget: "markdown" }
+
+  - name: "es_extra_hyperv"
+    label: "🇪🇸 Extra: Hyper-V"
+    folder: "src/content/docs/es/extra/hyper-v"
+    create: true
+    media_folder: "/src/assets/images"
+    public_folder: "/src/assets/images"
+    fields:
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Template", name: "template", widget: "hidden", default: "doc" }
+      - { label: "Contenido", name: "body", widget: "markdown" }
+
+  - name: "es_extra_mikrotik"
+    label: "🇪🇸 Extra: MikroTik"
+    folder: "src/content/docs/es/extra/mikrotik"
+    create: true
+    media_folder: "/src/assets/images"
+    public_folder: "/src/assets/images"
+    fields:
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Template", name: "template", widget: "hidden", default: "doc" }
+      - { label: "Contenido", name: "body", widget: "markdown" }

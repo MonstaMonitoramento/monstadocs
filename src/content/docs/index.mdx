@@ -1,0 +1,41 @@
+---
+title: Monsta Docs
+description: Central de ajuda, manuais e documentação técnica.
+template: splash
+hero:
+  tagline: Explore nossos manuais de usuário, guias de instalação, tutoriais técnicos e resolução de problemas. Selecione seu idioma abaixo para começar.
+  image:
+    file: ../../assets/logo/robo-monsta.png
+  actions:
+    - text: 🇧🇷 Português
+      link: /pt-br/
+      icon: right-arrow
+      variant: primary
+    - text: 🇺🇸 English
+      link: /en/
+      icon: right-arrow
+      variant: secondary
+    - text: 🇪🇸 Español
+      link: /es/
+      icon: right-arrow
+      variant: secondary
+---
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
+## O que você vai encontrar aqui? / What will you find?
+
+<CardGrid stagger>
+	<Card title="🚀 Primeiros Passos (Start)" icon="rocket">
+		Guias completos de instalação, conceitos iniciais, gerenciamento de licenças e migração de servidores.
+	</Card>
+	<Card title="📖 Manual do Usuário (Manual)" icon="open-book">
+		Aprenda a utilizar os painéis, configurar grupos de alertas e dominar todas as configurações da interface.
+	</Card>
+	<Card title="⚙️ Guias Técnicos (Tech & Extra)" icon="setting">
+		Documentação avançada sobre arquitetura, módulos de script, protocolos de coleta e configurações específicas para ambientes Linux, Windows, Hyper-V e MikroTik.
+	</Card>
+	<Card title="❓ Resolução de Problemas (FAQ)" icon="magnifier">
+		Soluções rápidas e diretas para problemas de acesso, falhas de coleta de dados e alertas de notificação.
+	</Card>
+</CardGrid>
