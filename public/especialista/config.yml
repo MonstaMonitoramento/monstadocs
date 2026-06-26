@@ -2,8 +2,9 @@ local_backend: false
 backend:
    name: "github"
    repo: MonstaMonitoramento/monstadocs
-   auth_methods: [oauth]
-   branch: main   
+   auth_methods:
+      - token
+   branch: main     
    automatic_deployments: true
    commit_messages:
     create: 'Create {{collection}} "{{slug}}"'
