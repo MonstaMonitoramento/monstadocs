@@ -18,9 +18,9 @@ DISCORD_WEBHOOK_URL = os.getenv('DISCORD_WEBHOOK_URL')
 OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')
 
 # Definição dos caminhos base do projeto
-RAIZ_PROJETO = os.path.abspath('../')
-DOCS_DIR = os.path.abspath('../src/content/docs')
-ASSETS_DIR = os.path.abspath('../src/assets')
+RAIZ_PROJETO = os.path.abspath('.')
+DOCS_DIR = os.path.abspath('./src/content/docs')
+ASSETS_DIR = os.path.abspath('./src/assets')
 
 # Estrutura centralizada para armazenar os logs da execução global
 relatorio = {
