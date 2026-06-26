@@ -207,6 +207,7 @@ def traduzir_conteudo(conteudo_md, idioma_destino):
     Traduz documentação Markdown preservando estrutura,
     código, frontmatter e links.
     """
+    pass
 
     if not OPENAI_API_KEY:
         print("⚠️ Chave API da OpenAI não configurada.")
