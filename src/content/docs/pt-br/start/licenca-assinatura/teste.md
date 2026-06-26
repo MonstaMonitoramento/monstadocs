@@ -5,6 +5,6 @@ template: doc
 
 Apenas um teste.
 
-![](/src/assets/images/20260626-160441.png)
+![](../../../../../assets/images/20260626-160441.png)
 
-[Teste](../../start/conceitos-iniciais/o-que-e-o-monsta)
+[Teste](/pt-br/start/conceitos-iniciais/o-que-e-o-monsta)
