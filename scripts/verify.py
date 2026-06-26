@@ -288,8 +288,7 @@ def sincronizar_e_traduzir():
     # --- PASSO 1: ATUALIZAR E TRADUZIR ---
     for pt_file in pt_dir.rglob("*.md*"):
         if not pt_file.is_file():
-            continue
-        break #Teste
+            continue        
         relative_path = pt_file.relative_to(pt_dir)
         with open(pt_file, "r", encoding="utf-8") as f:
             pt_content = f.read()
