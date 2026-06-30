@@ -138,6 +138,11 @@ export default defineConfig({
 							label: 'Tutoriais do Monsta',
 							translations: { en: 'Monsta Tutorials', es: 'Tutoriales de Monsta' },
 							items: [{ autogenerate: { directory: 'tech/tutoriais-monsta' } }]
+						},
+						{
+							label: 'Changelog',
+							translations: { en: 'Changelog', es: 'Changelog' },
+							items: [{ autogenerate: { directory: 'tech/changelog' } }]
 						}
 					],
 				},

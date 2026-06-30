@@ -2,7 +2,7 @@
 
 [![Built with Starlight](https://astro.badg.es/v2/built-with-starlight/tiny.svg)](https://starlight.astro.build)
 
-Bem-vindo ao Monsta Docs, a wiki oficial da plataforma de monitoramento Monsta. Este repositório contém todos os artigos, tutoriais e documentações de referência para ajudar você a extrair o máximo do Monsta.
+Bem-vindo ao [Monsta Docs](https://docs.monsta.com.br), a wiki oficial da plataforma de monitoramento [Monsta](https://www.monsta.com.br). Este repositório contém todos os artigos, tutoriais e documentações de referência para ajudar você a extrair o máximo do Monsta. Acesse a documentação em [docs.monsta.com.br](https://docs.monsta.com.br).
 
 ## 🚀 Estrutura do Conteúdo
 
