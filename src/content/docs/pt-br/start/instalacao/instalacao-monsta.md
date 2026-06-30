@@ -3,12 +3,13 @@ title: Instalação do Monsta
 sidebar:
   order: 3
 ---
+
 ## Requisitos mínimos
 
 Esta é a configuração mínima para a instalação do Monsta:
 
 | Item | Requisito Mínimo |
-| :---: | :--- |
+| --- | --- |
 | ![HD](../../../../../assets/images/p25_image-1645452261754.png) | **Espaço em disco**<br />40GB livre para /var (configurações, banco de dados e logs)<br />300MB livre para /opt/monsta (programas e bibliotecas) |
 | ![RAM](../../../../../assets/images/p25_image-1645452312898.png) | **Memória RAM**<br />2GB de memória RAM |
 | ![SO](../../../../../assets/images/p25_image-1645452455434.png) | **Sistema Operacional**<br />Linux 64bits<br />Sistema Operacional Linux recomendado: Fedora Server |
@@ -57,7 +58,7 @@ A partir de agora o Monsta está instalado em seu servidor e pode ser acessado a
 Se a sua rede possui um firewall que controla os acessos à internet, libere o acesso para os seguintes hosts:  
 
 * mind.monsta.com.br  
-* store.monsta.com.br
+* agent.monsta.com.br
 :::
 
 :::tip
@@ -69,6 +70,7 @@ A comunicação com os hosts acima permitem:
 * Checagem do estado da comunicação entre o Monsta instalado em seu servidor e o a Nuvem do Monsta. Com isso é possível receber alertas em caso de paradas inesperadas do serviço de monitoramento, tal como o desligamento impróprio do servidor ou falha no link de internet.  
 * Autenticação das Chaves de Licenciamento.  
 * Verificar e atualizar a versão do sistema.
+* Conexão com os agentes para monitoramento de redes remotas.
 :::
 
 ## Primeiro acesso ao Monsta
@@ -77,21 +79,22 @@ Abra um browser e acesse:
 
 ![image-1645528439997.png](../../../../../assets/images/p83_image-1645528439997.png)
 
-A próxima tela solicita um login na nuvem. Se você ainda não possui uma conta, clique em "Criar Conta":
+Você pode optar por autenticar-se utilizando uma credencial existente através do botão **"Entrar com minha conta"** ou iniciar o fluxo de novo usuário clicando em **"Criar nova conta"**.
 
-![image-1741981403822.png](../../../../../assets/images/p83_image-1741981403822.png)
+![](/src/assets/images/20260630-105252.png)
 
-Preencha os campos para criar sua conta na nuvem e clique em "Inscreva-se":
+Preencha os campos para criar sua conta na nuvem e avance clicando em "Próximo":
 
-![image-1741981571242.png](../../../../../assets/images/p83_image-1741981571242.png)
+![](/src/assets/images/Tela_Novo_Usuario.png)
 
 Você receberá em seguida um e-mail contendo um código para validar sua conta. Informe-o na tela abaixo e clique em Confirmar:
 
-![image-1741981652915.png](../../../../../assets/images/p83_image-1741981652915.png)
+
+![](/src/assets/images/20260630-111438.png)
 
 Após esse procedimento, você será direcionado para a tela de licenças. Como esta é uma nova conta, nenhuma licença será apresentada e você poderá selecionar se deseja assinar uma licença ou ativar a versão Trial. Clique no botão "Ativar Trial" para habilitar os 30 dias de teste do Monsta em sua empresa:
 
-![image-1741981798571.png](../../../../../assets/images/p83_image-1741981798571.png)
+![](/src/assets/images/20260630-111706.png)
 
 Você será encaminhado a tela para informar uma senha para o usuário "admin" do Monsta. Digite sua senha e clique no botão "Confirmar":
 
