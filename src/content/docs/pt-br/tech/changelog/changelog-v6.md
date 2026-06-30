@@ -14,7 +14,7 @@ sidebar:
 
 ## Versão 6.0.6
 
-**✨Novo**: **Agentes** - Monitoramento de redes remotas sem necessidade de VPNs ou redirecionamento de portas [Agente: Instalação Zero Conf](pt-br/start/instalacao/agente-instalacao-zero-conf).
+**✨Novo**: **Agentes** - Monitoramento de redes remotas sem necessidade de VPNs ou redirecionamento de portas [Agente: Instalação Zero Conf](/pt-br/start/instalacao/agente-instalacao-zero-conf).
 
 **✨Novo**: Mapa para visão hierárquica com possibilidade de definir posições, adicionar widgets e métricas.
 
