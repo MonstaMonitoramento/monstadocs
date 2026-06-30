@@ -89,7 +89,6 @@ Preencha os campos para criar sua conta na nuvem e avance clicando em "Próximo"
 
 Você receberá em seguida um e-mail contendo um código para validar sua conta. Informe-o na tela abaixo e clique em Confirmar:
 
-
 ![](/src/assets/images/20260630-111438.png)
 
 Após esse procedimento, você será direcionado para a tela de licenças. Como esta é uma nova conta, nenhuma licença será apresentada e você poderá selecionar se deseja assinar uma licença ou ativar a versão Trial. Clique no botão "Ativar Trial" para habilitar os 30 dias de teste do Monsta em sua empresa:
