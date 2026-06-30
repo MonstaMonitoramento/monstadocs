@@ -81,19 +81,19 @@ Abra um browser e acesse:
 
 Você pode optar por autenticar-se utilizando uma credencial existente através do botão **"Entrar com minha conta"** ou iniciar o fluxo de novo usuário clicando em **"Criar nova conta"**.
 
-![](/src/assets/images/20260630-105252.png)
+![](../../../../../assets/images/20260630-105252.png)
 
 Preencha os campos para criar sua conta na nuvem e avance clicando em "Próximo":
 
-![](/src/assets/images/Tela_Novo_Usuario.png)
+![](../../../../../assets/images/Tela_Novo_Usuario.png)
 
 Você receberá em seguida um e-mail contendo um código para validar sua conta. Informe-o na tela abaixo e clique em Confirmar:
 
-![](/src/assets/images/20260630-111438.png)
+![](../../../../../assets/images/20260630-111438.png)
 
 Após esse procedimento, você será direcionado para a tela de licenças. Como esta é uma nova conta, nenhuma licença será apresentada e você poderá selecionar se deseja assinar uma licença ou ativar a versão Trial. Clique no botão "Ativar Trial" para habilitar os 30 dias de teste do Monsta em sua empresa:
 
-![](/src/assets/images/20260630-111706.png)
+![](../../../../../assets/images/20260630-111706.png)
 
 Você será encaminhado a tela para informar uma senha para o usuário "admin" do Monsta. Digite sua senha e clique no botão "Confirmar":
 
