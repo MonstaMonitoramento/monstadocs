@@ -1,39 +1,41 @@
 ---
-title: "Who is Monsta intended for?"
+title: Who is Monsta for?
 sidebar:
   order: 3
 ---
 
-Monsta is suitable for a wide range of users and organizations that rely on a stable and high-performing Information Technology (IT) infrastructure. Specifically, it is valuable for:
+Monsta is a flexible and robust monitoring platform designed to adapt to different scenarios and business models. If your operation depends on a stable, secure, and high-performance Information Technology (IT) infrastructure, Monsta was made for you.
 
-**1. Businesses of All Sizes**:
+See how our solution specifically serves the main market profiles:
 
-- **Small and Medium-sized Businesses (SMBs)**: Even with limited IT resources, SMBs can benefit from Monsta to monitor their critical systems, prevent outages and ensure productivity. Ease of use and proactive alerts can be especially helpful.
-- **Large Enterprises**: With complex and extensive IT infrastructures, large enterprises need a robust solution like Monsta to gain a centralized view, identify problems at scale, and optimize the performance of their various systems and services.
+### 1. Internet Service Providers (ISPs)
 
-**2. IT Departments**:
+For providers, stability and latency are everything. Monsta is the right hand of your NOC, allowing you to proactively monitor the health of the entire network and act before the customer notices an outage.
 
-- **Infrastructure Teams**: Monsta is an essential tool for teams responsible for maintaining the availability and proper functioning of servers, networks, storage and other infrastructure components.
-- **IT Operations (ITOps) Teams**: Helps ensure service continuity, monitor application performance and respond quickly to incidents.
-- **IT Support Teams**: Facilitates diagnosing issues reported by users by providing detailed information about the state of the infrastructure.
+- **End-to-End Visibility:** Monitor from backbone equipment, edge routers and OLTs to Points of Presence (PoPs).
+- **Multi-vendor:** Native integration via SNMP to collect crucial traffic, signal and CPU metrics from leading market brands (such as Huawei, Cisco, Mikrotik, Intelbras, Fiberhome and Datacom).
+- **Faster Response:** Immediate alerts drastically reduce MTTR (Mean Time to Resolution).
 
-**3. Managed Service Providers (MSPs)**:
+### 2. Managed Service Providers (MSPs)
 
-- MSPs can use Monsta to monitor the infrastructure of multiple clients centrally, offering proactive monitoring services, fault detection and efficient remote support.
+Managing the IT of dozens of clients without centralized tools is a scalable challenge. Monsta enables MSPs to raise their delivery level with efficient multi-tenant monitoring.
 
-**4. Internet Service Providers (ISPs)**:
+- **Centralized Operations:** Track multiple clients' infrastructure on a single screen, ensuring compliance with strict SLAs.
+- **Lightweight Agents:** Collect data from remote networks with efficient agents that do not overload the client's environment.
+- **Competitive Edge:** Turn reactive support into a consultative and preventive service, generating capacity and availability reports for your clients.
 
-- For providers looking to ensure high availability, optimized performance and the quality of connectivity services offered to their customers. In an environment where network reliability is crucial, Monsta provides the necessary tools to proactively monitor the health and performance of the entire ISP infrastructure, from backbone equipment to points of presence (PoPs) and the delivery of service to end users.
+### 3. IT and Network Consultants
 
-**5. Developers and DevOps Teams**:
+As an independent or project-focused consultant, you need a tool that's quick to deploy, reliable, and that validates the value of your work.
 
-- Continuous monitoring provided by Monsta can help development teams understand the impact of new deployments on the performance of infrastructure and applications in production.
-- It helps identify bottlenecks and optimize the runtime environment for applications.
+- **Easy Deployment:** No steep learning curves or endless configurations. You install, configure discovery, and start collecting data quickly.
+- **Root Cause Analysis:** Identify hidden bottlenecks in a client's network (interface errors, link saturation, hardware failures) using metric histories and detailed graphs.
+- **Tailored Monitoring:** Create custom dashboards and alerts according to the specific needs of each project.
+- **Monthly AI-powered Reports:** Artificial Intelligence that transforms asset and alert data into strategic insights, sent by email at the start of each month.
 
-**6. Any Organization with a Critical Dependence on IT**:
+### 4. Companies in General (SMBs to Large Corporations)
 
-- **E-commerce**: To ensure the availability of online stores and avoid financial losses due to outages.
-- **Financial Institutions**: To maintain the security and continuity of banking and transactional services.
-- **Healthcare Organizations**: To ensure the operation of systems essential for care delivery and patient information management.
-- **Manufacturing Companies**: To monitor industrial control systems and ensure continuous production.
-- **Educational Organizations**: To maintain the availability of online learning platforms and administrative systems.
+Whether to ensure e-commerce sales, keep an industry's systems running, or make sure health and financial services don't stop, Monsta protects your business productivity.
+
+- **Small and Medium Businesses (SMBs):** Have the monitoring power of a large corporation with an intuitive interface, ideal for lean teams that need to focus on the business, not on maintaining the tool.
+- **Large Enterprises and ITOps:** Support for complex network topologies, monitoring of critical servers, databases and applications, with centralized views and dashboards for quick decision-making.
