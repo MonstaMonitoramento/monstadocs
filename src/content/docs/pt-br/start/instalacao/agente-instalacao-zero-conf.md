@@ -10,20 +10,9 @@ Esta documentação descreve o funcionamento e a arquitetura do **Agente Monsta*
 
 - Baixe o programa do agente:
 
-<table>
-  <tr style="border: none; background: none;">
-    <td style="border: none; padding-right: 15px; vertical-align: middle;">
-      <a href="https://www.monsta.com.br/monsta/download/agent.msi">
-        <img src="../../../../../src/assets/images/p139_image-1660325708746.png">
-      </a>
-    </td>
-    <td style="border: none; vertical-align: middle;">
-      <a href="https://www.monsta.com.br/monsta/download/agent.msi">
-        https://www.monsta.com.br/monsta/download/agent.msi
-      </a>
-    </td>
-  </tr>
-</table>
+|  |  |
+| :---: | :--- |
+| [![Download do Agente](/src/assets/images/p139_image-1660325708746.png)](https://www.monsta.com.br/monsta/download/agent.msi) | <br> [https://www.monsta.com.br/monsta/download/agent.msi](https://www.monsta.com.br/monsta/download/agent.msi) |
 
 - Logado com um usuário com permissões de administrador, execute o instalador "agent.msi".
 - Quando solicitado, insira a chave de licença do Monsta no qual você deseja conectar o agente.
