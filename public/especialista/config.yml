@@ -213,6 +213,17 @@ collections:
       - { label: "Template", name: "template", widget: "hidden", default: "doc" }
       - { label: "Conteúdo", name: "body", widget: "markdown" }
 
+  - name: "pt-br_tech_changelog"
+    label: "🇧🇷 Tech: Changelog"
+    folder: "src/content/docs/pt-br/tech/changelog"
+    create: true
+    media_folder: "/src/assets/images"
+    public_folder: "/src/assets/images"
+    fields:
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Template", name: "template", widget: "hidden", default: "doc" }
+      - { label: "Conteúdo", name: "body", widget: "markdown" }
+
   # --- FAQ ---
   - name: "pt-br_faq_conceitos"
     label: "🇧🇷 FAQ: Conceitos Fundamentais"
@@ -528,6 +539,17 @@ collections:
       - { label: "Template", name: "template", widget: "hidden", default: "doc" }
       - { label: "Content", name: "body", widget: "markdown" }
 
+  - name: "en_tech_changelog"
+    label: "🇺🇸 Tech: Changelog"
+    folder: "src/content/docs/en/tech/changelog"
+    create: true
+    media_folder: "/src/assets/images"
+    public_folder: "/src/assets/images"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Template", name: "template", widget: "hidden", default: "doc" }
+      - { label: "Content", name: "body", widget: "markdown" }
+
   - name: "en_faq_conceitos"
     label: "🇺🇸 FAQ: Fundamental Concepts"
     folder: "src/content/docs/en/faq/conceitos-fundamentais"
@@ -832,6 +854,17 @@ collections:
   - name: "es_tech_tutoriais"
     label: "🇪🇸 Tech: Tutoriales de Monsta"
     folder: "src/content/docs/es/tech/tutoriais-monsta"
+    create: true
+    media_folder: "/src/assets/images"
+    public_folder: "/src/assets/images"
+    fields:
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Template", name: "template", widget: "hidden", default: "doc" }
+      - { label: "Contenido", name: "body", widget: "markdown" }
+
+  - name: "es_tech_changelog"
+    label: "🇪🇸 Tech: Changelog"
+    folder: "src/content/docs/es/tech/changelog"
     create: true
     media_folder: "/src/assets/images"
     public_folder: "/src/assets/images"
