@@ -16,7 +16,7 @@ sidebar:
 
 **✨Novo**: **Agentes** - Monitoramento de redes remotas sem necessidade de VPNs ou redirecionamento de portas [Agente: Instalação Zero Conf](/pt-br/start/instalacao/agente-instalacao-zero-conf).
 
-**✨Novo**: Mapa para visão hierárquica com possibilidade de definir posições, adicionar widgets e métricas.
+**✨Novo**: [Mapa para visão hierárquica](pt-br/manual/dispositivos/visualizacao-em-mapa#mapa-dinâmico) com possibilidade de definir posições, adicionar widgets e métricas.
 
 **✨Novo**: Painéis podem ser disponibilizados para usuários não administradores.
 
