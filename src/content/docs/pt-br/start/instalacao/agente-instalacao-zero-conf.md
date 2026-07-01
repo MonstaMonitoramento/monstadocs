@@ -1,5 +1,5 @@
 ---
-title: "Agente: Instalação Zero Conf"
+title: 'Agente: Instalação Zero Conf'
 sidebar:
   order: 4
 ---
@@ -10,12 +10,27 @@ Esta documentação descreve o funcionamento e a arquitetura do **Agente Monsta*
 
 - Baixe o programa do agente:
 
-| | |
-| --- | --- |
 | ![image-1660325708746.png](../../../../../assets/images/p139_image-1660325708746.png) | [**DOWNLOAD**](http://www.monsta.com.br/monsta/download/agent.msi)<br />[https://monsta.com.br/downloads/](https://www.monsta.com.br/monsta/download/agent.msi) |
 
 - Logado com um usuário com permissões de administrador, execute o instalador "agent.msi".
 - Quando solicitado, insira a chave de licença do Monsta no qual você deseja conectar o agente.
+
+## Instalação pela linha de comando
+
+O instalador **agent.msi** suporta parâmetros de linha de comando para automação. Integrado ao utilitário **msiexec**, ele permite instalar via **GPO**, eliminando a necessidade de intervenção manual na interface gráfica.
+
+Opções da linha de comando:
+
+| `LICENSEKEY=\[chave de licença\]` | Informa a chave de licença no qual o Agente deverá se conectar. |
+| `AGREE=\[Y\]` | Confirma a aceitação dos termos de uso. |
+
+:::tip[Exemplo de uso]
+
+```powershell
+msiexec /i agent.msi /quiet LICENSEKEY=AAAABBBBCCCCDDDDEEEEFFFFGGGGHHHH AGREE=Y
+```
+
+:::
 
 :::note
 A Chave de Licença pode ser obtida no Monsta dentro do menu "Configuração" na opção "Agentes". Ela é informada no canto superior direito.
@@ -23,6 +38,7 @@ A Chave de Licença pode ser obtida no Monsta dentro do menu "Configuração" na
 
 :::tip
 **Firewall**:  
+
 - Não é necessário redirecionar nenhuma porta para o servidor do Monsta;  
 - Para garantir conexões diretas, libere a porta **58580/UDP** (saída) no seu firewall do servidor do Monsta para a Internet;  
 - Libere o acesso do servidor do Monsta para os hosts mind.monsta.com.br e agent.monsta.com.br.
@@ -40,20 +56,4 @@ Exemplo de Hierarquia:
 
 ![image-1765385133049.png](../../../../../assets/images/p139_image-1765385133049.png)
 
-## Instalação pela linha de comando
-
-O instalador **agent.msi** suporta parâmetros de linha de comando para automação. Integrado ao utilitário **msiexec**, ele permite instalar via **GPO**, eliminando a necessidade de intervenção manual na interface gráfica.
-
-Opções da linha de comando:
-
-
-|  |  |
-| --- | --- |
-| `LICENSEKEY=\[chave de licença\]` | Informa a chave de licença no qual o Agente deverá se conectar. |
-| `AGREE=\[Y\]` | Confirma a aceitação dos termos de uso. |
-
-:::tip[Exemplo de uso]
-```powershell
-msiexec /i agent.msi /quiet LICENSEKEY=AAAABBBBCCCCDDDDEEEEFFFFGGGGHHHH AGREE=Y
-```
-:::
+##
