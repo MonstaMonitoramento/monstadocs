@@ -4,17 +4,17 @@ sidebar:
   order: 4
 ---
 
-This documentation describes the operation and architecture of the **Monsta Agent**, a tool to extend the monitoring of your platform to remote and distributed networks, ensuring performance and security through the QUIC protocol.
+Esta documentação descreve o funcionamento e a arquitetura do **Agente Monsta**, uma ferramenta para estender o monitoramento da sua plataforma para redes remotas e distribuídas, garantindo performance e segurança por meio do protocolo QUIC.
 
-## Agent Installation for Windows
+## Instalação do Agente para Windows
 
-- Download the agent program:
+- Baixe o programa do agente:
 
 <table>
   <tr style="border: none; background: none;">
     <td style="border: none; padding-right: 15px; vertical-align: middle;">
       <a href="https://www.monsta.com.br/monsta/download/agent.msi">
-        <img src="/src/assets/images/p139_image-1660325708746.png" alt="Download do Agente" />
+        <img src="../../../../../src/assets/images/p139_image-1660325708746.png">
       </a>
     </td>
     <td style="border: none; vertical-align: middle;">
@@ -25,21 +25,21 @@ This documentation describes the operation and architecture of the **Monsta Agen
   </tr>
 </table>
 
-- Logged in as a user with administrator privileges, run the installer "agent.msi".
-- When prompted, enter the Monsta license key to which you want to connect the agent.
+- Logado com um usuário com permissões de administrador, execute o instalador "agent.msi".
+- Quando solicitado, insira a chave de licença do Monsta no qual você deseja conectar o agente.
 
-## Command-line Installation
+## Instalação pela linha de comando
 
-The installer **agent.msi** supports command-line parameters for automation. Integrated with the **msiexec** utility, it allows installation via **GPO**, eliminating the need for manual intervention in the graphical interface.
+O instalador **agent.msi** suporta parâmetros de linha de comando para automação. Integrado ao utilitário **msiexec**, ele permite instalar via **GPO**, eliminando a necessidade de intervenção manual na interface gráfica.
 
-Command-line options:
+Opções da linha de comando:
 
-| Option | Description |
+| Opção | Descrição |
 | --- | --- |
-| `LICENSEKEY=[chave de licença]` | Informs the license key to which the Agent should connect. <aside class="starlight-aside starlight-aside--tip"><p class="starlight-aside__title">Tip</p>The License key can be obtained in Monsta within the "Configuration" menu under the "Agents" option. It is shown in the top-right corner.</aside> |
-| `AGREE=[Y]` | Confirms acceptance of the terms of use. |
+| `LICENSEKEY=[chave de licença]` | Informa a chave de licença no qual o Agente deverá se conectar. <aside class="starlight-aside starlight-aside--tip"><p class="starlight-aside__title">Dica</p>A chave de Licença pode ser obtida no Monsta dentro do menu "Configuração" na opção "Agentes". Ela é informada no canto superior direito.</aside> |
+| `AGREE=[Y]` | Confirma a aceitação dos termos de uso. |
 
-**Example usage:**
+**Exemplo de uso:**
 
 ```powershell
 msiexec /i agent.msi /quiet LICENSEKEY=AAAABBBBCCCCDDDDEEEEFFFFGGGGHHHH AGREE=Y
@@ -50,20 +50,20 @@ msiexec /i agent.msi /quiet LICENSEKEY=AAAABBBBCCCCDDDDEEEEFFFFGGGGHHHH AGREE=Y
 :::tip
 **Firewall**:  
 
-- It is not necessary to forward any port to the Monsta server;  
-- To ensure direct connections, allow port **58580/UDP** (outbound) on your Monsta server firewall to the Internet;  
-- Allow the Monsta server access to the hosts mind.monsta.com.br and agent.monsta.com.br.
+- Não é necessário redirecionar nenhuma porta para o servidor do Monsta;  
+- Para garantir conexões diretas, libere a porta **58580/UDP** (saída) no seu firewall do servidor do Monsta para a Internet;  
+- Libere o acesso do servidor do Monsta para os hosts mind.monsta.com.br e agent.monsta.com.br.
 :::
 
-## Device Creation
+## Criação do Dispositivo
 
-Once installation is complete, the **Agent** will automatically appear on the **Configuration** screen under **Agents** with the host identification. The monitored device will be **created and listed instantly** on the **Devices** screen with the same host name and ready for configuration and addition of new monitors.
+Uma vez concluída a instalação, o **Agente** aparecerá automaticamente na tela de **Configuração** no item **Agentes** com a identificação do host. O dispositivo monitorado será **criado e listado instantaneamente** na tela de **Dispositivos** com o mesmo nome do host e pronto para a configuração e adição de novos monitores.
 
-### How to Monitor Devices via the Agent Connection
+### Como Monitorar Dispositivos pela Conexão do Agente
 
-To cover the entire remote network with a single agent, register the new devices in Monsta and set the device to be under the **hierarchy** of the host where the Agent is installed.
+Para cobrir toda a rede remota com um único agente, cadastre os novos dispositivos no Monsta e defina que o dispositivo está sob a **hierarquia** do host onde o Agente está instalado.
 
-Example of Hierarchy:
+Exemplo de Hierarquia:
 
 ![image-1765385133049.png](../../../../../assets/images/p139_image-1765385133049.png)
 
