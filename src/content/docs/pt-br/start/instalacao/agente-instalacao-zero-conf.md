@@ -10,6 +10,8 @@ Esta documentação descreve o funcionamento e a arquitetura do **Agente Monsta*
 
 - Baixe o programa do agente:
 
+| &nbsp; | &nbsp; |
+| --- | --- |
 | ![image-1660325708746.png](../../../../../assets/images/p139_image-1660325708746.png) | [**DOWNLOAD**](http://www.monsta.com.br/monsta/download/agent.msi)<br />[https://monsta.com.br/downloads/](https://www.monsta.com.br/monsta/download/agent.msi) |
 
 - Logado com um usuário com permissões de administrador, execute o instalador "agent.msi".
@@ -21,6 +23,8 @@ O instalador **agent.msi** suporta parâmetros de linha de comando para automaç
 
 Opções da linha de comando:
 
+| &nbsp; | &nbsp; |
+| --- | --- |
 | `LICENSEKEY=\[chave de licença\]` | Informa a chave de licença no qual o Agente deverá se conectar. |
 | `AGREE=\[Y\]` | Confirma a aceitação dos termos de uso. |
 
