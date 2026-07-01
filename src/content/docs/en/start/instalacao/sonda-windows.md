@@ -35,6 +35,8 @@ All information exchanged between the Monsta central server and the Probe instal
 
 1. Download the probe program on the Windows operating system you want to monitor;
 
+[![Download](/src/assets/images/p139_image-1660325708746.png)](https://www.monsta.com.br/monsta/download/MonstaProbe.exe)
+
 | [![Download](/src/assets/images/p139_image-1660325708746.png)](https://www.monsta.com.br/monsta/download/MonstaProbe.exe) | [https://www.monsta.com.br/monsta/download/MonstaProbe.exe (64bits)](https://www.monsta.com.br/monsta/download/MonstaProbe.exe) |
 | :---: | :--- |
 
