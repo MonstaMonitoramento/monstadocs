@@ -4,69 +4,69 @@ sidebar:
   order: 5
 ---
 
-A **Monsta Probe** is a local collection software designed to be installed directly on **Windows, Linux and Raspberry Pi** servers and devices. Its main function is to collect performance, health and availability metrics from the host system, acting as a native collection extension for the Monsta platform.
+A **Monsta Probe** é um software de coleta local projetado para ser instalado diretamente em servidores e dispositivos **Windows, Linux e Raspberry PI**. Sua função principal é coletar métricas de performance, integridade e disponibilidade do sistema hospedeiro, funcionando como uma extensão nativa de coleta para a plataforma Monsta.
 
-## Features and Technical Capabilities
+## Características e Capacidades Técnicas
 
-### 1. Passive Architecture (On-Demand)
+### 1. Arquitetura Passiva (Sob Demanda)
 
-The probe operates strictly under a **passive request-and-response** model. It does not initiate communications with the network autonomously; data traffic occurs only when Monsta contacts it to perform polling (collection request).
+A sonda opera estritamente sob um modelo **passivo de requisição e resposta**. Ela não inicia comunicações com a rede de forma autônoma; o tráfego de dados ocorre apenas quando o Monsta entra em contato para realizar o _polling_ (solicitação de coleta).
 
-### 2. Integration with the WMI API (Windows)
+### 2. Integração com a API WMI (Windows)
 
-In Microsoft environments, the probe natively uses the WMI (Windows Management Instrumentation) API, allowing extraction of detailed performance counters from servers and workstations without the need for complex remote management configurations on the network.
+Em ambientes Microsoft, a sonda utiliza de forma nativa a API WMI (_Windows Management Instrumentation_), permitindo extrair contadores de desempenho detalhados de servidores e estações de trabalho sem a necessidade de configurações complexas de gerenciamento remoto na rede.
 
-### 3. Execution of Commands and PowerShell Scripts
+### 3. Execução de Comandos e Scripts PowerShell
 
-The probe acts as an automation arm directly on the host operating system.
+A sonda atua como um braço de automação diretamente no sistema operacional do host.
 
-- **Local Commands:** It can execute commands directly on the host operating system.
-- **PowerShell Scripts:** Supports triggering custom scripts, allowing monitoring of specific applications or creating tailored validation routines.
+- **Comandos Locais:** Pode executar comandos diretamente no sistema operacional hospedeiro.
+- **Scripts PowerShell:** Suporta o acionamento de scripts customizados, permitindo monitorar aplicações específicas ou criar rotinas de validação sob medida.
 
-### 4. Physical Disk Health Diagnostics
+### 4. Diagnóstico de Saúde de Discos Físicos
 
-The software can read hardware indicators and the health status of hard drives and SSDs installed on the device. This enables early identification of physical failures (_bad blocks_) and storage degradation.
+O software possui a capacidade de ler indicadores de hardware e o status de integridade dos discos rígidos e SSDs instalados no dispositivo. Isso possibilita a identificação precoce de falhas físicas (_bad blocks_) e degradação de armazenamento.
 
-### 5. Encrypted Communication
+### 5. Comunicação Criptografada
 
-All information exchanged between the Monsta central server and the Probe installed on the device is **100% encrypted**, ensuring the security of transmitted metrics and preventing interception of sensitive infrastructure data.
+Toda a troca de informações entre o servidor central do Monsta e a Sonda instalada no dispositivo é **100% criptografada**, garantindo a segurança das métricas trafegadas e impedindo a interceptação de dados sensíveis da infraestrutura.
 
-## Probe Installation
+## Instalação da Sonda
 
-1. Download the probe program on the Windows system you want to monitor;
+1. Baixe o programa da sonda no sistema operacional Windows que deseja monitorar;
 
-| \n | [**DOWNLOAD**](https://www.monsta.com.br/monsta/download/MonstaProbe.exe "Monsta - Probe Collector")<br />[https://www.monsta.com.br/monsta/download/MonstaProbe.exe (64bits)](https://www.monsta.com.br/monsta/download/MonstaProbe.exe) |
+| [![image-1660325708746.png](/src/assets/images/p139_image-1660325708746.m2-S-12t_Z1fgt93.webp)](https://www.monsta.com.br/monsta/download/MonstaProbe.exe) | [**DOWNLOAD**](https://www.monsta.com.br/monsta/download/MonstaProbe.exe "Monsta - Sonda Coletora")<br />[https://www.monsta.com.br/monsta/download/MonstaProbe.exe (64bits)](https://www.monsta.com.br/monsta/download/MonstaProbe.exe) |
+| --- | --- |
 
-2. Logged in with an administrator user, run the installer "monstaprobe.exe" (see [Installation via command line](#instalação-pela-linha-de-comando) for batch installation);
-3. Configure the port and password parameters that will be requested during installation.  
+2. Logado com um usuário administrador, execute o instalador "monstaprobe.exe" (consulte [Instalação pela linha de comando](#instalação-pela-linha-de-comando) para instalação em lote);
+3. Configure os parâmetros de porta e senha que serão solicitados durante a instalação.  
 
 :::note
-**port**: It is the port that will be used by the probe for Monsta to connect. The default is **7744** (TCP).  
-**password**: It is the authentication password for the probe on the installed computer. The default is `monsta@dm`.
+**port**: É a porta que será utilizada pela sonda para o Monsta conectar. O padrão é **7744** (TCP).  
+**password**: É a senha de autenticação para a sonda no computador instalado. O padrão é `monsta@dm`.
 :::
 
-## Configuration in Monsta
+## Configuração no Monsta
 
-Within Monsta, when creating a device, simply configure it to use the Microsoft templates.
+Dentro do Monsta, ao criar um dispositivo, apenas configure-o para utilizar os templates da Microsoft.
 
 ![image-1741105397485.png](../../../../../assets/images/p68_image-1741105397485.png)
 
-And fill the "WMI User" field with any information (it will be discarded later) and the "WMI Password" field with the password provided during the probe installation.
+E preencha o campo "Usuário WMI" com qualquer informação (ele será descartado futuramente) e o campo "Senha WMI" com a senha informada na instalação da sonda.
 
 ![image-1741105450183.png](../../../../../assets/images/p68_image-1741105450183.png)
 
-After creating the device you can start using the monitors available in the template.
+Após criar o dispositivo você já pode utilizar os monitores disponíveis do template.
 
-<a id="instalação-pela-linha-de-comando"></a>
-## Installation via command line
+## Instalação pela linha de comando
 
-The MonstaProbe.exe installer accepts command line options. You can use them to automate installation across a network via a GPO, without requiring interaction with the graphical interface.
+O instalador MonstaProbe.exe aceita opções na linha de comando. Você pode utilizá-las para automatizar a instalação em uma rede através de uma GPO, sem necessidade de interação com a interface gráfica.
 
 | Opção &nbsp; &nbsp; &nbsp; &nbsp; | Descrição |
 | --- | --- |
-| `--agree` | Accepts the probe collector's terms of use. |
-| `--port` | Specifies the port to be used by the probe collector. If not specified, the default will be 7744 (TCP). |
-| `--passwd` | Assigns the password to be used by the probe collector. The default password will be *monsta@dm* if not provided. |
+| `--agree` | Aceita o termo de uso da sonda coletora. |
+| `--port` | Informa a porta a ser utilizada pela sonda coletora. Se não for informada, o padrão será 7744 (TCP). |
+| `--passwd` | Atribui a senha a ser utilizada pela sonda coletora. A senha padrão será *monsta@dm* caso não seja informada. |
 
 :::tip[Example usage]
 
