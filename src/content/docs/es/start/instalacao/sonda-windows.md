@@ -35,8 +35,9 @@ Todo el intercambio de información entre el servidor central de Monsta y la Son
 
 1. Descargue el programa de la sonda en el sistema operativo Windows que desea monitorizar;
 
+| | |
+| --- | :--- |
 | [![Download](../../../../../assets/images/p139_image-1660325708746.png)](https://www.monsta.com.br/monsta/download/MonstaProbe.exe) | [https://www.monsta.com.br/monsta/download/MonstaProbe.exe (64bits)](https://www.monsta.com.br/monsta/download/MonstaProbe.exe) |
-| :---: | :--- |
 
 2. Conectado con un usuario administrador, ejecute el instalador "monstaprobe.exe" (consulte [Instalación por línea de comandos](#instalación-por-línea-de-comandos) para instalación en lote);
 3. Configure los parámetros de puerto y contraseña que se le solicitarán durante la instalación.  
