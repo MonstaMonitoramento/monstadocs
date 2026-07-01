@@ -75,5 +75,3 @@ MonstaProbe.exe --agree --port 1234 --passwd senha
 ```
 
 :::
-
-    - - - - - -
