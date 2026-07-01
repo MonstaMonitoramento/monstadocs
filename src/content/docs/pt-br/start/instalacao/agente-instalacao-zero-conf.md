@@ -14,7 +14,7 @@ Esta documentação descreve o funcionamento e a arquitetura do **Agente Monsta*
   <tr style="border: none; background: none;">
     <td style="border: none; padding-right: 15px; vertical-align: middle;">
       <a href="https://www.monsta.com.br/monsta/download/agent.msi">
-        <img src="../../../../../src/assets/images/p139_image-1660325708746.png" alt="Download do Agente" />
+        <img src="../../../../../src/assets/images/p139_image-1660325708746.png">
       </a>
     </td>
     <td style="border: none; vertical-align: middle;">
