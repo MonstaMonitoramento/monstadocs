@@ -52,13 +52,11 @@ O instalador MonstaProbe.exe aceita opções na linha de comando. Você pode uti
 | `--port` | Informa a porta a ser utilizada pela sonda coletora. Se não for informada, o padrão será 7744 (TCP). |
 | `--passwd` | Atribui a senha a ser utilizada pela sonda coletora. A senha padrão será *monsta@dm* caso não seja informada. |
 
-:::tip[Exemplo de uso]
+**Exemplo de uso**
 
 ```powershell
 MonstaProbe.exe --agree --port 1234 --passwd senha
 ```
-
-:::
 
 :::note
 **port**: É a porta que será utilizada pela sonda para o Monsta conectar. O padrão é **7744** (TCP).  
