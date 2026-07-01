@@ -35,33 +35,28 @@ All information exchanged between the Monsta central server and the Probe instal
 
 1. Download the probe program on the Windows operating system you want to monitor;
 
-|  | Download |
-| --- | --- |
-| [![Download da Sonda](../../../../../assets/images/p139_image-1660325708746.png)](https://www.monsta.com.br/monsta/download/MonstaProbe.exe) | [https://www.monsta.com.br/monsta/download/MonstaProbe.exe](https://www.monsta.com.br/monsta/download/MonstaProbe.exe) |
+|                                                                                                                                                         | Download                                                                                                               |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| <a href="https://www.monsta.com.br/monsta/download/MonstaProbe.exe">![Download da Sonda](../../../../../assets/images/p139_image-1660325708746.png)</a> | [https://www.monsta.com.br/monsta/download/MonstaProbe.exe](https://www.monsta.com.br/monsta/download/MonstaProbe.exe) |
 
-2. Logged in as an administrator, run the installer "monstaprobe.exe" (see [Installation via command line](#instalação-pela-linha-de-comando) for batch installation);
-3. Configure the port and password parameters that will be requested during installation.  
+1. Logged in as an administrator, run the installer "monstaprobe.exe" (see [Installation via command line](#instalação-pela-linha-de-comando) for batch installation);
+2. Configure the port and password parameters that will be requested during installation.
 
 ## Instalação pela linha de comando
 
 The MonstaProbe.exe installer accepts command line options. You can use them to automate installation across a network via GPO, without the need to interact with the graphical interface.
 
-| Opção &nbsp; | Descrição |
-| :--- | :--- |
-| `--agree` | Accepts the probe collector's terms of use. |
-| `--port` | Specifies the port to be used by the probe collector. If not provided, the default will be 7744 (TCP). |
-| `--passwd` | Assigns the password to be used by the probe collector. The default password will be *monsta@dm* if not provided. |
+| Option              | Description                                                                                                        |
+| :------------------ | :----------------------------------------------------------------------------------------------------------------- |
+| `--agree`           | Accepts the probe collector's terms of use.                                                                        |
+| `--port`            | Specifies the port to be used by the probe collector. If not provided, the default will be 7744 (TCP).             |
+| `--passwd`          | Assigns the password to be used by the probe collector. The default password will be *monsta\@dm* if not provided. |
 
-**Exemplo de uso**
+**Example**
 
 ```powershell
 MonstaProbe.exe --agree --port 1234 --passwd senha
 ```
-
-:::note
-**port**: This is the port that the probe will use for Monsta to connect. The default is **7744** (TCP).  
-**password**: This is the authentication password for the probe on the installed computer. The default is `monsta@dm`.
-:::
 
 ## Configuration in Monsta
 
