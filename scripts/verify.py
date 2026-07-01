@@ -385,84 +385,109 @@ def processar_wiki():
                 modificado = (content_ajustado != content)
                 content = content_ajustado
 
-                def master_replacer(match):
+                # ========================================================
+                # 1. Função para processar apenas IMAGENS
+                # ========================================================
+                def processar_imagem(match):
                     nonlocal modificado
-                    
-                    is_image = bool(match.group(1))
-                    text = match.group(2)
-                    raw_path = match.group(3).strip()
+                    text = match.group(1)
+                    raw_path = match.group(2).strip()
                     path = urllib.parse.unquote(raw_path)
 
-                    if path.startswith(('http://', 'https://', '//', 'mailto:')) or (not is_image and path.startswith('#')):
+                    if path.startswith(('http://', 'https://', '//', 'mailto:', 'data:')):
                         return match.group(0)
 
-                    if is_image:
-                        system_img_path = path.replace('/', os.sep)
-                        nome_imagem = os.path.basename(system_img_path)
+                    system_img_path = path.replace('/', os.sep)
+                    nome_imagem = os.path.basename(system_img_path)
 
-                        if nome_imagem in asset_index:
-                            caminho_real_absoluto = asset_index[nome_imagem]
-                            novo_caminho_relativo = os.path.relpath(caminho_real_absoluto, file_dir).replace('\\', '/')
+                    if nome_imagem in asset_index:
+                        caminho_real_absoluto = asset_index[nome_imagem]
+                        novo_caminho_relativo = os.path.relpath(caminho_real_absoluto, file_dir).replace('\\', '/')
 
-                            if novo_caminho_relativo != raw_path:
-                                modificado = True
-                                log_msg = f"[{nome_arquivo_atual}] Imagem ajustada"
-                                if log_msg not in relatorio['imagens']:
-                                    relatorio['imagens'].append(log_msg)
-                                return f"![{text}]({novo_caminho_relativo})"
+                        if novo_caminho_relativo != raw_path:
+                            modificado = True
+                            log_msg = f"[{nome_arquivo_atual}] Imagem ajustada"
+                            if log_msg not in relatorio['imagens']:
+                                relatorio['imagens'].append(log_msg)
+                            return f"![{text}]({novo_caminho_relativo})"
+                    return match.group(0)
+
+                # ========================================================
+                # 2. Função para processar apenas LINKS
+                # ========================================================
+                def processar_link(match):
+                    nonlocal modificado
+                    text = match.group(1)
+                    raw_path = match.group(2).strip()
+                    path = urllib.parse.unquote(raw_path)
+
+                    if path.startswith(('http://', 'https://', '//', 'mailto:')) or path.startswith('#'):
                         return match.group(0)
 
-                    else:
-                        base_path = path
-                        anchor = ""
-                        if '#' in path:
-                            base_path, anchor = path.split('#', 1)
-                            anchor = f"#{anchor}"
+                    base_path = path
+                    anchor = ""
+                    if '#' in path:
+                        base_path, anchor = path.split('#', 1)
+                        anchor = f"#{anchor}"
 
-                        system_link_path = base_path.replace('/', os.sep).rstrip(os.sep)
-                        nome_alvo = os.path.basename(system_link_path)
-                        nome_alvo_sem_ext = os.path.splitext(nome_alvo)[0]
+                    system_link_path = base_path.replace('/', os.sep).rstrip(os.sep)
+                    nome_alvo = os.path.basename(system_link_path)
+                    nome_alvo_sem_ext = os.path.splitext(nome_alvo)[0]
 
-                        if not nome_alvo_sem_ext or nome_alvo_sem_ext not in artigos_index:
-                            log_quebrado = f"[{nome_arquivo_atual}] ➔ {raw_path}"
-                            if log_quebrado not in relatorio['links_quebrados']:
-                                relatorio['links_quebrados'].append(log_quebrado)
-                                print(f" ⚠️ Não encontrado: {log_quebrado}")
-                            return match.group(0)
+                    if not nome_alvo_sem_ext or nome_alvo_sem_ext not in artigos_index:
+                        log_quebrado = f"[{nome_arquivo_atual}] ➔ {raw_path}"
+                        if log_quebrado not in relatorio['links_quebrados']:
+                            relatorio['links_quebrados'].append(log_quebrado)
+                            print(f" ⚠️ Não encontrado: {log_quebrado}")
+                        return match.group(0)
 
-                        rel_to_docs = os.path.relpath(filepath, DOCS_DIR)
-                        partes_dir = rel_to_docs.split(os.sep)
-                        idioma_atual = partes_dir[0] if len(partes_dir) > 1 else ''
+                    rel_to_docs = os.path.relpath(filepath, DOCS_DIR)
+                    partes_dir = rel_to_docs.split(os.sep)
+                    idioma_atual = partes_dir[0] if len(partes_dir) > 1 else ''
 
-                        caminho_real_absoluto_destino = None
-                        target_rel_to_docs = None
+                    caminho_real_absoluto_destino = None
+                    target_rel_to_docs = None
 
-                        for caminho_possivel in artigos_index[nome_alvo_sem_ext]:
-                            target_rel = os.path.relpath(caminho_possivel, DOCS_DIR)
-                            target_partes = target_rel.split(os.sep)
-                            
-                            if target_partes[0] == idioma_atual:
-                                caminho_real_absoluto_destino = caminho_possivel
-                                target_rel_to_docs = target_rel
-                                break
-
-                        if caminho_real_absoluto_destino and target_rel_to_docs:
-                            caminho_web = os.path.splitext(target_rel_to_docs)[0].replace('\\', '/')
-                            if caminho_web.endswith('/index'): caminho_web = caminho_web[:-6]
-                            elif caminho_web == 'index': caminho_web = ''
-
-                            novo_caminho_absoluto = f"/{caminho_web}{anchor}"
-                            
-                            if novo_caminho_absoluto != raw_path:
-                                modificado = True
-                                log_msg = f"[{nome_arquivo_atual}] ➔ {novo_caminho_absoluto}"
-                                if log_msg not in relatorio['links_fix']:
-                                    relatorio['links_fix'].append(log_msg)
-                                return f"[{text}]({novo_caminho_absoluto})"
+                    for caminho_possivel in artigos_index[nome_alvo_sem_ext]:
+                        target_rel = os.path.relpath(caminho_possivel, DOCS_DIR)
+                        target_partes = target_rel.split(os.sep)
                         
-                        return match.group(0)
+                        if target_partes[0] == idioma_atual:
+                            caminho_real_absoluto_destino = caminho_possivel
+                            target_rel_to_docs = target_rel
+                            break
 
-                new_content = pattern.sub(master_replacer, content)
+                    if caminho_real_absoluto_destino and target_rel_to_docs:
+                        caminho_web = os.path.splitext(target_rel_to_docs)[0].replace('\\', '/')
+                        if caminho_web.endswith('/index'): caminho_web = caminho_web[:-6]
+                        elif caminho_web == 'index': caminho_web = ''
+
+                        novo_caminho_absoluto = f"/{caminho_web}{anchor}"
+                        
+                        if novo_caminho_absoluto != raw_path:
+                            modificado = True
+                            log_msg = f"[{nome_arquivo_atual}] ➔ {novo_caminho_absoluto}"
+                            if log_msg not in relatorio['links_fix']:
+                                relatorio['links_fix'].append(log_msg)
+                            return f"[{text}]({novo_caminho_absoluto})"
+                    
+                    return match.group(0)
+
+                # ========================================================
+                # Execução em cascata das Expressões Regulares
+                # ========================================================
+                
+                # Regex 1: Pega exclusivamente imagens
+                pattern_img = re.compile(r'!\[(.*?)\]\((.*?)\)')
+                
+                # Regex 2: Pega links, ignorando o prefixo "!" e aceitando que o "texto" possa conter uma imagem interna
+                pattern_link = re.compile(r'(?<!!)\[((?:[^\[\]]|!\[.*?\]\(.*?\))*)\]\((.*?)\)')
+
+                # Substitui as imagens primeiro
+                content_temp = pattern_img.sub(processar_imagem, content)
+                
+                # Substitui os links na string resultante
+                new_content = pattern_link.sub(processar_link, content_temp)
 
                 if modificado or new_content != content:
                     with open(filepath, 'w', encoding='utf-8') as f:

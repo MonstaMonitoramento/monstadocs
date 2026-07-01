@@ -10,8 +10,8 @@ Esta documentación describe el funcionamiento y la arquitectura del **Agente Mo
 
 - Descargue el programa del agente:
 
-[![](/src/assets/images/p139_image-1660325708746.png)](https://www.monsta.com.br/monsta/download/agent.msi)
-[https://www.monsta.com.br/monsta/download/agent.msi](https://www.monsta.com.br/monsta/download/agent.msi)
+[![](../../../../../assets/images/p139_image-1660325708746.png)](https://www.monsta.com.br/monsta/download/agent.msi)
+- [https://www.monsta.com.br/monsta/download/agent.msi](https://www.monsta.com.br/monsta/download/agent.msi)
 
 - Con sesión iniciada con un usuario con permisos de administrador, ejecute el instalador "agent.msi".
 - Cuando se solicite, introduzca la clave de licencia de Monsta a la que desea conectar el agente.
@@ -57,5 +57,3 @@ Para cubrir toda la red remota con un único agente, registre los nuevos disposi
 Ejemplo de Jerarquía:
 
 ![image-1765385133049.png](../../../../../assets/images/p139_image-1765385133049.png)
-
-##

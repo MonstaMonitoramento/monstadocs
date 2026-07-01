@@ -35,11 +35,11 @@ Todo el intercambio de información entre el servidor central de Monsta y la Son
 
 1. Descargue el programa de la sonda en el sistema operativo Windows que desee monitorizar;
 
-[![](/src/assets/images/p139_image-1660325708746.png)](https://www.monsta.com.br/monsta/download/MonstaProbe.exe)
+[![](../../../../../assets/images/p139_image-1660325708746.png)](https://www.monsta.com.br/monsta/download/MonstaProbe.exe)
 
-[https://www.monsta.com.br/monsta/download/MonstaProbe.exe](https://www.monsta.com.br/monsta/download/MonstaProbe.exe)
+- [https://www.monsta.com.br/monsta/download/MonstaProbe.exe](https://www.monsta.com.br/monsta/download/MonstaProbe.exe)
 
-2. Con una cuenta de administrador, ejecute el instalador "monstaprobe.exe" (consulte [Instalação pela linha de comando](#instalação-pela-linha-de-comando) para instalación masiva);
+2. Con una cuenta de administrador, ejecute el instalador "monstaprobe.exe" (consulte [Instalación por línea de comandos](#instalación-por-línea-de-comandos) para instalación masiva);
 3. Configure los parámetros de puerto y contraseña que se le solicitarán durante la instalación.  
 
 ## Instalación por línea de comandos
@@ -76,5 +76,3 @@ Y rellene el campo "Usuário WMI" con cualquier información (será descartado m
 ![image-1741105450183.png](../../../../../assets/images/p68_image-1741105450183.png)
 
 Tras crear el dispositivo ya puede utilizar los monitores disponibles de la plantilla.
-
-##

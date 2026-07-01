@@ -10,8 +10,8 @@ Esta documentação descreve o funcionamento e a arquitetura do **Monsta Agent**
 
 - Download the agent program:
 
-[![](/src/assets/images/p139_image-1660325708746.png)](https://www.monsta.com.br/monsta/download/agent.msi)
-[https://www.monsta.com.br/monsta/download/agent.msi](https://www.monsta.com.br/monsta/download/agent.msi)
+[![](../../../../../assets/images/p139_image-1660325708746.png)](https://www.monsta.com.br/monsta/download/agent.msi)
+- [https://www.monsta.com.br/monsta/download/agent.msi](https://www.monsta.com.br/monsta/download/agent.msi)
 
 - While logged in with a user with administrator permissions, run the "agent.msi" installer.
 - When prompted, enter the Monsta license key to which you want to connect the agent.
@@ -57,5 +57,3 @@ To cover the entire remote network with a single agent, register the new devices
 Hierarchy Example:
 
 ![image-1765385133049.png](../../../../../assets/images/p139_image-1765385133049.png)
-
-##
