@@ -35,8 +35,8 @@ Toda a troca de informações entre o servidor central do Monsta e a Sonda insta
 
 1. Baixe o programa da sonda no sistema operacional Windows que deseja monitorar;
 
-| [![image-1660325708746.png](/src/assets/images/p139_image-1660325708746.m2-S-12t_Z1fgt93.webp)](https://www.monsta.com.br/monsta/download/MonstaProbe.exe) | [**DOWNLOAD**](https://www.monsta.com.br/monsta/download/MonstaProbe.exe "Monsta - Sonda Coletora")<br />[https://www.monsta.com.br/monsta/download/MonstaProbe.exe (64bits)](https://www.monsta.com.br/monsta/download/MonstaProbe.exe) |
-| --- | --- |
+| [![Download](/src/assets/images/p139_image-1660325708746.m2-S-12t_Z1fgt93.webp)](https://www.monsta.com.br/monsta/download/MonstaProbe.exe) | [https://www.monsta.com.br/monsta/download/MonstaProbe.exe (64bits)](https://www.monsta.com.br/monsta/download/MonstaProbe.exe) |
+| :---: | :--- |
 
 2. Logged in with an administrator user, run the installer "monstaprobe.exe" (see [Installation via command line](#installation-via-command-line) for batch installation);
 3. Configure the port and password parameters that will be requested during installation.  
