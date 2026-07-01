@@ -10,7 +10,7 @@ Esta documentação descreve o funcionamento e a arquitetura do **Agente Monsta*
 
 - Baixe o programa do agente:
 
-[![](../../../../../assets/images/p139_image-1660325708746.png)](https://www.monsta.com.br/monsta/download/agent.msi)[https://www.monsta.com.br/monsta/download/agent.msi](https://www.monsta.com.br/monsta/download/agent.msi)
+[![Download do Agente](/src/assets/images/p139_image-1660325708746.png#align-bottom) https://www.monsta.com.br/monsta/download/agent.msi](https://www.monsta.com.br/monsta/download/agent.msi)
 
 - Logado com um usuário com permissões de administrador, execute o instalador "agent.msi".
 - Quando solicitado, insira a chave de licença do Monsta no qual você deseja conectar o agente.
@@ -23,10 +23,10 @@ Opções da linha de comando:
 
 | Opção | Descrição |
 | --- | --- |
-| `LICENSEKEY=\[chave de licença\]` | Informa a chave de licença no qual o Agente deverá se conectar. \n\n:::note\nA Chave de Licença pode ser obtida no Monsta dentro do menu "Configuração" na opção "Agentes". Ela é informada no canto superior direito.\n::: |
+| `LICENSEKEY=\[chave de licença\]` | Informa a chave de licença no qual o Agente deverá se conectar. \n\nA <aside class="starlight-aside starlight-aside--tip"><p class="starlight-aside__title">Chave de Licença pode ser obtida no Monsta dentro do menu "Configuração" na opção "Agentes". Ela é informada no canto superior direito.</aside> |
 | `AGREE=\[Y\]` | Confirma a aceitação dos termos de uso. |
 
-:::tip[Exemplo de uso]
+**Exemplo de uso:**
 
 ```powershell
 msiexec /i agent.msi /quiet LICENSEKEY=AAAABBBBCCCCDDDDEEEEFFFFGGGGHHHH AGREE=Y
