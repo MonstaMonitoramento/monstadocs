@@ -1,85 +1,78 @@
 ---
-title: "Probe: Windows Monitoring"
+title: 'Probe: Windows Monitoring'
 sidebar:
   order: 5
 ---
 
-Maximize efficiency and stability of your network with our WMI Monitoring Probe for Windows. Designed to provide a detailed view of the performance and health of your Windows servers and workstations, this essential tool collects crucial metrics via the WMI (Windows Management Instrumentation) API.
+A **Sonda Monsta** is a local collection software designed to be installed directly on **Windows, Linux and Raspberry PI** servers and devices. Its main function is to collect performance, health and availability metrics from the host system, acting as a native collection extension for the Monsta platform.
 
-## What is the Probe for?
+## Features and Technical Capabilities
 
-Imagine having an X-ray of your Windows environment in real time. Our probe works that way, allowing you to:
+### 1. Passive Architecture (On Demand)
 
-- Monitor system performance: Track CPU, RAM, disk and network usage to identify bottlenecks and optimize resources.
-- Detect problems proactively: Receive alerts about critical events, service failures and other indicators of potential instabilities before they impact your users.
-- Analyze resource consumption: Understand how applications and processes use system resources for smarter capacity planning.
-- Visualize key data: Integrate the collected metrics with Monsta so you can create customized, detailed dashboards.
-- Diagnose issues remotely: Get valuable information to resolve incidents quickly and efficiently, even without physical access to the machine.
+The probe operates strictly under a **passive request-response** model. It does not initiate communications on the network autonomously; data traffic only occurs when Monsta contacts it to perform polling (collection request).
 
-**Seamless integration**: Specifically designed for the Windows environment, making full use of the WMI API capabilities.
+### 2. Integration with the WMI API (Windows)
 
-**Lightweight and efficient**: Low resource consumption, ensuring monitoring does not impact the monitored system's performance.
+In Microsoft environments, the probe natively uses the WMI (_Windows Management Instrumentation_) API, allowing the extraction of detailed performance counters from servers and workstations without the need for complex remote management configurations on the network.
 
-**Easy installation** and configuration: A simple and intuitive process to get your probe running quickly.
+### 3. Execution of PowerShell Commands and Scripts
 
-**Accurate** and reliable data: Collects detailed, real-time information for precise analysis of your infrastructure.
+The probe acts as an automation arm directly on the host operating system.
 
-**Flexibility**: Tailor metric collection to your specific needs.
+- **Local Commands:** It can execute commands directly on the host operating system.
+- **PowerShell Scripts:** It supports triggering custom scripts, allowing monitoring of specific applications or creating tailored validation routines.
 
-With our WMI Monitoring Probe for Windows, you'll have full control over the health and performance of your Windows systems, ensuring a robust, efficient and always-available IT infrastructure. Start monitoring intelligently now!
+### 4. Physical Disk Health Diagnostics
+
+The software has the ability to read hardware indicators and the health status of hard drives and SSDs installed on the device. This enables early identification of physical failures (_bad blocks_) and storage degradation.
+
+### 5. Encrypted Communication
+
+All information exchanged between the Monsta central server and the Probe installed on the device is **100% encrypted**, ensuring the security of transmitted metrics and preventing interception of sensitive infrastructure data.
 
 ## Probe Installation
 
 1. Download the probe program on the Windows operating system you want to monitor;
 
+| ![image-1660325708746.png](../../../../../assets/images/p139_image-1660325708746.png) | [**DOWNLOAD**](https://www.monsta.com.br/monsta/download/MonstaProbe.exe "Monsta - Collector Probe")<br />[https://www.monsta.com.br/monsta/download/MonstaProbe.exe (64-bit)](https://www.monsta.com.br/monsta/download/MonstaProbe.exe) |
 
-| | |
-| --- | --- |
-| ![image-1660325708746.png](../../../../../assets/images/p139_image-1660325708746.png) | [**DOWNLOAD**](https://www.monsta.com.br/monsta/download/MonstaProbe.exe "Monsta - Collector Probe")<br />[https://www.monsta.com.br/monsta/download/MonstaProbe.exe (64bits)](https://www.monsta.com.br/monsta/download/MonstaProbe.exe) |
-2. Logged in as an administrator user, run the installer "monstaprobe.exe" (see [Installation via the command line](#installation-via-the-command-line) for batch installation);
+2. Logged in with an administrator user, run the installer "monstaprobe.exe" (see [Installation via command line](#instalação-pela-linha-de-comando) for batch installation);
 3. Configure the port and password parameters that will be requested during installation.  
-      
-    
 
 :::note
-**port**: This is the port that the probe will use for Monsta to connect. The default is **7744** (TCP).  
+**port**: This is the port that will be used by the probe for Monsta to connect. The default is **7744** (TCP).  
 **password**: This is the authentication password for the probe on the installed computer. The default is `monsta@dm`.
 :::
 
-
-
 ## Configuration in Monsta
 
-Inside Monsta, when creating a device, simply configure it to use the Microsoft templates.
+Inside Monsta, when creating a device, just configure it to use the Microsoft templates.
 
 ![image-1741105397485.png](../../../../../assets/images/p68_image-1741105397485.png)
 
-And fill the "WMI User" field with any information (it will be discarded later) and the "WMI Password" field with the password provided during the probe installation.
+And fill the "Usuário WMI" field with any information (it will be discarded later) and the "Senha WMI" field with the password provided during probe installation.
 
 ![image-1741105450183.png](../../../../../assets/images/p68_image-1741105450183.png)
 
-After creating the device you can start using the template's available monitors.
+After creating the device you can already use the available monitors from the template.
 
-## Installation via the command line
+## Instalação pela linha de comando {#instalação-pela-linha-de-comando}
 
-The MonstaProbe.exe installer accepts command-line options. You can use them to automate installation across a network via a GPO, without the need for interaction with the graphical interface.
+The MonstaProbe.exe installer accepts options on the command line. You can use them to automate the installation across a network through a GPO, without the need for interaction with the graphical interface.
 
 | Option &nbsp; &nbsp; &nbsp; &nbsp; | Description |
 | --- | --- |
-| `--agree` | Accepts the probe collector's terms of use. |
-| `--port` | Specifies the port to be used by the probe collector. If not specified, the default will be 7744 (TCP). |
-| `--passwd` | Sets the password to be used by the probe collector. The default password will be *monsta@dm* if not provided. |
-
-
-
-
+| `--agree` | Accepts the probe usage terms. |
+| `--port` | Specifies the port to be used by the probe. If not provided, the default will be 7744 (TCP). |
+| `--passwd` | Assigns the password to be used by the probe. The default password will be *monsta@dm* if not provided. |
 
 :::tip[Usage example]
+
 ```powershell
 MonstaProbe.exe --agree --port 1234 --passwd senha
 ```
+
 :::
 
-
-
-- - - - - -
+    - - - - - -
