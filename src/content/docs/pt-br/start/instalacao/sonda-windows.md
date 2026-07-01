@@ -37,7 +37,7 @@ Toda a troca de informações entre o servidor central do Monsta e a Sonda insta
 
 |  | Link para download |
 | --- | --- |
-| [![Download da Sonda](../../../../../assets/images/p139_image-1660325708746.png)](https://www.monsta.com.br/monsta/download/MonstaProbe.exe) | [https://www.monsta.com.br/monsta/download/MonstaProbe.exe](https://www.monsta.com.br/monsta/download/MonstaProbe.exe) |
+| [![Download da Sonda](/src/assets/images/p139_image-1660325708746.png)](https://www.monsta.com.br/monsta/download/MonstaProbe.exe) | [https://www.monsta.com.br/monsta/download/MonstaProbe.exe](https://www.monsta.com.br/monsta/download/MonstaProbe.exe) |
 
 2. Logado com um usuário administrador, execute o instalador "monstaprobe.exe" (consulte [Instalação pela linha de comando](#instalação-pela-linha-de-comando) para instalação em lote);
 3. Configure os parâmetros de porta e senha que serão solicitados durante a instalação.  
@@ -46,8 +46,8 @@ Toda a troca de informações entre o servidor central do Monsta e a Sonda insta
 
 O instalador MonstaProbe.exe aceita opções na linha de comando. Você pode utilizá-las para automatizar a instalação em uma rede através de uma GPO, sem necessidade de interação com a interface gráfica.
 
-| Opção | Descrição |
-| --- | --- |
+| Opção       | Descrição |
+| :--- | --- |
 | `--agree` | Aceita o termo de uso da sonda coletora. |
 | `--port` | Informa a porta a ser utilizada pela sonda coletora. Se não for informada, o padrão será 7744 (TCP). |
 | `--passwd` | Atribui a senha a ser utilizada pela sonda coletora. A senha padrão será *monsta@dm* caso não seja informada. |
