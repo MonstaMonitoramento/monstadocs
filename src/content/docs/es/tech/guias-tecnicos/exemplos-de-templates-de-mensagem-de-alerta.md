@@ -1,12 +1,16 @@
 ---
-title: "Ejemplos de Plantillas de Mensajes de Alerta"
+title: "Ejemplos de plantillas de mensajes de alerta"
 ---
 
-Las alertas enviadas por Monsta pueden personalizarse a través de las Plantillas de Mensaje, disponibles en Grupo de Alertas > Template de Mensagem. Este artículo muestra algunos ejemplos de personalización para mejorar los mensajes de alerta, con el fin de adaptarlos a sus necesidades. Para entender el funcionamiento de las Plantillas de Mensaje y cómo funcionan las variables disponibles, vea el artículo sobre los [Alertas](/es/manual/grupos-alertas/alertas#plantillas-de-mensaje) de Monsta.
+Los alertas enviados por Monsta pueden personalizarse a través de las Plantillas de Mensaje, disponibles en Grupo de Alertas > Plantilla de Mensaje. Este artículo muestra algunos ejemplos de personalización para mejorar los mensajes de alerta, con el fin de adaptarlos a sus necesidades. Para entender el funcionamiento de las Plantillas de Mensaje y las variables disponibles, consulte el artículo sobre los [Alertas](/es/manual/grupos-alertas/alertas#templates-de-mensagem) de Monsta.
 
-## Utilizando variables de acuerdo con el alerta
+:::caution[Atención]
+No se admiten *emojis* ni imágenes en las plantillas de alerta. El mensaje enviado por la alerta debe ser solo texto.
+:::
 
-Algunas variables están relacionadas con el dispositivo y otras con el monitor. Por ejemplo, la variable `{{nomemetrica}}` está relacionada con un monitor. Por lo tanto, al utilizar esa variable en una alerta de dispositivo, se enviará vacía en la alerta. Sin embargo, es posible diferenciar en la misma plantilla cuál será el mensaje para una alerta de dispositivo o de monitor. El código siguiente es un ejemplo que utiliza este recurso.
+## Utilizando variables según el tipo de alerta
+
+Algunas variables están relacionadas con el dispositivo y otras con el monitor. Por ejemplo, la variable `{{nomemetrica}}` está relacionada con un monitor. Por lo tanto, al usar esa variable en una alerta de dispositivo, se enviará vacía en la alerta. Sin embargo, es posible diferenciar en la misma plantilla cuál será el mensaje para una alerta de dispositivo o de monitor. El siguiente código es un ejemplo que utiliza este recurso.
 
 ```
 {{#if alertadispositivo}}
@@ -26,7 +30,7 @@ Horário: {{dataehora}}
 {{/if}}
 ```
 
-Lo que está entre `{{#if alertadispositivo}}` y el `{{else}}` se refiere al mensaje para una alerta generada por un dispositivo (cuando queda sin conexión, por ejemplo). Lo que está entre `{{else}}` y `{{/if}}` se refiere al mensaje para una alerta generada por un monitor (cuando un monitor alcanza una métrica de alerta, por ejemplo). Cabe señalar que el campo "`> Subject:`" se refiere al "asunto" cuando la alerta se envía por correo electrónico. Las alertas por Telegram y SMS no contendrán esa información.
+Lo que está entre `{{#if alertadispositivo}}` y `{{else}}` se refiere al mensaje para una alerta generada por un dispositivo (cuando queda sin conexión, por ejemplo). Lo que está entre `{{else}}` y `{{/if}}` se refiere al mensaje para una alerta generada por un monitor (cuando un monitor alcanza una métrica de alerta, por ejemplo). Cabe mencionar que el campo "`> Subject:`" se refiere al "asunto", cuando la alerta se envía por correo electrónico. Las alertas por Telegram y SMS no tendrán esta información.
 
 El código de ejemplo generará las siguientes alertas (ejemplos recibidos en Telegram).
 - Alerta generada por un Dispositivo que volvió del estado crítico:
@@ -66,7 +70,7 @@ Horario: 01/01/2026 - 12:33:46
 
 
 
-Si no se hubiera utilizado la personalización para dispositivo y monitor (usando las configuraciones del mensaje de los alertas de monitor para ambos), el mensaje de alerta de un dispositivo quedaría así:
+Si no se hubiera utilizado la personalización para dispositivo y monitor (usando la configuración del mensaje de los alertas de monitor para ambos), el mensaje de alerta de un dispositivo quedaría así:
 
 - Alerta generada por un Dispositivo con las variables de monitores.
 
@@ -85,13 +89,13 @@ Horario: 01/01/2026 - 14:50:18
 
 La personalización permite que el mensaje esté mejor estructurado.
 
-## Personalizando con informaciones fijas
+## Personalizando con información fija
 
-Además de utilizar las variables, también puede añadir información que no cambia según la alerta, como el nombre de la empresa, departamento, responsable, número de soporte... Estos datos pueden ser útiles si recibe alertas de más de un Monsta (para identificar de dónde provino la alerta) o incluso para alertas que se envían a gerentes, proveedores o terceros. Como es posible crear varias plantillas de mensaje, puede crear un [Grupo de Alertas](/es/manual/grupos-alertas/alertas#grupos) para un proveedor de suministros de impresora que recibirá un correo cuando el tóner de su impresora esté en estado crítico. Basta con configurar la plantilla en el grupo de alertas y añadir el grupo de alertas en el monitor específico.
+Además de usar las variables, también puede agregar información que no cambia según la alerta, como nombre de la empresa, departamento, responsable, número de soporte... Estos datos pueden ser útiles si recibe alertas de más de un Monsta (para identificar de dónde provino la alerta) o incluso para alertas que se envían a gerentes, proveedores o terceros. Como es posible crear varias plantillas de mensaje, puede crear un [Grupo de Alertas](/es/manual/grupos-alertas/alertas#grupos) para un proveedor de suministros de impresora que recibirá un correo electrónico cuando el tóner de su impresora esté en estado crítico. Basta con configurar la plantilla en el grupo de alertas y añadir el grupo de alertas en el monitor específico.
 
 Por ejemplo:
 
-- Template para proveedor de suministros para la impresora, que puede utilizarse exclusivamente en monitores de impresora
+- Plantilla para proveedor de suministros para la impresora, que puede usarse exclusivamente en monitores de impresora
 
 ```
 {{#if alertadispositivo}}
@@ -118,22 +122,22 @@ Horário: {{dataehora}}
 Alerta da empresa Monsta  
 Nossa impressora (Impressora XYZ) está alertando que Toner (Toner) está en estado Crítico (10 %).  
 Por favor, envie um orçamento para <suporteti@empresa.com.br> para substituição.  
-Horario: 01/01/2026 - 12:33:46
+Horário: 01/01/2026 - 12:33:46
 :::
 
 
 
-Ejemplo de la configuración del grupo de alertas, para que el destinatario reciba solo la alerta crítica de monitores:
+Ejemplo de la configuración del grupo de alertas, para que el destinatario reciba solo la alerta de crítico de monitores:
 
 ![image-1773337531514.png](../../../../../assets/images/p173_image-1773337531514.png)
 
-Configuración del monitor Toner, utilizado en el ejemplo:
+Configuración del monitor Toner, usado en el ejemplo:
 
 ![image-1773337636144.png](../../../../../assets/images/p173_image-1773337636144.png)
 
-Vea otro ejemplo, en el caso de tener más de un servidor Monsta y querer identificar de cuál de ellos provino la alerta.
+Vea otro ejemplo, para el caso de tener más de un servidor Monsta y desear identificar de cuál de ellos provino la alerta.
 
-- Template Monsta 1
+- Plantilla Monsta 1
 
 ```
 {{#if alertadispositivo}}
@@ -155,7 +159,7 @@ Horário: {{dataehora}}
 {{/if}}
 ```
 
-- Alerta generada por un Dispositivo que volvió del estado crítico:
+- Alerta generado por un Dispositivo que volvió del estado crítico:
 
 
 
@@ -169,7 +173,7 @@ Horario: 01/01/2026 - 14:50:18
 
 
 
-- Alerta generada por un Monitor con instancia que entró en estado crítico:
+- Alerta generado por un Monitor con instancia que entró en estado crítico:
 
 
 
@@ -185,7 +189,7 @@ Horario: 01/01/2026 - 12:33:46
 
 
 
-- Template Monsta 2
+- Plantilla Monsta 2
 
 ```
 {{#if alertadispositivo}}
@@ -207,7 +211,7 @@ Horário: {{dataehora}}
 {{/if}}
 ```
 
-- Alerta generada por un Dispositivo que volvió del estado crítico:
+- Alerta generado por un Dispositivo que volvió del estado crítico:
 
 
 
@@ -221,7 +225,7 @@ Horario: 01/01/2026 - 14:50:18
 
 
 
-- Alerta generada por un Monitor con instancia que entró en estado crítico:
+- Alerta generado por un Monitor con instancia que entró en estado crítico:
 
 
 
@@ -239,4 +243,4 @@ Horario: 01/01/2026 - 12:33:46
 
 ## Conclusión
 
-Hay innumerables formas de personalizar los mensajes de alerta de Monsta. Utilice estos ejemplos para explorar ideas que se adapten a su escenario. Si tiene alguna duda adicional, póngase en contacto con nuestro soporte.
+Hay innumerables maneras de personalizar los mensajes de alerta de Monsta. Utilice estos ejemplos para explorar ideas que se adapten a su escenario. Si tiene alguna duda adicional, póngase en contacto con nuestro soporte.
