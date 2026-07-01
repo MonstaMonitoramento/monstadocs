@@ -35,9 +35,9 @@ Toda a troca de informações entre o servidor central do Monsta e a Sonda insta
 
 1. Baixe o programa da sonda no sistema operacional Windows que deseja monitorar;
 
-[![](../../../../../assets/images/p139_image-1660325708746.png)](https://www.monsta.com.br/monsta/download/MonstaProbe.exe)
-
-- [https://www.monsta.com.br/monsta/download/MonstaProbe.exe](https://www.monsta.com.br/monsta/download/MonstaProbe.exe)
+|  | Link para download |
+| --- | --- |
+| [![Download da Sonda](/src/assets/images/p139_image-1660325708746.png)](https://www.monsta.com.br/monsta/download/MonstaProbe.exe) | [https://www.monsta.com.br/monsta/download/MonstaProbe.exe](https://www.monsta.com.br/monsta/download/MonstaProbe.exe) |
 
 2. Logado com um usuário administrador, execute o instalador "monstaprobe.exe" (consulte [Instalação pela linha de comando](#instalação-pela-linha-de-comando) para instalação em lote);
 3. Configure os parâmetros de porta e senha que serão solicitados durante a instalação.  
@@ -76,3 +76,5 @@ E preencha o campo "Usuário WMI" com qualquer informação (ele será descartad
 ![image-1741105450183.png](../../../../../assets/images/p68_image-1741105450183.png)
 
 Após criar o dispositivo você já pode utilizar os monitores disponíveis do template.
+
+##
