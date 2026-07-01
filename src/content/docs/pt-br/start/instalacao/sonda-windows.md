@@ -42,23 +42,6 @@ Toda a troca de informações entre o servidor central do Monsta e a Sonda insta
 2. Logado com um usuário administrador, execute o instalador "monstaprobe.exe" (consulte [Instalação pela linha de comando](#instalação-pela-linha-de-comando) para instalação em lote);
 3. Configure os parâmetros de porta e senha que serão solicitados durante a instalação.  
 
-:::note
-**port**: É a porta que será utilizada pela sonda para o Monsta conectar. O padrão é **7744** (TCP).  
-**password**: É a senha de autenticação para a sonda no computador instalado. O padrão é `monsta@dm`.
-:::
-
-## Configuração no Monsta
-
-Dentro do Monsta, ao criar um dispositivo, apenas configure-o para utilizar os templates da Microsoft.
-
-![image-1741105397485.png](../../../../../assets/images/p68_image-1741105397485.png)
-
-E preencha o campo "Usuário WMI" com qualquer informação (ele será descartado futuramente) e o campo "Senha WMI" com a senha informada na instalação da sonda.
-
-![image-1741105450183.png](../../../../../assets/images/p68_image-1741105450183.png)
-
-Após criar o dispositivo você já pode utilizar os monitores disponíveis do template.
-
 ## Instalação pela linha de comando
 
 O instalador MonstaProbe.exe aceita opções na linha de comando. Você pode utilizá-las para automatizar a instalação em uma rede através de uma GPO, sem necessidade de interação com a interface gráfica.
@@ -76,3 +59,22 @@ MonstaProbe.exe --agree --port 1234 --passwd senha
 ```
 
 :::
+
+:::note
+**port**: É a porta que será utilizada pela sonda para o Monsta conectar. O padrão é **7744** (TCP).  
+**password**: É a senha de autenticação para a sonda no computador instalado. O padrão é `monsta@dm`.
+:::
+
+## Configuração no Monsta
+
+Dentro do Monsta, ao criar um dispositivo, apenas configure-o para utilizar os templates da Microsoft.
+
+![image-1741105397485.png](../../../../../assets/images/p68_image-1741105397485.png)
+
+E preencha o campo "Usuário WMI" com qualquer informação (ele será descartado futuramente) e o campo "Senha WMI" com a senha informada na instalação da sonda.
+
+![image-1741105450183.png](../../../../../assets/images/p68_image-1741105450183.png)
+
+Após criar o dispositivo você já pode utilizar os monitores disponíveis do template.
+
+##
