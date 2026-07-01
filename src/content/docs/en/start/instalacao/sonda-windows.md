@@ -35,9 +35,10 @@ All information exchanged between the Monsta central server and the Probe instal
 
 1. Download the probe program on the Windows operating system you want to monitor;
 
-| ![image-1660325708746.png](../../../../../assets/images/p139_image-1660325708746.png) | [**DOWNLOAD**](https://www.monsta.com.br/monsta/download/MonstaProbe.exe "Monsta - Collector Probe")<br />[https://www.monsta.com.br/monsta/download/MonstaProbe.exe (64-bit)](https://www.monsta.com.br/monsta/download/MonstaProbe.exe) |
+![image-1660325708746.png](../../../../../assets/images/p139_image-1660325708746.png)
+[**DOWNLOAD**](https://www.monsta.com.br/monsta/download/MonstaProbe.exe "Monsta - Sonda Coletora") - [https://www.monsta.com.br/monsta/download/MonstaProbe.exe (64bits)](https://www.monsta.com.br/monsta/download/MonstaProbe.exe)
 
-2. Logged in with an administrator user, run the installer "monstaprobe.exe" (see [Installation via command line](#instalação-pela-linha-de-comando) for batch installation);
+2. Logged in with an administrator user, run the installer "monstaprobe.exe" (see [Installation via command line](#installation-via-command-line) for batch installation);
 3. Configure the port and password parameters that will be requested during installation.  
 
 :::note
@@ -57,7 +58,7 @@ And fill the "Usuário WMI" field with any information (it will be discarded lat
 
 After creating the device you can already use the available monitors from the template.
 
-## Instalação pela linha de comando {#instalação-pela-linha-de-comando}
+## Installation via command line
 
 The MonstaProbe.exe installer accepts options on the command line. You can use them to automate the installation across a network through a GPO, without the need for interaction with the graphical interface.
 
@@ -74,5 +75,3 @@ MonstaProbe.exe --agree --port 1234 --passwd senha
 ```
 
 :::
-
-    - - - - - -
