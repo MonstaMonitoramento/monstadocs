@@ -35,7 +35,7 @@ Todo el intercambio de información entre el servidor central de Monsta y la Son
 
 1. Descargue el programa de la sonda en el sistema operativo Windows que desea monitorizar;
 
-| | |
+| &nbsp; | &nbsp; |
 | --- | :--- |
 | [![Download](../../../../../assets/images/p139_image-1660325708746.png)](https://www.monsta.com.br/monsta/download/MonstaProbe.exe) | [https://www.monsta.com.br/monsta/download/MonstaProbe.exe (64bits)](https://www.monsta.com.br/monsta/download/MonstaProbe.exe) |
 
@@ -46,18 +46,6 @@ Todo el intercambio de información entre el servidor central de Monsta y la Son
 **port**: Es el puerto que será utilizado por la sonda para que Monsta se conecte. El valor por defecto es **7744** (TCP).  
 **password**: Es la contraseña de autenticación para la sonda en el equipo instalado. El valor por defecto es `monsta@dm`.
 :::
-
-## Configuración en Monsta
-
-Dentro de Monsta, al crear un dispositivo, configúrelo simplemente para usar las plantillas de Microsoft.
-
-![image-1741105397485.png](../../../../../assets/images/p68_image-1741105397485.png)
-
-Y rellene el campo "Usuario WMI" con cualquier información (se descartará posteriormente) y el campo "Senha WMI" con la contraseña indicada durante la instalación de la sonda.
-
-![image-1741105450183.png](../../../../../assets/images/p68_image-1741105450183.png)
-
-Después de crear el dispositivo ya puede utilizar los monitores disponibles de la plantilla.
 
 ## Instalación por línea de comandos
 
@@ -76,3 +64,15 @@ MonstaProbe.exe --agree --port 1234 --passwd senha
 ```
 
 :::
+
+## Configuración en Monsta
+
+Dentro de Monsta, al crear un dispositivo, configúrelo simplemente para usar las plantillas de Microsoft.
+
+![image-1741105397485.png](../../../../../assets/images/p68_image-1741105397485.png)
+
+Y rellene el campo "Usuario WMI" con cualquier información (se descartará posteriormente) y el campo "Senha WMI" con la contraseña indicada durante la instalación de la sonda.
+
+![image-1741105450183.png](../../../../../assets/images/p68_image-1741105450183.png)
+
+Después de crear el dispositivo ya puede utilizar los monitores disponibles de la plantilla.

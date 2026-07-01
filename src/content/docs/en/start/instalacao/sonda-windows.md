@@ -35,7 +35,7 @@ All information exchanged between the Monsta central server and the Probe instal
 
 1. Download the probe program on the Windows operating system you want to monitor;
 
-| | |
+| &nbsp; | &nbsp; |
 | --- | :--- |
 | [![Download](../../../../../assets/images/p139_image-1660325708746.png)](https://www.monsta.com.br/monsta/download/MonstaProbe.exe) | [https://www.monsta.com.br/monsta/download/MonstaProbe.exe (64bits)](https://www.monsta.com.br/monsta/download/MonstaProbe.exe) |
 
@@ -46,18 +46,6 @@ All information exchanged between the Monsta central server and the Probe instal
 **port**: This is the port that will be used by the probe for Monsta to connect. The default is **7744** (TCP).  
 **password**: This is the authentication password for the probe on the installed computer. The default is `monsta@dm`.
 :::
-
-## Configuration in Monsta
-
-Within Monsta, when creating a device, just configure it to use the Microsoft templates.
-
-![image-1741105397485.png](../../../../../assets/images/p68_image-1741105397485.png)
-
-And fill the "Usuário WMI" field with any information (it will be discarded later) and the "Senha WMI" field with the password provided during the probe installation.
-
-![image-1741105450183.png](../../../../../assets/images/p68_image-1741105450183.png)
-
-After creating the device you can already use the available monitors from the template.
 
 ## Command-line installation
 
@@ -76,3 +64,15 @@ MonstaProbe.exe --agree --port 1234 --passwd senha
 ```
 
 :::
+
+## Configuration in Monsta
+
+Within Monsta, when creating a device, just configure it to use the Microsoft templates.
+
+![image-1741105397485.png](../../../../../assets/images/p68_image-1741105397485.png)
+
+And fill the "Usuário WMI" field with any information (it will be discarded later) and the "Senha WMI" field with the password provided during the probe installation.
+
+![image-1741105450183.png](../../../../../assets/images/p68_image-1741105450183.png)
+
+After creating the device you can already use the available monitors from the template.

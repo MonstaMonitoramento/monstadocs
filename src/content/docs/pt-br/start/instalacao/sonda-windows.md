@@ -35,7 +35,7 @@ Toda a troca de informações entre o servidor central do Monsta e a Sonda insta
 
 1. Baixe o programa da sonda no sistema operacional Windows que deseja monitorar;
 
-| | |
+| &nbsp; | &nbsp; |
 | --- | :--- |
 | [![Download](../../../../../assets/images/p139_image-1660325708746.png)](https://www.monsta.com.br/monsta/download/MonstaProbe.exe) | [https://www.monsta.com.br/monsta/download/MonstaProbe.exe (64bits)](https://www.monsta.com.br/monsta/download/MonstaProbe.exe) |
 
@@ -46,18 +46,6 @@ Toda a troca de informações entre o servidor central do Monsta e a Sonda insta
 **port**: É a porta que será utilizada pela sonda para o Monsta conectar. O padrão é **7744** (TCP).  
 **password**: É a senha de autenticação para a sonda no computador instalado. O padrão é `monsta@dm`.
 :::
-
-## Configuração no Monsta
-
-Dentro do Monsta, ao criar um dispositivo, apenas configure-o para utilizar os templates da Microsoft.
-
-![image-1741105397485.png](../../../../../assets/images/p68_image-1741105397485.png)
-
-E preencha o campo "Usuário WMI" com qualquer informação (ele será descartado futuramente) e o campo "Senha WMI" com a senha informada na instalação da sonda.
-
-![image-1741105450183.png](../../../../../assets/images/p68_image-1741105450183.png)
-
-Após criar o dispositivo você já pode utilizar os monitores disponíveis do template.
 
 ## Instalação pela linha de comando
 
@@ -76,3 +64,16 @@ MonstaProbe.exe --agree --port 1234 --passwd senha
 ```
 
 :::
+
+## Configuração no Monsta
+
+Dentro do Monsta, ao criar um dispositivo, apenas configure-o para utilizar os templates da Microsoft.
+
+![image-1741105397485.png](../../../../../assets/images/p68_image-1741105397485.png)
+
+E preencha o campo "Usuário WMI" com qualquer informação (ele será descartado futuramente) e o campo "Senha WMI" com a senha informada na instalação da sonda.
+
+![image-1741105450183.png](../../../../../assets/images/p68_image-1741105450183.png)
+
+Após criar o dispositivo você já pode utilizar os monitores disponíveis do template.
+
