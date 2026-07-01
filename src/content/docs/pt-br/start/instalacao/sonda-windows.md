@@ -37,7 +37,7 @@ Toda a troca de informações entre o servidor central do Monsta e a Sonda insta
 
 |  | Download |
 | --- | --- |
-| [![Download da Sonda](/src/assets/images/p139_image-1660325708746.png)](https://www.monsta.com.br/monsta/download/MonstaProbe.exe) | [https://www.monsta.com.br/monsta/download/MonstaProbe.exe](https://www.monsta.com.br/monsta/download/MonstaProbe.exe) |
+| [![Download da Sonda](../../../../../assets/images/p139_image-1660325708746.png)](https://www.monsta.com.br/monsta/download/MonstaProbe.exe) | [https://www.monsta.com.br/monsta/download/MonstaProbe.exe](https://www.monsta.com.br/monsta/download/MonstaProbe.exe) |
 
 2. Logado com um usuário administrador, execute o instalador "monstaprobe.exe" (consulte [Instalação pela linha de comando](#instalação-pela-linha-de-comando) para instalação em lote);
 3. Configure os parâmetros de porta e senha que serão solicitados durante a instalação.  
