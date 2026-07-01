@@ -42,7 +42,7 @@ All information exchanged between the Monsta central server and the Probe instal
 1. Logged in as an administrator, run the installer "monstaprobe.exe" (see [Installation via command line](#instalação-pela-linha-de-comando) for batch installation);
 2. Configure the port and password parameters that will be requested during installation.
 
-## Instalação pela linha de comando
+## Command-line installation
 
 The MonstaProbe.exe installer accepts command line options. You can use them to automate installation across a network via GPO, without the need to interact with the graphical interface.
 
