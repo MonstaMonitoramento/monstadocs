@@ -59,5 +59,3 @@ Para cobrir toda a rede remota com um único agente, cadastre os novos dispositi
 Exemplo de Hierarquia:
 
 ![image-1765385133049.png](../../../../../assets/images/p139_image-1765385133049.png)
-
-##

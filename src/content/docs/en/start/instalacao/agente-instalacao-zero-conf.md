@@ -59,5 +59,3 @@ To cover the entire remote network with a single agent, register the new devices
 Hierarchy Example:
 
 ![image-1765385133049.png](../../../../../assets/images/p139_image-1765385133049.png)
-
-##

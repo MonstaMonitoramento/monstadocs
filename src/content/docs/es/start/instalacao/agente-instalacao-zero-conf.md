@@ -59,5 +59,3 @@ Para cubrir toda la red remota con un único agente, registre los nuevos disposi
 Ejemplo de Jerarquía:
 
 ![image-1765385133049.png](../../../../../assets/images/p139_image-1765385133049.png)
-
-##
