@@ -46,7 +46,7 @@ Toda a troca de informações entre o servidor central do Monsta e a Sonda insta
 
 O instalador MonstaProbe.exe aceita opções na linha de comando. Você pode utilizá-las para automatizar a instalação em uma rede através de uma GPO, sem necessidade de interação com a interface gráfica.
 
-| Opção             | Descrição |
+| Opção &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | Descrição |
 | :--- | :--- |
 | `--agree` | Aceita o termo de uso da sonda coletora. |
 | `--port` | Informa a porta a ser utilizada pela sonda coletora. Se não for informada, o padrão será 7744 (TCP). |
