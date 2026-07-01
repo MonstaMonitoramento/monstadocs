@@ -154,3 +154,7 @@ Nesta tela o usuário pode personalizar a mensagem enviada pelos grupos de alert
 | `nome.metrica` | Retorna o nome da métrica. |
 | `nome.instancia` | Retorna o nome da instância. |
 | `valor` | Retorna o valor da leitura. |
+
+:::caution[Atenção]
+Não há suporte a *emojis* e imagens nos templates de alerta. A mensagem enviada pelo alerta deve ser apenas texto.
+:::

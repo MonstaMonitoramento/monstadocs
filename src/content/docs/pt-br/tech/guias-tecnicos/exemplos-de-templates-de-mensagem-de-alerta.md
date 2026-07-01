@@ -4,6 +4,10 @@ title: "Exemplos de Templates de Mensagem de Alerta"
 
 Os alertas enviados pelo Monsta podem ser personalizados através dos Templates de Mensagem, disponível em Grupo de Alertas > Template de Mensagem. Este artigo demonstra alguns exemplos de personalização para melhorar as mensagens de alerta, afim de se adaptar à sua necessidade. Para entender o funcionamento dos Templates de Mensagem e como funcionam as variáveis disponíveis, veja o artigo sobre os [Alertas](/pt-br/manual/grupos-alertas/alertas#templates-de-mensagem) do Monsta.
 
+:::caution[Atenção]
+Não há suporte a *emojis* e imagens nos templates de alerta. A mensagem enviada pelo alerta deve ser apenas texto.
+:::
+
 ## Utilizando variáveis de acordo com o alerta
 
 Algumas variáveis são relacionadas ao dispositivo e outras ao monitor. Por exemplo, a variável `{{nomemetrica}}` está relacionada com um monitor. Sendo assim, ao utilizar essa variável em um alerta de dispositivo, ela será enviada vazia no alerta. Porém, é possível diferenciar no mesmo template qual será a mensagem para um alerta de dispositivo ou monitor. O código a seguir é um exemplo que utiliza esse recurso.
