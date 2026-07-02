@@ -1,7 +1,7 @@
 media: src/assets/images
 content:
   - name: artigos
-    label: Artigos da Wiki
+    label: Artigos
     type: collection
     path: src/content/docs
     format: frontmatter
