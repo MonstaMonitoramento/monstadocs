@@ -12,7 +12,7 @@ Esta documentação descreve o funcionamento e a arquitetura do **Agente Monsta*
 
 |  |  |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------- |
-| [![Download do Agente](../../../../../assets/images/p139_image-1660325708746.png)](https://www.monsta.com.br/monsta/download/agent.msi) | [https://www.monsta.com.br/monsta/download/agent.msi](https://www.monsta.com.br/monsta/download/agent.msi) |
+| ![Download do Agente](../../../../../assets/images/p139_image-1660325708746.png) | [https://www.monsta.com.br/monsta/download/agent.msi](https://www.monsta.com.br/monsta/download/agent.msi) |
 
 
 - Logado com um usuário com permissões de administrador, execute o instalador "agent.msi".
@@ -26,8 +26,8 @@ Opções da linha de comando:
 
 
 | Opção | Descrição |
-| ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `LICENSEKEY=[chave de licença]` | Informa a chave de licença no qual o Agente deverá se conectar. DicaA chave de Licença pode ser obtida no Monsta dentro do menu "Configuração" na opção "Agentes". Ela é informada no canto superior direito. |
+| ------------------------------- | --------------------------------------------------------------- |
+| `LICENSEKEY=[chave de licença]` | Informa a chave de licença no qual o Agente deverá se conectar. |
 | `AGREE=[Y]` | Confirma a aceitação dos termos de uso. |
 
 
@@ -36,6 +36,12 @@ Opções da linha de comando:
 ```powershell
 msiexec /i agent.msi /quiet LICENSEKEY=AAAABBBBCCCCDDDDEEEEFFFFGGGGHHHH AGREE=Y
 ```
+
+:::tip
+
+A chave de Licença pode ser obtida no Monsta dentro do menu "Configuração" na opção "Agentes". Ela é informada no canto superior direito.
+
+:::
 
 ## Criação do Dispositivo
 
@@ -48,3 +54,4 @@ Para cobrir toda a rede remota com um único agente, cadastre os novos dispositi
 Exemplo de Hierarquia:
 
 ![image-1765385133049.png](../../../../../assets/images/p139_image-1765385133049.png)
+
