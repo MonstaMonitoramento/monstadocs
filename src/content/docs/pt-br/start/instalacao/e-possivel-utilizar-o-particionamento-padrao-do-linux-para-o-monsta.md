@@ -8,11 +8,9 @@ O particionamento padrão, embora conveniente, não é otimizado para o perfil d
 
 A seguir, explicamos os principais motivos pelos quais o particionamento padrão não é ideal.
 
-***
+---
 
 ## 1. 🏡 Alocação Ineficiente para `/home`
-
-
 
 Muitos assistentes de instalação de distribuições Linux são configurados para uso pessoal (desktops) e, por isso, tendem a alocar um **espaço considerável e generoso para a partição `/home`**.
 
@@ -21,8 +19,6 @@ Muitos assistentes de instalação de distribuições Linux são configurados pa
 
 ## 2. 🗃️ Partição `/var` Subdimensionada ou Ausente
 
-
-
 A partição `/var` é de **importância crítica** para o Monsta, pois é o local padrão onde os bancos de dados e *logs* do sistema são armazenados.
 
 - **Problema**: Alguns particionadores automáticos podem **não criar uma partição separada para `/var`** ou alocar um volume muito pequeno para ela. Com a utilização intensiva de bancos de dados pelo Monsta, essa partição pode esgotar rapidamente seu espaço, levando a falhas operacionais e de armazenamento de dados.
@@ -30,11 +26,7 @@ A partição `/var` é de **importância crítica** para o Monsta, pois é o loc
 
 ## 3. 📉 Falta de Flexibilidade com LVM
 
-
-
 Muitos sistemas padrão podem não configurar as partições utilizando o **Logical Volume Manager (LVM)**.
 
 - **Problema**: O LVM é uma camada de abstração que permite o gerenciamento e a manipulação flexível dos volumes de disco. **Sem o LVM**, será impossível, ou extremamente difícil, **aumentar o tamanho** de uma partição (como `/var`) se ela começar a ficar sem espaço no futuro, exigindo a parada do sistema e, potencialmente, a migração de dados.
 - **Recomendação**: Utilizar o **LVM** ao criar as partições, especialmente para `/var`e `/` para garantir a capacidade de **expansão futura** sem *downtime* complexo.
-
-***

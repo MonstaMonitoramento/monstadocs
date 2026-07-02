@@ -3,7 +3,7 @@ title: "Sonda: Instalação"
 sidebar:
   order: 5
 ---
-A **Sonda Monsta** é um software de coleta local projetado para ser instalado diretamente em servidores e dispositivos **Windows, Linux e Raspberry PI**. Sua função principal é coletar métricas de performance, integridade e disponibilidade do sistema hospedeiro, funcionando como uma extensão nativa de coleta para a plataforma Monsta.
+A **Sonda Monsta** é um software de coleta local projetado para ser instalado diretamente em servidores e dispositivos **Windows** (em breve para **Linux** e **Raspberry PI**). Sua função principal é coletar métricas de performance, integridade e disponibilidade do sistema hospedeiro, funcionando como uma extensão nativa de coleta para a plataforma Monsta.
 
 ## Características e Capacidades Técnicas
 

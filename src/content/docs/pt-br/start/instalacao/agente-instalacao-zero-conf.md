@@ -3,7 +3,7 @@ title: "Agente: Instalação Zero Conf"
 sidebar:
   order: 4
 ---
-Esta documentação descreve o funcionamento e a arquitetura do **Agente Monsta**, uma ferramenta para estender o monitoramento da sua plataforma para redes remotas e distribuídas, garantindo performance e segurança por meio do protocolo QUIC.
+Esta documentação descreve o processo de instalação do **Agente Monsta**, uma ferramenta para estender o monitoramento da sua plataforma para redes remotas e distribuídas, garantindo performance e segurança por meio do protocolo QUIC.
 
 ## Instalação do Agente para Windows
 
@@ -54,4 +54,3 @@ Para cobrir toda a rede remota com um único agente, cadastre os novos dispositi
 Exemplo de Hierarquia:
 
 ![image-1765385133049.png](../../../../../assets/images/p139_image-1765385133049.png)
-

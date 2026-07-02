@@ -8,7 +8,7 @@ O Monsta é uma plataforma de monitoramento flexível e robusta, projetada para 
 
 Veja como nossa solução atende especificamente aos principais perfis do mercado:
 
-### 1. Provedores de Internet (ISPs)
+## 1. Provedores de Internet (ISPs)
 
 Para provedores, estabilidade e latência são tudo. O Monsta é o braço direito do seu NOC, permitindo monitorar proativamente a saúde de toda a rede e agir antes que o cliente perceba a queda.
 
@@ -16,7 +16,7 @@ Para provedores, estabilidade e latência são tudo. O Monsta é o braço direit
 - **Multi-fabricante:** Integração nativa via SNMP para coletar métricas cruciais de tráfego, sinal e CPU de marcas líderes do mercado (como Huawei, Cisco, Mikrotik, Intelbras, Fiberhome e Datacom).
 - **Agilidade no Atendimento:** Alertas imediatos reduzem drasticamente o MTTR (_Mean Time to Resolution_ — Tempo Médio de Resolução).
 
-### 2. Provedores de Serviços Gerenciados (MSPs)
+## 2. Provedores de Serviços Gerenciados (MSPs)
 
 Gerenciar a TI de dezenas de clientes sem ferramentas centralizadas é um desafio escalável. O Monsta permite que MSPs elevem o nível de entrega com um monitoramento multicliente eficiente.
 
@@ -24,7 +24,7 @@ Gerenciar a TI de dezenas de clientes sem ferramentas centralizadas é um desafi
 - **Agentes Leves:** Colete dados de redes remotas com agentes eficientes que não sobrecarregam o ambiente do cliente.
 - **Diferencial Competitivo:** Transforme o suporte reativo em um serviço consultivo e preventivo, gerando relatórios de capacidade e disponibilidade para seus clientes.
 
-### 3. Consultores de TI e Redes
+## 3. Consultores de TI e Redes
 
 Como consultor autônomo ou focado em projetos, você precisa de uma ferramenta rápida de implantar, confiável e que valide o valor do seu trabalho.
 
@@ -33,7 +33,7 @@ Como consultor autônomo ou focado em projetos, você precisa de uma ferramenta 
 - **Monitoramento Sob Medida:** Crie painéis e alertas customizados de acordo com as necessidades específicas de cada projeto.
 - **Relatórios Mensais via IA:** Inteligência Artificial que transforma dados de ativos e alertas em insights estratégicos, enviados por e-mail todo início de mês.
 
-### 4. Empresas em Geral (PMEs a Grandes Corporações)
+## 4. Empresas em Geral (PMEs a Grandes Corporações)
 
 Seja para garantir as vendas de um e-commerce, manter os sistemas de uma indústria rodando ou assegurar que os serviços de saúde e finanças não parem, o Monsta protege a produtividade do seu negócio.
 
