@@ -10,7 +10,7 @@ Esta documentação descreve o funcionamento e a arquitetura do **Agente Monsta*
 - Baixe o programa do agente:
 
 
-|  | Download |
+|  |  |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------- |
 | [![Download do Agente](../../../../../assets/images/p139_image-1660325708746.png)](https://www.monsta.com.br/monsta/download/agent.msi) | [https://www.monsta.com.br/monsta/download/agent.msi](https://www.monsta.com.br/monsta/download/agent.msi) |
 
