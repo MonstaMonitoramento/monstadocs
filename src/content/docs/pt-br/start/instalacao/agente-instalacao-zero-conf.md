@@ -27,7 +27,7 @@ Opções da linha de comando:
 
 | Opção | Descrição |
 | ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `LICENSEKEY=[chave de licença]` | Informa a chave de licença no qual o Agente deverá se conectar. DicaA chave de Licença pode ser obtida no Monsta dentro do menu "Configuração" na opção "Agentes". Ela é informada no canto superior direito. |
+| `LICENSEKEY=[chave de licença]` | Informa a chave de licença no qual o Agente deverá se conectar. <aside class="starlight-aside starlight-aside--tip"><p class="starlight-aside__title">Dica</p>A chave de Licença pode ser obtida no Monsta dentro do menu "Configuração" na opção "Agentes". Ela é informada no canto superior direito.</aside>  |
 | `AGREE=[Y]` | Confirma a aceitação dos termos de uso. |
 
 
@@ -51,3 +51,4 @@ Exemplo de Hierarquia:
 
 
 
+&nbsp;
