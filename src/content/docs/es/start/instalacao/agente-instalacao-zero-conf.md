@@ -3,9 +3,9 @@ title: "Agente: Instalación Zero Conf"
 sidebar:
   order: 4
 ---
-Esta documentación describe el funcionamiento y la arquitectura del **Agente Monsta**, una herramienta para ampliar la supervisión de su plataforma a redes remotas y distribuidas, garantizando rendimiento y seguridad mediante el protocolo QUIC.
+Esta documentación describe el proceso de instalación del **Agente Monsta**, una herramienta para ampliar el monitoreo de su plataforma a redes remotas y distribuidas, garantizando rendimiento y seguridad mediante el protocolo QUIC.
 
-## Instalación del Agente para Windows
+## Instalación del Agente en Windows
 
 - Descargue el programa del agente:
 
@@ -16,11 +16,11 @@ Esta documentación describe el funcionamiento y la arquitectura del **Agente Mo
 
 
 - Inicie sesión con un usuario con permisos de administrador y ejecute el instalador "agent.msi".
-- Cuando se le solicite, introduzca la clave de licencia de Monsta con la que desea conectar el agente.
+- Cuando se le solicite, introduzca la clave de licencia de Monsta a la que desea conectar el agente.
 
 ## Instalación desde la línea de comandos
 
-El instalador **agent.msi** admite parámetros de línea de comandos para automatización. Integrado con la utilidad **msiexec**, permite la instalación vía **GPO**, eliminando la necesidad de intervención manual en la interfaz gráfica.
+El instalador **agent.msi** admite parámetros de línea de comandos para automatización. Integrado con la utilidad **msiexec**, permite instalar mediante **GPO**, eliminando la necesidad de intervención manual en la interfaz gráfica.
 
 Opciones de la línea de comandos:
 
@@ -47,9 +47,9 @@ La clave de licencia puede obtenerse en Monsta dentro del menú "Configuración"
 
 Una vez completada la instalación, el **Agente** aparecerá automáticamente en la pantalla de **Configuración** en el elemento **Agentes** con la identificación del host. El dispositivo monitorizado será **creado y listado instantáneamente** en la pantalla de **Dispositivos** con el mismo nombre del host y estará listo para la configuración y la adición de nuevos monitores.
 
-### Cómo Monitorizar Dispositivos mediante la Conexión del Agente
+### Cómo monitorizar dispositivos mediante la conexión del Agente
 
-Para cubrir toda la red remota con un único agente, registre los nuevos dispositivos en Monsta y defina que el dispositivo esté bajo la **jerarquía** del host donde está instalado el Agente.
+Para cubrir toda la red remota con un único agente, registre los nuevos dispositivos en Monsta y defina que el dispositivo está bajo la **jerarquía** del host donde está instalado el Agente.
 
 Ejemplo de Jerarquía:
 
