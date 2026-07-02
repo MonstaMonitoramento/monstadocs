@@ -1,0 +1,21 @@
+media: src/assets/images
+content:
+  - name: artigos
+    label: Artigos da Wiki
+    type: collection
+    path: src/content/docs
+    format: frontmatter
+    fields:
+      - name: title
+        label: Título
+        type: string
+      - name: description
+        label: Descrição
+        type: string
+      - name: sidebar
+        label: Configuração da Sidebar
+        type: object
+        fields:
+          - name: order
+            label: Ordem no Menu
+            type: number
