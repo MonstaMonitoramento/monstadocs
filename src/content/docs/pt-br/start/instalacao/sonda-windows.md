@@ -76,6 +76,3 @@ E preencha o campo "Usuário WMI" com qualquer informação (ele será descartad
 ![image-1741105450183.png](../../../../../assets/images/p68_image-1741105450183.png)
 
 Após criar o dispositivo você já pode utilizar os monitores disponíveis do template.
-
-
-
