@@ -39,7 +39,7 @@ All information exchanged between the central Monsta server and the Probe instal
 | ----------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
 | [![Download da Sonda](../../../../../assets/images/p139_image-1660325708746.png)](https://www.monsta.com.br/monsta/download/MonstaProbe.exe) | [https://www.monsta.com.br/monsta/download/MonstaProbe.exe](https://www.monsta.com.br/monsta/download/MonstaProbe.exe) |
 
-2. Logged in as an administrator user, run the installer "monstaprobe.exe" (see [Command-line installation](#instalação-pela-linha-de-comando) for batch installation);
+2. Logged in as an administrator user, run the installer "monstaprobe.exe";
 3. Configure the port and password parameters that will be requested during installation.
 
 **Instalação pela linha de comando**

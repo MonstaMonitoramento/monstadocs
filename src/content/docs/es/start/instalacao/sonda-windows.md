@@ -39,7 +39,7 @@ Todo el intercambio de información entre el servidor central de Monsta y la Son
 | ----------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
 | [![Download da Sonda](../../../../../assets/images/p139_image-1660325708746.png)](https://www.monsta.com.br/monsta/download/MonstaProbe.exe) | [https://www.monsta.com.br/monsta/download/MonstaProbe.exe](https://www.monsta.com.br/monsta/download/MonstaProbe.exe) |
 
-2. Con sesión iniciada con un usuario administrador, ejecute el instalador "monstaprobe.exe" (consulte [Instalação pela linha de comando](#instalação-pela-linha-de-comando) para instalación en lote);
+2. Con sesión iniciada con un usuario administrador, ejecute el instalador "monstaprobe.exe";
 3. Configure los parámetros de puerto y contraseña que se le solicitarán durante la instalación.
 
 **Instalação pela linha de comando**
