@@ -10,9 +10,9 @@ Esta documentação descreve o funcionamento e a arquitetura do **Agente Monsta*
 
 - Baixe o programa do agente:
 
-|                                                                                                                                                    | Download                                                                                                   |
-| -------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
-| <a href="https://www.monsta.com.br/monsta/download/agent.msi">![Download do Agente](../../../../../assets/images/p139_image-1660325708746.png)</a> | [https://www.monsta.com.br/monsta/download/agent.msi](https://www.monsta.com.br/monsta/download/agent.msi) |
+| &nbsp; | Download |
+| :---: | :--- |
+| [![Download do Agente](/src/assets/images/p139_image-1660325708746.png)](https://www.monsta.com.br/monsta/download/agent.msi) | <br> [https://www.monsta.com.br/monsta/download/agent.msi](https://www.monsta.com.br/monsta/download/agent.msi) |
 
 - Logado com um usuário com permissões de administrador, execute o instalador "agent.msi".
 - Quando solicitado, insira a chave de licença do Monsta no qual você deseja conectar o agente.
@@ -23,10 +23,10 @@ O instalador **agent.msi** suporta parâmetros de linha de comando para automaç
 
 Opções da linha de comando:
 
-| Opção                           | Descrição                                                                                                                                                                                                                                                                                                       |
-| ------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Opção | Descrição |
+| --- | --- |
 | `LICENSEKEY=[chave de licença]` | Informa a chave de licença no qual o Agente deverá se conectar. <aside class="starlight-aside starlight-aside--tip"><p class="starlight-aside__title">Dica</p>A chave de Licença pode ser obtida no Monsta dentro do menu "Configuração" na opção "Agentes". Ela é informada no canto superior direito.</aside> |
-| `AGREE=[Y]`                     | Confirma a aceitação dos termos de uso.                                                                                                                                                                                                                                                                         |
+| `AGREE=[Y]` | Confirma a aceitação dos termos de uso. |
 
 **Exemplo de uso:**
 
