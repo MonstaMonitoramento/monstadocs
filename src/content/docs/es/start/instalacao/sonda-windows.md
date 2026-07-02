@@ -3,7 +3,7 @@ title: "Sonda: Instalación"
 sidebar:
   order: 5
 ---
-A **Sonda Monsta** es un software de recopilación local diseñado para instalarse directamente en servidores y dispositivos **Windows, Linux y Raspberry PI**. Su función principal es recopilar métricas de rendimiento, integridad y disponibilidad del sistema anfitrión, funcionando como una extensión nativa de recopilación para la plataforma Monsta.
+La **Sonda Monsta** es un software de recopilación local diseñado para instalarse directamente en servidores y dispositivos **Windows, Linux y Raspberry PI**. Su función principal es recopilar métricas de rendimiento, integridad y disponibilidad del sistema anfitrión, funcionando como una extensión nativa de recolección para la plataforma Monsta.
 
 ## Características y Capacidades Técnicas
 
@@ -17,14 +17,14 @@ En entornos Microsoft, la sonda utiliza de forma nativa la API WMI (*Windows Man
 
 ### 3. Ejecución de Comandos y Scripts PowerShell
 
-La sonda actúa como un brazo de automatización directamente en el sistema operativo del host.
+La sonda actúa como una extensión de automatización directamente en el sistema operativo del host.
 
 - **Comandos Locales:** Puede ejecutar comandos directamente en el sistema operativo anfitrión.
-- **Scripts PowerShell:** Soporta el lanzamiento de scripts personalizados, permitiendo monitorizar aplicaciones específicas o crear rutinas de validación a medida.
+- **Scripts PowerShell:** Soporta la ejecución de scripts personalizados, permitiendo supervisar aplicaciones específicas o crear rutinas de validación a medida.
 
 ### 4. Diagnóstico de Salud de Discos Físicos
 
-El software tiene la capacidad de leer indicadores de hardware y el estado de integridad de los discos duros y SSD instalados en el dispositivo. Esto posibilita la identificación temprana de fallos físicos (*bad blocks*) y la degradación del almacenamiento.
+El software posee la capacidad de leer indicadores de hardware y el estado de integridad de los discos duros y SSD instalados en el dispositivo. Esto posibilita la identificación temprana de fallos físicos (bloques defectuosos *bad blocks*) y la degradación del almacenamiento.
 
 ### 5. Comunicación Cifrada
 
@@ -37,21 +37,22 @@ Todo el intercambio de información entre el servidor central de Monsta y la Son
 
 |  | Download |
 | ----------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
-| [![Descarga de la Sonda](../../../../../assets/images/p139_image-1660325708746.png)](https://www.monsta.com.br/monsta/download/MonstaProbe.exe) | [https://www.monsta.com.br/monsta/download/MonstaProbe.exe](https://www.monsta.com.br/monsta/download/MonstaProbe.exe) |
+| [![Download da Sonda](../../../../../assets/images/p139_image-1660325708746.png)](https://www.monsta.com.br/monsta/download/MonstaProbe.exe) | [https://www.monsta.com.br/monsta/download/MonstaProbe.exe](https://www.monsta.com.br/monsta/download/MonstaProbe.exe) |
 
-2. Con sesión iniciada con un usuario administrador, ejecute el instalador "monstaprobe.exe" (consulte [Instalação pela linha de comando](#instalação-pela-linha-de-comando) para instalación en lote);
+2. Con sesión de un usuario administrador, ejecute el instalador "monstaprobe.exe" (consulte [Instalação pela linha de comando](#instalação-pela-linha-de-comando) para instalación en lote);
 3. Configure los parámetros de puerto y contraseña que se le solicitarán durante la instalación.
 
-**Instalação pela linha de comando**
+<a id="instalação-pela-linha-de-comando"></a>
+**Instalación por línea de comandos**
 
 El instalador MonstaProbe.exe acepta opciones en la línea de comandos. Puede utilizarlas para automatizar la instalación en una red mediante una GPO, sin necesidad de interacción con la interfaz gráfica.
 
 
-| Opção &nbsp; &nbsp; &nbsp; &nbsp; | Descrição |
+| Opción &nbsp; &nbsp; &nbsp; &nbsp; | Descripción |
 | --------------------------------- | ------------------------------------------------------------------------------------------------------------- |
-| `--agree` | Acepta los términos de uso de la sonda recolectora. |
-| `--port` | Informa el puerto que será utilizado por la sonda recolectora. Si no se informa, el valor por defecto será 7743 (TCP). |
-| `--passwd` | Asigna la contraseña que será utilizada por la sonda recolectora. La contraseña por defecto será *monsta@dm* en caso de no ser informada. |
+| `--agree` | Acepta los términos de uso de la sonda de recopilación. |
+| `--port` | Indica el puerto que será utilizado por la sonda de recopilación. Si no se especifica, el valor por defecto será 7743 (TCP). |
+| `--passwd` | Asigna la contraseña que utilizará la sonda de recopilación. La contraseña por defecto será *monsta@dm* si no se especifica. |
 
 
 **Ejemplo de uso**
@@ -71,8 +72,8 @@ Dentro de Monsta, al crear un dispositivo, simplemente configúrelo para utiliza
 
 ![image-1741105397485.png](../../../../../assets/images/p68_image-1741105397485.png)
 
-Y rellene el campo "Usuario WMI" con cualquier información (será descartado posteriormente) y el campo "Senha WMI" con la contraseña indicada durante la instalación de la sonda.
+Y rellene el campo "Usuario WMI" con cualquier información (será descartada posteriormente) y el campo "Contraseña WMI" con la contraseña indicada durante la instalación de la sonda.
 
 ![image-1741105450183.png](../../../../../assets/images/p68_image-1741105450183.png)
 
-Después de crear el dispositivo ya puede utilizar los monitores disponibles de la plantilla.
+Tras crear el dispositivo ya puede utilizar los monitores disponibles de la plantilla.

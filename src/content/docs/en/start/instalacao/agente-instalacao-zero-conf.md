@@ -3,7 +3,7 @@ title: "Agent: Zero-Conf Installation"
 sidebar:
   order: 4
 ---
-This documentation describes the operation and architecture of the **Monsta Agent**, a tool to extend monitoring of your platform to remote and distributed networks, ensuring performance and security through the QUIC protocol.
+This documentation describes the operation and architecture of the **Monsta Agent**, a tool to extend monitoring of your platform to remote and distributed networks, ensuring performance and security via the QUIC protocol.
 
 ## Agent Installation for Windows
 
@@ -12,13 +12,13 @@ This documentation describes the operation and architecture of the **Monsta Agen
 
 |  |  |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------- |
-| [![Agent Download](../../../../../assets/images/p139_image-1660325708746.png)](https://www.monsta.com.br/monsta/download/agent.msi) | [https://www.monsta.com.br/monsta/download/agent.msi](https://www.monsta.com.br/monsta/download/agent.msi) |
+| [![Download the Agent](../../../../../assets/images/p139_image-1660325708746.png)](https://www.monsta.com.br/monsta/download/agent.msi) | [https://www.monsta.com.br/monsta/download/agent.msi](https://www.monsta.com.br/monsta/download/agent.msi) |
 
 
-- Logged in as a user with administrator permissions, run the installer "agent.msi".
+- While logged in as a user with administrator permissions, run the installer "agent.msi".
 - When prompted, enter the Monsta license key to which you want to connect the agent.
 
-## Command-line Installation
+## Installation via Command Line
 
 The **agent.msi** installer supports command-line parameters for automation. Integrated with the **msiexec** utility, it allows installation via **GPO**, eliminating the need for manual interaction with the graphical interface.
 
@@ -27,11 +27,11 @@ Command-line options:
 
 | Option | Description |
 | ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `LICENSEKEY=[license key]` | Specifies the license key to which the Agent should connect. Tip: The License Key can be obtained in Monsta under the "Configuration" menu in the "Agents" option. It is shown in the top-right corner. |
+| `LICENSEKEY=[chave de licença]` | Specifies the license key to which the Agent should connect. TipThe License Key can be obtained in Monsta from the "Configuration" menu in the "Agents" option. It is shown in the upper right corner. |
 | `AGREE=[Y]` | Confirms acceptance of the terms of use. |
 
 
-Example usage:
+**Example usage:**
 
 ```powershell
 msiexec /i agent.msi /quiet LICENSEKEY=AAAABBBBCCCCDDDDEEEEFFFFGGGGHHHH AGREE=Y
@@ -48,7 +48,3 @@ To cover the entire remote network with a single agent, register the new devices
 Hierarchy Example:
 
 ![image-1765385133049.png](../../../../../assets/images/p139_image-1765385133049.png)
-
-
-
-&nbsp;
