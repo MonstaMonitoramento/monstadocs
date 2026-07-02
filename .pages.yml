@@ -4,7 +4,7 @@ content:
     label: Artigos
     type: collection
     path: src/content/docs
-    format: frontmatter
+    format: yaml-frontmatter
     fields:
       - name: title
         label: Título
@@ -19,3 +19,6 @@ content:
           - name: order
             label: Ordem no Menu
             type: number
+      - name: body
+        label: Conteúdo do Artigo
+        type: rich-text
