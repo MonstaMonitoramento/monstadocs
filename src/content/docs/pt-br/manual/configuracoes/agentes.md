@@ -3,7 +3,7 @@ title: Agentes
 sidebar:
   order: 3
 ---
-O Agente de Monitoramento da Monsta Tecnologia permite gerenciar infraestruturas de TI complexas e distribuídas, garantindo que o monitoramento seja eficiente, seguro e não sobrecarregue sua rede de longa distância (WAN). O Agente é multiplataforma, sua instalação é rápida e descomplicada em qualquer ambiente de TI, sendo compatível com os principais sistemas operacionais: Windows e, em breve, Linux (incluindo as distribuições mais populares).
+O Agente de Monitoramento da Monsta Tecnologia permite gerenciar infraestruturas de TI complexas e distribuídas, garantindo que o monitoramento seja eficiente, seguro e não sobrecarregue sua rede de longa distância (WAN). No momento, o Agente está disponível para Windows e sua instalação é rápida e descomplicada em qualquer ambiente de TI. Em breve teremos um instalador para Linux (incluindo as distribuições mais populares).
 
 ## Como o Agente Monsta Funciona?
 
