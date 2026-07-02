@@ -1,20 +1,19 @@
 ---
-title: 'Sonda: Monitoramento Windows'
+title: "Sonda: Instalação"
 sidebar:
   order: 5
 ---
-
 A **Sonda Monsta** é um software de coleta local projetado para ser instalado diretamente em servidores e dispositivos **Windows, Linux e Raspberry PI**. Sua função principal é coletar métricas de performance, integridade e disponibilidade do sistema hospedeiro, funcionando como uma extensão nativa de coleta para a plataforma Monsta.
 
 ## Características e Capacidades Técnicas
 
 ### 1. Arquitetura Passiva (Sob Demanda)
 
-A sonda opera estritamente sob um modelo **passivo de requisição e resposta**. Ela não inicia comunicações com a rede de forma autônoma; o tráfego de dados ocorre apenas quando o Monsta entra em contato para realizar o _polling_ (solicitação de coleta).
+A sonda opera estritamente sob um modelo **passivo de requisição e resposta**. Ela não inicia comunicações com a rede de forma autônoma; o tráfego de dados ocorre apenas quando o Monsta entra em contato para realizar o *polling* (solicitação de coleta).
 
 ### 2. Integração com a API WMI (Windows)
 
-Em ambientes Microsoft, a sonda utiliza de forma nativa a API WMI (_Windows Management Instrumentation_), permitindo extrair contadores de desempenho detalhados de servidores e estações de trabalho sem a necessidade de configurações complexas de gerenciamento remoto na rede.
+Em ambientes Microsoft, a sonda utiliza de forma nativa a API WMI (*Windows Management Instrumentation*), permitindo extrair contadores de desempenho detalhados de servidores e estações de trabalho sem a necessidade de configurações complexas de gerenciamento remoto na rede.
 
 ### 3. Execução de Comandos e Scripts PowerShell
 
@@ -25,32 +24,36 @@ A sonda atua como um braço de automação diretamente no sistema operacional do
 
 ### 4. Diagnóstico de Saúde de Discos Físicos
 
-O software possui a capacidade de ler indicadores de hardware e o status de integridade dos discos rígidos e SSDs instalados no dispositivo. Isso possibilita a identificação precoce de falhas físicas (_bad blocks_) e degradação de armazenamento.
+O software possui a capacidade de ler indicadores de hardware e o status de integridade dos discos rígidos e SSDs instalados no dispositivo. Isso possibilita a identificação precoce de falhas físicas (*bad blocks*) e degradação de armazenamento.
 
 ### 5. Comunicação Criptografada
 
 Toda a troca de informações entre o servidor central do Monsta e a Sonda instalada no dispositivo é **100% criptografada**, garantindo a segurança das métricas trafegadas e impedindo a interceptação de dados sensíveis da infraestrutura.
 
-## Instalação da Sonda
+## Instalação da Sonda (Windows)
 
 1. Baixe o programa da sonda no sistema operacional Windows que deseja monitorar;
 
+
 |  | Download |
-| --- | --- |
-| [![Download da Sonda](../../../../../assets/images/p139_image-1660325708746.png)](https://www.monsta.com.br/monsta/download/MonstaProbe.exe) | [https://www.monsta.com.br/monsta/download/MonstaProbe.exe](https://www.monsta.com.br/monsta/download/MonstaProbe.exe) |
+| ----------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| ![Download da Sonda](../../../../../assets/images/p139_image-1660325708746.png) | [https://www.monsta.com.br/monsta/download/MonstaProbe.exe](https://www.monsta.com.br/monsta/download/MonstaProbe.exe) |
+
 
 2. Logado com um usuário administrador, execute o instalador "monstaprobe.exe" (consulte [Instalação pela linha de comando](#instalação-pela-linha-de-comando) para instalação em lote);
-3. Configure os parâmetros de porta e senha que serão solicitados durante a instalação.  
+3. Configure os parâmetros de porta e senha que serão solicitados durante a instalação.
 
-## Instalação pela linha de comando
+++**Instalação pela linha de comando**++
 
 O instalador MonstaProbe.exe aceita opções na linha de comando. Você pode utilizá-las para automatizar a instalação em uma rede através de uma GPO, sem necessidade de interação com a interface gráfica.
 
-| Opção &nbsp; | Descrição |
-| :--- | :--- |
+
+| Opção &nbsp; &nbsp; &nbsp; &nbsp; | Descrição |
+| --------------------------------- | ------------------------------------------------------------------------------------------------------------- |
 | `--agree` | Aceita o termo de uso da sonda coletora. |
-| `--port` | Informa a porta a ser utilizada pela sonda coletora. Se não for informada, o padrão será 7744 (TCP). |
+| `--port` | Informa a porta a ser utilizada pela sonda coletora. Se não for informada, o padrão será 7743 (TCP). |
 | `--passwd` | Atribui a senha a ser utilizada pela sonda coletora. A senha padrão será *monsta@dm* caso não seja informada. |
+
 
 **Exemplo de uso**
 
@@ -63,7 +66,7 @@ MonstaProbe.exe --agree --port 1234 --passwd senha
 **password**: É a senha de autenticação para a sonda no computador instalado. O padrão é `monsta@dm`.
 :::
 
-## Configuração no Monsta
+++**Configuração no Monsta**++
 
 Dentro do Monsta, ao criar um dispositivo, apenas configure-o para utilizar os templates da Microsoft.
 
@@ -75,4 +78,5 @@ E preencha o campo "Usuário WMI" com qualquer informação (ele será descartad
 
 Após criar o dispositivo você já pode utilizar os monitores disponíveis do template.
 
-##
+
+
