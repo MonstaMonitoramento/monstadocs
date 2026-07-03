@@ -1,5 +1,6 @@
 ---
 title: Para quem o Monsta é indicado?
+description: Saiba para quem o Monsta é indicado e descubra como a plataforma atende empresas, provedores de internet, departamentos de TI, MSPs e profissionais que precisam monitorar sua infraestrutura.
 sidebar:
   order: 3
 ---

@@ -1,5 +1,6 @@
 ---
 title: "Como faço para baixar o Monsta?"
+description: Saiba como baixar o Monsta e iniciar rapidamente a instalação da plataforma de monitoramento de infraestrutura de TI para avaliar todos os seus recursos.
 sidebar:
   order: 5
 ---

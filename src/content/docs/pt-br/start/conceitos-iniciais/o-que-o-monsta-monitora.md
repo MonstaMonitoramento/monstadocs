@@ -1,5 +1,6 @@
 ---
 title: "O que o Monsta monitora?"
+description: Descubra o que o Monsta monitora e conheça todos os recursos para monitorar servidores, redes, aplicações, dispositivos, serviços, sistemas operacionais e infraestrutura de TI em tempo real.
 sidebar:
   order: 2
 ---

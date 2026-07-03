@@ -18,6 +18,6 @@ Monsta, desarrollado por Monsta Tecnologia, es una **plataforma de monitorizaci�
 - **Monitorización de Dispositivos y Servicios**: La plataforma es escalable y capaz de monitorizar una amplia gama de dispositivos de infraestructura (servidores, redes, firewalls, etc.) y servicios (aplicaciones, bases de datos, sitios web, etc.), con la posibilidad de supervisar un número ilimitado de elementos dependiendo del plan contratado.
 - **Monitorización de Redes Remotas mediante Agentes**: Monsta permite ampliar la visibilidad de la infraestructura más allá de la red local, alcanzando unidades remotas, clientes externos o entornos en la nube de forma segura y simplificada a través de sus agentes.
 
-#### Ejemplo de una estructura de red monitorizada por Monsta
+## Ejemplo de una estructura de red monitorizada por Monsta
 
 ![image-1773946263726.png](../../../../../assets/images/p92_image-1773946263726.png)

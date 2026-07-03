@@ -1,5 +1,6 @@
 ---
 title: "Como funciona o Trial?"
+description: Descubra como funciona o Trial do Monsta, quais recursos estão disponíveis durante o período de avaliação e como testar gratuitamente a plataforma de monitoramento.
 ---
 
 A versão trial do Monsta pode monitorar dispositivos e monitores ilimitados. Para ativar o trial do Monsta, acesse nossa página de downloads ([https://www.monsta.com.br/downloads](https://www.monsta.com.br/downloads)) e baixe o arquivo de instalação para o sistema operacional de sua preferência. Utilize nosso [Manual de Instalação](/pt-br/start/instalacao/instalacao-monsta#instalação) para lhe auxiliar nesse processo.
@@ -7,7 +8,7 @@ A versão trial do Monsta pode monitorar dispositivos e monitores ilimitados. Pa
 **Como ativar o Trial**:
 
 1. **Baixe o Monsta do site**: [https://www.monsta.com.br/downloads](https://monsta.com.br/)
-2. **Instale o Monsta no seu servidor;** 
+2. **Instale o Monsta no seu servidor;**
      - Fedora/Redhat: `dnf -y install monsta-latest.rpm`  
      - Debian/Ubuntu: `dpkg -i monsta-latest.deb`
 3. **Acesse a interface web;**
