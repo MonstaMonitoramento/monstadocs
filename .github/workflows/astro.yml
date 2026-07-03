@@ -2,7 +2,11 @@ name: Deploy Astro site to Pages
 
 on:
   push:
-    branches: ["main"]  
+    branches: ["main"]
+    paths-ignore:
+      - 'src/assets/images/**'
+      - '.github/workflows/**'
+      - 'scripts/**'
   workflow_dispatch:
 
 permissions:
