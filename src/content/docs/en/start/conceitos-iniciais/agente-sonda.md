@@ -1,5 +1,6 @@
 ---
 title: "Monsta Agent and Probe"
+description: Understand the difference between the Monsta Probe and Agent, when to use each component, and how they work together to monitor networks, servers, and remote environments.
 sidebar:
   order: 6
 ---

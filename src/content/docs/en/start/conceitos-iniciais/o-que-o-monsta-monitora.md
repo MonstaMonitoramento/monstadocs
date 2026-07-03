@@ -1,5 +1,6 @@
 ---
 title: "What does Monsta monitor?"
+description: Learn what Monsta monitors and discover how to monitor servers, networks, applications, devices, operating systems, services, and IT infrastructure in real time.
 sidebar:
   order: 2
 ---

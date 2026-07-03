@@ -1,5 +1,6 @@
 ---
 title: "How do I subscribe to Monsta?"
+description: Learn how to subscribe to Monsta, explore the available plans, and activate a license to monitor your IT infrastructure.
 ---
 
 To subscribe to Monsta, you can do it in two ways:
@@ -10,7 +11,7 @@ If you are using the Monsta Trial version, just click the "Subscribe" button in 
 
 **Through the website**:
 
-- Go to our website [https://www.monsta.com.br, ](https://www.monsta.com.br)click on "Login" in the upper right corner and sign in with your username and password;
+- Go to our website [https://www.monsta.com.br](https://www.monsta.com.br)click on "Login" in the upper right corner and sign in with your username and password;
 - On the screen that appears, in the Licenses tab, select your trial and click subscribe;  
     ![image-1746713245035.png](../../../../../assets/images/p96_Grcimage-1746713245035.png)
 - You will be redirected to the payment area. Select your plan and billing method;

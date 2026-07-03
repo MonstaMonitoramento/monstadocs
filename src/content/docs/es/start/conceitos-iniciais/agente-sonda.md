@@ -1,5 +1,6 @@
 ---
 title: "Agente y Sonda de Monsta"
+description: Comprenda la diferencia entre la Sonda y el Agente de Monsta, cuándo utilizar cada componente y cómo trabajan juntos para supervisar redes, servidores y entornos remotos.
 sidebar:
   order: 6
 ---

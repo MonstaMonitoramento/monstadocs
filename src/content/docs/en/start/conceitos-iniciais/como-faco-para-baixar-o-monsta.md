@@ -1,5 +1,6 @@
 ---
 title: "How do I download Monsta?"
+description: Learn how to download Monsta and quickly install the IT infrastructure monitoring platform to evaluate all its features.
 sidebar:
   order: 5
 ---

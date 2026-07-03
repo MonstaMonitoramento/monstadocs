@@ -1,5 +1,6 @@
 ---
 title: "¿Cómo contrato la suscripción de Monsta?"
+description: Aprenda cómo contratar la suscripción de Monsta, conozca los planes disponibles y active una licencia para supervisar su infraestructura de TI.
 ---
 
 Para contratar la suscripción de Monsta, puedes hacerlo de dos formas:
@@ -10,7 +11,7 @@ Si estás utilizando la versión Trial de Monsta, basta con hacer clic en el bot
 
 **Desde el sitio web**:
 
-- Acesse nosso site [https://www.monsta.com.br, ](https://www.monsta.com.br)clique em "Login" no canto superior direito e entre com seu usuário e senha;
+- Acesse nosso site [https://www.monsta.com.br](https://www.monsta.com.br)clique em "Login" no canto superior direito e entre com seu usuário e senha;
 - Na tela que aparecer, na aba licenças, selecione seu trial e clique em assinar;  
     ![image-1746713245035.png](../../../../../assets/images/p96_Grcimage-1746713245035.png)
 - Você será redirecionado para a área de pagamento. Selecione seu plano e a forma de cobrança;

@@ -1,5 +1,6 @@
 ---
 title: "Does Monsta Send Alerts?"
+description: Learn how Monsta sends real-time alerts through multiple notification channels, helping you detect failures quickly and proactively manage your IT infrastructure.
 sidebar:
   order: 4
 ---

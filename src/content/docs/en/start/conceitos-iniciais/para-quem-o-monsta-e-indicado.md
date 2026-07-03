@@ -1,5 +1,6 @@
 ---
 title: Who is Monsta intended for?
+description: Learn who Monsta is designed for and discover how it helps businesses, internet service providers, IT teams, managed service providers, and infrastructure professionals.
 sidebar:
   order: 3
 ---

@@ -1,5 +1,6 @@
 ---
 title: "¿Monsta envía alertas?"
+description: Descubra cómo Monsta envía alertas en tiempo real mediante diferentes canales para detectar fallas rápidamente y administrar su infraestructura de TI de forma proactiva.
 sidebar:
   order: 4
 ---

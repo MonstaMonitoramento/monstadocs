@@ -1,5 +1,6 @@
 ---
 title: "¿Qué monitorea Monsta?"
+description: Descubra qué monitorea Monsta y conozca cómo supervisar servidores, redes, aplicaciones, dispositivos, servicios, sistemas operativos e infraestructura de TI en tiempo real.
 sidebar:
   order: 2
 ---
