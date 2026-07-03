@@ -29,20 +29,20 @@ Intervals shorter than the device's data update time can generate charts with in
  **Chart Properties**: Opens the screen with the properties of the displayed chart. 
 
 
-| Ícone | Descrição |
-| ----------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| ![image-1732627382742.png](../../../../../assets/images/p113_image-1732627382742.png) | **Title**: Name that will appear at the top of the chart. |
-| ![image-1646943518875.png](../../../../../assets/images/p113_image-1646943518875.png) | **Limits per reading**: When enabled, fills the entire chart according to the period status during the readings. |
-| ![image-1646943561235.png](../../../../../assets/images/p113_image-1646943561235.png) | **Show Status Markers**: When there is a status change in the presented time period, Monsta adds a marker to visualize when and to which state the change occurred. |
-| ![image-1732627513437.png](../../../../../assets/images/p113_image-1732627513437.png) | **Hide values**: Removes the reported values from the bottom of the chart presentation. |
-| ![image-1732627598700.png](../../../../../assets/images/p113_image-1732627598700.png) | **Hide legend**: Removes the legend from the chart presentation. |
-| ![image-1732627665080.png](../../../../../assets/images/p113_image-1732627665080.png) | **Show variation only**: Renders the chart only with its variations for a better view of changes. |
-| ![image-1732627792522.png](../../../../../assets/images/p113_image-1732627792522.png) | **Legend color**: Customizes the text color of the legends at the bottom of the chart. |
-| ![image-1732627851295.png](../../../../../assets/images/p113_image-1732627851295.png) | **Background color**: Customizes the chart background color. |
-| ![image-1732627906990.png](../../../../../assets/images/p113_image-1732627906990.png) | **Legend font size**: Customizes the legend size at the bottom of the chart. |
-| ![image-1732627963075.png](../../../../../assets/images/p113_image-1732627963075.png) | **Line width**: Customizes the width of the line rendered on the chart. |
-| ![image-1646943757386.png](../../../../../assets/images/p113_image-1646943757386.png) | **Show Percentile Indicator**: Adds the selected percentile to the chart. |
-| **Group Data by Time** | **Group the data by time**: When there is a time period greater than two days, Monsta groups data and automatically generates an average of the information to be presented on the chart. In this property you can choose the time that this grouping will use or simply disable this property. |
+| Ícone                                                                                 | Descrição                                                                                                                                                                                                                                                                                       |
+| ------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| ![image-1732627382742.png](../../../../../assets/images/p113_image-1732627382742.png) | **Title**: Name that will appear at the top of the chart.                                                                                                                                                                                                                                       |
+| ![image-1646943518875.png](../../../../../assets/images/p113_image-1646943518875.png) | **Limits per reading**: When enabled, fills the entire chart according to the period status during the readings.                                                                                                                                                                                |
+| ![image-1646943561235.png](../../../../../assets/images/p113_image-1646943561235.png) | **Show Status Markers**: When there is a status change in the presented time period, Monsta adds a marker to visualize when and to which state the change occurred.                                                                                                                             |
+| ![image-1732627513437.png](../../../../../assets/images/p113_image-1732627513437.png) | **Hide values**: Removes the reported values from the bottom of the chart presentation.                                                                                                                                                                                                         |
+| ![image-1732627598700.png](../../../../../assets/images/p113_image-1732627598700.png) | **Hide legend**: Removes the legend from the chart presentation.                                                                                                                                                                                                                                |
+| ![image-1732627665080.png](../../../../../assets/images/p113_image-1732627665080.png) | **Show variation only**: Renders the chart only with its variations for a better view of changes.                                                                                                                                                                                               |
+| ![image-1732627792522.png](../../../../../assets/images/p113_image-1732627792522.png) | **Legend color**: Customizes the text color of the legends at the bottom of the chart.                                                                                                                                                                                                          |
+| ![image-1732627851295.png](../../../../../assets/images/p113_image-1732627851295.png) | **Background color**: Customizes the chart background color.                                                                                                                                                                                                                                    |
+| ![image-1732627906990.png](../../../../../assets/images/p113_image-1732627906990.png) | **Legend font size**: Customizes the legend size at the bottom of the chart.                                                                                                                                                                                                                    |
+| ![image-1732627963075.png](../../../../../assets/images/p113_image-1732627963075.png) | **Line width**: Customizes the width of the line rendered on the chart.                                                                                                                                                                                                                         |
+| ![image-1646943757386.png](../../../../../assets/images/p113_image-1646943757386.png) | **Show Percentile Indicator**: Adds the selected percentile to the chart.                                                                                                                                                                                                                       |
+| **Group Data by Time**                                                                | **Group the data by time**: When there is a time period greater than two days, Monsta groups data and automatically generates an average of the information to be presented on the chart. In this property you can choose the time that this grouping will use or simply disable this property. |
 
 
 ---
@@ -83,7 +83,7 @@ Intervals shorter than the device's data update time can generate charts with in
 ---
 
 ![image-1647016926788.png](../../../../../assets/images/p113_image-1647016926788.png) 
-**Publish**: Creates a link to publish the chart without the need for authentication. For more information, see [Publish a Monitor](#publicar-um-monitor)
+**Publish**: Creates a link to publish the chart without the need for authentication. For more information, see [Publish a Monitor](#publish-a-monitor)
 
 ---
 
@@ -201,7 +201,7 @@ Editing a monitor allows customizing important information about its behavior, s
 ---
 
 ![image-1647110506456.png](../../../../../assets/images/p113_image-1647110506456.png)
-**Number of Attempts**: Allows selecting how many times the monitor should be checked before leaving its normal state. When a monitor returns to normal before reaching this limit, this counter is reset. | 
+**Number of Attempts**: Allows selecting how many times the monitor should be checked before leaving its normal state. When a monitor returns to normal before reaching this limit, this counter is reset. 
 
 ---
 

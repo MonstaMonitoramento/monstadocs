@@ -201,7 +201,7 @@ A edição de um monitor permite customizar informações importantes sobre seu 
 ---
 
 ![image-1647110506456.png](../../../../../assets/images/p113_image-1647110506456.png)
-**Número de Tentativas**: Permite selecionar quantas vezes o monitor deverá ser checado antes de sair do seu estado normal. Quando um monitor retorna ao estado normal antes de atingir esse limite, esse contador é zerado. | 
+**Número de Tentativas**: Permite selecionar quantas vezes o monitor deverá ser checado antes de sair do seu estado normal. Quando um monitor retorna ao estado normal antes de atingir esse limite, esse contador é zerado.
 
 ---
 
