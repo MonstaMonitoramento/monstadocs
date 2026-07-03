@@ -214,33 +214,33 @@ html.dark-mode .callout.warning {
     color: #450a0a;            
 } */
 
-/* Transforma o parágrafo em flexbox quando detectar o plugin de zoom */
+
 .sl-markdown-content p:has(starlight-image-zoom-zoomable) {
-    display: flex;
-    align-items: center;
-    /* Centraliza o texto verticalmente com imagens altas */
-    gap: 16px;
-    /* Respiro entre a imagem e o texto */
-    flex-wrap: nowrap;
+    display: block;
 }
 
-/* Trava o tamanho do container do plugin para não empurrar o texto */
+.sl-markdown-content p:has(starlight-image-zoom-zoomable)::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
 .sl-markdown-content p>starlight-image-zoom-zoomable {
-    flex: 0 0 auto !important;
-    /* Impede de crescer ou encolher */
-    width: max-content !important;
-    /* Limita a largura ao tamanho real da imagem */
-    margin: 0 !important;
+    float: left;
+    margin: 4px 16px 8px 0 !important;
+    max-width: 100% !important;
+    width: auto !important;
 }
 
-/* Remove margens nativas residuais da imagem dentro do plugin */
 .sl-markdown-content p starlight-image-zoom-zoomable img {
+    max-width: 100% !important;
+    height: auto !important;
     margin: 0 !important;
 }
 
 /* Em telas de celular menores que 600px, permite que o texto vá para baixo da imagem */
-@media (max-width: 600px) {
+/* @media (max-width: 600px) {
     .sl-markdown-content p:has(starlight-image-zoom-zoomable) {
         flex-wrap: wrap;
     }
-}
+} */
