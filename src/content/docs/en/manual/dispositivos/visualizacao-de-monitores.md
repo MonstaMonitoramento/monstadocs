@@ -246,17 +246,17 @@ Shows the latest failures that occurred during monitor collection. This log is u
 ##### Metrics
 
 ![image-1732638791772.png](../../../../../assets/images/p113_image-1732638791772.png)
-Metrics: Allows changing the metric display order, removing it or editing it. For more information on how to edit a metric see [Métricas](/en/manual/configuracoes/templates#métricas). 
+Metrics: Allows changing the metric display order, removing it or editing it. For more information on how to edit a metric see [Metrics](/en/manual/configuracoes/templates#metrics). 
 
 ---
 
 ![image-1732638931351.png](../../../../../assets/images/p113_image-1732638931351.png) 
-Data source for the value: It is the method that Monsta will use to collect information for this metric. For more information, see [Métricas](/en/manual/configuracoes/templates#métricas). 
+Data source for the value: It is the method that Monsta will use to collect information for this metric. For more information, see [Metrics](/en/manual/configuracoes/templates#metrics). 
 
 ---
 
 ![image-1732639055201.png](../../../../../assets/images/p113_image-1732639055201.png)
-Data source for the maximum value: Used when the monitor has a maximum limit value. For more information, see [Métricas](/en/manual/configuracoes/templates#métricas). 
+Data source for the maximum value: Used when the monitor has a maximum limit value. For more information, see [Metrics](/en/manual/configuracoes/templates#metrics). 
 
 ---
 
