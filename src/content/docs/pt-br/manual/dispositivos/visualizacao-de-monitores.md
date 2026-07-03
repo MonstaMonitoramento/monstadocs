@@ -49,18 +49,18 @@ Intervalos menores que o tempo de atualização dos dados do equipamento podem g
 
 
 
-![image.png](/src/assets/images/image.png)
+![image.png](../../../../../assets/images/image.png)
 
 **Ativar Monitoramento**: Este botão permite habilitar ou pausar a coleta de dados e a exibição de gráficos para o ativo selecionado. Quando o monitor está **desativado**, a coleta é interrompida imediatamente, cessando o processamento de métricas e o envio de alertas associados, sem remover o histórico de dados já armazenado.
 
 
 
-![image.png](/src/assets/images/image-2.png)
+![image.png](../../../../../assets/images/image-2.png)
 
 **Clonar Monitor**: Utilize esta funcionalidade para replicar o monitor. Ao acionar este botão, você abrirá uma lista para selecionar o dispositivo de destino, herdando todas as métricas, limiares de alerta e parâmetros de verificação configurados.  
 
 
-![image.png](/src/assets/images/image-1.png)
+![image.png](../../../../../assets/images/image-1.png)
 
  **Valor da Métrica**:  Informa o nome da métrica, o valor da leitura atual e se o resultado está maior, menor ou igual à leitura anterior.
 
