@@ -7,18 +7,13 @@ O Agente de Monitoramento da Monsta Tecnologia permite gerenciar infraestruturas
 
 ## Como o Agente Monsta Funciona?
 
-O Agente Monsta atua como um Proxy de Monitoramento Distribuído para suas filiais e redes remotas. Monitore ativos de forma centralizada e segura, eliminando a complexidade de redirecionamento de portas, VPNs ou a exigência de IPs fixos/estáticos.
+O Agente é a inteligência distribuída do nosso sistema. Em vez de centralizar todo o trabalho no servidor, o Agente executa as verificações diretamente na rede onde os ativos residem, garantindo uma coleta precisa e performática.
 
-## Benefícios Arquiteturais
+Projetado para ambientes de rede modernos, o Agente oferece:
 
-
-| **Recurso** | **Descrição** |
-| --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Coleta Local** | O Agente é instalado na rede remota e faz a coleta de dados de todos os dispositivos *localmente*. |
-| **Comunicação Consolidada** | Ele **agrega e armazena** temporariamente as métricas antes de enviá-las ao Servidor Monsta central em um único fluxo. |
-| **Segurança Otimizada** | Apenas o Agente precisa abrir comunicação com o servidor central, exigindo menos regras de firewall e reduzindo a superfície de ataque. |
-| **Tolerância a Falhas** | Em caso de perda temporária da conexão WAN, o Agente continua coletando e armazenando dados (caching), garantindo que nenhuma informação seja perdida. |
-
+- **Descentralização do Processamento:** Ao executar as tarefas de monitoramento diretamente na rede remota, o Agente elimina a sobrecarga do processamento no servidor principal, permitindo que a plataforma gerencie uma escala maior de dispositivos sem comprometer a performance do núcleo do sistema.
+- **Resiliência Total:** O sistema é imune a falhas intermitentes de conexão com a internet. Caso a comunicação com o servidor seja interrompida, o Agente continua executando as tarefas localmente, garantindo a integridade do monitoramento, e sincroniza os dados automaticamente assim que a conexão é restabelecida.
+- **Conectividade Simplificada:** O Agente funciona perfeitamente sem a necessidade de configurar VPNs complexas ou redirecionamento de portas (*port forwarding*), garantindo uma instalação rápida e mantendo a segurança da sua infraestrutura intacta.
 
 ## Gerenciamento de Agentes e Monitoramento Distribuído
 
