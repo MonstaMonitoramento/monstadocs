@@ -213,34 +213,3 @@ html.dark-mode .callout.warning {
     border-color: #dc2626;     
     color: #450a0a;            
 } */
-
-
-.sl-markdown-content p:has(starlight-image-zoom-zoomable) {
-    display: block;
-}
-
-.sl-markdown-content p:has(starlight-image-zoom-zoomable)::after {
-    content: "";
-    display: table;
-    clear: both;
-}
-
-.sl-markdown-content p>starlight-image-zoom-zoomable {
-    float: left;
-    margin: 4px 16px 8px 0 !important;
-    max-width: 100% !important;
-    width: auto !important;
-}
-
-.sl-markdown-content p starlight-image-zoom-zoomable img {
-    max-width: 100% !important;
-    height: auto !important;
-    margin: 0 !important;
-}
-
-/* Em telas de celular menores que 600px, permite que o texto vá para baixo da imagem */
-/* @media (max-width: 600px) {
-    .sl-markdown-content p:has(starlight-image-zoom-zoomable) {
-        flex-wrap: wrap;
-    }
-} */
