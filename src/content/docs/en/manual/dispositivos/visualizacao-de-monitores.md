@@ -53,12 +53,13 @@ Intervals shorter than the device's data update time can generate charts with in
 
 **Enable Monitoring**: This button allows enabling or pausing data collection and chart display for the selected asset. When the monitor is **disabled**, collection is stopped immediately, ceasing metric processing and the sending of associated alerts, without removing the history of data already stored.
 
-
+---
 
 ![image.png](../../../../../assets/images/image-2.png)
 
 **Clone Monitor**: Use this functionality to replicate the monitor. By triggering this button, you will open a list to select the destination device, inheriting all metrics, alert thresholds and verification parameters configured.  
 
+---
 
 ![image.png](../../../../../assets/images/image-1.png)
 

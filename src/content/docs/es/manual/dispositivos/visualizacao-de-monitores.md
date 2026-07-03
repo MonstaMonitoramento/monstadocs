@@ -53,12 +53,13 @@ Intervalos menores que el tiempo de actualización de los datos del equipo puede
 
 **Activar monitorización**: Este botón permite habilitar o pausar la recopilación de datos y la visualización de gráficos para el activo seleccionado. Cuando el monitor está **desactivado**, la recopilación se interrumpe inmediatamente, cesando el procesamiento de métricas y el envío de alertas asociadas, sin eliminar el historial de datos ya almacenado.
 
-
+---
 
 ![image.png](../../../../../assets/images/image-2.png)
 
 **Clonar monitor**: Utilice esta funcionalidad para replicar el monitor. Al accionar este botón, se abrirá una lista para seleccionar el dispositivo de destino, heredando todas las métricas, umbrales de alerta y parámetros de verificación configurados.  
 
+---
 
 ![image.png](../../../../../assets/images/image-1.png)
 
