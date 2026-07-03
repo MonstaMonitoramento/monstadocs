@@ -1,9 +1,8 @@
 ---
-title: "Visualização de Monitores"
+title: Visualização de Monitores
 sidebar:
   order: 7
 ---
-
 ## Monitores
 
 Os monitores são informações existentes em um equipamento, como CPU, memória, disco, etc. Cada equipamento disponibiliza recursos exclusivos que podem ser monitorados. As cores dos monitores variam conforme seu estado.
@@ -29,8 +28,9 @@ Intervalos menores que o tempo de atualização dos dados do equipamento podem g
  ![image-1646943186232.png](../../../../../assets/images/p113_image-1646943186232.png) 
  **Propriedades do Gráfico**: Abre a tela com as propriedades do gráfico exibido. 
 
+
 | Ícone | Descrição |
-| :---: | :--- |  
+| ----------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | ![image-1732627382742.png](../../../../../assets/images/p113_image-1732627382742.png) | **Título**: Nome que aparecerá no topo do gráfico. |
 | ![image-1646943518875.png](../../../../../assets/images/p113_image-1646943518875.png) | **Limites por leitura**: Quando ativada, preenche todo o gráfico conforme o status do período durante as leituras. |
 | ![image-1646943561235.png](../../../../../assets/images/p113_image-1646943561235.png) | **Mostrar Marcadores de Status**: Quando houver uma mudança de status no período de tempo apresentado, o Monsta adiciona uma marca para visualizar quando e para qual estado a mudança ocorreu. |
@@ -44,9 +44,24 @@ Intervalos menores que o tempo de atualização dos dados do equipamento podem g
 | ![image-1646943757386.png](../../../../../assets/images/p113_image-1646943757386.png) | **Mostrar Indicador de Percentil**: Adiciona ao gráfico o percentil selecionado. |
 | **Agrupar Dados por Tempo** | **Agrupar os dados por tempo**: Quando há um período de tempo maior que dois dias o Monsta agrupa dados e gera uma média da informação automaticamente para ser apresentada no gráfico. Nessa propriedade é possível escolher o tempo que esse agrupamento irá utilizar ou simplesmente desativar essa propriedade. |
 
+
 ---
 
-![image-1647016637521.png](../../../../../assets/images/p113_image-1647016637521.png)
+
+
+![image.png](/src/assets/images/image.png)
+
+**Ativar Monitoramento**: Este botão permite habilitar ou pausar a coleta de dados e a exibição de gráficos para o ativo selecionado. Quando o monitor está **desativado**, a coleta é interrompida imediatamente, cessando o processamento de métricas e o envio de alertas associados, sem remover o histórico de dados já armazenado.
+
+
+
+![image.png](/src/assets/images/image-2.png)
+
+**Clonar Monitor**: Utilize esta funcionalidade para replicar o monitor. Ao acionar este botão, você abrirá uma lista para selecionar o dispositivo de destino, herdando todas as métricas, limiares de alerta e parâmetros de verificação configurados.  
+
+
+![image.png](/src/assets/images/image-1.png)
+
  **Valor da Métrica**:  Informa o nome da métrica, o valor da leitura atual e se o resultado está maior, menor ou igual à leitura anterior.
 
 ---
@@ -98,12 +113,12 @@ Intervalos menores que o tempo de atualização dos dados do equipamento podem g
 A publicação de um monitor permite que o usuário crie um link para acesso na internet sem a necessidade de um usuário e senha.
 
 ![image-1647023048029.png](../../../../../assets/images/p113_image-1647023048029.png)
+
 - **Publicar**: Habilita a criação do link para o monitor selecionado.
 - **Período**: Permite escolher o tempo de publicação do gráfico. Por segurança, períodos maiores que um mês não são permitidos.
 - **Tela cheia**: Quando ativado, utiliza toda a tela para exibir o gráfico.
 - **Largura e Altura**: Define as dimensões do gráfico em pixels.
 - **Código HTML**: Esse código é gerado pelo Monsta para o monitor selecionado e pode ser utilizado para publicar o gráfico em um painel de terceiros.
-
 
 ### Editar/Customizar um Monitor
 
@@ -172,6 +187,7 @@ A edição de um monitor permite customizar informações importantes sobre seu 
 **Inversão da Lógica de Limite (Threshold Inversion)**: Esta opção permite que você altere a **lógica de alerta** de um monitor. Use esta funcionalidade para métricas onde um **valor baixo** indica um problema (ex: a velocidade de uma interface de rede não deve cair de um certo nível) ou onde você precisa monitorar faixas específicas de valores. 
 
 ---
+
 ![image-1647109503541.png](../../../../../assets/images/p113_image-1647109503541.png)
 ![image-1647109809636.png](../../../../../assets/images/p113_image-1647109809636.png)
 **Percentual para Alertas**: Permite selecionar em quais valores a métrica entrará em estado de alerta. Quando há um valor máximo definido, a configuração dos alertas será em percentual, caso contrário, os limites são informados textualmente. 
@@ -195,7 +211,6 @@ A edição de um monitor permite customizar informações importantes sobre seu 
 
 ---
 
-
 ![image-1732630665348.png](../../../../../assets/images/p113_image-1732630665348.png)
 **Herdado do dispositivo**: São os grupos de alerta definidos na edição do dispositivo. Uma vez que são herdados, não é possível removê-los do monitor, apenas desativá-los.
 
@@ -212,20 +227,22 @@ A edição de um monitor permite customizar informações importantes sobre seu 
 ---
 
 #### Sons de Alerta
+
 ![image-1732630990555.png](../../../../../assets/images/p113_image-1732630990555.png)
 Permite adicionar sons de alerta personalizados para cada status do monitor.
 
 ---
 
 #### Log de Erros
+
 ![image-1732631123766.png](../../../../../assets/images/p113_image-1732631123766.png)
 Informa as últimas falhas que ocorreram com a coleta do monitor. Esse registro é útil para saber o motivo de alguma coleta não estar sendo realizada com sucesso.
 
 #### Avançado
+
 ![image-1647113062837.png](../../../../../assets/images/p113_image-1647113062837.png)
 
-
-##### Métricas 
+##### Métricas
 
 ![image-1732638791772.png](../../../../../assets/images/p113_image-1732638791772.png)
 Métricas: Permite alterar a ordem de exibição da métrica, removê-la ou editá-la. Para maiores informações sobre como editar uma métrica consulte [Métricas](/pt-br/manual/configuracoes/templates#métricas). 
