@@ -19,7 +19,6 @@ Projetado para ambientes de rede modernos, o Agente oferece:
 
 ![image-1768997185306.png](../../../../../assets/images/p63_image-1768997185306.png)
 
-
 | Ícone | Descrição |
 | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | ![image-1647867281671.png](../../../../../assets/images/p63_image-1647867281671.png) | **Pesquisar**: Utilize o campo de filtro para localizar agentes específicos. Ao digitar, a lista será atualizada automaticamente para exibir apenas os resultados que correspondam ao texto informado. |
@@ -33,7 +32,6 @@ Projetado para ambientes de rede modernos, o Agente oferece:
 | ![image-1768999398371.png](../../../../../assets/images/p63_image-1768999398371.png) | **Última atividade**: Registra o data e horário exato da última comunicação recebida do agente. É o principal indicador para verificar se o monitoramento está ocorrendo em tempo real. |
 | ![image-1768999481044.png](../../../../../assets/images/p63_image-1768999481044.png) | **Bloquear agente**: Permite interromper ou retomar a comunicação de um agente específico manualmente. Quando bloqueado, o agente para de enviar dados ao servidor, mas permanece instalado e configurado, podendo ser reativado a qualquer momento com um clique. |
 | ![image-1768999732028.png](../../../../../assets/images/p63_image-1768999732028.png) | **Excluir agente**: Remove permanentemente o agente da sua lista de monitoramento.<br />**Nota**: Por segurança, esta ação só é permitida para agentes que estejam com o status **Desconectado**. Caso o agente ainda esteja ativo, é necessário interromper o serviço no host antes da exclusão. |
-
 
 :::caution[Atenção]
 O suporte aos agentes está disponível a partir da versão **6** do Monsta.

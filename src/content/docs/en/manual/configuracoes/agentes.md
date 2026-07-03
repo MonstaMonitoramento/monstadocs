@@ -19,7 +19,6 @@ Designed for modern network environments, the Agent offers:
 
 ![image-1768997185306.png](../../../../../assets/images/p63_image-1768997185306.png)
 
-
 | Icon | Description |
 | ---------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | ![image-1647867281671.png](../../../../../assets/images/p63_image-1647867281671.png) | **Search**: Use the filter field to locate specific agents. As you type, the list will update automatically to display only results that match the entered text. |
@@ -33,7 +32,6 @@ Designed for modern network environments, the Agent offers:
 | ![image-1768999398371.png](../../../../../assets/images/p63_image-1768999398371.png) | **Last activity**: Records the exact date and time of the last communication received from the agent. It is the primary indicator to check whether monitoring is occurring in real time. |
 | ![image-1768999481044.png](../../../../../assets/images/p63_image-1768999481044.png) | **Block agent**: Allows you to manually pause or resume the communication of a specific agent. When blocked, the agent stops sending data to the server but remains installed and configured, and can be reactivated at any time with a click. |
 | ![image-1768999732028.png](../../../../../assets/images/p63_image-1768999732028.png) | **Delete agent**: Permanently removes the agent from your monitoring list. **Note**: For security, this action is only allowed for agents with the status **Disconnected**. If the agent is still active, you must stop the service on the host before deletion. |
-
 
 :::caution[Attention]
 Agent support is available starting from Monsta version **6**.

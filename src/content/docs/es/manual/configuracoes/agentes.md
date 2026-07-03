@@ -19,7 +19,6 @@ Diseñado para entornos de red modernos, el Agente ofrece:
 
 ![image-1768997185306.png](../../../../../assets/images/p63_image-1768997185306.png)
 
-
 | Ícone | Descrição |
 | ------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | ![image-1647867281671.png](../../../../../assets/images/p63_image-1647867281671.png) | **Pesquisar**: Utilice el campo de filtro para localizar agentes específicos. Al escribir, la lista se actualizará automáticamente para mostrar únicamente los resultados que coincidan con el texto ingresado. |
@@ -33,7 +32,6 @@ Diseñado para entornos de red modernos, el Agente ofrece:
 | ![image-1768999398371.png](../../../../../assets/images/p63_image-1768999398371.png) | **Última atividade**: Registra la fecha y hora exactas de la última comunicación recibida del agente. Es el principal indicador para verificar si la monitorización se está realizando en tiempo real. |
 | ![image-1768999481044.png](../../../../../assets/images/p63_image-1768999481044.png) | **Bloquear agente**: Permite interrumpir o reanudar la comunicación de un agente específico manualmente. Cuando está bloqueado, el agente deja de enviar datos al servidor, pero permanece instalado y configurado, pudiendo reactivarse en cualquier momento con un clic. |
 | ![image-1768999732028.png](../../../../../assets/images/p63_image-1768999732028.png) | **Excluir agente**: Elimina permanentemente el agente de su lista de monitorización.<br />**Nota**: Por seguridad, esta acción solo está permitida para agentes con estado **Desconectado**. Si el agente aún está activo, es necesario detener el servicio en el host antes de la eliminación. |
-
 
 :::caution[Atención]
 El soporte para los agentes está disponible a partir de la versión **6** de Monsta.
