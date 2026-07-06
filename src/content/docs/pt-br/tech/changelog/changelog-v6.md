@@ -1,8 +1,15 @@
 ---
-title: "Changelog v6"
+title: Changelog v6
 sidebar:
   order: 2
 ---
+## Versão 6.0.13 Beta
+
+**🔧Correção**: Otimizado o tempo de inicializacao da coleta de dados em novas instalacoes.
+
+**🔧Correção**: Corrigida a reconexao de agentes apos a restauracao de backup da nuvem em novas instalacoes.
+
+**🔧Correção**: Corrigido problema pontual que impedia o disparo de alarmes em alguns monitores.
 
 ## Versão 6.0.9
 
