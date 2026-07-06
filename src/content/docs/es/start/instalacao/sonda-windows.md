@@ -1,5 +1,6 @@
 ---
 title: "Sonda: Instalación"
+description: Aprenda a instalar la Sonda de Monsta en Windows para realizar monitoreo remoto y ampliar el alcance de la plataforma en su infraestructura.
 sidebar:
   order: 5
 ---
@@ -34,25 +35,22 @@ Todo el intercambio de información entre el servidor central de Monsta y la Son
 
 1. Descargue el programa de la sonda en el sistema operativo Windows que desea monitorizar;
 
-
 |  | Download |
 | ----------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
 | [![Download da Sonda](../../../../../assets/images/p139_image-1660325708746.png)](https://www.monsta.com.br/monsta/download/MonstaProbe.exe) | [https://www.monsta.com.br/monsta/download/MonstaProbe.exe](https://www.monsta.com.br/monsta/download/MonstaProbe.exe) |
 
-2. Con sesión iniciada con un usuario administrador, ejecute el instalador "monstaprobe.exe";
-3. Configure los parámetros de puerto y contraseña que se le solicitarán durante la instalación.
+1. Con sesión iniciada con un usuario administrador, ejecute el instalador "monstaprobe.exe";
+2. Configure los parámetros de puerto y contraseña que se le solicitarán durante la instalación.
 
 **Instalação pela linha de comando**
 
 El instalador MonstaProbe.exe acepta opciones en la línea de comandos. Puede utilizarlas para automatizar la instalación en una red mediante una GPO, sin necesidad de interacción con la interfaz gráfica.
-
 
 | Opção &nbsp; &nbsp; &nbsp; &nbsp; | Descrição |
 | --------------------------------- | ------------------------------------------------------------------------------------------------------------- |
 | `--agree` | Acepta el término de uso de la sonda colectora. |
 | `--port` | Informa el puerto a ser utilizado por la sonda colectora. Si no se informa, el valor por defecto será 7743 (TCP). |
 | `--passwd` | Asigna la contraseña que será utilizada por la sonda colectora. La contraseña por defecto será *monsta@dm* en caso de no ser informada. |
-
 
 **Exemplo de uso**
 

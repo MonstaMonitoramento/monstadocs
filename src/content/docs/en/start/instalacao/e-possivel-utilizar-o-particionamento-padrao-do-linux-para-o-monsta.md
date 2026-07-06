@@ -1,5 +1,6 @@
 ---
 title: "Is it possible to use the Linux default partitioning for Monsta?"
+description: Learn about the recommended Linux disk partitioning for Monsta and understand when the default partition layout is suitable for deployment.
 sidebar:
   order: 2
 ---

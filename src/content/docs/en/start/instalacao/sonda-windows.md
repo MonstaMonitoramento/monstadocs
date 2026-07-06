@@ -1,5 +1,6 @@
 ---
 title: "Monsta Probe: Installation"
+description: Learn how to install the Monsta Probe on Windows to perform remote monitoring and extend the platform across your IT infrastructure.
 sidebar:
   order: 5
 ---
@@ -34,25 +35,22 @@ All information exchanged between the central Monsta server and the Probe instal
 
 1. Download the probe program on the Windows operating system you want to monitor;
 
-
 |  | Download |
 | ----------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
 | [![Download da Sonda](../../../../../assets/images/p139_image-1660325708746.png)](https://www.monsta.com.br/monsta/download/MonstaProbe.exe) | [https://www.monsta.com.br/monsta/download/MonstaProbe.exe](https://www.monsta.com.br/monsta/download/MonstaProbe.exe) |
 
-2. Logged in as an administrator user, run the installer "monstaprobe.exe";
-3. Configure the port and password parameters that will be requested during installation.
+1. Logged in as an administrator user, run the installer "monstaprobe.exe";
+2. Configure the port and password parameters that will be requested during installation.
 
 **Instalação pela linha de comando**
 
 O instalador MonstaProbe.exe aceita opções na linha de comando. Você pode utilizá-las para automatizar a instalação em uma rede através de uma GPO, sem necessidade de interação com a interface gráfica.
-
 
 | Opção &nbsp; &nbsp; &nbsp; &nbsp; | Descrição |
 | --------------------------------- | ------------------------------------------------------------------------------------------------------------- |
 | `--agree` | Aceita o termo de uso da sonda coletora. |
 | `--port` | Informa a porta a ser utilizada pela sonda coletora. Se não for informada, o padrão será 7743 (TCP). |
 | `--passwd` | Atribui a senha a ser utilizada pela sonda coletora. A senha padrão será *monsta@dm* caso não seja informada. |
-
 
 **Exemplo de uso**
 

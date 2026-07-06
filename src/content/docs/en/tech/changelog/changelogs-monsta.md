@@ -1,5 +1,6 @@
 ---
 title: "Changelog"
+description: Browse the complete Monsta release history and discover new features, improvements, bug fixes, and changes released in every platform update.
 sidebar:
   order: 1
 ---

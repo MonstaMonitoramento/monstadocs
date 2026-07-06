@@ -1,5 +1,6 @@
 ---
 title: "Registro de cambios"
+description: Consulte el historial de versiones de Monsta y descubra las nuevas funcionalidades, mejoras, correcciones y cambios publicados en cada actualización.
 sidebar:
   order: 1
 ---

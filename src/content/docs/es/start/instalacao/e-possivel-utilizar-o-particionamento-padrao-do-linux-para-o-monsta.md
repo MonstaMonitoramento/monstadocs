@@ -1,5 +1,6 @@
 ---
 title: "¿Es posible utilizar el particionado predeterminado de Linux para Monsta?"
+description: Conozca las recomendaciones de particionado de Linux para instalar Monsta y descubra cuándo el esquema de particionado predeterminado es adecuado.
 sidebar:
   order: 2
 ---

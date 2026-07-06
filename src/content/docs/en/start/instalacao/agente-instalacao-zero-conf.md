@@ -1,5 +1,6 @@
 ---
 title: "Agent: Zero Conf Installation"
+description: Learn how to install the Monsta Agent using Zero-Conf mode and automate the setup to start monitoring devices quickly.
 sidebar:
   order: 4
 ---
@@ -9,11 +10,9 @@ This documentation describes the installation process for the **Monsta Agent**, 
 
 - Download the agent program:
 
-
 |  |  |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------- |
 | ![Agent Download](../../../../../assets/images/p139_image-1660325708746.png) | [https://www.monsta.com.br/monsta/download/agent.msi](https://www.monsta.com.br/monsta/download/agent.msi) |
-
 
 - Logged in as a user with administrator privileges, run the installer "agent.msi".
 - When prompted, enter the Monsta license key to which you want to connect the agent.
@@ -24,12 +23,10 @@ The installer **agent.msi** supports command-line parameters for automation. Int
 
 Command-line options:
 
-
 | Option | Description |
 | ------------------------------- | --------------------------------------------------------------- |
 | `LICENSEKEY=[license key]` | Specifies the license key to which the Agent should connect. |
 | `AGREE=[Y]` | Confirms acceptance of the terms of use. |
-
 
 **Example usage:**
 

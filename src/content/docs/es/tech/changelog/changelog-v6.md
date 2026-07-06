@@ -1,5 +1,6 @@
 ---
 title: Registro de cambios v6
+description: Consulte el Changelog de Monsta v6 y conozca las nuevas funcionalidades, mejoras, correcciones y cambios incluidos en cada actualización de la plataforma.
 sidebar:
   order: 2
 ---

@@ -1,5 +1,6 @@
 ---
 title: "In which environment can Monsta be installed?"
+description: Discover which environments support Monsta installation, including supported operating systems, requirements, and deployment recommendations.
 sidebar:
   order: 1
 ---

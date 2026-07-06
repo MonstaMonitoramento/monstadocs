@@ -1,5 +1,6 @@
 ---
 title: Monsta Installation
+description: Learn how to install Monsta and quickly deploy the IT infrastructure monitoring platform by following the installation guide.
 sidebar:
   order: 3
 ---

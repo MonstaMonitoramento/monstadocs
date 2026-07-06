@@ -1,5 +1,6 @@
 ---
 title: Changelog v6
+description: Explore the Monsta v6 Changelog and stay up to date with new features, improvements, bug fixes, and changes introduced in each platform release.
 sidebar:
   order: 2
 ---
