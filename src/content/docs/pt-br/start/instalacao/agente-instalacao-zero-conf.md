@@ -1,5 +1,6 @@
 ---
 title: "Agente: Instalação Zero Conf"
+description: Saiba como instalar o Agente do Monsta utilizando o modo Zero-Conf e automatize a configuração para iniciar o monitoramento de dispositivos com rapidez.
 sidebar:
   order: 4
 ---
@@ -9,11 +10,9 @@ Esta documentação descreve o processo de instalação do **Agente Monsta**, um
 
 - Baixe o programa do agente:
 
-
 |  |  |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------- |
 | ![Download do Agente](../../../../../assets/images/p139_image-1660325708746.png) | [https://www.monsta.com.br/monsta/download/agent.msi](https://www.monsta.com.br/monsta/download/agent.msi) |
-
 
 - Logado com um usuário com permissões de administrador, execute o instalador "agent.msi".
 - Quando solicitado, insira a chave de licença do Monsta no qual você deseja conectar o agente.
@@ -24,12 +23,10 @@ O instalador **agent.msi** suporta parâmetros de linha de comando para automaç
 
 Opções da linha de comando:
 
-
 | Opção | Descrição |
 | ------------------------------- | --------------------------------------------------------------- |
 | `LICENSEKEY=[chave de licença]` | Informa a chave de licença no qual o Agente deverá se conectar. |
 | `AGREE=[Y]` | Confirma a aceitação dos termos de uso. |
-
 
 **Exemplo de uso:**
 

@@ -1,5 +1,6 @@
 ---
 title: "Migração para um Novo Servidor"
+description: Aprenda como migrar o Monsta para um novo servidor preservando configurações, monitoramentos, histórico e dados da plataforma com segurança.
 ---
 
 Este tutorial mostra como migrar o Monsta a partir da versão >5.0 para outro servidor.
@@ -23,24 +24,26 @@ Verifique se a partição "/var" do novo servidor possui o espaço suficiente pa
 As configurações acima permitem, em geral, verificar aproximadamente 500 dispositivos com 10 monitores cada ou um total de 5.000 monitores.
 :::
 
-
 ## Script de migração
 
 Logado como root no seu servidor, baixe o script de migração conforme exemplo abaixo:
 
 ### Fedora/Red-Hat
+
 ```shell
 yum install -y wget sshpass
 wget https://www.monsta.com.br/monsta/download/migrate.sh
 ```
 
 ### Ubuntu/Debian
+
 ```shell
 apt-get install -y wget sshpass
 wget https://www.monsta.com.br/monsta/download/migrate.sh
 ```
 
 ## Iniciando a transferência
+
 Após baixar o script, execute-o com a seguinte sintaxe:
 
 `sh migrate.sh <usuário> <"senha"> <IP do servidor Monsta atual> <porta ssh>`

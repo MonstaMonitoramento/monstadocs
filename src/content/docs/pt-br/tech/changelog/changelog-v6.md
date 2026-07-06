@@ -1,5 +1,6 @@
 ---
 title: Changelog v6
+description: Acompanhe o Changelog da versão 6 do Monsta e conheça as novas funcionalidades, melhorias, correções e alterações realizadas em cada atualização da plataforma.
 sidebar:
   order: 2
 ---

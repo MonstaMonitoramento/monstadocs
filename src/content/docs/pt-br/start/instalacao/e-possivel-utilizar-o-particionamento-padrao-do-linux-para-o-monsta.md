@@ -1,5 +1,6 @@
 ---
 title: "É possível utilizar o particionamento padrão do Linux para o Monsta?"
+description: Entenda as recomendações de particionamento para instalar o Monsta no Linux e saiba quando o particionamento padrão é adequado para a plataforma.
 sidebar:
   order: 2
 ---

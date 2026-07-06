@@ -1,5 +1,6 @@
 ---
 title: "Changelog"
+description: Consulte o histórico de versões do Monsta e acompanhe todas as novidades, melhorias, correções e alterações publicadas em cada atualização da plataforma.
 sidebar:
   order: 1
 ---

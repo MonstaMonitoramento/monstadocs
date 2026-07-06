@@ -1,5 +1,6 @@
 ---
 title: "Sonda: Instalação"
+description: Aprenda como instalar a Sonda do Monsta no Windows para realizar monitoramentos remotos e expandir o alcance da plataforma em sua infraestrutura.
 sidebar:
   order: 5
 ---
@@ -34,25 +35,22 @@ Toda a troca de informações entre o servidor central do Monsta e a Sonda insta
 
 1. Baixe o programa da sonda no sistema operacional Windows que deseja monitorar;
 
-
 |  | Download |
 | ----------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
 | [![Download da Sonda](../../../../../assets/images/p139_image-1660325708746.png)](https://www.monsta.com.br/monsta/download/MonstaProbe.exe) | [https://www.monsta.com.br/monsta/download/MonstaProbe.exe](https://www.monsta.com.br/monsta/download/MonstaProbe.exe) |
 
-2. Logado com um usuário administrador, execute o instalador "monstaprobe.exe";
-3. Configure os parâmetros de porta e senha que serão solicitados durante a instalação.
+1. Logado com um usuário administrador, execute o instalador "monstaprobe.exe";
+2. Configure os parâmetros de porta e senha que serão solicitados durante a instalação.
 
 **Instalação pela linha de comando**
 
 O instalador MonstaProbe.exe aceita opções na linha de comando. Você pode utilizá-las para automatizar a instalação em uma rede através de uma GPO, sem necessidade de interação com a interface gráfica.
-
 
 | Opção &nbsp; &nbsp; &nbsp; &nbsp; | Descrição |
 | --------------------------------- | ------------------------------------------------------------------------------------------------------------- |
 | `--agree` | Aceita o termo de uso da sonda coletora. |
 | `--port` | Informa a porta a ser utilizada pela sonda coletora. Se não for informada, o padrão será 7743 (TCP). |
 | `--passwd` | Atribui a senha a ser utilizada pela sonda coletora. A senha padrão será *monsta@dm* caso não seja informada. |
-
 
 **Exemplo de uso**
 

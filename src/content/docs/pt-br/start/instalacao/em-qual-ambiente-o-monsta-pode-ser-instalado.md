@@ -1,5 +1,6 @@
 ---
 title: "Em qual ambiente o Monsta pode ser instalado?"
+description: Descubra em quais ambientes o Monsta pode ser instalado e conheça os requisitos, sistemas suportados e recomendações para implantação da plataforma.
 sidebar:
   order: 1
 ---

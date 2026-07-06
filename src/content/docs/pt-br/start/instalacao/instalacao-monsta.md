@@ -1,5 +1,6 @@
 ---
 title: Instalação do Monsta
+description: Aprenda como instalar o Monsta e configure rapidamente a plataforma de monitoramento de infraestrutura de TI seguindo o passo a passo da instalação.
 sidebar:
   order: 3
 ---
