@@ -1,0 +1,26 @@
+name: Notificação do Preview (Discord)
+
+# Esse gatilho escuta qualquer atualização de status de deploy no repositório (ex: vindo da Cloudflare)
+on:
+  deployment_status:
+
+jobs:
+  notificar_discord:
+    runs-on: ubuntu-latest
+    # Só executa se o aviso vier de um deploy feito na branch preview
+    if: github.event.deployment.ref == 'preview'
+    
+    steps:
+      - name: Enviar Sucesso para o Discord
+        if: github.event.deployment_status.state == 'success'
+        run: |
+          curl -H "Content-Type: application/json" \
+          -d '{"content": "✅ **Preview Atualizado!**\nAs alterações do PagesCMS foram compiladas e estão prontas para revisão.\n🔗 **Acesso:** '${{ github.event.deployment_status.target_url }}'"}' \
+          ${{ secrets.DISCORD_WEBHOOK_URL }}
+
+      - name: Enviar Falha para o Discord
+        if: github.event.deployment_status.state == 'failure' || github.event.deployment_status.state == 'error'
+        run: |
+          curl -H "Content-Type: application/json" \
+          -d '{"content": "❌ **Erro no deploy do Preview!**\nA Cloudflare não conseguiu compilar o Astro. Verifique se alguma formatação crítica foi quebrada."}' \
+          ${{ secrets.DISCORD_WEBHOOK_URL }}
