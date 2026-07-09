@@ -20,7 +20,7 @@ Tras el descubrimiento automático, tendrá la oportunidad de **seleccionar los 
 #### Cómo agregar una regla de monitor automático:
 
 1. Haga clic en el dispositivo para el que desea crear la regla de monitor automático;
-2. Haga clic en el botón![image-1746723454780.png](/src/assets/images/p99_image-1746723454780.png)<br />Se mostrará la siguiente pantalla:<br />![image-1746723532817.png](/src/assets/images/p99_image-1746723532817.png)
+2. Haga clic en el botón![image-1746723454780.png](../../../../../assets/images/p99_image-1746723454780.png)<br />Se mostrará la siguiente pantalla:<br />![image-1746723532817.png](../../../../../assets/images/p99_image-1746723532817.png)
 3. Haga clic en "Agregar";
 4. Personalice la regla según sus necesidades con los parámetros siguientes:  
     
@@ -33,6 +33,6 @@ Tras el descubrimiento automático, tendrá la oportunidad de **seleccionar los 
 
 **Ejemplo**:
 
-![image-1746724019551.png](/src/assets/images/p99_image-1746724019551.png)
+![image-1746724019551.png](../../../../../assets/images/p99_image-1746724019551.png)
 
 En la imagen anterior, la regla creada añadirá monitores que contengan la palabra "vlan" en su nombre. Cada 30 minutos Monsta realizará una exploración para verificar si existen nuevas instancias y las añadirá a la monitorización. Si un monitor automático entra en estado de fallo, y en 7 días no recupera las recogidas, será eliminado de la monitorización.

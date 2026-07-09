@@ -6,19 +6,19 @@ sidebar:
 
 ## Global device options
 
-![image-1646847756093.png](/src/assets/images/p52_image-1646847756093.png)
+![image-1646847756093.png](../../../../../assets/images/p52_image-1646847756093.png)
 Monsta allows the definition of **Global Values**, which act as an intelligent preset for all registered devices. When a value is defined globally, it is automatically inherited by all devices unless a specific setting is defined individually for the device or for its device group.
 
 ### Collection
 
-![image-1732557804866.png](/src/assets/images/p53_image-1732557804866.png)
+![image-1732557804866.png](../../../../../assets/images/p53_image-1732557804866.png)
 
 **Communication Parameters (SNMP, WMI and SSH)**: Centralize access credentials and communication ports. By configuring SNMP communities or SSH/WMI users globally, new devices will be monitored automatically without the need to enter passwords manually for each one.
 
 ### Sensitivity  
 
 
-![image-1732558676013.png](/src/assets/images/p53_image-1732558676013.png)
+![image-1732558676013.png](../../../../../assets/images/p53_image-1732558676013.png)
 
 **Uptime Sensitivity**: Defines the tolerance criteria to consider a device as "offline". Adjusting the global sensitivity allows you to determine how many connectivity tests must fail before the system triggers a down alert, avoiding false alarms in networks with momentary fluctuations.
 
@@ -34,13 +34,13 @@ Monsta allows the definition of **Global Values**, which act as an intelligent p
 
 ### Alert Sounds
 
-![image-1732559278364.png](/src/assets/images/p53_image-1732559278364.png)
+![image-1732559278364.png](../../../../../assets/images/p53_image-1732559278364.png)
 
 **Custom Alert Sounds**: Configure the sound experience of the Operations Center (NOC). You can set different audio for the **Normal**, **Warning**, and **Critical** states. This inheritance ensures the entire interface maintains a cohesive sound pattern, facilitating the immediate identification of an event's severity by the technical team.
 
 ## Display Options
 
-![image-1740681553351.png](/src/assets/images/p53_image-1740681553351.png)
+![image-1740681553351.png](../../../../../assets/images/p53_image-1740681553351.png)
 
 Monsta allows you to configure the level of visual detail of your assets, prioritizing the information that is most strategic for your daily operations:
 

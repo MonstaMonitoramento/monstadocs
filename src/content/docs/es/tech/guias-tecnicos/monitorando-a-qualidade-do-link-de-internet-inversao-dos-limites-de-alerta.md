@@ -15,7 +15,7 @@ Para garantizar que reciba alertas cuando la velocidad caiga por debajo del mín
 - Haga clic en el monitor de tráfico;
 - Haga clic en el botón "Editar";
 - Haga clic en el botón "Invertir Límites"  
-    ![image-1765802497808.png](/src/assets/images/p144_image-1765802497808.png)
+    ![image-1765802497808.png](../../../../../assets/images/p144_image-1765802497808.png)
 - Ajuste las barras de porcentaje para elegir los límites en los que desea ser alertado.
 
 En el ejemplo de la imagen anterior, el monitor está configurado para alertar sobre un enlace de 1G en las siguientes situaciones:

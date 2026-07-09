@@ -4,7 +4,7 @@ title: "¿Cómo Resolver el Error de Inicio de Sesión en Monsta?"
 
 Este artículo tiene como objetivo explicar cómo resolver el error de inicio de sesión de Monsta, ya que el problema puede deberse a distintas causas.
 
-![image-1774290685990.png](/src/assets/images/p175_image-1774290685990.png)
+![image-1774290685990.png](../../../../../assets/images/p175_image-1774290685990.png)
 
 ## Causas prováveis
 

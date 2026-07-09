@@ -11,7 +11,7 @@ This monitor uses a 32-bit variable that can store a maximum value of 4 Gigabyte
 - **Occurrence of rollover**: When this variable exceeds the maximum value, the counter resets to zero. This characteristic is known in Monsta as `rollover`.
 - **Resulting problem**: This counter overflow can lead to monitoring graphs with abrupt drops, reporting incorrect speeds or speeds lower than the total traffic on the monitored network interface, making analysis and correct traffic calculation difficult. As a result, the real traffic value is lost, since depending on how often the monitor collects data, a rollover can occur without being detected.
 
-![image-1756919458783.png](/src/assets/images/p120_image-1756919458783.png)  
+![image-1756919458783.png](../../../../../assets/images/p120_image-1756919458783.png)  
 Example of a 32-bit traffic monitor on a 1 Gbps link with a 5-minute polling frequency.
 
 ## Traffic Monitor (64 bits)
@@ -21,7 +21,7 @@ This monitor can store a maximum value of 18 Exabytes. This number is so large t
 - **Greater accuracy and reliability**: With a 64-bit counter, you ensure that traffic counting is continuous and accurate, without interruptions.
 - **Long-term analysis**: Allows more accurate and reliable traffic analysis over long periods, since the accumulated value is not lost.
 
-![image-1756919778342.png](/src/assets/images/p120_image-1756919778342.png)
+![image-1756919778342.png](../../../../../assets/images/p120_image-1756919778342.png)
 
 The same traffic on a 64-bit monitor.
 

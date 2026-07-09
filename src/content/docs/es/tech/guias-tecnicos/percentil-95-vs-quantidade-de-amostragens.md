@@ -31,13 +31,13 @@ Esto se debe a la capacidad inherente del muestreo más frecuente para capturar 
 
 ### Amostragem a Cada 1 Minuto: Captura mais Precisa de Picos
 
-![image-1748523913039.png](/src/assets/images/p108_image-1748523913039.png)
+![image-1748523913039.png](../../../../../assets/images/p108_image-1748523913039.png)
 
 Cuando los datos se muestrean cada 1 minuto, el sistema de monitorización registra el tráfico de datos en intervalos muy cortos. Esto le permite **capturar con mayor precisión los picos de uso transitorios y de corta duración**. Imagine un escenario donde hay un aumento abrupto en el tráfico de datos durante 30 segundos y luego vuelve a los niveles normales. Un muestreo cada 1 minuto tiene una alta probabilidad de registrar ese pico, ya que el intervalo de recogida posee un intervalo menor entre las muestras.
 
 ### Amostragem a Cada 5 Minutos: Suavização dos Picos
 
-![image-1748523993137.png](/src/assets/images/p108_image-1748523993137.png)
+![image-1748523993137.png](../../../../../assets/images/p108_image-1748523993137.png)
 
 Por otro lado, cuando el muestreo se realiza cada 5 minutos, el sistema calcula una media del tráfico de datos a lo largo de un período de 300 segundos. Esa media de tiempo mayor inerentemente **suaviza los picos de uso**. Si ocurre un pico de tráfico de corta duración (por ejemplo, 30 segundos) dentro de un intervalo de 5 minutos, su impacto se diluye por la media de los 4 minutos y 30 segundos restantes de tráfico potencialmente más bajo.
 
@@ -45,7 +45,7 @@ En términos técnicos, cada muestra de 5 minutos es una representación agregad
 
 Como ejemplo, el gráfico abajo posee un intervalo de muestreo de 30 minutos. La diferencia del percentil 95 con respecto a los demás muestreos se atenúa considerablemente:
 
-![image-1748525353442.png](/src/assets/images/p108_image-1748525353442.png)
+![image-1748525353442.png](../../../../../assets/images/p108_image-1748525353442.png)
 
 ## Conclusão
 

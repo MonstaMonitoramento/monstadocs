@@ -28,7 +28,7 @@ Una guía paso a paso para restablecer la contraseña de cualquier usuario (incl
     El final de la línea modificada debería parecerse a: `... ro quiet splash rw init=/bin/bash`
 4. Pulse `Ctrl+X` para iniciar el sistema con estos nuevos parámetros. El sistema arrancará directamente en un *shell* de root (`#`).
     
-    ![image-1764957644158.png](/src/assets/images/p136_image-1764957644158.png)
+    ![image-1764957644158.png](../../../../../assets/images/p136_image-1764957644158.png)
 
 ---
 

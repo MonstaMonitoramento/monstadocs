@@ -20,7 +20,7 @@ After automatic discovery, you will have the opportunity to **select the created
 #### How to Add an Automatic Monitor Rule:
 
 1. Click on the device for which you want to create the automatic monitor rule;
-2. Click the button![image-1746723454780.png](/src/assets/images/p99_image-1746723454780.png)<br />The following screen will be displayed:<br />![image-1746723532817.png](/src/assets/images/p99_image-1746723532817.png)
+2. Click the button![image-1746723454780.png](../../../../../assets/images/p99_image-1746723454780.png)<br />The following screen will be displayed:<br />![image-1746723532817.png](../../../../../assets/images/p99_image-1746723532817.png)
 3. Click "Add";
 4. Customize the rule according to your needs with the parameters below:  
     
@@ -33,6 +33,6 @@ After automatic discovery, you will have the opportunity to **select the created
 
 **Example**:
 
-![image-1746724019551.png](/src/assets/images/p99_image-1746724019551.png)
+![image-1746724019551.png](../../../../../assets/images/p99_image-1746724019551.png)
 
 In the image above, the created rule will add monitors that contain the word "vlan" in their name. Every 30 minutes Monsta will scan to check if there are new instances and will add them to monitoring. If an automatic monitor enters a failure state, and if within 7 days it does not resume collections, it will be removed from monitoring.

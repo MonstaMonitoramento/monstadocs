@@ -12,10 +12,10 @@ Monsta dispone de un servicio en la nube<sup>1</sup> que realiza, automáticamen
 <sup>2</sup> El historial de los monitores no está incluido en esta copia de seguridad.
 :::
 
-![image-1739988536042.png](/src/assets/images/p64_image-1739988536042.png)
+![image-1739988536042.png](../../../../../assets/images/p64_image-1739988536042.png)
 
 | Opção / Botão | Descrição |
 | :---: | :--- |
-| ![image-1739988569479.png](/src/assets/images/p64_image-1739988569479.png) | Lista de las copias de seguridad disponibles para restaurar. |
-| ![image-1739988610183.png](/src/assets/images/p64_image-1739988610183.png) | Restaura la copia de seguridad seleccionada. Este procedimiento sobrescribirá todas las configuraciones actuales con la copia seleccionada. |
-| ![image-1739988634554.png](/src/assets/images/p64_image-1739988634554.png) | Realiza una copia de seguridad con la fecha y hora actuales. |
+| ![image-1739988569479.png](../../../../../assets/images/p64_image-1739988569479.png) | Lista de las copias de seguridad disponibles para restaurar. |
+| ![image-1739988610183.png](../../../../../assets/images/p64_image-1739988610183.png) | Restaura la copia de seguridad seleccionada. Este procedimiento sobrescribirá todas las configuraciones actuales con la copia seleccionada. |
+| ![image-1739988634554.png](../../../../../assets/images/p64_image-1739988634554.png) | Realiza una copia de seguridad con la fecha y hora actuales. |

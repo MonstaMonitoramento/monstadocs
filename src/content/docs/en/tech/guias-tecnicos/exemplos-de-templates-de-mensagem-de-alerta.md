@@ -129,11 +129,11 @@ Horário: 01/01/2026 - 12:33:46
 
 Example of the alert group configuration so that the recipient receives only the critical monitor alert:
 
-![image-1773337531514.png](/src/assets/images/p173_image-1773337531514.png)
+![image-1773337531514.png](../../../../../assets/images/p173_image-1773337531514.png)
 
 Configuration of the Toner monitor used in the example:
 
-![image-1773337636144.png](/src/assets/images/p173_image-1773337636144.png)
+![image-1773337636144.png](../../../../../assets/images/p173_image-1773337636144.png)
 
 See another example, for the case of having more than one Monsta server and wanting to identify which one the alert came from.
 

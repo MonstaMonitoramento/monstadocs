@@ -31,13 +31,13 @@ This occurs due to the inherent ability of more frequent sampling to capture fas
 
 ### Sampling Every 1 Minute: More Accurate Capture of Spikes
 
-![image-1748523913039.png](/src/assets/images/p108_image-1748523913039.png)
+![image-1748523913039.png](../../../../../assets/images/p108_image-1748523913039.png)
 
 When data are sampled every 1 minute, the monitoring system records traffic in very short intervals. This allows it to **capture transient and short-duration usage spikes with greater accuracy**. Imagine a scenario where there is a sudden increase in data traffic lasting 30 seconds and then it returns to normal levels. A 1-minute sampling has a high probability of registering that spike, since the collection interval is small between samples.
 
 ### Sampling Every 5 Minutes: Smoothing of Spikes
 
-![image-1748523993137.png](/src/assets/images/p108_image-1748523993137.png)
+![image-1748523993137.png](../../../../../assets/images/p108_image-1748523993137.png)
 
 On the other hand, when sampling is performed every 5 minutes, the system calculates an average of the data traffic over a 300-second period. This longer averaging period inherently **smooths out usage spikes**. If a short-duration traffic spike (for example, 30 seconds) occurs within a 5-minute interval, its impact is diluted by the average over the remaining 4 minutes and 30 seconds of potentially lower traffic.
 
@@ -45,7 +45,7 @@ Technically speaking, each 5-minute sample is an aggregated representation of tr
 
 As an example, the chart below uses a sampling interval of every 30 minutes. The difference in the 95th percentile compared to the other samplings is considerably attenuated:
 
-![image-1748525353442.png](/src/assets/images/p108_image-1748525353442.png)
+![image-1748525353442.png](../../../../../assets/images/p108_image-1748525353442.png)
 
 ## Conclusion
 

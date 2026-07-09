@@ -28,7 +28,7 @@ A step-by-step guide to reset the password of any user (including **root**) on *
     The end of the modified line should look like: `... ro quiet splash rw init=/bin/bash`
 4. Press `Ctrl+X` to boot the system with these new parameters. The system will boot directly to a root shell (`#`).
     
-    ![image-1764957644158.png](/src/assets/images/p136_image-1764957644158.png)
+    ![image-1764957644158.png](../../../../../assets/images/p136_image-1764957644158.png)
 
 ---
 

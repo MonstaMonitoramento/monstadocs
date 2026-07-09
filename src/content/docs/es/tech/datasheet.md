@@ -17,7 +17,7 @@ Monsta es una solución completa y intuitiva para el monitoreo de redes, diseña
 - **Desarrollo 100% propio**: Solución 100% desarrollada por Monsta Tecnología, fruto de nuestra experiencia y dedicación para ofrecer el mejor software de monitoreo de redes del mercado.
 - **Copias de seguridad automáticas**: Monsta realiza una copia de seguridad en la nube, automáticamente, de todas sus configuraciones.
 
-![image-1740051151463.png](/src/assets/images/p25_image-1740051151463.png)
+![image-1740051151463.png](../../../../assets/images/p25_image-1740051151463.png)
 
 ## ¿Para qué sirve Monsta?
 
@@ -30,10 +30,10 @@ Sugerido para monitorizar 500 dispositivos y 5.000 monitores.
 
 | Item | Requisito mínimo |
 | :---: | :--- |
-| ![image-1645452261754.png](/src/assets/images/p25_image-1645452261754.png) | **Espacio en disco**<br />40GB libres para /var (configuraciones, base de datos y registros)<sup>1</sup> <br />300MB libres para /opt/monsta (programas y bibliotecas) |
-| ![image-1645452312898.png](/src/assets/images/p25_image-1645452312898.png) | **Memoria RAM**<br />1GB de memoria RAM |
-| ![image-1645452455434.png](/src/assets/images/p25_image-1645452455434.png) | **Sistema Operativo**<br />Linux 64 bits<br />Sistema operativo recomendado: Fedora Server 40 |
-| ![image-1645452542916.png](/src/assets/images/p25_image-1645452542916.png) | **Procesador**<br />Núcleos: 2<br />Velocidad: 1.8GHz |
+| ![image-1645452261754.png](../../../../assets/images/p25_image-1645452261754.png) | **Espacio en disco**<br />40GB libres para /var (configuraciones, base de datos y registros)<sup>1</sup> <br />300MB libres para /opt/monsta (programas y bibliotecas) |
+| ![image-1645452312898.png](../../../../assets/images/p25_image-1645452312898.png) | **Memoria RAM**<br />1GB de memoria RAM |
+| ![image-1645452455434.png](../../../../assets/images/p25_image-1645452455434.png) | **Sistema Operativo**<br />Linux 64 bits<br />Sistema operativo recomendado: Fedora Server 40 |
+| ![image-1645452542916.png](../../../../assets/images/p25_image-1645452542916.png) | **Procesador**<br />Núcleos: 2<br />Velocidad: 1.8GHz |
 
 :::note
 <sup>1</sup> El tamaño de la partición depende de la cantidad de información que se almacenará. Los datos de monitoreo se comprimen antes de guardarse en disco.
@@ -73,7 +73,7 @@ Sugerido para monitorizar 500 dispositivos y 5.000 monitores.
 
 ## Arquitectura de software
 
-![image-1645464317340.png](/src/assets/images/p25_image-1645464317340.png)
+![image-1645464317340.png](../../../../assets/images/p25_image-1645464317340.png)
 
 ## Prueba antes de comprar
 

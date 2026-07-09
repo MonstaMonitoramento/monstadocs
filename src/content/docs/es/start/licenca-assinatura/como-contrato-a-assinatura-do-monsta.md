@@ -13,6 +13,6 @@ Si estás utilizando la versión Trial de Monsta, basta con hacer clic en el bot
 
 - Acesse nosso site [https://www.monsta.com.br](https://www.monsta.com.br)clique em "Login" no canto superior direito e entre com seu usuário e senha;
 - Na tela que aparecer, na aba licenças, selecione seu trial e clique em assinar;  
-    ![image-1746713245035.png](/src/assets/images/p96_Grcimage-1746713245035.png)
+    ![image-1746713245035.png](../../../../../assets/images/p96_Grcimage-1746713245035.png)
 - Você será redirecionado para a área de pagamento. Selecione seu plano e a forma de cobrança;
 - Quando o pagamento for efetuado, seu Trial se tornará automaticamente uma versão licenciada.

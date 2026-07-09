@@ -16,7 +16,7 @@ Cuando el número de conexiones activas alcanza el límite máximo configurado, 
     - `kernel: nf_conntrack: table full, dropping packet`
     - `nf_conntrack: table full`
 
-![Captura de pantalla 2025-11-14 161942.png](/src/assets/images/p123_captura-de-tela-2025-11-14-161942.png)
+![Captura de pantalla 2025-11-14 161942.png](../../../../../assets/images/p123_captura-de-tela-2025-11-14-161942.png)
 
 Este problema influye en el monitoreo de Monsta, causando fallos de recopilación en monitores de forma aleatoria, ya que Monsta envía la solicitud y no recibe una respuesta.
 

@@ -8,7 +8,7 @@ This article explains the proper procedure to monitor the status of a specific U
 
 It's a common mistake to try to add the full URL path (ex: `http://192.168.0.200:8080/sistema`) in the Device Address field on the device screen.
 
-![image-1764180428270.png](/src/assets/images/p129_image-1764180428270.png)
+![image-1764180428270.png](../../../../../assets/images/p129_image-1764180428270.png)
 
 The Device Address field accepts only the IP or *hostname* (ex: `192.168.10.16`, `www.foo.com`). It is used to identify the device and does not check URL paths or ports.
 
@@ -20,17 +20,17 @@ To monitor whether a specific path on a URL is responding correctly, you should 
 
 - Edit the device.
 - Add the "Services - HTTP" template to the device.  
-    ![image-1764180633849.png](/src/assets/images/p129_image-1764180633849.png)
+    ![image-1764180633849.png](../../../../../assets/images/p129_image-1764180633849.png)
 
 ### 2. Add and Configure the "Check URL" Monitor
 
 The "Services - HTTP" template contains several monitors, including "Check URL", which will be used.
 
 - Click the option to add a new monitor  
-    ![image-1764180781279.png](/src/assets/images/p129_image-1764180781279.png)
+    ![image-1764180781279.png](../../../../../assets/images/p129_image-1764180781279.png)
 - Select the "Check URL" monitor and click the pencil icon to edit  
-    ![image-1764180854853.png](/src/assets/images/p129_image-1764180854853.png)
-- Click Advanced and add the URL you want to monitor (ex: `http://192.168.0.200:8080/sistema`) ![image-1764180956419.png](/src/assets/images/p129_image-1764180956419.png)
+    ![image-1764180854853.png](../../../../../assets/images/p129_image-1764180854853.png)
+- Click Advanced and add the URL you want to monitor (ex: `http://192.168.0.200:8080/sistema`) ![image-1764180956419.png](../../../../../assets/images/p129_image-1764180956419.png)
 - Save the changes and create the monitor
 
 

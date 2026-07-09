@@ -43,7 +43,7 @@ Para restaurar una copia de seguridad desde la nube, siga los siguientes pasos:
 3. Haga clic en la opción “Copia de seguridad en la nube”;
 4. Seleccione la fecha de la copia de seguridad que desea restaurar;
 5. Haga clic en el botón “Restaurar”.  
-    ![image-1741969806125.png](/src/assets/images/p26_image-1741969806125.png)
+    ![image-1741969806125.png](../../../../../assets/images/p26_image-1741969806125.png)
 
 En unos minutos, Monsta se restaurará con las configuraciones de la copia de seguridad seleccionada y solicitará el inicio de sesión nuevamente. Utilice los usuarios y contraseñas que estaban registrados en esa copia de seguridad para iniciar sesión.
 

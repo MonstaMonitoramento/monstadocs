@@ -4,7 +4,7 @@ sidebar:
   order: 10
 ---
 
-![image-1739991628924.png](/src/assets/images/p77_image-1739991628924.png)
+![image-1739991628924.png](../../../../../assets/images/p77_image-1739991628924.png)
 
 
 La pantalla de parámetros de configuración de Monsta le permite personalizar el software según sus preferencias y necesidades, definiendo tiempos de espera, imágenes y rutas importantes para el funcionamiento del programa.

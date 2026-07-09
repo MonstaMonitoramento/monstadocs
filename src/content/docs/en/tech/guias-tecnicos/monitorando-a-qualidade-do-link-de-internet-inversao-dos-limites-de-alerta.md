@@ -15,7 +15,7 @@ To ensure you receive alerts when the speed falls below the minimum acceptable, 
 - Click on the traffic monitor;
 - Click the "Edit" button;
 - Click the "Invert Limits" button  
-    ![image-1765802497808.png](/src/assets/images/p144_image-1765802497808.png)
+    ![image-1765802497808.png](../../../../../assets/images/p144_image-1765802497808.png)
 - Adjust the percentage bars to choose the thresholds at which you want to be alerted.
 
 In the example image above, the monitor is set to alert for a 1G link in the following situations:

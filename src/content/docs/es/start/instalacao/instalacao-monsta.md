@@ -11,10 +11,10 @@ Esta es la configuración mínima para la instalación de Monsta:
 
 | Item                                                             | Requisito Mínimo                                                                                                                                 |
 | ---------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
-| ![HD](/src/assets/images/p25_image-1645452261754.png)  | **Espacio en disco**<br />40GB libres para /var (configuraciones, base de datos y registros)<br />300MB libres para /opt/monsta (programas y bibliotecas) |
-| ![RAM](/src/assets/images/p25_image-1645452312898.png) | **Memoria RAM**<br />2GB de memoria RAM                                                                                                          |
-| ![SO](/src/assets/images/p25_image-1645452455434.png)  | **Sistema operativo**<br />Linux 64bits<br />Sistema operativo Linux recomendado: Fedora Server                                                 |
-| ![CPU](/src/assets/images/p25_image-1645452542916.png) | **Procesador**<br />Núcleos: 2<br />Velocidad: 1.8GHz                                                                                            |
+| ![HD](../../../../../assets/images/p25_image-1645452261754.png)  | **Espacio en disco**<br />40GB libres para /var (configuraciones, base de datos y registros)<br />300MB libres para /opt/monsta (programas y bibliotecas) |
+| ![RAM](../../../../../assets/images/p25_image-1645452312898.png) | **Memoria RAM**<br />2GB de memoria RAM                                                                                                          |
+| ![SO](../../../../../assets/images/p25_image-1645452455434.png)  | **Sistema operativo**<br />Linux 64bits<br />Sistema operativo Linux recomendado: Fedora Server                                                 |
+| ![CPU](../../../../../assets/images/p25_image-1645452542916.png) | **Procesador**<br />Núcleos: 2<br />Velocidad: 1.8GHz                                                                                            |
 
 ## Descarga del archivo
 
@@ -55,31 +55,31 @@ A partir de ahora Monsta está instalado en su servidor y se puede acceder a él
 
 Abra un navegador y acceda:
 
-![image-1645528439997.png](/src/assets/images/p83_image-1645528439997.png)
+![image-1645528439997.png](../../../../../assets/images/p83_image-1645528439997.png)
 
 Puede optar por autenticarse utilizando una credencial existente a través del botón **"Iniciar sesión con mi cuenta"** o iniciar el flujo de nuevo usuario haciendo clic en **"Crear cuenta nueva"**.
 
-![](/src/assets/images/20260630-105252.png)
+![](../../../../../assets/images/20260630-105252.png)
 
 Rellene los campos para crear su cuenta en la nube y avance haciendo clic en "Siguiente":
 
-![](/src/assets/images/Tela_Novo_Usuario.png)
+![](../../../../../assets/images/Tela_Novo_Usuario.png)
 
 A continuación recibirá un correo electrónico que contiene un código para validar su cuenta. Introduzca dicho código en la pantalla siguiente y haga clic en Confirmar:
 
-![](/src/assets/images/20260630-111438.png)
+![](../../../../../assets/images/20260630-111438.png)
 
 Tras este procedimiento, se le dirigirá a la pantalla de licencias. Al ser una cuenta nueva, no se mostrará ninguna licencia y podrá seleccionar si desea suscribir una licencia o activar la versión Trial. Haga clic en el botón "Activar Trial" para habilitar los 30 días de prueba de Monsta en su empresa:
 
-![](/src/assets/images/20260630-111706.png)
+![](../../../../../assets/images/20260630-111706.png)
 
 Será dirigido a la pantalla para establecer una contraseña para el usuario "admin" de Monsta. Escriba su contraseña y haga clic en el botón "Confirmar":
 
-![image-1741981958907.png](/src/assets/images/p83_image-1741981958907.png)
+![image-1741981958907.png](../../../../../assets/images/p83_image-1741981958907.png)
 
 Ahora será redirigido a la pantalla principal de Monsta:
 
-![image-1741982076022.png](/src/assets/images/p83_image-1741982076022.png)
+![image-1741982076022.png](../../../../../assets/images/p83_image-1741982076022.png)
 
 Desde esta pantalla podrá crear y administrar los dispositivos que serán monitorizados.
 

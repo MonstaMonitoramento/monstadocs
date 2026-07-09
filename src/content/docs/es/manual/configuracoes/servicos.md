@@ -4,7 +4,7 @@ sidebar:
   order: 12
 ---
 
-![image-1756129281788.png](/src/assets/images/p115_image-1756129281788.png)
+![image-1756129281788.png](../../../../../assets/images/p115_image-1756129281788.png)
 
 La pantalla **Gestionar Servicios** ofrece una visión general del estado de los servicios esenciales para el funcionamiento de Monsta. Le permite supervisar y gestionar cada servicio individualmente, garantizando que el sistema opere sin interrupciones.
 

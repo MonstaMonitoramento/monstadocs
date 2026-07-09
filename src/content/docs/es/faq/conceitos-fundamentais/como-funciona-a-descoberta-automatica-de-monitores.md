@@ -7,7 +7,7 @@ El descubrimiento automático de monitores en Monsta es una función diseñada p
 **¿Cómo crear reglas de monitores automáticos?**
 
 - Haga clic en el dispositivo en el que desea crear la regla;
-- En la pestaña inferior, haga clic en el icono: ![image-1746721039162.png](/src/assets/images/p98_image-1746721039162.png)
+- En la pestaña inferior, haga clic en el icono: ![image-1746721039162.png](../../../../../assets/images/p98_image-1746721039162.png)
 - En la ventana que aparezca, haga clic para añadir una nueva regla;
 - Seleccione el monitor que desea que se cree de forma automática.
 - Puede definir parámetros para cada regla. Para más información, consulte [Monitores Automáticos](/es/manual/dispositivos/monitores-automaticos).

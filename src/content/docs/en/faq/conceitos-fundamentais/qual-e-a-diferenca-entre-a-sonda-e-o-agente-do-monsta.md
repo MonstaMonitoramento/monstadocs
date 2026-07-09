@@ -30,7 +30,7 @@ The main difference between the Probe and the Agent is their purpose:
 
 The Probe is a simpler tool focused on collecting metrics from Windows machines (CPU, RAM, disk, network) and responds when the Monsta server queries it. The Agent is a more robust, cross-platform solution, ideal for expanding monitoring to remote networks — it initiates communication with the server itself, removing the need for VPN, port forwarding, or a fixed IP.
 
-![image-1773943312944.png](/src/assets/images/p174_image-1773943312944.png)
+![image-1773943312944.png](../../../../../assets/images/p174_image-1773943312944.png)
 
 ## More information
 

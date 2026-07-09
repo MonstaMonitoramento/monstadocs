@@ -31,7 +31,7 @@ The root password can be reset using the **GRUB** (Grand Unified Bootloader) men
     
     > `linux /boot/vmlinuz-5.10.0-23-amd64 root=UUID=... rw quiet init=/bin/bash`
 
-![image-1764956789240.png](/src/assets/images/p135_image-1764956789240.png)
+![image-1764956789240.png](../../../../../assets/images/p135_image-1764956789240.png)
 
 ### 3. Boot the System and Change the Password
 

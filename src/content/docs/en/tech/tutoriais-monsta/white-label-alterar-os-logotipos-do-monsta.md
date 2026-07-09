@@ -17,7 +17,7 @@ The Monsta White Label feature allows you to **customize the platform with your 
 2. In the **"Search"** field, filter the content by **"Logo"**;
 3. Click the **"Unlock"** button;  
 
-    ![image-1773339320532.png](/src/assets/images/p44_image-1773339320532.png)
+    ![image-1773339320532.png](../../../../../assets/images/p44_image-1773339320532.png)
 4. Click the **"Edit"** button for the image you want to change, then click **"Select..."**;
 5. Upload the image with the new logo;
 6. Click the **"Confirm"** button to save the change.

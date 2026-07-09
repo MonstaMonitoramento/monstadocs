@@ -4,7 +4,7 @@ sidebar:
   order: 9
 ---
 
-![image-1740053130226.png](/src/assets/images/p19_image-1740053130226.png)
+![image-1740053130226.png](../../../../../assets/images/p19_image-1740053130226.png)
 
 Este tutorial explica cómo aumentar una partición configurada sobre LVM usando un disco nuevo. Antes de continuar, agregue un nuevo disco virtual a su VM o un disco físico nuevo a un servidor no virtualizado.
 
@@ -26,7 +26,7 @@ lsblk
 
 Este comando listará las particiones en los discos físicos disponibles para Linux. El resultado del comando será algo como:
 
-![image-1719319256777.png](/src/assets/images/p19_image-1719319256777.png)
+![image-1719319256777.png](../../../../../assets/images/p19_image-1719319256777.png)
 
 En este ejemplo, el disco físico /dev/sdb con 127GiB es el disco adicional y será usado para aumentar el volumen LVM.
 
@@ -36,7 +36,7 @@ Para usar toda la partición para crear un volumen LVM, use el siguiente comando
 (echo n; echo p; echo 1; echo; echo; echo t; echo 8e; echo w) | fdisk /dev/sdb
 ```
 
-![image-1719319583211.png](/src/assets/images/p19_image-1719319583211.png)
+![image-1719319583211.png](../../../../../assets/images/p19_image-1719319583211.png)
 
 Para verificar si el nuevo disco se inicializó correctamente, escriba de nuevo el comando:
 
@@ -46,7 +46,7 @@ fdisk -l /dev/sdb
 
 El disco /dev/sdb debe mostrarse como una partición del tipo LVM:
 
-![image-1719319740087.png](/src/assets/images/p19_image-1719319740087.png)
+![image-1719319740087.png](../../../../../assets/images/p19_image-1719319740087.png)
 
 ## Aumentar el espacio en el volumen lógico
 
@@ -64,7 +64,7 @@ vgdisplay
 
 La salida deberá ser como en el siguiente ejemplo:
 
-![image-1719317745124.png](/src/assets/images/p19_image-1719317745124.png)
+![image-1719317745124.png](../../../../../assets/images/p19_image-1719317745124.png)
 
 En nuestro ejemplo se aumentará el volumen `logical`. Para hacerlo, ejecute el comando:
 
@@ -78,7 +78,7 @@ Ejecute de nuevo el siguiente comando para verificar si el tamaño del grupo de 
 vgdisplay
 ```
 
-![image-1719317853910.png](/src/assets/images/p19_image-1719317853910.png)
+![image-1719317853910.png](../../../../../assets/images/p19_image-1719317853910.png)
 
 Ahora es necesario aumentar el volumen lógico. Para listar los volúmenes existentes, ejecute el siguiente comando:
 
@@ -88,7 +88,7 @@ lvdisplay
 
 Identifique el volumen de la partición `/var`, como se muestra en la imagen siguiente:
 
-![image-1719317916295.png](/src/assets/images/p19_image-1719317916295.png)
+![image-1719317916295.png](../../../../../assets/images/p19_image-1719317916295.png)
 
 Para aumentar el tamaño del volumen /dev/logical/var, ejecute los siguientes comandos:
 
@@ -113,4 +113,4 @@ df -h
 
 En nuestro ejemplo, la partición `/var` deberá tener 591GB de tamaño.
 
-![image-1719318344313.png](/src/assets/images/p19_image-1719318344313.png)
+![image-1719318344313.png](../../../../../assets/images/p19_image-1719318344313.png)

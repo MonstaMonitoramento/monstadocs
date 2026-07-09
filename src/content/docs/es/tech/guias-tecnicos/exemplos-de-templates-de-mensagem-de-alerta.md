@@ -129,11 +129,11 @@ Horário: 01/01/2026 - 12:33:46
 
 Ejemplo de la configuración del grupo de alertas, para que el destinatario reciba solo la alerta de crítico de monitores:
 
-![image-1773337531514.png](/src/assets/images/p173_image-1773337531514.png)
+![image-1773337531514.png](../../../../../assets/images/p173_image-1773337531514.png)
 
 Configuración del monitor Toner, usado en el ejemplo:
 
-![image-1773337636144.png](/src/assets/images/p173_image-1773337636144.png)
+![image-1773337636144.png](../../../../../assets/images/p173_image-1773337636144.png)
 
 Vea otro ejemplo, para el caso de tener más de un servidor Monsta y desear identificar de cuál de ellos provino la alerta.
 

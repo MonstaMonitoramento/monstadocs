@@ -4,7 +4,7 @@ sidebar:
   order: 10
 ---
 
-![image-1739991628924.png](/src/assets/images/p77_image-1739991628924.png)
+![image-1739991628924.png](../../../../../assets/images/p77_image-1739991628924.png)
 
 
 The Monsta configuration parameters screen lets you customize the software according to your preferences and needs by setting timeouts, images, and important paths required for the program to function.

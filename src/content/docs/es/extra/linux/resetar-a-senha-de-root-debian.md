@@ -31,7 +31,7 @@ La contraseña de root puede restablecerse usando el menú de **GRUB** (Grand Un
     
     > `linux /boot/vmlinuz-5.10.0-23-amd64 root=UUID=... rw quiet init=/bin/bash`
 
-![image-1764956789240.png](/src/assets/images/p135_image-1764956789240.png)
+![image-1764956789240.png](../../../../../assets/images/p135_image-1764956789240.png)
 
 ### 3. Iniciar el sistema y cambiar la contraseña
 

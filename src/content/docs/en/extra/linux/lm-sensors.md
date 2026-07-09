@@ -2,7 +2,7 @@
 title: "LM Sensors - Linux"
 ---
 
-![image-1740052992811.png](/src/assets/images/p17_image-1740052992811.png)
+![image-1740052992811.png](../../../../../assets/images/p17_image-1740052992811.png)
 
 Tutorial aimed at enabling the LM Sensors package on Linux distributions for monitoring through Monsta.
 
@@ -78,4 +78,4 @@ See our tutorial at [Configuring SNMP on Linux](/en/extra/linux/snmp-linux).
 
 To monitor the sensors in Monsta, during device creation add the “LM Sensors” template as shown in the example below. This way, when adding a monitor in Monsta the monitors related to LM Sensors will also be shown.
 
-![image-1645205747750.png](/src/assets/images/p17_image-1645205747750.png)
+![image-1645205747750.png](../../../../../assets/images/p17_image-1645205747750.png)
