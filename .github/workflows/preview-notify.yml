@@ -1,6 +1,5 @@
 name: Notificação do Preview
 
-# Agora escutamos os "Checks" dos commits quando eles terminam
 on:
   check_run:
     types: [completed]
@@ -8,20 +7,28 @@ on:
 jobs:
   notificar_discord:
     runs-on: ubuntu-latest
-    # A Mágica: Só roda se o aviso vier do aplicativo da Cloudflare E se for na branch preview
-    if: github.event.check_run.app.name == 'Cloudflare Pages' && github.event.check_run.check_suite.head_branch == 'preview'
     
-    steps:
-      - name: Enviar Sucesso para o Discord
-        if: github.event.check_run.conclusion == 'success'
-        run: |          
-          curl -H "Content-Type: application/json" \
-          -d '{"content": "✅ **Preview Atualizado!**\nAs alterações foram compiladas e estão prontas para revisão."}' \
-          ${{ secrets.DISCORD_WEBHOOK_URL }}
+    steps:      
+      - name: 🔍 Debug (Ver o que ativou o gatilho)
+        run: |
+          echo "=== INFORMAÇÕES DO CHECK RUN ==="
+          echo "App Name: ${{ github.event.check_run.app.name }}"
+          echo "App Slug: ${{ github.event.check_run.app.slug }}"
+          echo "Branch: ${{ github.event.check_run.check_suite.head_branch }}"
+          echo "Conclusion: ${{ github.event.check_run.conclusion }}"
+          echo "================================"
 
-      - name: Enviar Falha para o Discord
-        if: github.event.check_run.conclusion == 'failure' || github.event.check_run.conclusion == 'timed_out'
+      - name: Enviar Sucesso para o Discord
+        if: github.event.check_run.app.slug == 'cloudflare-pages' && github.event.check_run.check_suite.head_branch == 'preview' && github.event.check_run.conclusion == 'success'
         run: |
           curl -H "Content-Type: application/json" \
-          -d '{"content": "❌ **Erro no deploy do Preview!**\n"}' \
+          -d '{"content": "✅ **Preview Atualizado!**\nAs alterações foram compiladas e estão prontas para revisão.\n"}' \
+          ${{ secrets.DISCORD_WEBHOOK_URL }}
+
+      # Passo 3: O Envio de Falha
+      - name: Enviar Falha para o Discord
+        if: github.event.check_run.app.slug == 'cloudflare-pages' && github.event.check_run.check_suite.head_branch == 'preview' && (github.event.check_run.conclusion == 'failure' || github.event.check_run.conclusion == 'timed_out')
+        run: |
+          curl -H "Content-Type: application/json" \
+          -d '{"content": "❌ **Erro no deploy do Preview!**\nA Cloudflare não conseguiu compilar o Astro. Verifique se alguma formatação crítica foi quebrada."}' \
           ${{ secrets.DISCORD_WEBHOOK_URL }}
