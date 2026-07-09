@@ -24,13 +24,13 @@ Siga la secuencia a continuación para editar las configuraciones de red:
 
 
 
-![image-1645530757865.png](../../../../../assets/images/p85_image-1645530757865.png)
+![image-1645530757865.png](/src/assets/images/p85_image-1645530757865.png)
 - Seleccione “Editar la conexión”;
 - Pulse “Enter”.
-![image-1718907509891.png](../../../../../assets/images/p85_image-1718907509891.png)
+![image-1718907509891.png](/src/assets/images/p85_image-1718907509891.png)
 - Seleccione su conexión de red;
 - Seleccione “Editar”.
-![image-1718829976173.png](../../../../../assets/images/p85_image-1718829976173.png)
+![image-1718829976173.png](/src/assets/images/p85_image-1718829976173.png)
 Utilice la tecla “TAB” para navegar entre los campos. Si su red dispone de un servidor DHCP habilitado, deje los campos de “CONFIGURACIÓN DE IPVx” en Automático. Si desea una IP fija para su servidor, haga lo siguiente:
 - Seleccione el campo “CONFIGURACIÓN DE IPVx” y pulse “Enter”;- Seleccione el modo “Manual”;
 - Seleccione “Mostrar” y pulse “Enter”;
@@ -38,9 +38,9 @@ Utilice la tecla “TAB” para navegar entre los campos. Si su red dispone de u
 - Al final, seleccione “OK”;
 - Pulse “Enter”.
 - Pulse la tecla “ESC” para volver a la pantalla inicial.
-![image-1645531410027.png](../../../../../assets/images/p85_image-1645531410027.png)
+![image-1645531410027.png](/src/assets/images/p85_image-1645531410027.png)
 - Seleccione “Activar una conexión” y pulse “Enter”.
-![image-1645531449446.png](../../../../../assets/images/p85_image-1645531449446.png)
+![image-1645531449446.png](/src/assets/images/p85_image-1645531449446.png)
 - Seleccione la interfaz de red a la que cambió la IP y pulse “Enter” para desactivarla;
 - A continuación, pulse “Enter” de nuevo para activarla.
 - Pulse “ESC” hasta salir del programa y volver al indicador de comandos.
@@ -49,11 +49,11 @@ Utilice la tecla “TAB” para navegar entre los campos. Si su red dispone de u
 
 Tras configurar la dirección IP del servidor, abra un navegador de internet y acceda a:
 
-![image-1645531726319.png](../../../../../assets/images/p85_image-1645531726319.png)
+![image-1645531726319.png](/src/assets/images/p85_image-1645531726319.png)
 
 o
 
-![image-1645531751491.png](../../../../../assets/images/p85_image-1645531751491.png)  
+![image-1645531751491.png](/src/assets/images/p85_image-1645531751491.png)  
   
 Se mostrará la pantalla de inicio de sesión de Monsta. Para iniciar sesión, utilice sus credenciales.
 

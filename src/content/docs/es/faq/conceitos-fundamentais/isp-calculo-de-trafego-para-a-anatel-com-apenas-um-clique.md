@@ -16,10 +16,10 @@ Con un solo clic, puede generar el informe completo con el total de tráfico de 
 
 1. En el menú Dispositivos, seleccione el dispositivo y haga clic sobre el monitor de tráfico para el que desea realizar el cálculo.
 2. Seleccione el período de la consulta.
-3. Tras generar el gráfico con el consumo del período, haga clic en![image-1756127757486.png](../../../../../assets/images/p114_image-1756127757486.png) situado en la esquina superior derecha del gráfico.
+3. Tras generar el gráfico con el consumo del período, haga clic en![image-1756127757486.png](/src/assets/images/p114_image-1756127757486.png) situado en la esquina superior derecha del gráfico.
 4. Seleccione la opción "Informe de Consumo".
 
-![image-1756128123019.png](../../../../../assets/images/p114_image-1756128123019.png)
+![image-1756128123019.png](/src/assets/images/p114_image-1756128123019.png)
 
 ¡Listo! El sistema realiza el cálculo y entrega el resultado en segundos. La suma total es el valor que debe ser reportado a la ANATEL.
 

@@ -32,7 +32,7 @@ Puedes usar el botón "Probar" para comprobar si la conexión está bien.
 
 4. Haz clic en Guardar para crear el nuevo dispositivo.
 
-![image-1759756111276.png](../../../../../assets/images/p122_image-1759756111276.png)
+![image-1759756111276.png](/src/assets/images/p122_image-1759756111276.png)
 *Pantalla de configuración del SSH*
 
 ## 3. Creación del monitor de usuarios
@@ -41,7 +41,7 @@ Después de crear el dispositivo, haz clic sobre él para que los monitores apar
 
 En la ventana de monitores, busca "PPPoE: Usuarios por servidor PPPoE" y selecciona qué servidor deseas monitorizar la cantidad de usuarios.
 
-![image-1759756922247.png](../../../../../assets/images/p122_image-1759756922247.png)
+![image-1759756922247.png](/src/assets/images/p122_image-1759756922247.png)
 *Pantalla para añadir monitores*
 
 Haz clic en el botón para crear el monitor.
@@ -56,5 +56,5 @@ Al abrir el monitor para visualizar su gráfico, haz clic en el botón "Editar" 
 
 
 
-![image-1759757535089.png](../../../../../assets/images/p122_image-1759757535089.png)
+![image-1759757535089.png](/src/assets/images/p122_image-1759757535089.png)
 *Ejemplo de límites de alerta*

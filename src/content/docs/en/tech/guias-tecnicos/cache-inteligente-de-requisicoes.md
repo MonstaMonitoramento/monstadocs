@@ -4,7 +4,7 @@ title: "Intelligent Request Cache"
 
 Monsta employs a system of **intelligent instance request caching** to optimize network monitoring, significantly reducing bandwidth consumption and computational resource usage both on the monitored device and on the server hosting Monsta. This mechanism operates by identifying and storing data from previously queried requests, avoiding the need for new requests for information that is already known.
 
-![image-1749751994277.png](../../../../../assets/images/p109_image-1749751994277.png)
+![image-1749751994277.png](/src/assets/images/p109_image-1749751994277.png)
 
 ## Technical Operation
 

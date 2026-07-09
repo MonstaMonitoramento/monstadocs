@@ -4,7 +4,7 @@ title: "How to Fix the Login Error in Monsta?"
 
 This article aims to explain how to fix the Monsta login error, since the problem can be caused by different reasons.
 
-![image-1774290685990.png](../../../../../assets/images/p175_image-1774290685990.png)
+![image-1774290685990.png](/src/assets/images/p175_image-1774290685990.png)
 
 ## Probable causes
 

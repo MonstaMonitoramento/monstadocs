@@ -18,9 +18,9 @@ La versión utilizada para este tutorial es Windows 10 Pro.
 
 Hyper-V requiere que el hardware donde está instalado Windows tenga soporte para virtualización para funcionar. Este recurso puede venir desactivado en algunos equipos. Para habilitarlo reinicie el equipo, acceda a su BIOS (en general mediante las teclas F1 o Delete) y active la opción de virtualización del procesador según los ejemplos siguientes:
 
-![image-1645207744580.png](../../../../../assets/images/p20_image-1645207744580.png)
+![image-1645207744580.png](/src/assets/images/p20_image-1645207744580.png)
 
-![image-1645207728181.png](../../../../../assets/images/p20_image-1645207728181.png)
+![image-1645207728181.png](/src/assets/images/p20_image-1645207728181.png)
 
 Guarde los cambios y reinicie el equipo.
 
@@ -34,16 +34,16 @@ appwiz.cpl
 
 Se abrirá la ventana para administrar Programas y características.
 
-![image-1645209739713.png](../../../../../assets/images/p20_image-1645209739713.png)
+![image-1645209739713.png](/src/assets/images/p20_image-1645209739713.png)
 
 - Haga clic en la opción “Activar o desactivar las características de Windows
 
-![image-1645209850340.png](../../../../../assets/images/p20_image-1645209850340.png)
+![image-1645209850340.png](/src/assets/images/p20_image-1645209850340.png)
 
 - Marque la opción “Hyper-V” y todos sus subelementos.
 - Haga clic en el botón Ok.
 
-![image-1645209878625.png](../../../../../assets/images/p20_image-1645209878625.png)
+![image-1645209878625.png](/src/assets/images/p20_image-1645209878625.png)
 
 - Haga clic en el botón “Reiniciar ahora”.
 
@@ -53,7 +53,7 @@ Tras reiniciar Windows, Hyper-V estará disponible.
 
 Cuando se instala Hyper-V, se crea una nueva interfaz de red llamada vEthernet, como se muestra en la imagen siguiente:
 
-![image-1645210125370.png](../../../../../assets/images/p20_image-1645210125370.png)
+![image-1645210125370.png](/src/assets/images/p20_image-1645210125370.png)
 
   
 Para crear una interfaz con acceso externo, ejecute el siguiente programa:
@@ -64,17 +64,17 @@ virtmgmt.msc
 
 Se abrirá el sistema de administración de Hyper-V. Siga los pasos a continuación:
 
-![image-1645210155993.png](../../../../../assets/images/p20_image-1645210155993.png)
+![image-1645210155993.png](/src/assets/images/p20_image-1645210155993.png)
 
 - En el menú Acciones, haga clic en “Administrador de conmutador virtual”.
 
-![image-1645210186805.png](../../../../../assets/images/p20_image-1645210186805.png)
+![image-1645210186805.png](/src/assets/images/p20_image-1645210186805.png)
 
 - Haga clic en la opción “Nuevo conmutador de red virtual”;
 - Seleccione la opción “Externo”;
 - Haga clic en el botón “Crear conmutador virtual”.
 
-![image-1645210218328.png](../../../../../assets/images/p20_image-1645210218328.png)
+![image-1645210218328.png](/src/assets/images/p20_image-1645210218328.png)
 
 - Escriba un nombre para el nuevo conmutador;
 - En “Tipo de conexión” seleccione la opción “Red Externa” y la tarjeta de red para su conmutador;
@@ -82,7 +82,7 @@ Se abrirá el sistema de administración de Hyper-V. Siga los pasos a continuaci
 
 A partir de ahora una nueva interfaz de red estará disponible en su equipo. Si es necesario, configure las direcciones IP para esta nueva interfaz.
 
-![image-1645210258565.png](../../../../../assets/images/p20_image-1645210258565.png)
+![image-1645210258565.png](/src/assets/images/p20_image-1645210258565.png)
 
 ## Instalar Monsta en un servidor Linux
 

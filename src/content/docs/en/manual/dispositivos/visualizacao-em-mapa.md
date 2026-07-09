@@ -14,7 +14,7 @@ This mode offers a simplified and optimized view of the infrastructure.
 - **Customization**: Does not allow moving items or inserting *widgets*, keeping the interface clean and focused on asset status.
 - **Application**: Recommended for visualizing large volumes of devices and large-scale infrastructures that require high loading performance.
 
-![image-1771270820757.png](../../../../../assets/images/p56_image-1771270820757.png)
+![image-1771270820757.png](/src/assets/images/p56_image-1771270820757.png)
 
 ## Dynamic Map
 
@@ -45,19 +45,19 @@ The map allows inserting **Widgets** directly into the viewing area:
 - **Real-time Monitoring**: Add data blocks, performance charts, indicators and more alongside devices.
 - **Dashboard Customization**: Widgets can be resized and positioned strategically to highlight critical metrics of specific assets without needing to navigate to other menus.
 
-![image-1768939041220.png](../../../../../assets/images/p56_image-1768939041220.png)
+![image-1768939041220.png](/src/assets/images/p56_image-1768939041220.png)
 
-![image-1768939090089.png](../../../../../assets/images/p56_image-1768939090089.png) 
+![image-1768939090089.png](/src/assets/images/p56_image-1768939090089.png) 
 **Primary device**: The map has an intelligent filter system that isolates specific branches. When selecting a device via the filter, the interface hides irrelevant devices and displays exclusively the direct lineage of the chosen item.
 
 
-![image-1771271034725.png](../../../../../assets/images/p56_image-1771271034725.png) 
+![image-1771271034725.png](/src/assets/images/p56_image-1771271034725.png) 
 **Map Properties**: Through the **Properties** button, you can customize the topology display to improve readability and visualization:
 - **Elements**: Adjust the size and shape of device icons and texts.
 - **Identification**: Enable or hide the display of images.
 - **Connectivity**: Select different arrow types and link styles to represent network connections.
 
-![image-1739973711187.png](../../../../../assets/images/p56_image-1739973711187.png) 
+![image-1739973711187.png](/src/assets/images/p56_image-1739973711187.png) 
 **Editing**: When activating **Edit** mode, the user gains full control over the network visual interface, allowing:
 - **Spatial Organization**: Reposition devices freely via *drag-and-drop* to reflect the physical or logical topology.
 - **Connection Metrics**: Insert performance indicators directly on the link lines between devices.

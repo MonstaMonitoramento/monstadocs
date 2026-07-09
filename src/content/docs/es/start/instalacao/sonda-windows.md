@@ -37,7 +37,7 @@ Todo el intercambio de información entre el servidor central de Monsta y la Son
 
 |  | Download |
 | ----------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
-| [![Download da Sonda](../../../../../assets/images/p139_image-1660325708746.png)](https://www.monsta.com.br/monsta/download/MonstaProbe.exe) | [https://www.monsta.com.br/monsta/download/MonstaProbe.exe](https://www.monsta.com.br/monsta/download/MonstaProbe.exe) |
+| [![Download da Sonda](/src/assets/images/p139_image-1660325708746.png)](https://www.monsta.com.br/monsta/download/MonstaProbe.exe) | [https://www.monsta.com.br/monsta/download/MonstaProbe.exe](https://www.monsta.com.br/monsta/download/MonstaProbe.exe) |
 
 1. Con sesión iniciada con un usuario administrador, ejecute el instalador "monstaprobe.exe";
 2. Configure los parámetros de puerto y contraseña que se le solicitarán durante la instalación.
@@ -67,10 +67,10 @@ MonstaProbe.exe --agree --port 1234 --passwd senha
 
 Dentro de Monsta, al crear un dispositivo, simplemente configúrelo para utilizar las plantillas de Microsoft.
 
-![image-1741105397485.png](../../../../../assets/images/p68_image-1741105397485.png)
+![image-1741105397485.png](/src/assets/images/p68_image-1741105397485.png)
 
 Y rellene el campo "Usuário WMI" con cualquier información (se descartará en el futuro) y el campo "Senha WMI" con la contraseña indicada durante la instalación de la sonda.
 
-![image-1741105450183.png](../../../../../assets/images/p68_image-1741105450183.png)
+![image-1741105450183.png](/src/assets/images/p68_image-1741105450183.png)
 
 Tras crear el dispositivo ya puede utilizar los monitores disponibles de la plantilla.

@@ -43,7 +43,7 @@ To restore a backup from the cloud, follow these steps:
 3. Click the "Cloud Backup" option;
 4. Select the date of the backup you want to restore;
 5. Click the "Restore" button.  
-    ![image-1741969806125.png](../../../../../assets/images/p26_image-1741969806125.png)
+    ![image-1741969806125.png](/src/assets/images/p26_image-1741969806125.png)
 
 Within a few minutes, Monsta will be restored with the selected backup's settings and will prompt for login again. Use the users and passwords that were registered in that backup to log in.
 

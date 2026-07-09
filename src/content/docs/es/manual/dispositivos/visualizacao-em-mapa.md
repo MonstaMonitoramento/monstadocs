@@ -14,7 +14,7 @@ Este modo ofrece una visualización simplificada y optimizada de la infraestruct
 - **Personalización**: No permite el desplazamiento de elementos ni la inserción de *widgets*, manteniendo la interfaz limpia y centrada en el estado de los activos.
 - **Aplicación**: Recomendado para la visualización de grandes volúmenes de dispositivos e infraestructuras a gran escala que requieren un alto rendimiento de carga.
 
-![image-1771270820757.png](../../../../../assets/images/p56_image-1771270820757.png)
+![image-1771270820757.png](/src/assets/images/p56_image-1771270820757.png)
 
 ## Mapa Dinámico
 
@@ -45,19 +45,19 @@ El mapa permite insertar **Widgets** informativos directamente en el área de vi
 - **Monitorización en Tiempo Real**: Añade bloques de datos, gráficos de rendimiento, indicadores y mucho más junto a los dispositivos.
 - **Personalización del Panel**: Los widgets pueden redimensionarse y posicionarse estratégicamente para destacar métricas críticas de activos específicos sin necesidad de navegar por otros menús.
 
-![image-1768939041220.png](../../../../../assets/images/p56_image-1768939041220.png)
+![image-1768939041220.png](/src/assets/images/p56_image-1768939041220.png)
 
-![image-1768939090089.png](../../../../../assets/images/p56_image-1768939090089.png) 
+![image-1768939090089.png](/src/assets/images/p56_image-1768939090089.png) 
 **Dispositivo principal**: El mapa posee un sistema de filtro inteligente que aísla ramas específicas. Al seleccionar un dispositivo a través del filtro, la interfaz oculta los dispositivos irrelevantes y muestra exclusivamente el linaje directo del elemento elegido.
 
 
-![image-1771271034725.png](../../../../../assets/images/p56_image-1771271034725.png) 
+![image-1771271034725.png](/src/assets/images/p56_image-1771271034725.png) 
 **Propiedades del Mapa**: A través del botón de **Propiedades**, es posible personalizar la visualización de la topología para facilitar su lectura y visualización:
 - **Elementos**: Ajusta el tamaño y la forma de los iconos de los dispositivos y de los textos.
 - **Identificación**: Habilita u oculta la visualización de imágenes.
 - **Conectividad**: Selecciona diferentes tipos de flechas y estilos de enlace para representar las conexiones de red.
 
-![image-1739973711187.png](../../../../../assets/images/p56_image-1739973711187.png) 
+![image-1739973711187.png](/src/assets/images/p56_image-1739973711187.png) 
 **Edición**: Al activar el modo de **Edición**, el usuario obtiene control total sobre la interfaz visual de la red, permitiendo:
 - **Organización Espacial**: Reposicionar dispositivos libremente mediante *drag-and-drop* para reflejar la topología física o lógica.
 - **Métricas de Conexión**: Insertar indicadores de rendimiento directamente en las líneas de enlace entre dispositivos.

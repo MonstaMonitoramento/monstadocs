@@ -15,10 +15,10 @@ Compruebe que la partición "/var" del nuevo servidor dispone del espacio sufici
 
 | Item | Requisito Mínimo |
 | :---: | :--- |
-| ![Espaço em disco](../../../../../assets/images/p25_image-1645452261754.png) | **Espacio en disco**<br />40GB libres para /var (configuraciones, base de datos y logs)<br />300MB libres para /opt/monsta (programas y bibliotecas)<br />Asegúrese de que la nueva instalación dispone de espacio suficiente para efectuar la migración. |
-| ![Memória RAM](../../../../../assets/images/p25_image-1645452312898.png) | **Memoria RAM**<br />2GB de memoria RAM |
-| ![Sistema Operacional](../../../../../assets/images/p25_image-1645452455434.png) | **Sistema Operativo**<br />Linux 64bits<br />Sistema operativo Linux recomendado: Fedora Server 40 (sistemas x86_64) u Ubuntu Server 24. Puede utilizarse la instalación mínima para Monsta. |
-| ![Processador](../../../../../assets/images/p25_image-1645452542916.png) | **Procesador**<br />Núcleos: 2<br />Velocidad: 1.8GHz |
+| ![Espaço em disco](/src/assets/images/p25_image-1645452261754.png) | **Espacio en disco**<br />40GB libres para /var (configuraciones, base de datos y logs)<br />300MB libres para /opt/monsta (programas y bibliotecas)<br />Asegúrese de que la nueva instalación dispone de espacio suficiente para efectuar la migración. |
+| ![Memória RAM](/src/assets/images/p25_image-1645452312898.png) | **Memoria RAM**<br />2GB de memoria RAM |
+| ![Sistema Operacional](/src/assets/images/p25_image-1645452455434.png) | **Sistema Operativo**<br />Linux 64bits<br />Sistema operativo Linux recomendado: Fedora Server 40 (sistemas x86_64) u Ubuntu Server 24. Puede utilizarse la instalación mínima para Monsta. |
+| ![Processador](/src/assets/images/p25_image-1645452542916.png) | **Procesador**<br />Núcleos: 2<br />Velocidad: 1.8GHz |
 
 :::note
 Las configuraciones anteriores permiten, en general, supervisar aproximadamente 500 dispositivos con 10 monitores cada uno o un total de 5.000 monitores.
