@@ -2,6 +2,38 @@
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 import starlightImageZoom from 'starlight-image-zoom';
+import path from 'node:path';
+
+function remarkFixPagesCMSImages() {
+	return function (tree, file) {
+		function walk(node) {
+			if (!node) return;
+
+			// Se encontrar uma imagem e o link começar com /src/assets/images/...
+			if (node.type === 'image' && node.url && node.url.startsWith('/src/assets/images/')) {
+				// Descobre em qual pasta o arquivo .md atual está (ex: pt-br/start)
+				const mdFilePath = file.history ? file.history[0] : file.path;
+
+				if (mdFilePath) {
+					const mdDir = path.dirname(mdFilePath);
+					const projectRoot = process.cwd();
+
+					// Junta o caminho raiz do projeto com o da imagem
+					const imgAbs = path.join(projectRoot, node.url);
+
+					// Calcula matematicamente os "../../../" necessários
+					let relUrl = path.relative(mdDir, imgAbs).replace(/\\/g, '/');
+
+					// Garante que o caminho relativo tenha a formatação correta
+					node.url = relUrl.startsWith('.') ? relUrl : './' + relUrl;
+				}
+			}
+			// Continua varrendo os outros elementos do texto
+			if (node.children) node.children.forEach(walk);
+		}
+		walk(tree);
+	};
+}
 
 // https://astro.build/config
 export default defineConfig({
@@ -216,4 +248,7 @@ export default defineConfig({
 			]
 		}),
 	],
+	markdown: {
+		remarkPlugins: [remarkFixPagesCMSImages],
+	},
 });
