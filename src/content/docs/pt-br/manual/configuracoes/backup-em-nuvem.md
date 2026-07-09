@@ -12,10 +12,10 @@ O Monsta possui um serviço em nuvem<sup>1</sup> que efetua, automaticamente, um
 <sup>2</sup> O histórico dos monitores não é incluso neste backup.
 :::
 
-![image-1739988536042.png](../../../../../assets/images/p64_image-1739988536042.png)
+![image-1739988536042.png](/src/assets/images/p64_image-1739988536042.png)
 
 | Opção / Botão | Descrição |
 | :---: | :--- |
-| ![image-1739988569479.png](../../../../../assets/images/p64_image-1739988569479.png) | Lista dos backups disponíveis para restaurar. |
-| ![image-1739988610183.png](../../../../../assets/images/p64_image-1739988610183.png) | Restaura o backup selecionado. Esse procedimento irá sobrepor todas as configurações atuais pelo backup selecionado. |
-| ![image-1739988634554.png](../../../../../assets/images/p64_image-1739988634554.png) | Efetua um backup com a data de agora. |
+| ![image-1739988569479.png](/src/assets/images/p64_image-1739988569479.png) | Lista dos backups disponíveis para restaurar. |
+| ![image-1739988610183.png](/src/assets/images/p64_image-1739988610183.png) | Restaura o backup selecionado. Esse procedimento irá sobrepor todas as configurações atuais pelo backup selecionado. |
+| ![image-1739988634554.png](/src/assets/images/p64_image-1739988634554.png) | Efetua um backup com a data de agora. |

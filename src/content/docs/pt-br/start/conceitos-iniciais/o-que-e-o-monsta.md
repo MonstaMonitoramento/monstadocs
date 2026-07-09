@@ -20,4 +20,4 @@ O Monsta, desenvolvido pela Monsta Tecnologia, é uma **plataforma de monitorame
 
 ## Exemplo de uma estrutura de rede monitorada pelo Monsta
 
-![image-1773946263726.png](../../../../../assets/images/p92_image-1773946263726.png)
+![image-1773946263726.png](/src/assets/images/p92_image-1773946263726.png)

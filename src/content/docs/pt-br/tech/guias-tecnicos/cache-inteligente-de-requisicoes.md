@@ -4,7 +4,7 @@ title: "Cache Inteligente de Requisições"
 
 O Monsta emprega um sistema de **cache inteligente de requisições de instâncias** para otimizar o monitoramento de rede, reduzindo significativamente o consumo de banda e o uso de recursos computacionais tanto no dispositivo monitorado quanto no servidor onde o Monsta está hospedado. Este mecanismo opera identificando e armazenando dados de requisições previamente consultadas, evitando a necessidade de novas solicitações para informações já conhecidas.
 
-![image-1749751994277.png](../../../../../assets/images/p109_image-1749751994277.png)
+![image-1749751994277.png](/src/assets/images/p109_image-1749751994277.png)
 
 ## Funcionamento Técnico
 

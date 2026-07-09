@@ -11,7 +11,7 @@ Esse monitor utiliza uma variável de 32 bits que pode armazenar um valor máxim
 - **Ocorrência de rollover**: Quando essa variável ultrapassa o valor máximo, o contador retorna a zero. Essa característica é conhecida no Monsta como `rollover`.
 - **Problema ocasionado**: Esse "estouro" de contador pode levar a gráficos de monitoramento como quedas abruptas, reportar velocidades incorretas ou menores que o total trafegado na interface de rede monitorada, dificultando a análise e o cálculo correto do tráfego. Com isso, o valor real do tráfego é perdido, pois dependendo da frequência com que a coleta do monitor ocorre, um rollover pode ocorrer sem ser detectado.
 
-![image-1756919458783.png](../../../../../assets/images/p120_image-1756919458783.png)  
+![image-1756919458783.png](/src/assets/images/p120_image-1756919458783.png)  
 Exemplo de um monitor de tráfego 32 bits em um link de 1gbps com frequência de 5 minutos.
 
 ## Monitor de Tráfego (64 bits)
@@ -21,7 +21,7 @@ Esse monitor pode armazenar um valor máximo de 18 Exabytes. Esse número é tã
 - **Maior precisão e confiabilidade**: Com o contador de 64 bits, você garante que a contagem do tráfego seja contínua e precisa, sem interrupções.
 - **Análise de longo prazo**: Permite uma análise de tráfego mais precisa e confiável em períodos longos, já que o valor acumulado não é perdido.
 
-![image-1756919778342.png](../../../../../assets/images/p120_image-1756919778342.png)
+![image-1756919778342.png](/src/assets/images/p120_image-1756919778342.png)
 
 O mesmo tráfego em um monitor de 64 bits.
 

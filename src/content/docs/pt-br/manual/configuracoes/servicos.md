@@ -4,7 +4,7 @@ sidebar:
   order: 12
 ---
 
-![image-1756129281788.png](../../../../../assets/images/p115_image-1756129281788.png)
+![image-1756129281788.png](/src/assets/images/p115_image-1756129281788.png)
 
 A tela **Gerenciar Serviços** oferece uma visão geral do estado dos serviços essenciais para o funcionamento do Monsta. Ela permite que você monitore e gerencie cada serviço individualmente, garantindo que o sistema opere sem interrupções.
 

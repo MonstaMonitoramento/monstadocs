@@ -28,7 +28,7 @@ Um passo a passo para para resetar a senha de qualquer usuário (incluindo o **r
     O final da linha modificada deve se parecer com: `... ro quiet splash rw init=/bin/bash`
 4. Pressione `Ctrl+X` para iniciar o sistema com esses novos parâmetros. O sistema fará o boot diretamente para um *shell* de root (`#`).
     
-    ![image-1764957644158.png](../../../../../assets/images/p136_image-1764957644158.png)
+    ![image-1764957644158.png](/src/assets/images/p136_image-1764957644158.png)
 
 ---
 
