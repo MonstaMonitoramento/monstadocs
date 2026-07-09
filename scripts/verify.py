@@ -452,10 +452,10 @@ def processar_wiki():
     print("🚀 Correções locais concluídas.")
     
     # 2. Roda a rotina de tradução automática baseando-se no pt-br consolidado
-    #sincronizar_e_traduzir()
+    sincronizar_e_traduzir()
     
     # 3. Dispara o relatório consolidado para o Discord
-    #enviar_discord()
+    enviar_discord()
 
 if __name__ == '__main__':
     processar_wiki()
