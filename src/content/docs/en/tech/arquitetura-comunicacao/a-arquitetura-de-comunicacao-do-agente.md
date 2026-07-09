@@ -26,7 +26,7 @@ The Monsta Agent offers flexibility in how it communicates with the Monsta Serve
 
 Direct connection is the **default and most efficient** communication method for the Monsta Agent.
 
-![image-1773247027332.png](../../../../../assets/images/p141_image-1773247027332.png)
+![image-1773247027332.png](/src/assets/images/p141_image-1773247027332.png)
 
 #### How It Works
 
@@ -48,7 +48,7 @@ In this mode, the Agent installed on the remote network establishes a secure **p
 
 This option is provided for environments with network restrictions where the Monsta Server does not have communication on port 58580/UDP to the internet.
 
-![image-1773248921644.png](../../../../../assets/images/p141_image-1773248921644.png)
+![image-1773248921644.png](/src/assets/images/p141_image-1773248921644.png)
 
 #### How It Works
 

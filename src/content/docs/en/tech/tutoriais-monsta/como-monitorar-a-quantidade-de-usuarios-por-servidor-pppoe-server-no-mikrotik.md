@@ -32,7 +32,7 @@ You can use the "Test" button to check if the connection is OK.
 
 4. Click Save to create the new device.
 
-![image-1759756111276.png](../../../../../assets/images/p122_image-1759756111276.png)
+![image-1759756111276.png](/src/assets/images/p122_image-1759756111276.png)
 *SSH configuration screen*
 
 ## 3. Creating the User Monitor
@@ -41,7 +41,7 @@ After creating the device, click on it so that the monitors appear at the bottom
 
 In the monitors window, search for "PPPoE: Users per PPPoE server" and select which server you want to monitor the number of users.
 
-![image-1759756922247.png](../../../../../assets/images/p122_image-1759756922247.png)
+![image-1759756922247.png](/src/assets/images/p122_image-1759756922247.png)
 *Screen for adding monitors*
 
 Click the button to create the monitor.
@@ -56,5 +56,5 @@ When opening the monitor to view its graph, click the "Edit" button located at t
 
 
 
-![image-1759757535089.png](../../../../../assets/images/p122_image-1759757535089.png)
+![image-1759757535089.png](/src/assets/images/p122_image-1759757535089.png)
 *Example of alert thresholds*

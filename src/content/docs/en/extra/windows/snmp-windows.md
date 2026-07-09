@@ -16,11 +16,11 @@ control appwiz.cpl
 
 The following screen will be shown:
 
-![image-1645202947535.png](../../../../../assets/images/p12_image-1645202947535.png)
+![image-1645202947535.png](/src/assets/images/p12_image-1645202947535.png)
 
 • Click on “Turn Windows features on or off”;
 
-![image-1645202976501.png](../../../../../assets/images/p12_image-1645202976501.png)  
+![image-1645202976501.png](/src/assets/images/p12_image-1645202976501.png)  
 • Check the item “SNMP Protocol” and click OK;
 
 At the command prompt, type:
@@ -31,13 +31,13 @@ services.msc
 
 The following screen will be shown:
 
-![image-1645203011196.png](../../../../../assets/images/p12_image-1645203011196.png)• Select the item “SNMP Service”;  
+![image-1645203011196.png](/src/assets/images/p12_image-1645203011196.png)• Select the item “SNMP Service”;  
 • Click the “Action” menu and select “Properties”;
 
-![image-1645203056884.png](../../../../../assets/images/p12_image-1645203056884.png)  
+![image-1645203056884.png](/src/assets/images/p12_image-1645203056884.png)  
 • On the “General” tab, set the “Startup type” field to “Automatic”;
 
-![image-1645203078004.png](../../../../../assets/images/p12_image-1645203078004.png)  
+![image-1645203078004.png](/src/assets/images/p12_image-1645203078004.png)  
 • On the “Security” tab click the “Add” button;  
 • In “Community rights” select the option “READ ONLY”;  
 • In “Community Name” type “public”;  

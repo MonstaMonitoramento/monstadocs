@@ -28,13 +28,13 @@ No utilice en esta pantalla las credenciales para acceder a Monsta.
 
 
 
-![image-1766583600758.png](../../../../../assets/images/p145_image-1766583600758.png)
+![image-1766583600758.png](/src/assets/images/p145_image-1766583600758.png)
 
 ### 2. Selección de la licencia existente
 
 - Tras iniciar sesión, el sistema listará todas las claves de licencia vinculadas a su cuenta.
 - Identifique la clave que desea utilizar y haga clic en Seleccionar (es posible utilizar una clave en uso).
-- Confirme la operación.![image-1766583740414.png](../../../../../assets/images/p145_image-1766583740414.png)
+- Confirme la operación.![image-1766583740414.png](/src/assets/images/p145_image-1766583740414.png)
 
 ### 3. Finalización
 

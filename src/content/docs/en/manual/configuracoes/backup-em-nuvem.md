@@ -12,10 +12,10 @@ Monsta provides a cloud service<sup>1</sup> that automatically backs up your con
 <sup>2</sup> The monitor history is not included in this backup.
 :::
 
-![image-1739988536042.png](../../../../../assets/images/p64_image-1739988536042.png)
+![image-1739988536042.png](/src/assets/images/p64_image-1739988536042.png)
 
 | Opção / Botão | Descrição |
 | :---: | :--- |
-| ![image-1739988569479.png](../../../../../assets/images/p64_image-1739988569479.png) | List of available backups to restore. |
-| ![image-1739988610183.png](../../../../../assets/images/p64_image-1739988610183.png) | Restores the selected backup. This procedure will overwrite all current configurations with the selected backup. |
-| ![image-1739988634554.png](../../../../../assets/images/p64_image-1739988634554.png) | Creates a backup with the current date/time. |
+| ![image-1739988569479.png](/src/assets/images/p64_image-1739988569479.png) | List of available backups to restore. |
+| ![image-1739988610183.png](/src/assets/images/p64_image-1739988610183.png) | Restores the selected backup. This procedure will overwrite all current configurations with the selected backup. |
+| ![image-1739988634554.png](/src/assets/images/p64_image-1739988634554.png) | Creates a backup with the current date/time. |

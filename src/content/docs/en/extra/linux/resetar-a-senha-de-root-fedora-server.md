@@ -10,19 +10,19 @@ This tutorial explains how to recover the root password on a Fedora Server.
 
 During the Linux server boot, a boot screen like the one below will appear:
 
-![image-1719319990630.png](../../../../../assets/images/p21_image-1719319990630.png)
+![image-1719319990630.png](/src/assets/images/p21_image-1719319990630.png)
 
 Press the "e" key to open the boot configuration edit mode as shown below:
 
-![image-1719320093869.png](../../../../../assets/images/p21_image-1719320093869.png)
+![image-1719320093869.png](/src/assets/images/p21_image-1719320093869.png)
 
 Find the line that starts with "linux" or "linux16" or "linuxefi" and at the end add "rw init=/bin/bash" as in the example below:
 
-![image-1719320698513.png](../../../../../assets/images/p21_image-1719320698513.png)
+![image-1719320698513.png](/src/assets/images/p21_image-1719320698513.png)
 
 Press CTRL + X to boot Linux with the new settings. The following screen should appear:
 
-![image-1719320807739.png](../../../../../assets/images/p21_image-1719320807739.png)
+![image-1719320807739.png](/src/assets/images/p21_image-1719320807739.png)
 
 Enter the commands below to change the password:
 

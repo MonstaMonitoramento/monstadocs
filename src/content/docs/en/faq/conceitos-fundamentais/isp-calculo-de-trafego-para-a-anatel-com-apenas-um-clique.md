@@ -16,10 +16,10 @@ With just one click, you can generate the complete report with the total Interne
 
 1. In the Devices menu, select the device and click on the traffic monitor for which you want to perform the calculation.
 2. Select the query period.
-3. After generating the chart with the period consumption, click on![image-1756127757486.png](../../../../../assets/images/p114_image-1756127757486.png) located at the top-right corner of the chart.
+3. After generating the chart with the period consumption, click on![image-1756127757486.png](/src/assets/images/p114_image-1756127757486.png) located at the top-right corner of the chart.
 4. Select the "Consumption Report" option.
 
-![image-1756128123019.png](../../../../../assets/images/p114_image-1756128123019.png)
+![image-1756128123019.png](/src/assets/images/p114_image-1756128123019.png)
 
 Done! The system performs the calculation and delivers the result in seconds. The total sum is the value that must be reported to ANATEL.
 

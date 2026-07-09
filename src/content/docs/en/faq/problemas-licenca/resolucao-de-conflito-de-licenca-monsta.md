@@ -28,13 +28,13 @@ Do not use your Monsta access credentials on this screen.
 
 
 
-![image-1766583600758.png](../../../../../assets/images/p145_image-1766583600758.png)
+![image-1766583600758.png](/src/assets/images/p145_image-1766583600758.png)
 
 ### 2. Selecting the Existing License
 
 - After logging in, the system will list all license keys linked to your account.
 - Identify the key you want to use and click Select (it is possible to use a key that is currently in use).
-- Confirm the operation.![image-1766583740414.png](../../../../../assets/images/p145_image-1766583740414.png)
+- Confirm the operation.![image-1766583740414.png](/src/assets/images/p145_image-1766583740414.png)
 
 ### 3. Finalization
 

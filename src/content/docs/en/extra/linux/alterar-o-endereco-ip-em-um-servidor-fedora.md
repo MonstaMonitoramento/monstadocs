@@ -24,13 +24,13 @@ Follow the sequence below to edit the network settings:
 
 
 
-![image-1645530757865.png](../../../../../assets/images/p85_image-1645530757865.png)
+![image-1645530757865.png](/src/assets/images/p85_image-1645530757865.png)
 - Select “Edit a connection”;
 - Press “Enter”.
-![image-1718907509891.png](../../../../../assets/images/p85_image-1718907509891.png)
+![image-1718907509891.png](/src/assets/images/p85_image-1718907509891.png)
 - Select your network connection;
 - Select “Edit”.
-![image-1718829976173.png](../../../../../assets/images/p85_image-1718829976173.png)
+![image-1718829976173.png](/src/assets/images/p85_image-1718829976173.png)
 Use the “TAB” key to navigate between fields. If your network has a DHCP server enabled, leave the “IPVx CONFIGURATION” fields set to Automatic. If you want a fixed IP for your server, do the following:
 - Select the field “IPVx CONFIGURATION” and press “Enter”;- Select the “Manual” mode;
 - Select “Show” and press “Enter”;
@@ -38,9 +38,9 @@ Use the “TAB” key to navigate between fields. If your network has a DHCP ser
 - At the end, select “OK”;
 - Press “Enter”.
 - Press the “ESC” key to return to the main screen.
-![image-1645531410027.png](../../../../../assets/images/p85_image-1645531410027.png)
+![image-1645531410027.png](/src/assets/images/p85_image-1645531410027.png)
 - Select “Activate a connection” and press “Enter”.
-![image-1645531449446.png](../../../../../assets/images/p85_image-1645531449446.png)
+![image-1645531449446.png](/src/assets/images/p85_image-1645531449446.png)
 - Select the network interface whose IP was changed and press “Enter” to deactivate it;
 - Then press “Enter” again to activate it.
 - Press “ESC” until you exit the program and return to the command prompt.
@@ -49,11 +49,11 @@ Use the “TAB” key to navigate between fields. If your network has a DHCP ser
 
 After configuring the server IP address, open a web browser and access:
 
-![image-1645531726319.png](../../../../../assets/images/p85_image-1645531726319.png)
+![image-1645531726319.png](/src/assets/images/p85_image-1645531726319.png)
 
 or
 
-![image-1645531751491.png](../../../../../assets/images/p85_image-1645531751491.png)  
+![image-1645531751491.png](/src/assets/images/p85_image-1645531751491.png)  
   
 The Monsta login screen will be displayed. To log in, use your credentials.
 

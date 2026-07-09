@@ -17,7 +17,7 @@ The **Monsta** is a complete and intuitive network monitoring solution, designed
 - **100% in-house development**: A 100% in-house solution developed by Monsta Technology, the result of our expertise and dedication to providing the best network monitoring software on the market.
 - **Automatic backups**: Monsta automatically backs up all your configurations to the cloud.
 
-![image-1740051151463.png](../../../../assets/images/p25_image-1740051151463.png)
+![image-1740051151463.png](/src/assets/images/p25_image-1740051151463.png)
 
 ## What is Monsta used for?
 
@@ -30,10 +30,10 @@ Suggested to monitor 500 devices and 5,000 monitors.
 
 | Item | Minimum Requirement |
 | :---: | :--- |
-| ![image-1645452261754.png](../../../../assets/images/p25_image-1645452261754.png) | **Disk space**<br />40GB free for /var (configurations, database and logs)<sup>1</sup> <br />300MB free for /opt/monsta (programs and libraries) |
-| ![image-1645452312898.png](../../../../assets/images/p25_image-1645452312898.png) | **RAM**<br />1GB RAM |
-| ![image-1645452455434.png](../../../../assets/images/p25_image-1645452455434.png) | **Operating System**<br />Linux 64-bit<br />Recommended Linux Operating System: Fedora Server 40 |
-| ![image-1645452542916.png](../../../../assets/images/p25_image-1645452542916.png) | **Processor**<br />Cores: 2<br />Clock speed: 1.8GHz |
+| ![image-1645452261754.png](/src/assets/images/p25_image-1645452261754.png) | **Disk space**<br />40GB free for /var (configurations, database and logs)<sup>1</sup> <br />300MB free for /opt/monsta (programs and libraries) |
+| ![image-1645452312898.png](/src/assets/images/p25_image-1645452312898.png) | **RAM**<br />1GB RAM |
+| ![image-1645452455434.png](/src/assets/images/p25_image-1645452455434.png) | **Operating System**<br />Linux 64-bit<br />Recommended Linux Operating System: Fedora Server 40 |
+| ![image-1645452542916.png](/src/assets/images/p25_image-1645452542916.png) | **Processor**<br />Cores: 2<br />Clock speed: 1.8GHz |
 
 :::note
 <sup>1</sup> The partition size depends on the amount of information that will be stored. Monitoring data is compressed before being saved to disk.
@@ -73,7 +73,7 @@ Suggested to monitor 500 devices and 5,000 monitors.
 
 ## Software Architecture
 
-![image-1645464317340.png](../../../../assets/images/p25_image-1645464317340.png)
+![image-1645464317340.png](/src/assets/images/p25_image-1645464317340.png)
 
 ## Try Monsta Before You Buy
 

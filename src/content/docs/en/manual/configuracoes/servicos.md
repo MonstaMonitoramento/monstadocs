@@ -4,7 +4,7 @@ sidebar:
   order: 12
 ---
 
-![image-1756129281788.png](../../../../../assets/images/p115_image-1756129281788.png)
+![image-1756129281788.png](/src/assets/images/p115_image-1756129281788.png)
 
 The **Manage Services** screen provides an overview of the status of the services essential for Monsta's operation. It allows you to monitor and manage each service individually, ensuring the system runs without interruptions.
 

@@ -4,7 +4,7 @@ title: "Caché Inteligente de Solicitudes"
 
 El Monsta emplea un sistema de **caché inteligente de solicitudes de instancias** para optimizar el monitoreo de red, reduciendo significativamente el consumo de ancho de banda y el uso de recursos computacionales tanto en el dispositivo monitorizado como en el servidor donde Monsta está alojado. Este mecanismo funciona identificando y almacenando datos de solicitudes previamente consultadas, evitando la necesidad de nuevas peticiones para información ya conocida.
 
-![image-1749751994277.png](../../../../../assets/images/p109_image-1749751994277.png)
+![image-1749751994277.png](/src/assets/images/p109_image-1749751994277.png)
 
 ## Funcionamiento Técnico
 
