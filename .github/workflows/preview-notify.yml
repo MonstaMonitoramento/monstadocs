@@ -1,26 +1,27 @@
-name: Notificação do Preview (Discord)
+name: Notificação do Preview
 
-# Esse gatilho escuta qualquer atualização de status de deploy no repositório (ex: vindo da Cloudflare)
+# Agora escutamos os "Checks" dos commits quando eles terminam
 on:
-  deployment_status:
+  check_run:
+    types: [completed]
 
 jobs:
   notificar_discord:
     runs-on: ubuntu-latest
-    # Só executa se o aviso vier de um deploy feito na branch preview
-    if: github.event.deployment.ref == 'preview'
+    # A Mágica: Só roda se o aviso vier do aplicativo da Cloudflare E se for na branch preview
+    if: github.event.check_run.app.name == 'Cloudflare Pages' && github.event.check_run.check_suite.head_branch == 'preview'
     
     steps:
       - name: Enviar Sucesso para o Discord
-        if: github.event.deployment_status.state == 'success'
-        run: |
+        if: github.event.check_run.conclusion == 'success'
+        run: |          
           curl -H "Content-Type: application/json" \
-          -d '{"content": "✅ **Preview Atualizado!**\nAs alterações do PagesCMS foram compiladas e estão prontas para revisão.\n🔗 **Acesso:** '${{ github.event.deployment_status.target_url }}'"}' \
+          -d '{"content": "✅ **Preview Atualizado!**\nAs alterações foram compiladas e estão prontas para revisão."}' \
           ${{ secrets.DISCORD_WEBHOOK_URL }}
 
       - name: Enviar Falha para o Discord
-        if: github.event.deployment_status.state == 'failure' || github.event.deployment_status.state == 'error'
+        if: github.event.check_run.conclusion == 'failure' || github.event.check_run.conclusion == 'timed_out'
         run: |
           curl -H "Content-Type: application/json" \
-          -d '{"content": "❌ **Erro no deploy do Preview!**\nA Cloudflare não conseguiu compilar o Astro. Verifique se alguma formatação crítica foi quebrada."}' \
+          -d '{"content": "❌ **Erro no deploy do Preview!**\n"}' \
           ${{ secrets.DISCORD_WEBHOOK_URL }}
