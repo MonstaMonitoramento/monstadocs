@@ -12,7 +12,7 @@ Esta documentação descreve o processo de instalação do **Agente Monsta**, um
 
 |  |  |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------- |
-| ![Download do Agente](/src/assets/images/p139_image-1660325708746.png) | [https://www.monsta.com.br/monsta/download/agent.msi](https://www.monsta.com.br/monsta/download/agent.msi) |
+| ![Download do Agente](../../../../../assets/images/p139_image-1660325708746.png) | [https://www.monsta.com.br/monsta/download/agent.msi](https://www.monsta.com.br/monsta/download/agent.msi) |
 
 - Logado com um usuário com permissões de administrador, execute o instalador "agent.msi".
 - Quando solicitado, insira a chave de licença do Monsta no qual você deseja conectar o agente.
@@ -50,4 +50,4 @@ Para cobrir toda a rede remota com um único agente, cadastre os novos dispositi
 
 Exemplo de Hierarquia:
 
-![image-1765385133049.png](/src/assets/images/p139_image-1765385133049.png)
+![image-1765385133049.png](../../../../../assets/images/p139_image-1765385133049.png)

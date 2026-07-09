@@ -4,7 +4,7 @@ sidebar:
   order: 10
 ---
 
-![image-1739991628924.png](/src/assets/images/p77_image-1739991628924.png)
+![image-1739991628924.png](../../../../../assets/images/p77_image-1739991628924.png)
 
 
 A tela de parâmetros de configuração do Monsta permite que você personalize o software de acordo com suas preferências e necessidades, definindo timeouts, imagens e caminhos importantes para o funcionamento do programa.

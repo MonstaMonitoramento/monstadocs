@@ -6,19 +6,19 @@ sidebar:
 
 ## Opções globais de dispositivos
 
-![image-1646847756093.png](/src/assets/images/p52_image-1646847756093.png)
+![image-1646847756093.png](../../../../../assets/images/p52_image-1646847756093.png)
 O Monsta permite a definição de **Valores Globais**, que funcionam como uma predefinição inteligente para todos os dispositivos cadastrados. Quando um valor é definido globalmente, ele é automaticamente herdado por todos os dispositivos, a menos que uma configuração específica seja definida individualmente para o dispositivo ou para seu grupo de dispositivos.
 
 ### Coleta
 
-![image-1732557804866.png](/src/assets/images/p53_image-1732557804866.png)
+![image-1732557804866.png](../../../../../assets/images/p53_image-1732557804866.png)
 
 **Parâmetros de Comunicação (SNMP, WMI e SSH)**: Centralize as credenciais de acesso e portas de comunicação. Ao configurar as comunidades SNMP ou usuários de SSH/WMI globalmente, novos dispositivos serão monitorados automaticamente sem a necessidade de inserir senhas manualmente para cada um.
 
 ### Sensibilidade  
 
 
-![image-1732558676013.png](/src/assets/images/p53_image-1732558676013.png)
+![image-1732558676013.png](../../../../../assets/images/p53_image-1732558676013.png)
 
 **Sensibilidade do Uptime**: Define o critério de tolerância para considerar um dispositivo como "offline". Ajustar a sensibilidade global permite determinar quantos testes de conectividade devem falhar antes que o sistema dispare um alerta de queda, evitando alarmes falsos em redes com oscilações momentâneas.
 
@@ -34,13 +34,13 @@ O Monsta permite a definição de **Valores Globais**, que funcionam como uma pr
 
 ### Sons de Alerta
 
-![image-1732559278364.png](/src/assets/images/p53_image-1732559278364.png)
+![image-1732559278364.png](../../../../../assets/images/p53_image-1732559278364.png)
 
 **Sons de Alerta Personalizados**: Configure a experiência sonora do Centro de Operações (NOC). Você pode definir áudios distintos para os estados **Normal**, **Aviso** e **Crítico**. Essa herança garante que toda a interface mantenha um padrão sonoro coeso, facilitando a identificação imediata da gravidade de um evento pela equipe técnica.
 
 ## Opções de exibição
 
-![image-1740681553351.png](/src/assets/images/p53_image-1740681553351.png)
+![image-1740681553351.png](../../../../../assets/images/p53_image-1740681553351.png)
 
 O Monsta permite que você configure o nível de detalhamento visual dos seus ativos, priorizando a informação que for mais estratégica para o seu dia a dia:
 

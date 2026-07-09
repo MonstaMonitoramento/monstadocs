@@ -4,7 +4,7 @@ title: "Como Resolver o Erro de Login no Monsta?"
 
 Este artigo tem como objetivo explicar como resolver o erro de login do Monsta, pois o problema pode ser ocasionado por causas distintas.
 
-![image-1774290685990.png](/src/assets/images/p175_image-1774290685990.png)
+![image-1774290685990.png](../../../../../assets/images/p175_image-1774290685990.png)
 
 ## Causas prováveis
 

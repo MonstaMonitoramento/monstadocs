@@ -26,7 +26,7 @@ O Agente Monsta oferece flexibilidade na forma como se comunica com o Servidor M
 
 A conexão direta é o método de comunicação **padrão e mais eficiente** para o Agente Monsta.
 
-![image-1773247027332.png](/src/assets/images/p141_image-1773247027332.png)
+![image-1773247027332.png](../../../../../assets/images/p141_image-1773247027332.png)
 
 #### Como Funciona
 
@@ -48,7 +48,7 @@ Neste modo, o Agente, instalado na rede remota, estabelece uma **comunicação p
 
 Esta opção é oferecida para ambientes com restrições de rede, onde o Servidor Monsta não possui comunicação na porta 58580/UDP para a internet.
 
-![image-1773248921644.png](/src/assets/images/p141_image-1773248921644.png)
+![image-1773248921644.png](../../../../../assets/images/p141_image-1773248921644.png)
 
 #### Como Funciona
 

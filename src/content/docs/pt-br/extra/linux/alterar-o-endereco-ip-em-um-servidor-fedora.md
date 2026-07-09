@@ -24,13 +24,13 @@ Siga a sequência abaixo para editar as configurações de rede:
 
 
 
-![image-1645530757865.png](/src/assets/images/p85_image-1645530757865.png)
+![image-1645530757865.png](../../../../../assets/images/p85_image-1645530757865.png)
 - Selecione “Editar a conexão”;
 - Pressione “Enter”.
-![image-1718907509891.png](/src/assets/images/p85_image-1718907509891.png)
+![image-1718907509891.png](../../../../../assets/images/p85_image-1718907509891.png)
 - Selecione sua conexão de rede;
 - Selecione “Editar”.
-![image-1718829976173.png](/src/assets/images/p85_image-1718829976173.png)
+![image-1718829976173.png](../../../../../assets/images/p85_image-1718829976173.png)
 Utilize a tecla “TAB” para navegar entre os campos. Caso sua rede possua um servidor DHCP habilitado, deixe os campos de “CONFIGURAÇÃO DO IPVx” em Automático. Se quiser um IP fixo para seu servidor, faça o seguinte:
 - Selecione o campo “CONFIGURAÇÃO DO IPVx” e pressione “Enter”;- Selecione o modo “Manual”;
 - Selecione “Exibir” e pressione “Enter”;
@@ -38,9 +38,9 @@ Utilize a tecla “TAB” para navegar entre os campos. Caso sua rede possua um 
 - Ao final, selecione “OK”;
 - Pressione “Enter”.
 - Pressione a tecla “ESC” para retornar a tela inicial.
-![image-1645531410027.png](/src/assets/images/p85_image-1645531410027.png)
+![image-1645531410027.png](../../../../../assets/images/p85_image-1645531410027.png)
 - Selecione “Ativar uma conexão” e pressione “Enter”.
-![image-1645531449446.png](/src/assets/images/p85_image-1645531449446.png)
+![image-1645531449446.png](../../../../../assets/images/p85_image-1645531449446.png)
 - Selecione a placa de rede que teve seu IP alterado e pressione “Enter” para desativá-la;
 - Em seguida, pressione “Enter” novamente para ativá-la.
 - Pressione “ESC” até sair do programa e retornar ao prompt de comando.
@@ -49,11 +49,11 @@ Utilize a tecla “TAB” para navegar entre os campos. Caso sua rede possua um 
 
 Após configurar o endereço IP do servidor, abra um navegador de internet e acesse:
 
-![image-1645531726319.png](/src/assets/images/p85_image-1645531726319.png)
+![image-1645531726319.png](../../../../../assets/images/p85_image-1645531726319.png)
 
 ou
 
-![image-1645531751491.png](/src/assets/images/p85_image-1645531751491.png)  
+![image-1645531751491.png](../../../../../assets/images/p85_image-1645531751491.png)  
   
 A tela de login do Monsta será apresentada. Para efetuar o login, utilize suas credencias.
 

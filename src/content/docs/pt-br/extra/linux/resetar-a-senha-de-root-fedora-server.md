@@ -10,19 +10,19 @@ Este tutorial tem como objetivo recuperar a senha de root em um Linux Fedora Ser
 
 Na inicialização do servidor Linux aparecerá a tela de boot semelhante a imagem abaixo:
 
-![image-1719319990630.png](/src/assets/images/p21_image-1719319990630.png)
+![image-1719319990630.png](../../../../../assets/images/p21_image-1719319990630.png)
 
 Pressione a tecla “e”, com isso será aberto o modo de edição das configurações do boot conforme a imagem abaixo:
 
-![image-1719320093869.png](/src/assets/images/p21_image-1719320093869.png)
+![image-1719320093869.png](../../../../../assets/images/p21_image-1719320093869.png)
 
 Procure pela linha que começa com “linux” ou "linux16" ou "linuxefi" e ao final adicione "rw init=/bin/bash" conforme exemplo abaixo:
 
-![image-1719320698513.png](/src/assets/images/p21_image-1719320698513.png)
+![image-1719320698513.png](../../../../../assets/images/p21_image-1719320698513.png)
 
 Pressione CTRL + X para iniciar o Linux com as novas configurações. A seguinte tela deverá aparecer:
 
-![image-1719320807739.png](/src/assets/images/p21_image-1719320807739.png)
+![image-1719320807739.png](../../../../../assets/images/p21_image-1719320807739.png)
 
 Digite os comandos abaixo para efetuar a troca da senha:
 

@@ -15,7 +15,7 @@ Para garantir que você receba alertas quando a velocidade cair abaixo do mínim
 - Clique sobre o monitor de tráfego;
 - Clique no botão "Editar";
 - Clique sobre o botão "Inverter Limites"  
-    ![image-1765802497808.png](/src/assets/images/p144_image-1765802497808.png)
+    ![image-1765802497808.png](../../../../../assets/images/p144_image-1765802497808.png)
 - Ajuste as barras de percentual para escolher os limites no qual você deseja ser alertado.
 
 No exemplo da imagem acima, o monitor está ajustado para alertar sobre um link de 1G nas seguintes situações:

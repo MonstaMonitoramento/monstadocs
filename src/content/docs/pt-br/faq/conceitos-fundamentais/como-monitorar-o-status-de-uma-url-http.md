@@ -8,7 +8,7 @@ Este artigo explica o procedimento correto para monitorar o status de uma URL es
 
 É um erro comum tentar adicionar o caminho completo da URL (ex: `http://192.168.0.200:8080/sistema`) no campo Endereço do Dispositivo da tela do dispositivo.
 
-![image-1764180428270.png](/src/assets/images/p129_image-1764180428270.png)
+![image-1764180428270.png](../../../../../assets/images/p129_image-1764180428270.png)
 
 O campo Endereço do Dispositivo aceita apenas o IP ou *hostname* (ex: `192.168.10.16`, `www.foo.com`). Ele é usado para identificar o dispositivo e não verifica caminhos de URL ou portas.
 
@@ -20,17 +20,17 @@ Para monitorar se um caminho específico em uma URL está respondendo corretamen
 
 - Edite o dispositivo.
 - Adicione o template "Serviços - HTTP" ao dispositivo.  
-    ![image-1764180633849.png](/src/assets/images/p129_image-1764180633849.png)
+    ![image-1764180633849.png](../../../../../assets/images/p129_image-1764180633849.png)
 
 ### 2. Adicionar e Configurar o Monitor "Verifica URL"
 
 O template "Serviços - HTTP" contém vários monitores, incluindo o Verifica URL, que será utilizado.
 
 - Clique na opção para adicionar um novo monitor  
-    ![image-1764180781279.png](/src/assets/images/p129_image-1764180781279.png)
+    ![image-1764180781279.png](../../../../../assets/images/p129_image-1764180781279.png)
 - Selecione o monitor "Verifica URL" e clique no ícone de lápis para editar  
-    ![image-1764180854853.png](/src/assets/images/p129_image-1764180854853.png)
-- Clique em Avançado e adicione a URL que deseja monitorar (ex: `http://192.168.0.200:8080/sistema`) ![image-1764180956419.png](/src/assets/images/p129_image-1764180956419.png)
+    ![image-1764180854853.png](../../../../../assets/images/p129_image-1764180854853.png)
+- Clique em Avançado e adicione a URL que deseja monitorar (ex: `http://192.168.0.200:8080/sistema`) ![image-1764180956419.png](../../../../../assets/images/p129_image-1764180956419.png)
 - Salve as alterações e crie o monitor
 
 

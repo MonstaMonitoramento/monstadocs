@@ -12,14 +12,14 @@ O Monsta utiliza um bot do Telegram para envio de alertas. Para ingressar o bot 
 
 Para ativar os alertas, **busque no Telegram por "MonstaTecnologiaBot"**. Ao abrir o chat do bot, clique sobre a imagem do perfil, a seguinte tela será apresentada:
 
-![image-1770041179868.png](/src/assets/images/p148_image-1770041179868.png)
+![image-1770041179868.png](../../../../../assets/images/p148_image-1770041179868.png)
 
 Após, clique em **"Adicionar ao Grupo ou Canal"**. Na tela que aparecer, selecione o grupo desejado e adicione o bot do Monsta como integrante.
 
-![image-1770041312257.png](/src/assets/images/p148_image-1770041312257.png)
+![image-1770041312257.png](../../../../../assets/images/p148_image-1770041312257.png)
 
 Ao retornar para a tela do perfil, **clique na aba Grupos** e clique sobre o grupo adicionado. Dentro dessa tela, **digite o código fornecido pelo Monsta** na etapa inicial:
 
-![image-1770041567397.png](/src/assets/images/p148_image-1770041567397.png)
+![image-1770041567397.png](../../../../../assets/images/p148_image-1770041567397.png)
 
 Se o procedimento for bem-sucedido, você receberá a mensagem "**Alertas Ativados**". A partir desse momento, o seu grupo do Telegram começará a receber os alertas específicos definidos no grupo de alertas do Monsta.

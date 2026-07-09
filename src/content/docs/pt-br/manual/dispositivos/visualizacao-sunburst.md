@@ -10,19 +10,19 @@ Neste modo é apresentado uma visão hierárquica dos dispositivos com resumos d
 Dispositivos pai são configurados dentro dos dispositivos. Veja mais em: [Novo Dispositivo](/pt-br/manual/dispositivos/novo-dispositivo).
 :::
 
-![image-1739973811215.png](/src/assets/images/p57_image-1739973811215.png)
+![image-1739973811215.png](../../../../../assets/images/p57_image-1739973811215.png)
 
 
-![image-1739973834435.png](/src/assets/images/p57_image-1739973834435.png)
+![image-1739973834435.png](../../../../../assets/images/p57_image-1739973834435.png)
 **Dispositivo Pai**: Seleciona a partir de qual dispositivo o Monsta deverá mostrar a estrutura hierárquica da rede.
 
-![image-1732645456771.png](/src/assets/images/p57_image-1732645456771.png)
+![image-1732645456771.png](../../../../../assets/images/p57_image-1732645456771.png)
 **Dispositivos**: Informa o total de dispositivos por status no momento atual. 
 
-![image-1732645514898.png](/src/assets/images/p57_image-1732645514898.png)
+![image-1732645514898.png](../../../../../assets/images/p57_image-1732645514898.png)
 **Monitores**: Informa o total de monitores por status no momento atual. 
 
-![image-1739973853483.png](/src/assets/images/p57_image-1739973853483.png)
+![image-1739973853483.png](../../../../../assets/images/p57_image-1739973853483.png)
 **Linha do Tempo**: Retorna a linha do tempo para os dispositivos que fazem parte da árvore selecionada.
-![image-1739973993952.png](/src/assets/images/p57_image-1739973993952.png) Quando o alarme está em evidência, significa que um ou mais grupos de alerta foram acionados nesse evento.
+![image-1739973993952.png](../../../../../assets/images/p57_image-1739973993952.png) Quando o alarme está em evidência, significa que um ou mais grupos de alerta foram acionados nesse evento.
 
