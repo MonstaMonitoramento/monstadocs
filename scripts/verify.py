@@ -356,12 +356,8 @@ def sincronizar_e_traduzir():
 
 def processar_wiki():
     # 1. Executa a desduplicação de arquivos pt-br
-    desduplicar_artigos_pt_br()
-    
-    asset_index = mapear_assets()
-    artigos_index = mapear_artigos()
-    
-    pattern = re.compile(r'(!?)\[(.*?)\]\((.*?)\)')
+    desduplicar_artigos_pt_br()    
+    artigos_index = mapear_artigos()    
     arquivos_corrigidos = 0
 
     print("\n🔍 Iniciando varredura e correções locais em 'pt-br'...")
@@ -374,7 +370,6 @@ def processar_wiki():
         for file in files:
             if file.endswith(('.md', '.mdx')):
                 filepath = os.path.join(root, file)
-                file_dir = os.path.dirname(filepath)
                 nome_arquivo_atual = os.path.basename(filepath)
                 
                 with open(filepath, 'r', encoding='utf-8') as f:
@@ -385,36 +380,6 @@ def processar_wiki():
                 modificado = (content_ajustado != content)
                 content = content_ajustado
 
-                # ========================================================
-                # 1. Função para processar apenas IMAGENS
-                # ========================================================
-                def processar_imagem(match):
-                    nonlocal modificado
-                    text = match.group(1)
-                    raw_path = match.group(2).strip()
-                    path = urllib.parse.unquote(raw_path)
-
-                    if path.startswith(('http://', 'https://', '//', 'mailto:', 'data:')):
-                        return match.group(0)
-
-                    system_img_path = path.replace('/', os.sep)
-                    nome_imagem = os.path.basename(system_img_path)
-
-                    if nome_imagem in asset_index:
-                        caminho_real_absoluto = asset_index[nome_imagem]
-                        novo_caminho_relativo = os.path.relpath(caminho_real_absoluto, file_dir).replace('\\', '/')
-
-                        if novo_caminho_relativo != raw_path:
-                            modificado = True
-                            log_msg = f"[{nome_arquivo_atual}] Imagem ajustada"
-                            if log_msg not in relatorio['imagens']:
-                                relatorio['imagens'].append(log_msg)
-                            return f"![{text}]({novo_caminho_relativo})"
-                    return match.group(0)
-
-                # ========================================================
-                # 2. Função para processar apenas LINKS
-                # ========================================================
                 def processar_link(match):
                     nonlocal modificado
                     text = match.group(1)
@@ -473,21 +438,11 @@ def processar_wiki():
                     
                     return match.group(0)
 
-                # ========================================================
-                # Execução em cascata das Expressões Regulares
-                # ========================================================
-                
-                # Regex 1: Pega exclusivamente imagens
-                pattern_img = re.compile(r'!\[(.*?)\]\((.*?)\)')
-                
-                # Regex 2: Pega links, ignorando o prefixo "!" e aceitando que o "texto" possa conter uma imagem interna
+                # Regex: Pega links, ignorando o prefixo "!" e aceitando que o "texto" possa conter uma imagem interna
                 pattern_link = re.compile(r'(?<!!)\[((?:[^\[\]]|!\[.*?\]\(.*?\))*)\]\((.*?)\)')
 
-                # Substitui as imagens primeiro
-                content_temp = pattern_img.sub(processar_imagem, content)
-                
                 # Substitui os links na string resultante
-                new_content = pattern_link.sub(processar_link, content_temp)
+                new_content = pattern_link.sub(processar_link, content)
 
                 if modificado or new_content != content:
                     with open(filepath, 'w', encoding='utf-8') as f:
@@ -497,10 +452,10 @@ def processar_wiki():
     print("🚀 Correções locais concluídas.")
     
     # 2. Roda a rotina de tradução automática baseando-se no pt-br consolidado
-    sincronizar_e_traduzir()
+    #sincronizar_e_traduzir()
     
     # 3. Dispara o relatório consolidado para o Discord
-    enviar_discord()
+    #enviar_discord()
 
 if __name__ == '__main__':
     processar_wiki()
