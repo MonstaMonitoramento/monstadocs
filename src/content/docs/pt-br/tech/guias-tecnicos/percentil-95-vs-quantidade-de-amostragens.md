@@ -31,13 +31,13 @@ Isso ocorre devido à capacidade inerente da amostragem mais frequente de captur
 
 ### Amostragem a Cada 1 Minuto: Captura mais Precisa de Picos
 
-![image-1748523913039.png](../../../../../assets/images/p108_image-1748523913039.png)
+![image-1748523913039.png](/src/assets/images/p108_image-1748523913039.png)
 
 Quando os dados são amostrados a cada 1 minuto, o sistema de monitoramento registra o tráfego de dados em intervalos muito curtos. Isso permite que ele **capture com maior precisão os picos de uso transitórios e de curta duração**. Imagine um cenário onde há um aumento abrupto no tráfego de dados por 30 segundos e depois ele retorna aos níveis normais. Uma amostragem a cada 1 minuto tem uma alta probabilidade de registrar esse pico, já que o intervalo de coleta possui um intervalo menor entre as amostras.
 
 ### Amostragem a Cada 5 Minutos: Suavização dos Picos
 
-![image-1748523993137.png](../../../../../assets/images/p108_image-1748523993137.png)
+![image-1748523993137.png](/src/assets/images/p108_image-1748523993137.png)
 
 Por outro lado, quando a amostragem é realizada a cada 5 minutos, o sistema calcula uma média do tráfego de dados ao longo de um período de 300 segundos. Essa média de tempo maior inerentemente **suaviza os picos de uso**. Se ocorrer um pico de tráfego de curta duração (por exemplo, 30 segundos) dentro de um intervalo de 5 minutos, seu impacto é diluído pela média dos 4 minutos e 30 segundos restantes de tráfego potencialmente mais baixo.
 
@@ -45,7 +45,7 @@ Em termos técnicos, cada amostra de 5 minutos é uma representação agregada d
 
 Como exemplo, o gráfico abaixo possui um intervalo de amostragem a cada 30 minutos. A diferença do percentil 95 para as demais amostragens atenua consideravelmente:
 
-![image-1748525353442.png](../../../../../assets/images/p108_image-1748525353442.png)
+![image-1748525353442.png](/src/assets/images/p108_image-1748525353442.png)
 
 ## Conclusão
 

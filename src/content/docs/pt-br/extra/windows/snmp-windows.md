@@ -16,11 +16,11 @@ control appwiz.cpl
 
 A seguinte tela será mostrada:
 
-![image-1645202947535.png](../../../../../assets/images/p12_image-1645202947535.png)
+![image-1645202947535.png](/src/assets/images/p12_image-1645202947535.png)
 
 • Clique em “Ativar ou desativar recursos do Windows”;
 
-![image-1645202976501.png](../../../../../assets/images/p12_image-1645202976501.png)  
+![image-1645202976501.png](/src/assets/images/p12_image-1645202976501.png)  
 • Marque o item “Protocolo SNMP” e clique em Ok;
 
 No prompt de comando, digite:
@@ -31,13 +31,13 @@ services.msc
 
 A seguinte tela será mostrada:
 
-![image-1645203011196.png](../../../../../assets/images/p12_image-1645203011196.png)• Selecione o item “Serviço SNMP”;  
+![image-1645203011196.png](/src/assets/images/p12_image-1645203011196.png)• Selecione o item “Serviço SNMP”;  
 • Clique no menu “Ação” e selecione “Propriedades”;
 
-![image-1645203056884.png](../../../../../assets/images/p12_image-1645203056884.png)  
+![image-1645203056884.png](/src/assets/images/p12_image-1645203056884.png)  
 • Na aba “Geral”, marque o campo “Tipo de inicialização” como “Automático”;
 
-![image-1645203078004.png](../../../../../assets/images/p12_image-1645203078004.png)  
+![image-1645203078004.png](/src/assets/images/p12_image-1645203078004.png)  
 • Na aba “Segurança” clique no botão “Adicionar”;  
 • Em “Direitos da comunidade” selecione a opção “SOMENTE LEITURA”;  
 • Em “Nome da Comunidade” digite “public”;  

@@ -43,7 +43,7 @@ Para restaurar um backup da nuvem, execute os seguinte passos:
 3. Clique na opção “Backup em Nuvem”;
 4. Selecione a data do backup que deseja restaurar;
 5. Clique no botão “Restaurar”.  
-    ![image-1741969806125.png](../../../../../assets/images/p26_image-1741969806125.png)
+    ![image-1741969806125.png](/src/assets/images/p26_image-1741969806125.png)
 
 Em alguns minutos, o Monsta será restaurado com as configurações do backup selecionado e solicitará o login novamente. Utilize usuários e senhas que estavam cadastrados nesse backup para logar.
 

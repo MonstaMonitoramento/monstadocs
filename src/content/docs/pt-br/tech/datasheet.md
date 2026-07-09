@@ -17,7 +17,7 @@ O **Monsta** é uma solução completa e intuitiva para monitoramento de redes, 
 - **Desenvolvimento 100 próprio**: Solução 100% desenvolvida pela Monsta Tecnologia, fruto de nossa expertise e dedicação em oferecer o melhor software de monitoramento de redes do mercado.
 - **Backup automáticos**. O Monsta faz um backup na nuvem, automaticamente, de todas suas configurações.
 
-![image-1740051151463.png](../../../../assets/images/p25_image-1740051151463.png)
+![image-1740051151463.png](/src/assets/images/p25_image-1740051151463.png)
 
 ## Para que server o Monsta?
 
@@ -30,10 +30,10 @@ Sugerido para monitorar 500 dispositivos e 5.000 monitores.
 
 | Item | Requisito mínimo |
 | :---: | :--- |
-| ![image-1645452261754.png](../../../../assets/images/p25_image-1645452261754.png) | **Espaço em disco**<br />40GB livre para /var (configurações, banco de dados e logs)<sup>1</sup> <br />300MB livre para /opt/monsta (programas e bibliotecas) |
-| ![image-1645452312898.png](../../../../assets/images/p25_image-1645452312898.png) | **Memória RAM**<br />1GB de memória RAM |
-| ![image-1645452455434.png](../../../../assets/images/p25_image-1645452455434.png) | **Sistema Operacional**<br />Linux 64bits<br />Sistema Operacional Linux recomendado: Fedora Server 40 |
-| ![image-1645452542916.png](../../../../assets/images/p25_image-1645452542916.png) | **Processador**<br />Cores: 2<br />Velocidade: 1.8GHz |
+| ![image-1645452261754.png](/src/assets/images/p25_image-1645452261754.png) | **Espaço em disco**<br />40GB livre para /var (configurações, banco de dados e logs)<sup>1</sup> <br />300MB livre para /opt/monsta (programas e bibliotecas) |
+| ![image-1645452312898.png](/src/assets/images/p25_image-1645452312898.png) | **Memória RAM**<br />1GB de memória RAM |
+| ![image-1645452455434.png](/src/assets/images/p25_image-1645452455434.png) | **Sistema Operacional**<br />Linux 64bits<br />Sistema Operacional Linux recomendado: Fedora Server 40 |
+| ![image-1645452542916.png](/src/assets/images/p25_image-1645452542916.png) | **Processador**<br />Cores: 2<br />Velocidade: 1.8GHz |
 
 :::note
 <sup>1</sup> O tamanho da partição depende da quantidade de informações que serão armazenadas. Os dados de monitoramento são compactados antes de serem salvos em disco.
@@ -73,7 +73,7 @@ Sugerido para monitorar 500 dispositivos e 5.000 monitores.
 
 ## Arquitetura de software
 
-![image-1645464317340.png](../../../../assets/images/p25_image-1645464317340.png)
+![image-1645464317340.png](/src/assets/images/p25_image-1645464317340.png)
 
 ## Experimente antes de comprar
 

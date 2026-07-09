@@ -28,13 +28,13 @@ Não utilize nesta tela as credenciais para acessar o Monsta.
 
 
 
-![image-1766583600758.png](../../../../../assets/images/p145_image-1766583600758.png)
+![image-1766583600758.png](/src/assets/images/p145_image-1766583600758.png)
 
 ### 2. Seleção da Licença Existente
 
 - Após o login, o sistema listará todas as chaves de licença vinculadas a sua conta.
 - Identifique a chave que deseja utilizar e clique em Selecionar (é possível utilizar uma chave em uso).
-- Confirme a operação.![image-1766583740414.png](../../../../../assets/images/p145_image-1766583740414.png)
+- Confirme a operação.![image-1766583740414.png](/src/assets/images/p145_image-1766583740414.png)
 
 ### 3. Finalização
 

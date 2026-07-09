@@ -16,10 +16,10 @@ Com apenas um clique, você pode gerar o relatório completo com o total de trá
 
 1. No menu Dispositivos, selecione o dispositivo e clique sobre o monitor de tráfego que deseja efetuar o cálculo.
 2. Selecione o período da consulta.
-3. Após gerar o gráfico com o consumo do período, clique em![image-1756127757486.png](../../../../../assets/images/p114_image-1756127757486.png) localizado no canto superior direito do gráfico.
+3. Após gerar o gráfico com o consumo do período, clique em![image-1756127757486.png](/src/assets/images/p114_image-1756127757486.png) localizado no canto superior direito do gráfico.
 4. Selecione a opção "Relatório de Consumo".
 
-![image-1756128123019.png](../../../../../assets/images/p114_image-1756128123019.png)
+![image-1756128123019.png](/src/assets/images/p114_image-1756128123019.png)
 
 Pronto! O sistema faz o cálculo e entrega o resultado em segundos. A soma total é o valor que deve ser reportado a ANATEL.
 

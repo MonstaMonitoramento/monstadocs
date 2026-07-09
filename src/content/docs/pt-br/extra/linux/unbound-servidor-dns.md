@@ -4,7 +4,7 @@ title: Monitorar o Servidor DNS Unbound
 
 Tutorial para monitorar o servidor DNS Unbound através do serviço de SNMP.
 
-![image-1740053252228.png](../../../../../assets/images/p11_image-1740053252228.png)
+![image-1740053252228.png](/src/assets/images/p11_image-1740053252228.png)
 
 :::note
 Os comandos Linux deste tutorial são compatíveis com distribuições Linux como CentOS e Fedora Server. Caso utilize outra distribuição (como Debian ou Ubuntu), comandos como `yum`, por exemplo, precisarão ser substituídos. 

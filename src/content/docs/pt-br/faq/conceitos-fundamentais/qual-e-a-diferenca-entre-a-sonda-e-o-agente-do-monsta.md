@@ -30,7 +30,7 @@ A principal diferença entre a Sonda e o Agente é o propósito de cada um:
 
 A Sonda é uma ferramenta mais simples, focada em coletar métricas de máquinas Windows (CPU, RAM, disco, rede) e responde quando o servidor Monsta a consulta. O Agente é uma solução mais robusta e multiplataforma, ideal para expandir o monitoramento para redes remotas — ele próprio inicia a comunicação com o servidor, dispensando VPN, redirecionamento de portas ou IP fixo.
 
-![image-1773943312944.png](../../../../../assets/images/p174_image-1773943312944.png)
+![image-1773943312944.png](/src/assets/images/p174_image-1773943312944.png)
 
 ## Mais informações
 

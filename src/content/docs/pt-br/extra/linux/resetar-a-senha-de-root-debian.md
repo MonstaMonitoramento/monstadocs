@@ -31,7 +31,7 @@ A senha de root pode ser redefinida usando o menu do **GRUB** (Grand Unified Boo
     
     > `linux /boot/vmlinuz-5.10.0-23-amd64 root=UUID=... rw quiet init=/bin/bash`
 
-![image-1764956789240.png](../../../../../assets/images/p135_image-1764956789240.png)
+![image-1764956789240.png](/src/assets/images/p135_image-1764956789240.png)
 
 ### 3. Iniciar o Sistema e Alterar a Senha
 
