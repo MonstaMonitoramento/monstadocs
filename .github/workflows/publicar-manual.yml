@@ -1,0 +1,51 @@
+name: Publicar Manualmente
+
+on:
+  push:
+    branches:
+      - preview
+    paths:
+      - 'publicar.json'
+
+jobs:
+  publicacao_via_botao:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Baixar o repositório
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.PAT_GITHUB }}
+
+      - name: Ler a posição do botão
+        id: checar_gatilho
+        run: |
+          # Extrai o valor do JSON (true ou false)
+          TRIGGER=$(jq '.publicar_agora' publicar.json)
+          echo "BOTAO=$TRIGGER" >> $GITHUB_ENV
+
+      - name: Configurar o usuário do Git
+        if: env.BOTAO == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: 1. Executar o Merge para a Main
+        if: env.BOTAO == 'true'
+        run: |
+          git checkout main
+          git merge origin/preview --no-edit
+          git push origin main
+          
+      - name: 2. Desligar o botão (Reset)
+        if: env.BOTAO == 'true'
+        run: |
+          git checkout preview
+          
+          # Reescreve o JSON de volta para "false"
+          echo '{"publicar_agora": false}' > publicar.json
+          
+          git add publicar.json
+          git commit -m "chore: reseta gatilho visual de publicação"
+          git push origin preview
