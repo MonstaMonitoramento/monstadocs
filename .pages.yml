@@ -4,6 +4,7 @@ content:
     label: Artigos
     type: collection
     path: src/content/docs
+    filename: "{slug}.md"
     format: yaml-frontmatter
     fields:
       - name: title
