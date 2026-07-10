@@ -60,6 +60,13 @@ jobs:
           git diff --quiet && git diff --staged --quiet || git commit -m "Auto-correção: Script de traduções [skip ci]"
           git push origin main
 
+      - name: Sincronização Reversa Artigos Traduzidos (Main ➔ Preview)
+        run: |          
+          git fetch origin preview
+          git checkout preview
+          git merge main --no-edit
+          git push origin preview
+          
       # ==========================================
       # ETAPA 2: BUILD DO ASTRO E PUBLICAÇÃO
       # ==========================================
