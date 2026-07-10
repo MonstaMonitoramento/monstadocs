@@ -1,14 +1,5 @@
 media: src/assets/images
-content:
-  - name: publicar
-    label: 🚀 Publicar Oficial
-    type: file
-    path: publicar.json
-    fields:
-      - name: publicar_agora
-        label: Ativar Publicação
-        type: boolean
-        description: "Marque esta caixa e clique em 'Save'. O robô irá atualizar o site oficial com todo o conteúdo atual do Preview. A chave voltará para 'falso' automaticamente depois de alguns segundos."
+content:  
   - name: artigos
     label: Artigos
     type: collection
@@ -31,3 +22,12 @@ content:
       - name: body
         label: Conteúdo do Artigo
         type: rich-text
+  - name: publicar
+    label: 🚀 Publicar Oficial
+    type: file
+    path: publicar.json
+    fields:
+      - name: publicar_agora
+        label: Ativar Publicação
+        type: boolean
+        description: "Marque esta caixa e clique em 'Save'. O robô irá atualizar o site oficial com todo o conteúdo atual do Preview. A chave voltará para 'falso' automaticamente depois de alguns segundos."
