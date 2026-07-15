@@ -28,7 +28,7 @@ for _, dev in ipairs(devices) do
 end
 ```
 
-### 2.  storage.info(path)
+## 2.  `storage.info(path)`
 
 Retorna informacoes gerais do disco.
 
@@ -40,19 +40,21 @@ path (string):   Caminho do dispositivo (ex: "/dev/sda")
 
 Table com os campos:
 
-        device_model (string):   Modelo do disco  
-        model_family (string):   Familia do modelo (apenas ATA)  
-        serial_number (string):   Numero de serie  
-        firmware_version (string):  Versao do firmware  
-        user_capacity (string):   Capacidade total  
-        rotation_rate (string):   RPM (apenas ATA)  
-        form_factor (string):   Formato fisico (apenas ATA)  
-        interface (string):   Velocidade da interface (apenas ATA)  
-        protocol (string):   "ATA", "NVMe" ou "SCSI"  
-        smart_support (table):    Informacoes de suporte SMART  
-        logical_block_size (number):   Tamanho do bloco logico  
-        physical_block_size (number):   Tamanho do bloco fisico  
-        nvme_version (string):   Versao NVMe (apenas NVMe)
+```
+    device_model (string):   Modelo do disco  
+    model_family (string):   Familia do modelo (apenas ATA)  
+    serial_number (string):   Numero de serie  
+    firmware_version (string):  Versao do firmware  
+    user_capacity (string):   Capacidade total  
+    rotation_rate (string):   RPM (apenas ATA)  
+    form_factor (string):   Formato fisico (apenas ATA)  
+    interface (string):   Velocidade da interface (apenas ATA)  
+    protocol (string):   "ATA", "NVMe" ou "SCSI"  
+    smart_support (table):    Informacoes de suporte SMART  
+    logical_block_size (number):   Tamanho do bloco logico  
+    physical_block_size (number):   Tamanho do bloco fisico  
+    nvme_version (string):   Versao NVMe (apenas NVMe)
+```
 
 ### Exemplo de Uso
 
@@ -63,7 +65,9 @@ print(info.device_model, info.serial_number)
 
 ## 3. `storage.health(path)`
 
-    Retorna o status geral de saude do disco (SMART overall-health).
+```
+Retorna o status geral de saude do disco (SMART overall-health).
+```
 
 **Parametros:**
 
@@ -73,9 +77,11 @@ path (string):   Caminho do dispositivo
 
 Table com os campos:
 
-        passed (boolean):  true se o disco passou no teste SMART  
-        status (string):   "PASSED" ou "FAILED"  
-        message (string):   Mensagem descritiva do status
+```
+    passed (boolean):  true se o disco passou no teste SMART  
+    status (string):   "PASSED" ou "FAILED"  
+    message (string):   Mensagem descritiva do status
+```
 
 ### Exemplo de Uso
 
@@ -100,14 +106,16 @@ path (string):   Caminho do dispositivo
 
 Array de objetos, cada um com os campos:
 
-        id (number):   ID do atributo  
-        name (string):   Nome do atributo (ex: "Temperature_Celsius")  
-        value (number):   Valor normalizado  
-        worst (number):   Pior valor ja registrado  
-        thresh (number):   Limite de falha  
-        raw (number):   Valor bruto (raw)  
-        when_failed (string):   Indicacao de falha  
-        flags (string):   Flags do atributo
+```
+    id (number):   ID do atributo  
+    name (string):   Nome do atributo (ex: "Temperature_Celsius")  
+    value (number):   Valor normalizado  
+    worst (number):   Pior valor ja registrado  
+    thresh (number):   Limite de falha  
+    raw (number):   Valor bruto (raw)  
+    when_failed (string):   Indicacao de falha  
+    flags (string):   Flags do atributo
+```
 
 ### Exemplo de Uso
 
@@ -124,8 +132,10 @@ Retorna um atributo SMART especifico pelo nome.
 
 **Parametros:**
 
-      path      : string   Caminho do dispositivo  
-      attr_name : string   Nome do atributo (ex: "Temperature_Celsius")
+```
+  path      : string   Caminho do dispositivo  
+  attr_name : string   Nome do atributo (ex: "Temperature_Celsius")
+```
 
 **Retorno:**
 
@@ -173,14 +183,16 @@ path (string):   Caminho do dispositivo
 
 Table ou nil com os campos (varia por protocolo):
 
-        ATA:  
-          count (number):   Quantidade de erros registrados  
-          logged_errors (number):   Erros logados
+```
+    ATA:  
+      count (number):   Quantidade de erros registrados  
+      logged_errors (number):   Erros logados
 
-        NVMe:  
-          size (number):   Tamanho do log  
-          read (number):   Entradas lidas  
-          unread (number):   Entradas nao lidas
+    NVMe:  
+      size (number):   Tamanho do log  
+      read (number):   Entradas lidas  
+      unread (number):   Entradas nao lidas
+```
 
 ### Exemplo de Uso
 
@@ -203,10 +215,12 @@ path (string):   Caminho do dispositivo
 
 Table ou nil com os campos (varia por protocolo):
 
-        ATA: retorna o ultimo teste da tabela de self-tests
+```
+    ATA: retorna o ultimo teste da tabela de self-tests
 
-        NVMe:  
-                current_self_test_operation : string   Operacao atual
+    NVMe:  
+            current_self_test_operation : string   Operacao atual
+```
 
 ### Exemplo de Uso
 
