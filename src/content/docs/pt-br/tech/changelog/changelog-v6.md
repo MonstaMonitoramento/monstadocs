@@ -18,7 +18,7 @@ sidebar:
 
 **✨Novo**: **Monitoramento S.M.A.R.T.:** Adicionamos suporte à coleta de dados S.M.A.R.T. (Self-Monitoring, Analysis, and Reporting Technology) de discos físicos, permitindo acompanhar a integridade, a vida útil e os indicadores de saúde do armazenamento para identificar possíveis falhas antes que elas afetem o ambiente.
 
-![image.png](/src/assets/images/image-6.png)
+![image.png](/src/assets/images/image-9.png)
 
 🔧**Correção**: Corrigido um comportamento inesperado onde as atualizações do sistema afetavam indevidamente o logotipo personalizado definido pelo usuário.
 
