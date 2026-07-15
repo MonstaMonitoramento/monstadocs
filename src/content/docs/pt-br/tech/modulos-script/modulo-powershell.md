@@ -11,17 +11,17 @@ O módulo PowerShell permite executar comandos e scripts do PowerShell de forma 
 
 Executa um ou mais comandos PowerShell exclusivamente em ambientes Windows.
 
-**Parametros:**
+**Parametros**:
 
-(string):   Um ou mais comandos PowerShell.
+(string): Um ou mais comandos PowerShell.
 
-**Retorno:**
+**Retorno**:
 
-(string):  A saida padrao (stdout) do comando executado
+(string): A saída padrão (`stdout`) do comando executado
 
-### Exemplo de Uso
+**Exemplo de Uso**:
 
-```
+```lua
 local script = [[
 # Lista todas as impressoras instaladas com detalhes básicos
 try {
