@@ -8,15 +8,15 @@ sidebar:
 ---
 ## Versão 6.0.16 Beta
 
-**✨Novo**: **Relatórios Mensais com Inteligência Artificial:** Agora, sua conta gera automaticamente relatórios mensais enriquecidos com *insights* baseados em IA.
+**✨Novo**: **Relatórios Mensais com Inteligência Artificial**. Agora, sua conta gera automaticamente relatórios mensais enriquecidos com *insights* baseados em IA.
 
 ![image.png](/src/assets/images/image-10.png)
 
-**✨Novo**: **Execução Remota via PowerShell:** A Sonda permite a execução de comandos e *scripts* em PowerShell diretamente pelo console. Para garantir a segurança do seu ambiente, todos os comandos são processados utilizando um **usuário com privilégios restritos (não administrador)**.
+**✨Novo**: **Execução Remota via PowerShell**. A Sonda permite a execução de comandos e *scripts* em PowerShell diretamente pelo console. Para garantir a segurança do seu ambiente, todos os comandos são processados utilizando um **usuário com privilégios restritos (não administrador)**.
 
 ![image.png](/src/assets/images/image-5.png)
 
-**✨Novo**: **Monitoramento S.M.A.R.T.:** Adicionamos suporte à coleta de dados S.M.A.R.T. (Self-Monitoring, Analysis, and Reporting Technology) de discos físicos, permitindo acompanhar a integridade, a vida útil e os indicadores de saúde do armazenamento para identificar possíveis falhas antes que elas afetem o ambiente.
+**✨Novo**: **Monitoramento S.M.A.R.T.**. Adicionamos suporte à coleta de dados S.M.A.R.T. (*Self-Monitoring, Analysis, and Reporting Technology*) de discos físicos, permitindo acompanhar a integridade, a vida útil e os indicadores de saúde do armazenamento para identificar possíveis falhas antes que elas afetem o ambiente.
 
 ![image.png](/src/assets/images/image-9.png)
 
