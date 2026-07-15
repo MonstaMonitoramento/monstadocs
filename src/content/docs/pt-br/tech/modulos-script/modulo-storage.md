@@ -36,21 +36,21 @@ Retorna informações gerais do disco.
 
 `Table` com os campos:
 
-| Campo | Descrição |
-| --- | --- |
-| `device_model` (*string*) | Modelo do disco |
-| `model_family` (*string*) | Família do modelo (apenas ATA) |
-| `serial_number` (*string*) | Numero de serie |
-| `firmware_version` (*string*) | Versão do firmware |
-| `user_capacity` (*string*) | Capacidade total |
-| `rotation_rate` (*string*) | RPM (apenas ATA) |
-| `form_factor` (*string*) | Formato físico (apenas ATA) |
-| `interface` (*string*) | Velocidade da interface (apenas ATA) |
-| `protocol` (*string*) | "ATA", "NVMe" ou "SCSI" |
-| `smart_support` (*table*) | Informações de suporte S.M.A.R.T. |
-| `logical_block_size` (*number*) | Tamanho do bloco logico |
-| `physical_block_size` (*number*) | Tamanho do bloco físico |
-| `nvme_version` (*string*) | Versão NVMe (apenas NVMe) |
+| Campo | Tipo | Descrição |
+| --- | --- | --- |
+| `device_model` | *string* | Modelo do disco |
+| `model_family` | *string* | Família do modelo (apenas ATA) |
+| `serial_number` | *string* | Numero de serie |
+| `firmware_version` | *string* | Versão do firmware |
+| `user_capacity` | *string* | Capacidade total |
+| `rotation_rate` | *string* | RPM (apenas ATA) |
+| `form_factor` | *string* | Formato físico (apenas ATA) |
+| `interface` | *string* | Velocidade da interface (apenas ATA) |
+| `protocol` | *string* | "ATA", "NVMe" ou "SCSI" |
+| `smart_support` | *table* | Informações de suporte S.M.A.R.T. |
+| `logical_block_size` | *number* | Tamanho do bloco logico |
+| `physical_block_size` | *number* | Tamanho do bloco físico |
+| `nvme_version` | *string* | Versão NVMe (apenas NVMe) |
 
 **Exemplo de uso**:
 
@@ -65,17 +65,17 @@ Retorna o status geral de saúde do disco (S.M.A.R.T. *overall-health*).
 
 **Parâmetros**:
 
-`path` (*string*):   Caminho do dispositivo
+`path` (*string*): Caminho do dispositivo
 
 **Retorno**:
 
 `Table` com os campos:
 
-| Campo | Descrição |
-| --- | --- |
-| `passed` (*boolean*) | true se o disco passou no teste S.M.A.R.T. |
-| `status` (*string*) | "PASSED" ou "FAILED" |
-| `message` (*string*) | Mensagem descritiva do status |
+| Campo | Tipo | Descrição |
+| --- | --- | --- |
+| `passed` | *boolean* | true se o disco passou no teste S.M.A.R.T. |
+| `status` | *string* | "PASSED" ou "FAILED" |
+| `message` | *string* | Mensagem descritiva do status |
 
 **Exemplo de uso**:
 
@@ -100,16 +100,16 @@ Retorna todos os atributos S.M.A.R.T. do disco.
 
 Array de objetos, cada um com os campos:
 
-| Campo | Descrição |
-| --- | --- |
-| `id` (*number*) | ID do atributo |
-| `name` (*string*) | Nome do atributo (ex: "Temperature_Celsius") |
-| `value` (*number*) | Valor normalizado |
-| `worst` (*number*) | Pior valor ja registrado |
-| `thresh` (*number*) | Limite de falha |
-| `raw` (*number*) | Valor bruto (*raw*) |
-| `when_failed` (*string*) | Indicação de falha |
-| `flags` (*string*) | *Flags* do atributo |
+| Campo | Tipo | Descrição |
+| --- | --- | --- |
+| `id` | *number* | ID do atributo |
+| `name` | *string* | Nome do atributo (ex: "Temperature_Celsius") |
+| `value` | *number* | Valor normalizado |
+| `worst` | *number* | Pior valor ja registrado |
+| `thresh` | *number* | Limite de falha |
+| `raw` | *number* | Valor bruto (*raw*) |
+| `when_failed` | *string* | Indicação de falha |
+| `flags` | *string* | *Flags* do atributo |
 
 **Exemplo de uso**:
 
@@ -126,10 +126,10 @@ Retorna um atributo S.M.A.R.T. especifico pelo nome.
 
 **Parâmetros**:
 
-| Parâmetro | Descrição |
-| --- | --- |
-| `path` (*string*) | Caminho do dispositivo |
-| `attr_name` (*string*) | Nome do atributo (ex: "Temperature_Celsius") |
+| Parâmetro | Tipo | Descrição |
+| --- | --- | --- |
+| `path` | *string* | Caminho do dispositivo |
+| `attr_name` | *string* | Nome do atributo (ex: "Temperature_Celsius") |
 
 **Retorno**:
 
@@ -177,16 +177,15 @@ Retorna um resumo do log de erros do disco.
 
 `Table` ou `nil` com os campos (varia por protocolo):
 
-```text
-    ATA:  
-      count (*number*):   Quantidade de erros registrados  
-      logged_errors (*number*):   Erros logados
-
-    NVMe:  
-      size (*number*):   Tamanho do log  
-      read (*number*):   Entradas lidas  
-      unread (*number*):   Entradas nao lidas
-```
+| | Campo | Tipo | Descrição |
+| :---: | --- | --- | --- |
+| ATA | | | |
+| | `count` | *number* | Quantidade de erros registrados |
+| | `logged_errors` | *number* | Erros logados |
+| NVMe | | | |
+| | `size` | *number* | Tamanho do log |
+| | `read` | *number* | Entradas lidas |
+| | `unread` | *number* | Entradas nao lidas |
 
 **Exemplo de uso**:
 
@@ -211,8 +210,8 @@ Retorna o resultado do ultimo *self-test* do disco.
 
 | Campo | Descrição |
 | --- | --- |
-| ATA | Retorna o último teste da tabela de *self-tests* |
-| NVMe | `current_self_test_operation` (*string*): Operação atual |
+| `ATA` | Retorna o último teste da tabela de *self-tests* |
+| `NVMe` | `current_self_test_operation` (*string*): Operação atual |
 
 **Exemplo de uso**:
 
