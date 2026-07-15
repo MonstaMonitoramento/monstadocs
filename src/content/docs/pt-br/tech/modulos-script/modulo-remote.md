@@ -13,39 +13,39 @@ O módulo Remote é uma ferramenta avançada de automação que permite que a So
 
 Executa um comando do sistema operacional remoto com os argumentos especificados.
 
-### Parâmetros
+**Parâmetros**:
 
-- **command** (string): Nome do comando/programa a ser executado
-- **…** (opcional, strings): Argumentos adicionais para o comando
+- `command` (string): Nome do comando/programa a ser executado
+- `…` (opcional, strings): Argumentos adicionais para o comando
 
-### Retorno
+**Retorno**:
 
-- **tuple**: `(out, err)` onde:
-  - **out** (string ou nil): Saída padrão do comando se bem-sucedido, ou `nil` se falhar
-  - **err** (string ou nil): Saída de erro do comando se falhar, ou `nil` se bem-sucedido
+- `tuple`: `(out, err)` onde:
+  - `out` (string ou nil): Saída padrão do comando se bem-sucedido, ou `nil` se falhar
+  - `err` (string ou nil): Saída de erro do comando se falhar, ou `nil` se bem-sucedido
 
-### Comportamento
+**Comportamento**:
 
 1. O comando é executado com o usuário `monsta-probe` em ambientes Windows e `monstasb` em ambientes Linux.  
 
-2. Se o comando retornar código de saída 0 (sucesso):
+   1. Se o comando retornar código de saída `0` (sucesso):
 
-- `out` contém a saída do comando
-- `err` é `nil`
+      - `out` contém a saída do comando
+      - `err` é `nil`
 
-3. Se o comando falhar (código ≠ 0):
+   2. Se o comando falhar (código ≠ `0`):
 
-- `out` é nil
-- `err` contém a saída de erro (stderr) do comando
+      - `out` é nil
+      - `err` contém a saída de erro (stderr) do comando
 
-4. Se houver erro na execução (comando não encontrado, etc.):
+   3. Se houver erro na execução (comando não encontrado, etc.):
 
-- `out` é `nil`
-- `err` contém a mensagem de erro
+      - `out` é `nil`
+      - `err` contém a mensagem de erro
 
-### Exemplo de Uso
+**Exemplo de Uso**:
 
-```
+```lua
       local resp = probe.exec("ping", { "C:\\Windows\\System32\\ping.exe" }, { "127.0.0.1" })
 
       if resp.status == "Success" then
@@ -53,11 +53,11 @@ Executa um comando do sistema operacional remoto com os argumentos especificados
       end
 ```
 
-### Suporte a Argumentos Variáveis
+#### Suporte a Argumentos Variáveis
 
 Aceita qualquer número de argumentos:
 
-```
+```lua
 -- 1 argumento
 process.exec("ls")
 
@@ -67,5 +67,3 @@ process.exec("ls", "-la")
 -- Múltiplos argumentos
 process.exec("find", ".", "-name", "*.log", "-type", "f", "-mtime", "+7")
 ```
-
-&nbsp;
