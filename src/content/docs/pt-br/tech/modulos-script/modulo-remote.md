@@ -22,7 +22,8 @@ Executa um comando do sistema operacional remoto com os argumentos especificados
 
 ### Comportamento:
 
-1. O comando é executado com o usuário `monsta-probe` em ambientes Windows e `monstasb` em ambientes Linux.
+1. O comando é executado com o usuário `monsta-probe` em ambientes Windows e `monstasb` em ambientes Linux.  
+
 2. Se o comando retornar código de saída 0 (sucesso):
   - `out` contém a saída do comando
   - `err` é `nil`
