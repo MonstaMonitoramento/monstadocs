@@ -1,12 +1,13 @@
 ---
-title: "Configurando o SNMP no Linux"
+title: Configurando o SNMP no Linux
+description: Qual a melhor forma de monitorar um Linux? É através do SNMP. Este
+  tutorial orienta como configurar o SNMP em distribuições Linux que utilizam
+  gerenciadores de pacotes com os comandos yum e apt-get, como Fedora, CentOS,
+  RedHat, Debian, Ubuntu, Mint, entre outros.
 sidebar:
   order: 1
 ---
-
-Tutorial com objetivo de ativar uma configuração básica dos serviços SNMP em Sistemas Operacionais Linux.
-
-
+A melhor forma de monitorar um servidor ou estação Linux (Red Hat, Fedora, Debian, Ubuntu, Mint, CentOS, Rocky Linux, Suse, OpenSuse... praticamente qualquer distribuição Linux) é através do `SNMP`. Este tutorial tem como objetivo instalar o serviço `snmpd` e realizar uma configuração básica do serviço para diponibilizar as informações ao Monsta.
 
 :::note
 Existem diversas distribuições Linux, cada qual com suas particularidades. As informações a seguir podem não funcionar em sua distribuição.
@@ -47,6 +48,7 @@ sysContact seu@email.com.br
 ```
 
 ## Reiniciar e habilitar o serviço SNMP
+
 ### Sistemas com Systemd
 
 Na tela de terminal, digite:
