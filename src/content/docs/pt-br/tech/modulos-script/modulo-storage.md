@@ -9,18 +9,18 @@ O módulo Storage realiza uma análise contínua da integridade e do desempenho 
 
 ## Funções Disponíveis
 
-## 1. `storage.list_devices()`
+### 1. `storage.list_devices()`
 
 Lista todos os dispositivos de armazenamento detectados no sistema.
 
-**Retorno:**  
+**Retorno**:  
 Array de strings com os caminhos dos dispositivos
 
-{ "/dev/sda", "/dev/sdb" }
+`{ "/dev/sda", "/dev/sdb" }`
 
-### Exemplo
+**Exemplo**:
 
-```
+```lua
 local devices = storage.list_devices()
 
 for _, dev in ipairs(devices) do
@@ -28,19 +28,19 @@ for _, dev in ipairs(devices) do
 end
 ```
 
-## 2.  `storage.info(path)`
+### 2. `storage.info(path)`
 
-Retorna informacoes gerais do disco.
+Retorna informações gerais do disco.
 
-**Parametros:**
+**Parâmetros**:
 
-path (string):   Caminho do dispositivo (ex: "/dev/sda")
+`path` (string): Caminho do dispositivo (ex: `"/dev/sda"`)
 
-**Retorno:**
+**Retorno**:
 
 Table com os campos:
 
-```
+```text
     device_model (string):   Modelo do disco  
     model_family (string):   Familia do modelo (apenas ATA)  
     serial_number (string):   Numero de serie  
@@ -56,36 +56,34 @@ Table com os campos:
     nvme_version (string):   Versao NVMe (apenas NVMe)
 ```
 
-### Exemplo de Uso
+**Exemplo de uso**:
 
-```
+```lua
 local info = storage.info("/dev/sda")
 print(info.device_model, info.serial_number)
 ```
 
-## 3. `storage.health(path)`
+### 3. `storage.health(path)`
 
-```
-Retorna o status geral de saude do disco (SMART overall-health).
-```
+Retorna o status geral de saude do disco (SMART *overall-health*).
 
-**Parametros:**
+**Parâmetros**:
 
-path (string):   Caminho do dispositivo
+`path` (string):   Caminho do dispositivo
 
-**Retorno:**
+**Retorno**:
 
 Table com os campos:
 
-```
+```text
     passed (boolean):  true se o disco passou no teste SMART  
     status (string):   "PASSED" ou "FAILED"  
     message (string):   Mensagem descritiva do status
 ```
 
-### Exemplo de Uso
+**Exemplo de uso**:
 
-```
+```lua
 local h = storage.health("/dev/sda")
 if h.passed then
     print("Disco saudavel")
@@ -94,19 +92,19 @@ else
 end
 ```
 
-## 4. `storage.attributes(path)`
+### 4. `storage.attributes(path)`
 
 Retorna todos os atributos SMART do disco.
 
-**Parametros:**
+**Parâmetros**:
 
-path (string):   Caminho do dispositivo
+`path` (string): Caminho do dispositivo
 
-**Retorno:**
+**Retorno**:
 
 Array de objetos, cada um com os campos:
 
-```
+```text
     id (number):   ID do atributo  
     name (string):   Nome do atributo (ex: "Temperature_Celsius")  
     value (number):   Valor normalizado  
@@ -117,73 +115,73 @@ Array de objetos, cada um com os campos:
     flags (string):   Flags do atributo
 ```
 
-### Exemplo de Uso
+**Exemplo de uso**:
 
-```
+```lua
 local attrs = storage.attributes("/dev/sda")
 for _, a in ipairs(attrs) do
     print(a.id, a.name, a.raw)
 end
 ```
 
-## 5. `storage.attribute(path, attr_name)`
+### 5. `storage.attribute(path, attr_name)`
 
 Retorna um atributo SMART especifico pelo nome.
 
-**Parametros:**
+**Parâmetros**:
 
-```
+```text
   path      : string   Caminho do dispositivo  
   attr_name : string   Nome do atributo (ex: "Temperature_Celsius")
 ```
 
-**Retorno:**
+**Retorno**:
 
 O objeto do atributo se encontrado, nil caso contrario
 
-### Exemplo de Uso
+**Exemplo de uso**:
 
-```
+```lua
 local attr = storage.attribute("/dev/sda", "Power_On_Hours")
 if attr then
     print("Horas ligadas:", attr.raw)
 end
 ```
 
-## 6. `storage.temperature(path)`
+### 6. `storage.temperature(path)`
 
 Retorna a temperatura atual do disco em Celsius.
 
-**Parametros:**
+**Parâmetros**:
 
-path (string): Caminho do dispositivo
+`path` (string): Caminho do dispositivo
 
-**Retorno:**
+**Retorno**:
 
-Temperatura em graus Celsius, ou nil se indisponivel
+Temperatura em graus Celsius, ou `nil` se indisponível
 
-### Exemplo de Uso
+**Exemplo de uso**:
 
-```
+```lua
 local temp = storage.temperature("/dev/sda")
 if temp then
     print("Temperatura:", temp, "C")
 end
 ```
 
-## 7. `storage.error_log(path)`
+### 7. `storage.error_log(path)`
 
 Retorna um resumo do log de erros do disco.
 
-**Parametros:**
+**Parâmetros**:
 
-path (string):   Caminho do dispositivo
+`path` (string):   Caminho do dispositivo
 
-**Retorno:**
+**Retorno**:
 
 Table ou nil com os campos (varia por protocolo):
 
-```
+```text
     ATA:  
       count (number):   Quantidade de erros registrados  
       logged_errors (number):   Erros logados
@@ -194,37 +192,37 @@ Table ou nil com os campos (varia por protocolo):
       unread (number):   Entradas nao lidas
 ```
 
-### Exemplo de Uso
+**Exemplo de uso**:
 
-```
+```lua
 local log = storage.error_log("/dev/nvme0")
 if log then
     print("Erros nao lidos:", log.unread)
 end
 ```
 
-## 8. `storage.self_test(path)`
+### 8. `storage.self_test(path)`
 
-Retorna o resultado do ultimo self-test do disco.
+Retorna o resultado do ultimo *self-test* do disco.
 
-**Parametros:**
+**Parâmetros**:
 
-path (string):   Caminho do dispositivo
+`path` (string):   Caminho do dispositivo
 
-**Retorno:**
+**Retorno**:
 
 Table ou nil com os campos (varia por protocolo):
 
-```
+```text
     ATA: retorna o ultimo teste da tabela de self-tests
 
     NVMe:  
             current_self_test_operation : string   Operacao atual
 ```
 
-### Exemplo de Uso
+**Exemplo de uso**:
 
-```
+```lua
 local test = storage.self_test("/dev/sda")
 if test then
     print("Status:", test.status)
