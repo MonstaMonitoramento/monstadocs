@@ -1,16 +1,18 @@
 ---
 title: "Sonda: Instalación"
-description: Aprenda a instalar la Sonda de Monsta en Windows para realizar monitoreo remoto y ampliar el alcance de la plataforma en su infraestructura.
+description: Aprenda cómo instalar la Sonda de Monsta en Windows para realizar
+  monitorizaciones remotas y ampliar el alcance de la plataforma en su
+  infraestructura.
 sidebar:
   order: 5
 ---
-A **Sonda Monsta** es un software de recopilación local diseñado para ser instalado directamente en servidores y dispositivos **Windows** (próximamente para **Linux** y **Raspberry PI**). Su función principal es recopilar métricas de rendimiento, integridad y disponibilidad del sistema anfitrión, funcionando como una extensión nativa de recopilación para la plataforma Monsta.
+A **Sonda Monsta** es un software de recolección local diseñado para instalarse directamente en servidores y dispositivos **Windows** (próximamente para **Linux** y **Raspberry PI**). Su función principal es recopilar métricas de rendimiento, integridad y disponibilidad del sistema anfitrión, funcionando como una extensión nativa de recolección para la plataforma Monsta.
 
 ## Características y Capacidades Técnicas
 
 ### 1. Arquitectura Pasiva (Bajo Demanda)
 
-La sonda opera estrictamente bajo un modelo **pasivo de petición y respuesta**. No inicia comunicaciones con la red de forma autónoma; el tráfico de datos se produce solo cuando Monsta se pone en contacto para realizar el *polling* (solicitud de recopilación).
+La sonda opera estrictamente bajo un modelo **pasivo de petición y respuesta**. No inicia comunicaciones con la red de forma autónoma; el tráfico de datos se produce únicamente cuando Monsta contacta para realizar el *polling* (solicitud de recolección).
 
 ### 2. Integración con la API WMI (Windows)
 
@@ -21,11 +23,11 @@ En entornos Microsoft, la sonda utiliza de forma nativa la API WMI (*Windows Man
 La sonda actúa como un brazo de automatización directamente en el sistema operativo del host.
 
 - **Comandos Locales:** Puede ejecutar comandos directamente en el sistema operativo anfitrión.
-- **Scripts PowerShell:** Soporta el disparo de scripts personalizados, permitiendo supervisar aplicaciones específicas o crear rutinas de validación a medida.
+- **Scripts PowerShell:** Soporta el disparo de scripts personalizados, permitiendo monitorizar aplicaciones específicas o crear rutinas de validación a medida.
 
 ### 4. Diagnóstico de Salud de Discos Físicos
 
-El software posee la capacidad de leer indicadores de hardware y el estado de integridad de los discos duros y SSD instalados en el dispositivo. Esto posibilita la identificación temprana de fallos físicos (*bad blocks*) y degradación del almacenamiento.
+El software tiene la capacidad de leer indicadores de hardware y el estado de integridad de los discos duros y SSD instalados en el dispositivo. Esto posibilita la identificación temprana de fallos físicos (*bad blocks*) y degradación del almacenamiento.
 
 ### 5. Comunicación Cifrada
 
@@ -35,42 +37,65 @@ Todo el intercambio de información entre el servidor central de Monsta y la Son
 
 1. Descargue el programa de la sonda en el sistema operativo Windows que desea monitorizar;
 
-|  | Download |
-| ----------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
-| [![Download da Sonda](/src/assets/images/p139_image-1660325708746.png)](https://www.monsta.com.br/monsta/download/MonstaProbe.exe) | [https://www.monsta.com.br/monsta/download/MonstaProbe.exe](https://www.monsta.com.br/monsta/download/MonstaProbe.exe) |
 
-1. Con sesión iniciada con un usuario administrador, ejecute el instalador "monstaprobe.exe";
-2. Configure los parámetros de puerto y contraseña que se le solicitarán durante la instalación.
+|  | Descarga |
+| --------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| ![Download da Sonda](/src/assets/images/p139_image-1660325708746.png) | [https://www.monsta.com.br/monsta/download/MonstaProbe.msi](https://www.monsta.com.br/monsta/download/MonstaProbe.msi) |
 
-**Instalação pela linha de comando**
+
+1. Con sesión iniciada con un usuario administrador, ejecute el instalador "monstaprobe.msi";
+2. Configure los parámetros de puerto y contraseña que se solicitarán durante la instalación.
+
+### Instalación desde la línea de comandos
 
 El instalador MonstaProbe.exe acepta opciones en la línea de comandos. Puede utilizarlas para automatizar la instalación en una red mediante una GPO, sin necesidad de interacción con la interfaz gráfica.
 
-| Opção &nbsp; &nbsp; &nbsp; &nbsp; | Descrição |
-| --------------------------------- | ------------------------------------------------------------------------------------------------------------- |
-| `--agree` | Acepta el término de uso de la sonda colectora. |
-| `--port` | Informa el puerto a ser utilizado por la sonda colectora. Si no se informa, el valor por defecto será 7743 (TCP). |
-| `--passwd` | Asigna la contraseña que será utilizada por la sonda colectora. La contraseña por defecto será *monsta@dm* en caso de no ser informada. |
 
-**Exemplo de uso**
+| Opción &nbsp; &nbsp; &nbsp; &nbsp; | Descripción |
+| --------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| `AGREE=Y` | Acepta el término de uso de la sonda recolectora. |
+| `PORT=<num>` | Indica el puerto que usará la sonda recolectora. Si no se especifica, el valor por defecto será 7743 (TCP). |
+| `PASSWD=<password>` | Asigna la contraseña que usará la sonda recolectora. |
+| `REMOTE_EXEC=1` | Habilita la ejecución de comandos y scripts en PowerShell. |
+
+
+**Ejemplo de uso**:
 
 ```powershell
-MonstaProbe.exe --agree --port 1234 --passwd senha
+msiexec /i MonstaProbe.msi /qn AGREE=Y PORT=7743 PASSWD=MinhaSenha REMOTE_EXEC=1
 ```
 
-:::note
-**port**: Es el puerto que será utilizado por la sonda para que Monsta se conecte. El valor por defecto es **7743** (TCP).  
-**password**: Es la contraseña de autenticación para la sonda en el equipo instalado. El valor por defecto es `monsta@dm`.
-:::
+### Comandos para cambiar la configuración
 
-**Configuração no Monsta**
+Los parámetros de la sonda pueden ajustarse vía línea de comandos.
 
-Dentro de Monsta, al crear un dispositivo, simplemente configúrelo para utilizar las plantillas de Microsoft.
+
+| Opción | Descripción |
+| ----------------- | ----------------------------------------------------- |
+| `--cfg` | Indica que la configuración será modificada. |
+| `--port` | Redefine el puerto que la sonda deberá escuchar. |
+| `--passwd` | Redefine la contraseña. |
+| `--remote-exec 1` | Habilita la ejecución de comandos y scripts PowerShell. |
+
+
+**Ejemplo de uso**:
+
+```powershell
+"C:\Program Files (x86)\MonstaProbe\monsta_probe.exe" --cfg --port 7744 --passwd NovaSenha --remote-exec 1
+```
+
+### Ejecución Remota de Scripts: Seguridad y Permisos
+
+La ejecución de comandos y scripts en PowerShell a través de la Sonda de Monsta se realiza en el contexto exclusivo del usuario local **monsta-probe**. Este usuario se crea automáticamente durante el proceso de instalación y opera estrictamente con permisos de usuario estándar, garantizando que todos los servicios, tareas y scripts disparados por la plataforma se ejecuten de forma aislada, sin privilegios de administrador ni acceso a archivos sensibles del sistema operativo.
+
+### Configuración en Monsta
+
+Dentro de Monsta, al crear un dispositivo, simplemente configúrelo para usar las plantillas de Microsoft.
 
 ![image-1741105397485.png](/src/assets/images/p68_image-1741105397485.png)
 
-Y rellene el campo "Usuário WMI" con cualquier información (se descartará en el futuro) y el campo "Senha WMI" con la contraseña indicada durante la instalación de la sonda.
+Y rellene el campo "Usuário WMI" con cualquier información (será descartada en el futuro) y el campo "Senha WMI" con la contraseña indicada durante la instalación de la sonda.
 
 ![image-1741105450183.png](/src/assets/images/p68_image-1741105450183.png)
 
-Tras crear el dispositivo ya puede utilizar los monitores disponibles de la plantilla.
+Después de crear el dispositivo ya puede utilizar los monitores disponibles de la plantilla.
