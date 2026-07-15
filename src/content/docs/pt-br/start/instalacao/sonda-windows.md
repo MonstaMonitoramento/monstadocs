@@ -37,9 +37,11 @@ Toda a troca de informações entre o servidor central do Monsta e a Sonda insta
 
 1. Baixe o programa da sonda no sistema operacional Windows que deseja monitorar;
 
+
 |  | Download |
 | --------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
 | ![Download da Sonda](/src/assets/images/p139_image-1660325708746.png) | [https://www.monsta.com.br/monsta/download/MonstaProbe.msi](https://www.monsta.com.br/monsta/download/MonstaProbe.msi) |
+
 
 1. Logado com um usuário administrador, execute o instalador "monstaprobe.msi";
 2. Configure os parâmetros de porta e senha que serão solicitados durante a instalação.
@@ -48,12 +50,14 @@ Toda a troca de informações entre o servidor central do Monsta e a Sonda insta
 
 O instalador MonstaProbe.exe aceita opções na linha de comando. Você pode utilizá-las para automatizar a instalação em uma rede através de uma GPO, sem necessidade de interação com a interface gráfica.
 
+
 | Opção &nbsp; &nbsp; &nbsp; &nbsp; | Descrição |
 | --------------------------------- | ---------------------------------------------------------------------------------------------------- |
 | `AGREE=Y` | Aceita o termo de uso da sonda coletora. |
 | `PORT=<num>` | Informa a porta a ser utilizada pela sonda coletora. Se não for informada, o padrão será 7743 (TCP). |
 | `PASSWD=<password>` | Atribui a senha a ser utilizada pela sonda coletora. |
 | `REMOTE_EXEC=1` | Habilita a execução de comandos e scripts em Powershell. |
+
 
 **Exemplo de uso**
 
@@ -65,6 +69,7 @@ msiexec /i MonstaProbe.msi /qn AGREE=Y PORT=7743 PASSWD=MinhaSenha REMOTE_EXEC=1
 
 Os parâmetros da sonda podem ser ajustados via linha de comando.
 
+
 | Opção | Descrição |
 | ----------------- | ----------------------------------------------------- |
 | `--cfg` | Indica que a configuração será alterada. |
@@ -72,10 +77,11 @@ Os parâmetros da sonda podem ser ajustados via linha de comando.
 | `--passwd` | Redefine a senha. |
 | `--remote-exec 1` | Habilita a execução de comandos e scripts powershell. |
 
+
 Exemplo de uso:
 
 ```
-"C:\Program Files (x86)\MonstaProbe\monsta_probe.exe" --cfg --port 7744 --passwd NovaSenha remote-exec 1
+"C:\Program Files (x86)\MonstaProbe\monsta_probe.exe" --cfg --port 7744 --passwd NovaSenha --remote-exec 1
 ```
 
 ### Execução Remota de Scripts: Segurança e Permissões
