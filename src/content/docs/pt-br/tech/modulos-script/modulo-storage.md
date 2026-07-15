@@ -1,5 +1,9 @@
 ---
 title: Módulo Storage
+sidebar:
+    badge:
+        text: New
+        variant: success
 ---
 O módulo Storage realiza uma análise contínua da integridade e do desempenho de discos rígidos (HDs) e unidades de estado sólido (SSDs), coletando informações S.M.A.R.T. para identificar sinais de desgaste, falhas iminentes e degradação do dispositivo
 
@@ -12,9 +16,9 @@ Lista todos os dispositivos de armazenamento detectados no sistema.
 **Retorno:**  
 Array de strings com os caminhos dos dispositivos
 
-{ "/dev/sda", "/dev/sdb" } 
+{ "/dev/sda", "/dev/sdb" }
 
-### Exemplo:
+### Exemplo
 
 ```
 local devices = storage.list_devices()
@@ -50,7 +54,7 @@ Table com os campos:
         physical_block_size (number):   Tamanho do bloco fisico  
         nvme_version (string):   Versao NVMe (apenas NVMe)
 
-### Exemplo de Uso:
+### Exemplo de Uso
 
 ```
 local info = storage.info("/dev/sda")
@@ -73,7 +77,7 @@ Table com os campos:
         status (string):   "PASSED" ou "FAILED"  
         message (string):   Mensagem descritiva do status
 
-### Exemplo de Uso:
+### Exemplo de Uso
 
 ```
 local h = storage.health("/dev/sda")
@@ -105,7 +109,7 @@ Array de objetos, cada um com os campos:
         when_failed (string):   Indicacao de falha  
         flags (string):   Flags do atributo
 
-### Exemplo de Uso:
+### Exemplo de Uso
 
 ```
 local attrs = storage.attributes("/dev/sda")
@@ -127,7 +131,7 @@ Retorna um atributo SMART especifico pelo nome.
 
 O objeto do atributo se encontrado, nil caso contrario
 
-### Exemplo de Uso:
+### Exemplo de Uso
 
 ```
 local attr = storage.attribute("/dev/sda", "Power_On_Hours")
@@ -148,7 +152,7 @@ path (string): Caminho do dispositivo
 
 Temperatura em graus Celsius, ou nil se indisponivel
 
-### Exemplo de Uso:
+### Exemplo de Uso
 
 ```
 local temp = storage.temperature("/dev/sda")
@@ -178,7 +182,7 @@ Table ou nil com os campos (varia por protocolo):
           read (number):   Entradas lidas  
           unread (number):   Entradas nao lidas
 
-### Exemplo de Uso:
+### Exemplo de Uso
 
 ```
 local log = storage.error_log("/dev/nvme0")
@@ -204,7 +208,7 @@ Table ou nil com os campos (varia por protocolo):
         NVMe:  
                 current_self_test_operation : string   Operacao atual
 
-### Exemplo de Uso:
+### Exemplo de Uso
 
 ```
 local test = storage.self_test("/dev/sda")
@@ -212,4 +216,3 @@ if test then
     print("Status:", test.status)
 end
 ```
-
