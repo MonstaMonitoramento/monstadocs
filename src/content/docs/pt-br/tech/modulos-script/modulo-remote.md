@@ -5,22 +5,22 @@ O módulo Remote é uma ferramenta avançada de automação que permite que a So
 
 ## Funções Disponíveis
 
-### 1.**** `remote.exec(command, [arg1], [arg2], ...)`
+### 1. `remote.exec(command, [arg1], [arg2], ...)`
 
 Executa um comando do sistema operacional remoto com os argumentos especificados.
 
-#### **Parâmetros:**
+### Parâmetros:
 
 - **command** (string): Nome do comando/programa a ser executado
 - **…** (opcional, strings): Argumentos adicionais para o comando
 
-#### **Retorno:**
+### Retorno:
 
 - **tuple**: `(out, err)` onde:
   - **out** (string ou nil): Saída padrão do comando se bem-sucedido, ou `nil` se falhar
   - **err** (string ou nil): Saída de erro do comando se falhar, ou `nil` se bem-sucedido
 
-#### **Comportamento:**
+### Comportamento:
 
 1. O comando é executado com o usuário `monsta-probe` em ambientes Windows e `monstasb` em ambientes Linux.
 2. Se o comando retornar código de saída 0 (sucesso):
@@ -33,7 +33,7 @@ Executa um comando do sistema operacional remoto com os argumentos especificados
   - `out` é `nil`
   - `err` contém a mensagem de erro
 
-#### **Exemplo de Uso:**
+### Exemplo de Uso:
 
 ```
       local resp = probe.exec("ping", { "C:\\Windows\\System32\\ping.exe" }, { "127.0.0.1" })
