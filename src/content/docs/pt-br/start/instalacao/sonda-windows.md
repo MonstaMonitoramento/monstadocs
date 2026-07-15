@@ -37,7 +37,7 @@ Toda a troca de informações entre o servidor central do Monsta e a Sonda insta
 
 1. Baixe o programa da sonda no sistema operacional Windows que deseja monitorar;
 
-|  | Download |
+| | Download |
 | --------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
 | ![Download da Sonda](/src/assets/images/p139_image-1660325708746.png) | [https://www.monsta.com.br/monsta/download/MonstaProbe.msi](https://www.monsta.com.br/monsta/download/MonstaProbe.msi) |
 
@@ -55,7 +55,7 @@ O instalador MonstaProbe.exe aceita opções na linha de comando. Você pode uti
 | `PASSWD=<password>` | Atribui a senha a ser utilizada pela sonda coletora. |
 | `REMOTE_EXEC=1` | Habilita a execução de comandos e scripts em Powershell. |
 
-**Exemplo de uso**
+**Exemplo de uso**:
 
 ```powershell
 msiexec /i MonstaProbe.msi /qn AGREE=Y PORT=7743 PASSWD=MinhaSenha REMOTE_EXEC=1
@@ -72,9 +72,9 @@ Os parâmetros da sonda podem ser ajustados via linha de comando.
 | `--passwd` | Redefine a senha. |
 | `--remote-exec 1` | Habilita a execução de comandos e scripts powershell. |
 
-Exemplo de uso:
+**Exemplo de uso**:
 
-```
+```powershell
 "C:\Program Files (x86)\MonstaProbe\monsta_probe.exe" --cfg --port 7744 --passwd NovaSenha remote-exec 1
 ```
 
