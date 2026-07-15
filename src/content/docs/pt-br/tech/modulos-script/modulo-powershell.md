@@ -7,7 +7,7 @@ O módulo PowerShell permite executar comandos e scripts do PowerShell de forma 
 
 Executa um ou mais comandos PowerShell exclusivamente em ambientes Windows.
 
-**Parametros**:
+**Parâmetros**:
 
 (string): Um ou mais comandos PowerShell.
 
