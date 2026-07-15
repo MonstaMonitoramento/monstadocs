@@ -46,7 +46,7 @@ Toda a troca de informações entre o servidor central do Monsta e a Sonda insta
 1. Logado com um usuário administrador, execute o instalador "monstaprobe.msi";
 2. Configure os parâmetros de porta e senha que serão solicitados durante a instalação.
 
-### **Instalação pela linha de comando**
+### Instalação pela linha de comando
 
 O instalador MonstaProbe.exe aceita opções na linha de comando. Você pode utilizá-las para automatizar a instalação em uma rede através de uma GPO, sem necessidade de interação com a interface gráfica.
 
@@ -64,7 +64,7 @@ O instalador MonstaProbe.exe aceita opções na linha de comando. Você pode uti
 msiexec /i MonstaProbe.msi /qn AGREE=Y PORT=7743 PASSWD=MinhaSenha
 ```
 
-### **Comandos para alterar a configuração**
+### Comandos para alterar a configuração
 
 Os parâmetros da sonda podem ser ajustados via linha de comando.
 
@@ -82,7 +82,7 @@ Exemplo de uso:
 C:\Program Files (x86)\MonstaProbe\monsta_probe.exe --cfg --port 7744 --passwd NovaSenha
 ```
 
-### **Configuração no Monsta**
+### Configuração no Monsta
 
 Dentro do Monsta, ao criar um dispositivo, apenas configure-o para utilizar os templates da Microsoft.
 
