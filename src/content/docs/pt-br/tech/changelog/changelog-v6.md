@@ -1,9 +1,27 @@
 ---
 title: Changelog v6
-description: Acompanhe o Changelog da versão 6 do Monsta e conheça as novas funcionalidades, melhorias, correções e alterações realizadas em cada atualização da plataforma.
+description: Acompanhe o Changelog da versão 6 do Monsta e conheça as novas
+  funcionalidades, melhorias, correções e alterações realizadas em cada
+  atualização da plataforma.
 sidebar:
   order: 2
 ---
+## Versão 6.0.16 Beta
+
+**✨Novo**: **Relatórios Mensais com Inteligência Artificial:** Agora, sua conta gera automaticamente relatórios mensais enriquecidos com *insights* baseados em IA.
+
+![image.png](/src/assets/images/image-8.png)
+
+**✨Novo**: **Execução Remota via PowerShell:** A Sonda permite a execução de comandos e *scripts* em PowerShell diretamente pelo console. Para garantir a segurança do seu ambiente, todos os comandos são processados utilizando um **usuário com privilégios restritos (não administrador)**.
+
+![image.png](/src/assets/images/image-5.png)
+
+**✨Novo**: **Monitoramento S.M.A.R.T.:** Adicionamos suporte à coleta de dados S.M.A.R.T. (Self-Monitoring, Analysis, and Reporting Technology) de discos físicos, permitindo acompanhar a integridade, a vida útil e os indicadores de saúde do armazenamento para identificar possíveis falhas antes que elas afetem o ambiente.
+
+![image.png](/src/assets/images/image-6.png)
+
+🔧**Correção**: Corrigido um comportamento inesperado onde as atualizações do sistema afetavam indevidamente o logotipo personalizado definido pelo usuário.
+
 ## Versão 6.0.13 Beta
 
 **🔧Correção**: Otimizado o tempo de inicializacao da coleta de dados em novas instalacoes.
