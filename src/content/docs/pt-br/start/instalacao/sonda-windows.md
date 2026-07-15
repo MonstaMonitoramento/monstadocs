@@ -70,10 +70,10 @@ Os parâmetros da sonda podem ser ajustados via linha de comando.
 
 
 | Opção | Descrição |
-| -------- | -------------------------------------------- |
-| --cfg | Indica que a configuração será alterada. |
-| --port | Redefine a porta que a sonda deverá escutar. |
-| --passwd | Redefine a senha. |
+| ---------- | -------------------------------------------- |
+| `--cfg` | Indica que a configuração será alterada. |
+| `--port` | Redefine a porta que a sonda deverá escutar. |
+| `--passwd` | Redefine a senha. |
 
 
 Exemplo de uso:
