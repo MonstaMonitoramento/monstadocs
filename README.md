@@ -44,6 +44,7 @@ src/content/docs/
     │   └── migracao/
     ├── tech/
     │   ├── arquitetura-comunicacao/
+    │   ├── changelog/
     │   ├── guias-tecnicos/
     │   ├── modulos-script/
     │   ├── protocolos-coleta/
