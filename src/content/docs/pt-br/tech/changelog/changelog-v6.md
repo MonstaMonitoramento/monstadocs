@@ -10,7 +10,7 @@ sidebar:
 
 **✨Novo**: **Relatórios Mensais com Inteligência Artificial:** Agora, sua conta gera automaticamente relatórios mensais enriquecidos com *insights* baseados em IA.
 
-![image.png](/src/assets/images/image-8.png)
+![image.png](/src/assets/images/image-10.png)
 
 **✨Novo**: **Execução Remota via PowerShell:** A Sonda permite a execução de comandos e *scripts* em PowerShell diretamente pelo console. Para garantir a segurança do seu ambiente, todos os comandos são processados utilizando um **usuário com privilégios restritos (não administrador)**.
 
