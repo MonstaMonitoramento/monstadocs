@@ -52,6 +52,32 @@ Table com os campos:
     nvme_version (string):   Versao NVMe (apenas NVMe)
 ```
 
+> device_model (string):   Modelo do disco  
+>
+> model_family (string):   Familia do modelo (apenas ATA)  
+>
+> serial_number (string):   Numero de serie  
+>
+> firmware_version (string):  Versao do firmware  
+>
+> user_capacity (string):   Capacidade total  
+>
+> rotation_rate (string):   RPM (apenas ATA)  
+>
+> form_factor (string):   Formato fisico (apenas ATA)  
+>
+> interface (string):   Velocidade da interface (apenas ATA)  
+>
+> protocol (string):   "ATA", "NVMe" ou "SCSI"  
+>
+> smart_support (table):    Informacoes de suporte SMART  
+>
+> logical_block_size (number):   Tamanho do bloco logico  
+>
+> physical_block_size (number):   Tamanho do bloco fisico  
+>
+> nvme_version (string):   Versao NVMe (apenas NVMe)
+
 **Exemplo de uso**:
 
 ```lua
@@ -224,3 +250,4 @@ if test then
     print("Status:", test.status)
 end
 ```
+
