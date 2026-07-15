@@ -1,9 +1,5 @@
 ---
 title: Módulo Powershell
-sidebar:
-    badge:
-        text: New
-        variant: success
 ---
 O módulo PowerShell permite executar comandos e scripts do PowerShell de forma segura e automatizada nos equipamentos monitorados, possibilitando a coleta de informações, a execução de tarefas administrativas e a validação de configurações do sistema. Com ele, é possível criar verificações personalizadas, automatizar rotinas de manutenção e integrar o monitoramento a recursos nativos do Windows, ampliando a capacidade de diagnóstico e gerenciamento do ambiente.
 

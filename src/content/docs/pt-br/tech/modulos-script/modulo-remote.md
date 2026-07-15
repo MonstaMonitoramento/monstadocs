@@ -1,9 +1,5 @@
 ---
 title: Módulo Remote
-sidebar:
-    badge:
-        text: New
-        variant: success
 ---
 O módulo Remote é uma ferramenta avançada de automação que permite que a Sonda execute comandos diretamente no sistema operacional ou no ambiente onde ela está instalada. Este recurso é ideal para automatizar respostas a incidentes, realizar coletas de diagnóstico específicas ou disparar scripts locais baseados em eventos do monitoramento.
 

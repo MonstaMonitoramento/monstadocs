@@ -1,9 +1,5 @@
 ---
 title: Módulo Storage
-sidebar:
-    badge:
-        text: New
-        variant: success
 ---
 O módulo Storage realiza uma análise contínua da integridade e do desempenho de discos rígidos (HDs) e unidades de estado sólido (SSDs), coletando informações S.M.A.R.T. para identificar sinais de desgaste, falhas iminentes e degradação do dispositivo
 
