@@ -78,7 +78,7 @@ Os parâmetros da sonda podem ser ajustados via linha de comando.
 | `--remote-exec 1` | Habilita a execução de comandos e scripts powershell. |
 
 
-Exemplo de uso:
+**Exemplo de uso**
 
 ```
 "C:\Program Files (x86)\MonstaProbe\monsta_probe.exe" --cfg --port 7744 --passwd NovaSenha --remote-exec 1
