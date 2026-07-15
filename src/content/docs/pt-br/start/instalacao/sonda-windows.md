@@ -18,18 +18,11 @@ A sonda opera estritamente sob um modelo **passivo de requisição e resposta**.
 
 Em ambientes Microsoft, a sonda utiliza de forma nativa a API WMI (*Windows Management Instrumentation*), permitindo extrair contadores de desempenho detalhados de servidores e estações de trabalho sem a necessidade de configurações complexas de gerenciamento remoto na rede.
 
-### 3. Execução de Comandos e Scripts PowerShell
-
-A sonda atua como um braço de automação diretamente no sistema operacional do host.
-
-- **Comandos Locais:** Pode executar comandos diretamente no sistema operacional hospedeiro.
-- **Scripts PowerShell:** Suporta o acionamento de scripts customizados, permitindo monitorar aplicações específicas ou criar rotinas de validação sob medida.
-
-### 4. Diagnóstico de Saúde de Discos Físicos
+### 3. Diagnóstico de Saúde de Discos Físicos
 
 O software possui a capacidade de ler indicadores de hardware e o status de integridade dos discos rígidos e SSDs instalados no dispositivo. Isso possibilita a identificação precoce de falhas físicas (*bad blocks*) e degradação de armazenamento.
 
-### 5. Comunicação Criptografada
+### 4. Comunicação Criptografada
 
 Toda a troca de informações entre o servidor central do Monsta e a Sonda instalada no dispositivo é **100% criptografada**, garantindo a segurança das métricas trafegadas e impedindo a interceptação de dados sensíveis da infraestrutura.
 
