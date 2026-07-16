@@ -1,4 +1,7 @@
-media: src/assets/images
+media:
+  input: src/assets/images
+  output: /src/assets/images
+  rename: random
 content:  
   - name: artigos
     label: Artigos
