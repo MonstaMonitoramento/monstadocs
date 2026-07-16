@@ -1,5 +1,5 @@
 ---
-title: "Módulo de registro"
+title: "Módulo Log"
 ---
 
 El módulo **log** proporciona funciones de logging para scripts Lua, permitiendo el registro de mensajes con diferentes niveles de severidad. Este módulo es útil para depuración, monitorización y auditoría de scripts en producción.
@@ -20,15 +20,15 @@ El módulo **log** proporciona funciones de logging para scripts Lua, permitiend
 
 Define un identificador para los logs generados por el script actual.
 
-#### Parámetros:
+#### Parámetros
 
 - **identificador** (string): Identificador único para el contexto de ejecución
 
-#### Retorno:
+#### Retorno
 
 - **nil**: La función no devuelve valor
 
-#### Comportamiento:
+#### Comportamiento
 
 - El identificador se almacena internamente y persiste durante toda la ejecución del script
 
@@ -36,7 +36,7 @@ Define un identificador para los logs generados por el script actual.
 
 - Útil para distinguir registros de diferentes scripts o instancias
 
-#### Ejemplo de uso:
+#### Ejemplo de uso
 
 ```lua
 -- Establecer identificador para un script específico
@@ -56,22 +56,22 @@ log.info("Iniciando backup")
 
 Registra mensajes de nivel DEBUG para información detallada de depuración.
 
-#### Parámetros:
+#### Parámetros
 
 - **...** (múltiples valores): Valores a registrar, separados por tabulación
 
-#### Retorno:
+#### Retorno
 
 - **nil**: La función no devuelve valor
 
-#### Ejemplo de uso:
+#### Ejemplo de uso
 
 ```lua
 -- Registro de valores de variables para depuración
 local temperatura = 45.6
 local uso_memoria = 78.3
 log.debug("Variáveis de sistema:", "Temp:", temperatura, "Mem:", uso_memoria)
--- Salida: [lua] [ident] Variáveis de sistema:	Temp:	45.6	Mem:	78.3
+-- Salida: [lua] [ident] Variáveis de sistema: Temp: 45.6 Mem: 78.3
 
 -- Depuración del flujo de ejecución
 log.debug("Entrando na função processar_dados")
@@ -91,11 +91,11 @@ log.debug("Dados da requisição:", dados)
 
 Registra mensajes de nivel INFO para información general sobre la ejecución.
 
-#### Parámetros:
+#### Parámetros
 
 - **...** (múltiples valores): Valores a registrar, separados por tabulación
 
-#### Retorno:
+#### Retorno
 
 - **nil**: La función no devuelve valor
 
@@ -103,11 +103,11 @@ Registra mensajes de nivel INFO para información general sobre la ejecución.
 
 Registra mensajes de nivel WARN para situaciones que requieren atención pero no son errores.
 
-#### Parámetros:
+#### Parámetros
 
 - **...** (múltiples valores): Valores a registrar, separados por tabulación
 
-#### Retorno:
+#### Retorno
 
 - **nil**: La función no devuelve valor
 
@@ -115,10 +115,10 @@ Registra mensajes de nivel WARN para situaciones que requieren atención pero no
 
 Registra mensajes de nivel ERROR para situaciones de error que requieren intervención.
 
-#### Parámetros:
+#### Parámetros
 
 - **...** (múltiples valores): Valores a registrar, separados por tabulación
 
-#### Retorno:
+#### Retorno
 
 - **nil**: La función no devuelve valor

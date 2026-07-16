@@ -16,10 +16,10 @@ This documentation is designed to guide you from sub-1-minute installation to ad
 Our knowledge base is organized so you can find quick, accurate answers:
 
 * 🚀 **Getting Started**: The basics you need to know. Quick installation guides, first steps and mapping your network topology.
-* 📖 **User Guide**: Detailed instructions on the entire Monsta interface. Learn to navigate the screens, create custom dashboards, configure alerts (Email, SMS, Telegram) and manage devices.
+* 📖 **User Manual**: Detailed instructions on the entire Monsta interface. Learn to navigate the screens, create custom dashboards, configure alerts (Email, SMS, Telegram) and manage devices.
 * ⚙️ **Technical Documentation**: Dive into collection protocols (SNMP, WMI), creating custom monitors using the **Lua** language and other integrations.
 * ❓ **Frequently Asked Questions (FAQ)**: Quick answers to the most common questions (such as the differences between Probe and Agent) and solutions for troubleshooting scenarios.
-* 💡 **Additional Guides**: Specific use cases, equipment configuration tutorials and other tools, monitoring best practices and tips to optimize your environment's performance.
+* 💡 **Extra Guides**: Specific use cases, equipment configuration tutorials and other tools, monitoring best practices and tips to optimize your environment's performance.
 
 ---
 

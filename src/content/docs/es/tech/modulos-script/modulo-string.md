@@ -1,5 +1,5 @@
 ---
-title: "Módulo de cadenas"
+title: "Módulo String"
 ---
 
 El módulo **string** proporciona funciones utilitarias para la manipulación de cadenas en Lua, complementando las funciones nativas del lenguaje.
@@ -12,17 +12,17 @@ El módulo **string** proporciona funciones utilitarias para la manipulación de
 
 Divide una cadena en subcadenas basándose en un separador especificado.
 
-#### Parámetros:
+#### Parámetros
 
 - **s** (string): La cadena original que será dividida
 
 - **sep** (string): El separador usado para dividir la cadena
 
-#### Retorno:
+#### Retorno
 
 - **table**: Un array (tabla indexada numéricamente) que contiene todas las subcadenas resultantes de la división
 
-#### Comportamiento:
+#### Comportamiento
 
 - Si el separador es una cadena vacía (`""`), la función devuelve un array con cada carácter individual
 
@@ -30,7 +30,7 @@ Divide una cadena en subcadenas basándose en un separador especificado.
 
 - La división se realiza en todas las ocurrencias del separador
 
-#### Ejemplo de uso:
+#### Ejemplo de uso
 
 ```lua
 -- Dividir una cadena por coma
@@ -58,15 +58,15 @@ local unico = string.split("texto_sem_separador", "|")
 
 Elimina espacios en blanco (whitespace) del inicio y del final de una cadena.
 
-#### Parámetros:
+#### Parámetros
 
 - **s** (string): La cadena que será limpiada
 
-#### Retorno:
+#### Retorno
 
 - **string**: La cadena original sin espacios en blanco al inicio ni al final
 
-#### Comportamiento:
+#### Comportamiento
 
 - Elimina espacios (` `), tabs (`\t`), saltos de línea (`\n`), retornos de carro (`\r`)
 
@@ -74,7 +74,7 @@ Elimina espacios en blanco (whitespace) del inicio y del final de una cadena.
 
 - Devuelve cadena vacía si la entrada contiene solo espacios en blanco
 
-#### Ejemplo de uso:
+#### Ejemplo de uso
 
 ```lua
 -- Eliminar espacios extra
@@ -100,17 +100,17 @@ local vazio = string.trim("   \t\n   ")
 
 Verifica si una cadena comienza con un prefijo específico.
 
-#### Parámetros:
+#### Parámetros
 
 - **String** (string): La cadena a verificar
 
 - **Start** (string): El prefijo a buscar al inicio de la cadena
 
-#### Retorno:
+#### Retorno
 
 - **boolean**: `true` si la cadena comienza con el prefijo especificado, `false` en caso contrario
 
-#### Comportamiento:
+#### Comportamiento
 
 - La comparación distingue mayúsculas y minúsculas (case-sensitive)
 
@@ -118,7 +118,7 @@ Verifica si una cadena comienza con un prefijo específico.
 
 - Funciona con cadenas multibyte (UTF-8)
 
-#### Ejemplo de uso:
+#### Ejemplo de uso
 
 ```lua
 -- Verificar si una cadena comienza con "http"
@@ -149,17 +149,17 @@ local case_check = string.starts("Hello World", "hello")
 
 Verifica si una cadena termina con un sufijo específico.
 
-#### Parámetros:
+#### Parámetros
 
 - **string** (string): La cadena a verificar
 
 - **end** (string): El sufijo a buscar al final de la cadena
 
-#### Retorno:
+#### Retorno
 
 - **boolean**: `true` si la cadena termina con el sufijo especificado, `false` en caso contrario
 
-#### Comportamiento:
+#### Comportamiento
 
 - La comparación distingue mayúsculas y minúsculas (case-sensitive)
 
@@ -167,7 +167,7 @@ Verifica si una cadena termina con un sufijo específico.
 
 - Funciona con cadenas multibyte (UTF-8)
 
-#### Ejemplo de uso:
+#### Ejemplo de uso
 
 ```lua
 -- Verificar extensión de archivo
@@ -194,7 +194,7 @@ local case_check = string.ends("Hello World", "world")
 -- case_check = false (distingue mayúsculas/minúsculas)
 ```
 
-### Ventajas del Módulo String de Monsta:
+### Ventajas del Módulo String de Monsta
 
 1. **`string.split()`** - No existe nativamente en Lua, necesita implementarse manualmente
 
@@ -202,7 +202,7 @@ local case_check = string.ends("Hello World", "world")
 
 3. **Consistencia** - Misma interfaz para todas las funciones
 
-### Funciones complementarias:
+### Funciones complementarias
 
 Úselo en conjunto con funciones nativas de Lua:
 

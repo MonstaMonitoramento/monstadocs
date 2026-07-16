@@ -19,7 +19,7 @@ Nuestra base de conocimiento está organizada para que encuentre respuestas ráp
 * 📖 **Manual del usuario**: Instrucciones detalladas sobre toda la interfaz de Monsta. Aprenda a navegar por las pantallas, crear paneles personalizados, configurar alertas (Correo electrónico, SMS, Telegram) y gestionar dispositivos.
 * ⚙️ **Documentación técnica**: Profundice en los protocolos de recolección (SNMP, WMI), creación de monitores personalizados utilizando el lenguaje **Lua** y otras integraciones.
 * ❓ **Preguntas frecuentes (FAQ)**: Respuestas rápidas a las preguntas más frecuentes (como las diferencias entre Sonda y Agente) y soluciones para escenarios de resolución de problemas.
-* 💡 **Guías extra**: Casos de uso específicos, tutoriales de configuración de equipos y otras herramientas, mejores prácticas de monitorización y consejos para optimizar el rendimiento de su entorno.
+* 💡 **Guías adicionales**: Casos de uso específicos, tutoriales de configuración de equipos y otras herramientas, mejores prácticas de monitorización y consejos para optimizar el rendimiento de su entorno.
 
 ---
 

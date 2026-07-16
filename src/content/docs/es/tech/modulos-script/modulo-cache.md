@@ -1,5 +1,5 @@
 ---
-title: "Módulo Caché"
+title: "Módulo Cache"
 ---
 
 El módulo **cache** proporciona un sistema de caché distribuido para scripts Lua. La caché admite operaciones de lectura/escritura con expiración automática (TTL) y mecanismos de sincronización para operaciones concurrentes.

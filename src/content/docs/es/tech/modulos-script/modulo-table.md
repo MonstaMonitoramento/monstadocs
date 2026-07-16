@@ -1,5 +1,5 @@
 ---
-title: "Módulo table"
+title: "Módulo Table"
 ---
 
 El módulo **table** extiende las funcionalidades estándar de manipulación de tablas de Lua, proporcionando funciones adicionales útiles para el procesamiento de datos. Este módulo complementa las funciones nativas de la tabla `table` de Lua, añadiendo operaciones comunes que no están disponibles en la biblioteca estándar.
@@ -16,17 +16,17 @@ El módulo **table** extiende las funcionalidades estándar de manipulación de 
 
 Verifica si un valor específico está presente en una tabla Lua.
 
-#### Parâmetros:
+#### Parâmetros
 
 - **tabela** (tabela): La tabla a verificar (puede ser array o tabla asociativa)
 
 - **valor** (qualquer tipo Lua): El valor a buscar en la tabla
 
-#### Retorno:
+#### Retorno
 
 - **boolean**: `true` si el valor se encuentra en la tabla, `false` en caso contrario
 
-#### Comportamento:
+#### Comportamento
 
 1. Recorre todos los pares clave-valor de la tabla usando `pairs()`
 
@@ -38,7 +38,7 @@ Verifica si un valor específico está presente en una tabla Lua.
 
 5. Funciona con tablas indexadas numéricamente (arrays) y tablas asociativas
 
-#### Ejemplo de Uso:
+#### Ejemplo de Uso
 
 ```lua
 -- Verificar si un valor existe en un array
@@ -84,7 +84,7 @@ print("Encontrou novo Bob?", encontrou_novo_bob)  -- false
 
 Extrae una porción (subarray) de una tabla indexada numéricamente (array).
 
-#### Parâmetros:
+#### Parâmetros
 
 - **tabela** (tabela): El array Lua del que extraer la porción
 
@@ -92,11 +92,11 @@ Extrae una porción (subarray) de una tabla indexada numéricamente (array).
 
 - **último** (número, opcional): Índice final de la porción (por defecto: longitud de la tabla)
 
-#### Retorno:
+#### Retorno
 
 - **tabela**: Nuevo array que contiene los elementos de la porción especificada
 
-#### Comportamento:
+#### Comportamento
 
 1. Crea una nueva tabla que contiene los elementos desde el índice `primeiro` hasta `último` (inclusive)
 
@@ -110,7 +110,7 @@ Extrae una porción (subarray) de una tabla indexada numéricamente (array).
 
 6. Preserva el orden original de los elementos
 
-#### Ejemplo de Uso:
+#### Ejemplo de Uso
 
 ```lua
 -- Extrair parte de um array
