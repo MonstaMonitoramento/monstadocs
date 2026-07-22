@@ -78,7 +78,7 @@ local load_linux = snmp.get("1.3.6.1.4.1.2021.10.1.3.2.0") -- Função do Monsta
 return load_linux
 ```
 
-O `return` também pode definir o status da métrica. Quando o status é definido dentro do script, não é possível configurar o status de alerta através das configurações do monitor, pois o script definirá essa informação. Para retornar um status, o return precisa retornar um dicionário contendo `value` (valor a ser retornado) e `status` (uma *string* com valores pré-definidos).
+O `return` também pode definir o status da métrica. Para retornar um status, o return precisa retornar um dicionário contendo `value` (valor a ser retornado) e `status` (uma *string* com valores pré-definidos).
 
 Os valores aceitos para `status` são:
 
@@ -105,6 +105,12 @@ else
    return { value=volt, status="MetricOk" }
 end
 ```
+
+:::caution[Atenção!]
+
+Quando o status é definido dentro do script, não é possível configurar o status de alerta através das configurações do monitor, pois o script definirá essa informação. 
+
+:::
 
 ## Recursos e Manuais Completos
 
