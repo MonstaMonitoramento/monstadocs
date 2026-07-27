@@ -1,18 +1,18 @@
 ---
 title: Registro de cambios v6
-description: Sigue el registro de cambios de la versión 6 de Monsta y conoce las nuevas
-  funcionalidades, mejoras, correcciones y cambios realizados en cada
+description: Sigue el registro de cambios de la versión 6 de Monsta y conoce las
+  nuevas funcionalidades, mejoras, correcciones y cambios realizados en cada
   actualización de la plataforma.
 sidebar:
   order: 2
 ---
 ## Versión 6.0.17 Beta
 
-🔧**Corrección**: **Actualización en el estado de eventos:** Ahora, cuando un dispositivo o monitor cambia de estado entre aviso y crítico, solo el evento más reciente permanece marcado como no resuelto en la línea de tiempo, evitando la acumulación de pendientes para el mismo incidente.
+🔧**Corrección**: **Actualización en el estado de eventos**. Ahora, cuando un dispositivo o monitor cambia de estado entre aviso y crítico, solo el evento más reciente permanece marcado como no resuelto en la línea de tiempo, evitando la acumulación de pendientes para el mismo incidente.
 
-🔧**Corrección**: **Corrección en alertas con valores decimales:** Ajustada la lectura de límites para que las alertas consideren correctamente los decimales, evitando activaciones incorrectas en métricas fraccionadas.
+🔧**Corrección**: **Corrección en alertas con valores decimales**. Ajustada la lectura de límites para que las alertas consideren correctamente los decimales, evitando activaciones incorrectas en métricas fraccionadas.
 
-**🔧Corrección: Ajuste en alertas porcentuales:** Corregido el límite de configuración para permitir que la barra porcentual se posicione en **0%.**
+**🔧Corrección**: **Ajuste en alertas porcentuales**. Corregido el límite de configuración para permitir que la barra porcentual se posicione en **0%**.
 
 ## Versión 6.0.16 Beta
 
@@ -50,7 +50,7 @@ sidebar:
 
 **✨Nuevo**: **Agentes** - Monitorización de redes remotas sin necesidad de VPNs o reenvío de puertos [Agente: Instalação Zero Conf](/es/start/instalacao/agente-instalacao-zero-conf).
 
-**✨Nuevo**: [Mapa para visión jerárquica](/es/manual/dispositivos/visualizacao-em-mapa#mapa-dinâmico) con posibilidad de definir posiciones, añadir widgets y métricas.
+**✨Nuevo**: [Mapa para visión jerárquica](/es/manual/dispositivos/visualizacao-em-mapa#mapa-dinámico) con posibilidad de definir posiciones, añadir widgets y métricas.
 
 **✨Nuevo**: Los paneles pueden estar disponibles para usuarios no administradores.
 
