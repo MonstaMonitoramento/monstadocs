@@ -1,24 +1,33 @@
 ---
 title: Instalación de Monsta
-description: Aprenda a instalar Monsta y configure rápidamente la plataforma de monitoreo de infraestructura de TI siguiendo la guía de instalación.
+description: Aprenda cómo instalar Monsta y configure rápidamente la plataforma
+  de monitorización de infraestructura TI siguiendo el paso a paso de la
+  instalación.
 sidebar:
   order: 3
 ---
-
 ## Requisitos mínimos
 
 Esta es la configuración mínima para la instalación de Monsta:
 
-| Item                                                             | Requisito Mínimo                                                                                                                                 |
-| ---------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
-| ![HD](/src/assets/images/p25_image-1645452261754.png)  | **Espacio en disco**<br />40GB libres para /var (configuraciones, base de datos y registros)<br />300MB libres para /opt/monsta (programas y bibliotecas) |
-| ![RAM](/src/assets/images/p25_image-1645452312898.png) | **Memoria RAM**<br />2GB de memoria RAM                                                                                                          |
-| ![SO](/src/assets/images/p25_image-1645452455434.png)  | **Sistema operativo**<br />Linux 64bits<br />Sistema operativo Linux recomendado: Fedora Server                                                 |
-| ![CPU](/src/assets/images/p25_image-1645452542916.png) | **Procesador**<br />Núcleos: 2<br />Velocidad: 1.8GHz                                                                                            |
+
+| Item | Requisito Mínimo |
+| ------------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------- |
+| ![HD](/src/assets/images/p25_image-1645452261754.png) | **Espacio en disco** 40GB libres para /var (configuraciones, base de datos y registros) 300MB libres para /opt/monsta (programas y bibliotecas) |
+| ![RAM](/src/assets/images/p25_image-1645452312898.png) | **Memoria RAM** 2GB de memoria RAM |
+| ![SO](/src/assets/images/p25_image-1645452455434.png) | **Sistema Operativo** Linux 64 bits Sistema operativo Linux recomendado: Fedora Server |
+| ![CPU](/src/assets/images/p25_image-1645452542916.png) | **Procesador** Núcleos: 2 Velocidad: 1.8GHz |
+
+
+:::caution[Importante]
+
+Las configuraciones anteriores permiten, en general, comprobar aproximadamente 500 dispositivos con 10 monitores cada uno o un total de 5.000 monitores.
+
+:::
 
 ## Descarga del archivo
 
-Conectado en su servidor Linux como root, ejecute los siguientes comandos:
+Inicie sesión en su servidor Linux como root y ejecute los comandos siguientes:
 
 #### Fedora/Red Hat
 
@@ -49,15 +58,37 @@ export PATH=/usr/local/sbin:/usr/sbin:/sbin:$PATH
 dpkg -i monsta-latest.deb
 ```
 
-A partir de ahora Monsta está instalado en su servidor y se puede acceder a él a través de los puertos 80 (http) y 443 (https):
+A partir de ahora Monsta está instalado en su servidor y puede ser accedido a través de los puertos 80 (http) y 443 (https):
+
+:::note
+
+Si su red tiene un firewall que controla los accesos a Internet, permita el acceso a los siguientes hosts:
+
+- [mind.monsta.com.br](http://mind.monsta.com.br)
+- [store.monsta.com.br](http://store.monsta.com.br)
+
+:::
+
+:::tip 
+
+La comunicación con los hosts anteriores permite:
+
+- Copia de seguridad automática de las configuraciones.
+- Restauración de la copia de seguridad en caso de alguna falla.
+- Envío de notificaciones por correo electrónico, SMS y Telegram.
+- Comprobación del estado de la comunicación entre el Monsta instalado en su servidor y la Nube de Monsta. Con esto es posible recibir alertas en caso de paradas inesperadas del servicio de monitorización, como el apagado impropio del servidor o fallo en el enlace de Internet.
+- Autenticación de las claves de licencia.
+- Verificar y actualizar la versión del sistema. 
+
+:::
 
 ## Primer acceso a Monsta
 
-Abra un navegador y acceda:
+Abra un navegador y acceda a:
 
 ![image-1645528439997.png](/src/assets/images/p83_image-1645528439997.png)
 
-Puede optar por autenticarse utilizando una credencial existente a través del botón **"Iniciar sesión con mi cuenta"** o iniciar el flujo de nuevo usuario haciendo clic en **"Crear cuenta nueva"**.
+Puede optar por autenticarse utilizando una credencial existente a través del botón **"Entrar con mi cuenta"** o iniciar el flujo de nuevo usuario haciendo clic en **"Crear nueva cuenta"**.
 
 ![](/src/assets/images/20260630-105252.png)
 
@@ -65,15 +96,15 @@ Rellene los campos para crear su cuenta en la nube y avance haciendo clic en "Si
 
 ![](/src/assets/images/Tela_Novo_Usuario.png)
 
-A continuación recibirá un correo electrónico que contiene un código para validar su cuenta. Introduzca dicho código en la pantalla siguiente y haga clic en Confirmar:
+A continuación recibirá un correo electrónico con un código para validar su cuenta. Indíquelo en la pantalla siguiente y haga clic en Confirmar:
 
 ![](/src/assets/images/20260630-111438.png)
 
-Tras este procedimiento, se le dirigirá a la pantalla de licencias. Al ser una cuenta nueva, no se mostrará ninguna licencia y podrá seleccionar si desea suscribir una licencia o activar la versión Trial. Haga clic en el botón "Activar Trial" para habilitar los 30 días de prueba de Monsta en su empresa:
+Después de este procedimiento, será dirigido a la pantalla de licencias. Como esta es una cuenta nueva, no se mostrará ninguna licencia y podrá seleccionar si desea suscribirse a una licencia o activar la versión Trial. Haga clic en el botón "Activar Trial" para habilitar los 30 días de prueba de Monsta en su empresa:
 
 ![](/src/assets/images/20260630-111706.png)
 
-Será dirigido a la pantalla para establecer una contraseña para el usuario "admin" de Monsta. Escriba su contraseña y haga clic en el botón "Confirmar":
+Se le llevará a la pantalla para informar una contraseña para el usuario "admin" de Monsta. Introduzca su contraseña y haga clic en el botón "Confirmar":
 
 ![image-1741981958907.png](/src/assets/images/p83_image-1741981958907.png)
 
@@ -81,6 +112,12 @@ Ahora será redirigido a la pantalla principal de Monsta:
 
 ![image-1741982076022.png](/src/assets/images/p83_image-1741982076022.png)
 
-Desde esta pantalla podrá crear y administrar los dispositivos que serán monitorizados.
+Desde esta pantalla podrá crear y gestionar los dispositivos que serán monitorizados.
 
 Para más información, consulte el [Manual del Usuario](/es/manual/manual-usuario) de Monsta.
+
+:::tip 
+
+Si instaló su servidor y necesita ayuda para configurar las direcciones IP en Fedora, utilice este tutorial: [Cambiar la dirección IP en un servidor Fedora](/es/extra/linux/alterar-o-endereco-ip-em-um-servidor-fedora)
+
+:::
