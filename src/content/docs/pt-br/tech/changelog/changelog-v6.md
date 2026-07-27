@@ -12,7 +12,7 @@ sidebar:
 
 🔧**Correção**: **Correção em alertas com valores decimais:** Ajustada a leitura de limites para que os alertas considerem corretamente as casas decimais, evitando disparos incorretos em métricas fracionadas.
 
-**🔧**Correção**: Ajuste em alertas percentuais:** Corrigido o limite de configuração para permitir que a barra de percentual seja posicionada em **0%.**
+**🔧Correção: Ajuste em alertas percentuais:** Corrigido o limite de configuração para permitir que a barra de percentual seja posicionada em **0%.**
 
 ## Versão 6.0.16 Beta
 
