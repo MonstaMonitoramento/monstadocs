@@ -1,20 +1,29 @@
 ---
 title: Instalação do Monsta
-description: Aprenda como instalar o Monsta e configure rapidamente a plataforma de monitoramento de infraestrutura de TI seguindo o passo a passo da instalação.
+description: Aprenda como instalar o Monsta e configure rapidamente a plataforma
+  de monitoramento de infraestrutura de TI seguindo o passo a passo da
+  instalação.
 sidebar:
   order: 3
 ---
-
 ## Requisitos mínimos
 
 Esta é a configuração mínima para a instalação do Monsta:
 
-| Item                                                             | Requisito Mínimo                                                                                                                                 |
-| ---------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
-| ![HD](/src/assets/images/p25_image-1645452261754.png)  | **Espaço em disco**<br />40GB livre para /var (configurações, banco de dados e logs)<br />300MB livre para /opt/monsta (programas e bibliotecas) |
-| ![RAM](/src/assets/images/p25_image-1645452312898.png) | **Memória RAM**<br />2GB de memória RAM                                                                                                          |
-| ![SO](/src/assets/images/p25_image-1645452455434.png)  | **Sistema Operacional**<br />Linux 64bits<br />Sistema Operacional Linux recomendado: Fedora Server                                              |
-| ![CPU](/src/assets/images/p25_image-1645452542916.png) | **Processador**<br />Cores: 2<br />Velocidade: 1.8GHz                                                                                            |
+
+| Item | Requisito Mínimo |
+| ------------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------- |
+| ![HD](/src/assets/images/p25_image-1645452261754.png) | **Espaço em disco** 40GB livre para /var (configurações, banco de dados e logs) 300MB livre para /opt/monsta (programas e bibliotecas) |
+| ![RAM](/src/assets/images/p25_image-1645452312898.png) | **Memória RAM** 2GB de memória RAM |
+| ![SO](/src/assets/images/p25_image-1645452455434.png) | **Sistema Operacional** Linux 64bits Sistema Operacional Linux recomendado: Fedora Server |
+| ![CPU](/src/assets/images/p25_image-1645452542916.png) | **Processador** Cores: 2 Velocidade: 1.8GHz |
+
+
+:::caution[Importante]
+
+As configurações acima permitem, em geral, verificar aproximadamente 500 dispositivos com 10 monitores cada ou um total de 5.000 monitores.
+
+:::
 
 ## Download do Arquivo
 
@@ -51,6 +60,28 @@ dpkg -i monsta-latest.deb
 
 A partir de agora o Monsta está instalado em seu servidor e pode ser acessado através das portas 80 (http) e 443 (https):
 
+:::note
+
+Se a sua rede possui um firewall que controla os acessos à internet, libere o acesso para os seguintes hosts:
+
+- [mind.monsta.com.br](http://mind.monsta.com.br)
+- [store.monsta.com.br](http://store.monsta.com.br)
+
+:::
+
+:::tip 
+
+A comunicação com os hosts acima permitem:
+
+- Backup automático das configurações.
+- Restauração do backup em caso de alguma falha.
+- Envio de notificações por E-mail, SMS e Telegram.
+- Checagem do estado da comunicação entre o Monsta instalado em seu servidor e o a Nuvem do Monsta. Com isso é possível receber alertas em caso de paradas inesperadas do serviço de monitoramento, tal como o desligamento impróprio do servidor ou falha no link de internet.
+- Autenticação das Chaves de Licenciamento.
+- Verificar e atualizar a versão do sistema. 
+
+:::
+
 ## Primeiro acesso ao Monsta
 
 Abra um browser e acesse:
@@ -84,3 +115,9 @@ Agora você será redirecionado a tela principal do Monsta:
 A partir desta tela você poderá criar e gerenciar os dispositivos a serem monitorados.
 
 Para maiores informações, consulte o [Manual do Usuário](/pt-br/manual/manual-usuario) do Monsta.
+
+:::tip 
+
+Se você instalou seu servidor e precisa de auxílio para configurar os endereços IP's no Fedora, utilize este tutorial: [Alterar o endereço IP em um servidor Fedora](/pt-br/extra/linux/alterar-o-endereco-ip-em-um-servidor-fedora)
+
+:::
