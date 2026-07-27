@@ -8,11 +8,11 @@ sidebar:
 ---
 ## Versão 6.0.17 Beta
 
-🔧**Correção**: **Atualização no status de eventos:** Agora, quando um dispositivo ou monitor alterna de estado entre aviso e crítico, apenas o evento mais recente permanece marcado como não resolvido na linha do tempo, evitando o acúmulo de pendências para o mesmo incidente.
+🔧**Correção**: **Atualização no status de eventos.** Agora, quando um dispositivo ou monitor alterna de estado entre aviso e crítico, apenas o evento mais recente permanece marcado como não resolvido na linha do tempo, evitando o acúmulo de pendências para o mesmo incidente.
 
-🔧**Correção**: **Correção em alertas com valores decimais:** Ajustada a leitura de limites para que os alertas considerem corretamente as casas decimais, evitando disparos incorretos em métricas fracionadas.
+🔧**Correção**: **Correção em alertas com valores decimais.** Ajustada a leitura de limites para que os alertas considerem corretamente as casas decimais, evitando disparos incorretos em métricas fracionadas.
 
-**🔧Correção: Ajuste em alertas percentuais:** Corrigido o limite de configuração para permitir que a barra de percentual seja posicionada em **0%.**
+**🔧Correção**: **Ajuste em alertas percentuais.** Corrigido o limite de configuração para permitir que a barra de percentual seja posicionada em **0%.**
 
 ## Versão 6.0.16 Beta
 
