@@ -7,11 +7,11 @@ sidebar:
 ---
 ## Version 6.0.17 Beta
 
-🔧**Fix**: **Event status update:** Now, when a device or monitor switches state between warning and critical, only the most recent event remains marked as unresolved in the timeline, avoiding the accumulation of pending items for the same incident.
+🔧**Fix**: **Event status update**. Now, when a device or monitor switches state between warning and critical, only the most recent event remains marked as unresolved in the timeline, avoiding the accumulation of pending items for the same incident.
 
-🔧**Fix**: **Fix in alerts with decimal values:** Adjusted the reading of thresholds so that alerts correctly consider decimal places, preventing incorrect triggers on fractional metrics.
+🔧**Fix**: **Fix in alerts with decimal values**. Adjusted the reading of thresholds so that alerts correctly consider decimal places, preventing incorrect triggers on fractional metrics.
 
-**🔧Fix: Adjustment in percentage alerts:** Fixed the configuration limit to allow the percentage bar to be positioned at **0%.**
+**🔧Fix**: **Adjustment in percentage alerts**. Fixed the configuration limit to allow the percentage bar to be positioned at **0%**.
 
 ## Version 6.0.16 Beta
 
@@ -49,7 +49,7 @@ sidebar:
 
 **✨New**: **Agents** - Monitoring of remote networks without the need for VPNs or port forwarding [Agent: Zero Conf Installation](/en/start/instalacao/agente-instalacao-zero-conf).
 
-**✨New**: [Map for hierarchical view](/en/manual/dispositivos/visualizacao-em-mapa#mapa-dinâmico) with the ability to set positions, add widgets and metrics.
+**✨New**: [Map for hierarchical view](/en/manual/dispositivos/visualizacao-em-mapa#dynamic-map) with the ability to set positions, add widgets and metrics.
 
 **✨New**: Dashboards can be made available to non-administrator users.
 
