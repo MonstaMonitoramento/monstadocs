@@ -58,11 +58,17 @@ export PATH=/usr/local/sbin:/usr/sbin:/sbin:$PATH
 dpkg -i monsta-latest.deb
 ```
 
-A partir de agora o Monsta está instalado em seu servidor e pode ser acessado através das portas 80 (http) e 443 (https):
+A partir de agora o Monsta está instalado em seu servidor e pode ser acessado através das portas 80 (http) e 443 (https).
+
+:::caution[Atenção]
+
+Se o seu Linux possui um *firewall* habilitado, verifique se as portas 80/TCP e 443/TCP estão liberadas para entrada (se for FirewallD, [veja este artigo](/pt-br/extra/linux/firewalld-gerenciamento-de-firewall)). Caso contrário, não será possível acessar a interface web do seu Monsta. 
+
+:::
 
 :::note
 
-Se a sua rede possui um firewall que controla os acessos à internet, libere o acesso para os seguintes hosts:
+Se a sua rede possui um *firewall* que controla os acessos à internet, libere o acesso para os seguintes hosts:
 
 - [mind.monsta.com.br](http://mind.monsta.com.br)
 - [store.monsta.com.br](http://store.monsta.com.br)
@@ -78,7 +84,7 @@ A comunicação com os hosts acima permitem:
 - Envio de notificações por E-mail, SMS e Telegram.
 - Checagem do estado da comunicação entre o Monsta instalado em seu servidor e o a Nuvem do Monsta. Com isso é possível receber alertas em caso de paradas inesperadas do serviço de monitoramento, tal como o desligamento impróprio do servidor ou falha no link de internet.
 - Autenticação das Chaves de Licenciamento.
-- Verificar e atualizar a versão do sistema. 
+- Verificar e atualizar a versão do sistema.
 
 :::
 
