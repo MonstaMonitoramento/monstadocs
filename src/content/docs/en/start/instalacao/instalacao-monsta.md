@@ -1,32 +1,32 @@
 ---
 title: Monsta Installation
 description: Learn how to install Monsta and quickly set up the IT infrastructure
-  monitoring platform by following the installation step-by-step.
+  monitoring platform by following the installation step by step.
 sidebar:
   order: 3
 ---
-## Minimum requirements
+## Requisitos mínimos
 
-This is the minimum configuration for installing Monsta:
+Esta é a configuração mínima para a instalação do Monsta:
 
 
-| Item | Minimum Requirement |
+| Item | Requisito Mínimo |
 | ------------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------- |
-| ![HD](/src/assets/images/p25_image-1645452261754.png) | **Disk space** 40GB free for /var (configurations, database and logs) 300MB free for /opt/monsta (programs and libraries) |
-| ![RAM](/src/assets/images/p25_image-1645452312898.png) | **RAM** 2GB of RAM |
-| ![SO](/src/assets/images/p25_image-1645452455434.png) | **Operating System** 64-bit Linux Recommended Linux distribution: Fedora Server |
-| ![CPU](/src/assets/images/p25_image-1645452542916.png) | **Processor** Cores: 2 Speed: 1.8GHz |
+| ![HD](/src/assets/images/p25_image-1645452261754.png) | **Espaço em disco** 40GB livre para /var (configurações, banco de dados e logs) 300MB livre para /opt/monsta (programas e bibliotecas) |
+| ![RAM](/src/assets/images/p25_image-1645452312898.png) | **Memória RAM** 2GB de memória RAM |
+| ![SO](/src/assets/images/p25_image-1645452455434.png) | **Sistema Operacional** Linux 64bits Sistema Operacional Linux recomendado: Fedora Server |
+| ![CPU](/src/assets/images/p25_image-1645452542916.png) | **Processador** Cores: 2 Velocidade: 1.8GHz |
 
 
 :::caution[Important]
 
-The above settings generally allow monitoring approximately 500 devices with 10 monitors each, or a total of 5,000 monitors.
+As configurações acima permitem, em geral, verificar aproximadamente 500 dispositivos com 10 monitores cada ou um total de 5.000 monitores.
 
 :::
 
-## Download the file
+## Download do Arquivo
 
-Logged in to your Linux server as root, run the commands below:
+Logado em seu servidor Linux como root, execute os comandos abaixo:
 
 #### Fedora/Red Hat
 
@@ -40,9 +40,9 @@ yum install -y wget && wget https://www.monsta.com.br/monsta/download/monsta-lat
 apt-get install -y wget && wget https://www.monsta.com.br/monsta/download/monsta-latest.deb
 ```
 
-## Installation
+## Instalação
 
-After downloading the Monsta installation file, run the following command:
+Após baixar o arquivo de instalação do Monsta, execute o seguinte comando:
 
 #### Fedora/Red Hat
 
@@ -57,11 +57,17 @@ export PATH=/usr/local/sbin:/usr/sbin:/sbin:$PATH
 dpkg -i monsta-latest.deb
 ```
 
-Monsta is now installed on your server and can be accessed via ports 80 (http) and 443 (https):
+A partir de agora o Monsta está instalado em seu servidor e pode ser acessado através das portas 80 (http) e 443 (https).
+
+:::caution[Attention]
+
+Se o seu Linux possui um *firewall* habilitado, verifique se as portas 80/TCP e 443/TCP estão liberadas para entrada (se for FirewallD, [veja este artigo](/en/extra/linux/firewalld-gerenciamento-de-firewall)). Caso contrário, não será possível acessar a interface web do seu Monsta. 
+
+:::
 
 :::note
 
-If your network has a firewall controlling internet access, allow access to the following hosts:
+Se a sua rede possui um *firewall* que controla os acessos à internet, libere o acesso para os seguintes hosts:
 
 - [mind.monsta.com.br](http://mind.monsta.com.br)
 - [store.monsta.com.br](http://store.monsta.com.br)
@@ -70,53 +76,53 @@ If your network has a firewall controlling internet access, allow access to the 
 
 :::tip 
 
-Communication with the hosts above allows:
+A comunicação com os hosts acima permitem:
 
-- Automatic backup of configurations.
-- Restoration of backup in case of a failure.
-- Sending notifications by Email, SMS and Telegram.
-- Checking the communication status between the Monsta installed on your server and the Monsta Cloud. This makes it possible to receive alerts in case of unexpected monitoring service stoppages, such as improper server shutdown or internet link failure.
-- License key authentication.
-- Check and update the system version. 
+- Backup automático das configurações.
+- Restauração do backup em caso de alguma falha.
+- Envio de notificações por E-mail, SMS e Telegram.
+- Checagem do estado da comunicação entre o Monsta instalado em seu servidor e o a Nuvem do Monsta. Com isso é possível receber alertas em caso de paradas inesperadas do serviço de monitoramento, tal como o desligamento impróprio do servidor ou falha no link de internet.
+- Autenticação das Chaves de Licenciamento.
+- Verificar e atualizar a versão do sistema.
 
 :::
 
-## First access to Monsta
+## Primeiro acesso ao Monsta
 
-Open a browser and access:
+Abra um browser e acesse:
 
 ![image-1645528439997.png](/src/assets/images/p83_image-1645528439997.png)
 
-You can choose to authenticate using an existing credential via the **"Sign in with my account"** button or start the new user flow by clicking **"Create new account"**.
+Você pode optar por autenticar-se utilizando uma credencial existente através do botão **"Entrar com minha conta"** ou iniciar o fluxo de novo usuário clicando em **"Criar nova conta"**.
 
 ![](/src/assets/images/20260630-105252.png)
 
-Fill in the fields to create your cloud account and proceed by clicking "Next":
+Preencha os campos para criar sua conta na nuvem e avance clicando em "Próximo":
 
 ![](/src/assets/images/Tela_Novo_Usuario.png)
 
-You will then receive an email containing a code to validate your account. Enter it on the screen below and click Confirm:
+Você receberá em seguida um e-mail contendo um código para validar sua conta. Informe-o na tela abaixo e clique em Confirmar:
 
 ![](/src/assets/images/20260630-111438.png)
 
-After this procedure, you will be directed to the licenses screen. Since this is a new account, no license will be shown and you can choose whether to purchase a license or activate the Trial version. Click the "Activate Trial" button to enable 30 days of Monsta trial in your company:
+Após esse procedimento, você será direcionado para a tela de licenças. Como esta é uma nova conta, nenhuma licença será apresentada e você poderá selecionar se deseja assinar uma licença ou ativar a versão Trial. Clique no botão "Ativar Trial" para habilitar os 30 dias de teste do Monsta em sua empresa:
 
 ![](/src/assets/images/20260630-111706.png)
 
-You will be taken to the screen to provide a password for the Monsta "admin" user. Enter your password and click the "Confirm" button:
+Você será encaminhado a tela para informar uma senha para o usuário "admin" do Monsta. Digite sua senha e clique no botão "Confirmar":
 
 ![image-1741981958907.png](/src/assets/images/p83_image-1741981958907.png)
 
-Now you will be redirected to the Monsta main screen:
+Agora você será redirecionado a tela principal do Monsta:
 
 ![image-1741982076022.png](/src/assets/images/p83_image-1741982076022.png)
 
-From this screen you can create and manage the devices to be monitored.
+A partir desta tela você poderá criar e gerenciar os dispositivos a serem monitorados.
 
-For more information, consult the [User Manual](/en/manual/manual-usuario) of Monsta.
+Para maiores informações, consulte o [Manual do Usuário](/en/manual/manual-usuario) do Monsta.
 
 :::tip 
 
-If you installed your server and need help configuring IP addresses on Fedora, use this tutorial: [Change the IP address on a Fedora server](/en/extra/linux/alterar-o-endereco-ip-em-um-servidor-fedora)
+Se você instalou seu servidor e precisa de auxílio para configurar os endereços IP's no Fedora, utilize este tutorial: [Alterar o endereço IP em um servidor Fedora](/en/extra/linux/alterar-o-endereco-ip-em-um-servidor-fedora)
 
 :::
