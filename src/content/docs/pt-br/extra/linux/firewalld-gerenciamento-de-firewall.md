@@ -27,7 +27,7 @@ O firewalld gerencia um grupo de regras conhecido como zonas. As zonas definem o
 
 O comando abaixo lista as zonas existentes:
 
-```shell
+```bash
 firewall-cmd --get-zones
 ```
 
@@ -55,13 +55,13 @@ Abaixo são mostradas as zonas existentes no firewalld em ordem de nível de con
 
 O comando abaixo lista todas as regras existentes no serviço firewalld:
 
-```shell
+```bash
 firewall-cmd --list-all
 ```
 
 Se desejar listar apenas as regras de uma determinada zona utilize a opção –zone:
 
-```shell
+```bash
 firewall-cmd --zone=public --list-all
 ```
 
@@ -71,7 +71,7 @@ Para modificar as regras de entrada do firewall do Fedora, utilizamos o comando 
 
 No exemplo abaixo é demonstrado como liberar as portas 80(TCP) e 443(TCP) para acesso da rede pública, de forma permanente, para um servidor HTTP através da linha de comando:
 
-```shell
+```bash
 firewall-cmd --permanent --zone=public --add-port=80/tcp
 firewall-cmd --permanent --zone=public --add-port=443/tcp
 firewall-cmd --set-default-zone=public
@@ -92,7 +92,7 @@ onde:
 
 O exemplo abaixo demonstra como liberar a porta SSH para o servidor Linux:
 
-```shell
+```bash
 firewall-cmd --permanent --zone=public --add-port=22/tcp
 firewall-cmd --set-default-zone=public
 firewall-cmd --reload
@@ -102,7 +102,7 @@ firewall-cmd --reload
 
 Abaixo é demonstrado como liberar o acesso total ao servidor para a rede cuja origem é 192.168.1.0/24:
 
-```shell
+```bash
 firewall-cmd --permanent --zone=public --add-source=127.0.0.1/8
 firewall-cmd --reload
 ```
@@ -122,7 +122,7 @@ Para essa função faz-se necessário ter pelo menos 2 interfaces de rede no ser
 
 No exemplo abaixo, a interface eth0 está conectada na rede pública e a eth1 na rede interna:
 
-```shell
+```bash
 firewall-cmd --permanent --zone=internal --add-interface=eth1
 firewall-cmd --permanent --zone=public --add-masquerade
 firewall-cmd --reload
@@ -142,7 +142,7 @@ firewall-cmd --reload
 
 Para redirecionar portas da rede externa para um endereço da rede interna, utilize os comandos abaixo:
 
-```shell
+```bash
 firewall-cmd --permanent --zone=public --add-forward-port=port=443:proto=tcp:toport=443:toaddr=192.168.1.11
 firewall-cmd --reload
 ```
