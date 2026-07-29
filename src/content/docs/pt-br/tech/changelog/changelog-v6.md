@@ -20,7 +20,7 @@ sidebar:
 
 ![image.png](/src/assets/images/image-9.png)
 
-🔧**Correção**: **Preservação do White Label em atualizações**. Corrigido um comportamento inesperado onde as atualizações do sistema afetavam indevidamente o logotipo personalizado definido pelo usuário.
+🔧**Correção**: **Preservação do White Label em atualizações**. Corrigido um comportamento inesperado onde as atualizações do sistema retornavam o logotipo padrão.
 
 🔧**Correção**: **Atualização no status de eventos.** Agora, quando um dispositivo ou monitor alterna de estado entre aviso e crítico, apenas o evento mais recente permanece marcado como não resolvido na linha do tempo, evitando o acúmulo de pendências para o mesmo incidente.
 
