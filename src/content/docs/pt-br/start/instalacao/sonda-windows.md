@@ -22,8 +22,8 @@ Em ambientes Microsoft, a sonda utiliza de forma nativa a API WMI (*Windows Mana
 
 A sonda atua como um braço de automação diretamente no sistema operacional do host.
 
-- **Comandos Locais:** Pode executar comandos diretamente no sistema operacional hospedeiro.
-- **Scripts PowerShell:** Suporta o acionamento de scripts customizados, permitindo monitorar aplicações específicas ou criar rotinas de validação sob medida.
+- **Comandos Locais**: Pode executar comandos diretamente no sistema operacional hospedeiro.
+- **Scripts PowerShell**: Suporta o acionamento de scripts customizados, permitindo monitorar aplicações específicas ou criar rotinas de validação sob medida.
 
 ### 4. Diagnóstico de Saúde de Discos Físicos
 
