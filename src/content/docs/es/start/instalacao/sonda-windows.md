@@ -22,8 +22,8 @@ En entornos Microsoft, la sonda utiliza de forma nativa la API WMI (*Windows Man
 
 La sonda actúa como un brazo de automatización directamente en el sistema operativo del host.
 
-- **Comandos Locales:** Puede ejecutar comandos directamente en el sistema operativo anfitrión.
-- **Scripts PowerShell:** Soporta el lanzamiento de scripts personalizados, permitiendo monitorizar aplicaciones específicas o crear rutinas de validación a medida.
+- **Comandos Locales**: Puede ejecutar comandos directamente en el sistema operativo anfitrión.
+- **Scripts PowerShell**: Soporta el lanzamiento de scripts personalizados, permitiendo monitorizar aplicaciones específicas o crear rutinas de validación a medida.
 
 ### 4. Diagnóstico de salud de discos físicos
 
@@ -39,7 +39,7 @@ Todo el intercambio de información entre el servidor central de Monsta y la Son
 
 
 |  | Descarga |
-| --------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| ------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------- |
 | ![Descarga de la Sonda](/src/assets/images/p139_image-1660325708746.png) | [https://www.monsta.com.br/monsta/download/MonstaProbe.msi](https://www.monsta.com.br/monsta/download/MonstaProbe.msi) |
 
 
@@ -52,7 +52,7 @@ El instalador MonstaProbe.exe acepta opciones en la línea de comandos. Puede ut
 
 
 | Opción &nbsp; &nbsp; &nbsp; &nbsp; | Descripción |
-| --------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| ---------------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
 | `AGREE=Y` | Acepta el acuerdo de uso de la sonda recolectora. |
 | `PORT=<num>` | Indica el puerto que será utilizado por la sonda recolectora. Si no se especifica, el valor predeterminado será 7743 (TCP). |
 | `PASSWD=<password>` | Asigna la contraseña que utilizará la sonda recolectora. |
@@ -71,7 +71,7 @@ Los parámetros de la sonda pueden ajustarse mediante la línea de comandos.
 
 
 | Opción &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | Descripción |
-| ------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------- |
+| ------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
 | `--cfg` | Indica que la configuración será cambiada. |
 | `--port` | Redefine el puerto en el que la sonda debe escuchar. |
 | `--passwd` | Redefine la contraseña. |
