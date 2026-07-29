@@ -19,7 +19,7 @@ Com base nesses dados, o relatório pode destacar tendências, identificar dispo
 
 As análises apresentadas são geradas automaticamente por inteligência artificial a partir dos dados coletados pelo Monsta e devem ser utilizadas como apoio à tomada de decisão. Embora forneçam informações relevantes sobre o ambiente monitorado, elas não substituem a análise técnica realizada pelo administrador.
 
-![image.png](/src/assets/images/ms64d72b-lad3bl72.png)
+![image.png](/src/assets/images/ms64qs6f-1ag2tsld.png)
 
 
 | Opção | Descrição |
