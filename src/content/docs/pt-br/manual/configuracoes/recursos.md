@@ -25,6 +25,7 @@ Neste local é possível personalizar todos dados relacionados a configuração 
 | ![image-1647435477277.png](/src/assets/images/p60_image-1647435477277.png) | **Backup em Nuvem**: Nesta opção é possível restaurar um backup das configurações do Monsta. Para mais informações consulte: [Backup em Nuvem](/pt-br/manual/configuracoes/backup-em-nuvem). |
 | ![image-1739983055127.png](/src/assets/images/p60_image-1739983055127.png) | **Certificado TLS**: Instale e gerencie seus certificados para acessar a interface web do Monsta. É possível utilizar certificados próprios, gerados pelo Monsta ou automatizá-los através do Letsencrypt. Para mais informações consulte: [Certificado TLS](/pt-br/manual/configuracoes/certificado-tls). |
 | ![image-1647437341171.png](/src/assets/images/p60_image-1647437341171.png) | **Chave de Licença**: Apresenta informações sobre a chave de licença utilizada. Para mais informações consulte: [Chave de Licença](/pt-br/manual/configuracoes/chave-de-licenca). |
+| ![image.png](/src/assets/images/ms62pllf-fv4wytcc.png) | **Insights**: O Monsta envia automaticamente um resumo mensal por e-mail no início de cada mês, trazendo insights essenciais sobre o desempenho e o status do sistema. |
 | ![image-1647437392464.png](/src/assets/images/p60_image-1647437392464.png) | **Sobre o Monsta**: Apresenta informações sobre a versão atual. |
 
 
