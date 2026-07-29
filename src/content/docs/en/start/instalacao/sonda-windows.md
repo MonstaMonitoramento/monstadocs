@@ -1,6 +1,7 @@
 ---
 title: "Monsta Probe: Installation"
-description: Learn how to install the Monsta Probe on Windows to perform remote monitoring and extend the platform's reach within your infrastructure.
+description: Learn how to install the Monsta Probe on Windows to perform remote
+  monitoring and extend the platform's reach within your infrastructure.
 sidebar:
   order: 5
 ---
@@ -20,8 +21,8 @@ In Microsoft environments, the probe natively uses the WMI (*Windows Management 
 
 The probe acts as an automation arm directly on the host operating system.
 
-- **Local Commands:** It can execute commands directly on the host operating system.
-- **PowerShell Scripts:** Supports triggering custom scripts, allowing monitoring of specific applications or creating tailored validation routines.
+- **Local Commands**: It can execute commands directly on the host operating system.
+- **PowerShell Scripts**: Supports triggering custom scripts, allowing monitoring of specific applications or creating tailored validation routines.
 
 ### 4. Physical Disk Health Diagnostics
 
@@ -50,7 +51,7 @@ The MonstaProbe installer accepts options on the command line. You can use them 
 
 
 | Option &nbsp; &nbsp; &nbsp; &nbsp; | Description |
-| --------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| ---------------------------------- | -------------------------------------------------------------------------------------------- |
 | `AGREE=Y` | Accepts the probe's terms of use. |
 | `PORT=<num>` | Specifies the port to be used by the probe. If not provided, the default will be 7743 (TCP). |
 | `PASSWD=<password>` | Assigns the password to be used by the probe. |
@@ -69,7 +70,7 @@ The probe parameters can be adjusted via the command line.
 
 
 | Option &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | Description |
-| ------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------- |
+| ------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
 | `--cfg` | Indicates that the configuration will be changed. |
 | `--port` | Redefines the port the probe should listen on. |
 | `--passwd` | Redefines the password. |
