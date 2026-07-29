@@ -71,11 +71,11 @@ Os parâmetros da sonda podem ser ajustados via linha de comando.
 
 
 | Opção | Descrição |
-| ----------------- | ----------------------------------------------------- |
+| ----------------- | -------------------------------------------------------------------------------------------------------------------------------- |
 | `--cfg` | Indica que a configuração será alterada. |
 | `--port` | Redefine a porta que a sonda deverá escutar. |
 | `--passwd` | Redefine a senha. |
-| `--remote-exec 1` | Habilita a execução de comandos e scripts powershell. |
+| `--remote-exec 1` | Define se a execução de comandos e scripts do PowerShell está habilitada. Utilize **1** para habilitar e **0** para desabilitar. |
 
 
 **Exemplo de uso**:
