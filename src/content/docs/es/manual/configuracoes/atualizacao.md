@@ -16,6 +16,6 @@ Mantenga su software siempre actualizado con la versión más reciente y aprovec
 | ![image.png](/src/assets/images/ms6256ha-tthpw4wg.png) | **Historial de cambios (*Changelog*)**: Para seguir las novedades, correcciones y mejoras implementadas en cada versión del sistema, puede consultar el *changelog* oficial en cualquier momento directamente desde la interfaz. Esta información también está disponible en *[Changelogs](/es/tech/changelog/changelogs-monsta)*. |
 
 
-:::note[Preservación de la configuración]
-Las actualizaciones de Monsta están diseñadas para mantener la integridad de las configuraciones existentes. Los parámetros personalizados en los monitores —incluida la frecuencia de recolección (intervalo), el número de intentos (*retries*) y los límites de alerta (*thresholds*)— no se modifican durante el proceso de actualización de la plataforma.
+:::note[Preservación de Configuraciones]
+Las actualizaciones de Monsta están diseñadas para mantener la integridad de las configuraciones existentes. Los parámetros personalizados en los monitores — incluyendo frecuencia de recolección (intervalo), número de intentos (*retries*) y límites de alerta (*thresholds*) — no se modifican durante el proceso de actualización de la plataforma.
 :::

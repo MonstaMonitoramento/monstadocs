@@ -3,7 +3,7 @@ title: Update
 sidebar:
   order: 8
 ---
-Keep your software always up to date with the latest version and take advantage of new features, performance improvements, and bug fixes.
+Keep your software always up to date with the latest version and take advantage of new features, performance improvements and bug fixes.
 
 ![image.png](/src/assets/images/ms61n9ly-nv0wlu2k.png)
 
@@ -17,5 +17,5 @@ Keep your software always up to date with the latest version and take advantage 
 
 
 :::note[Preservation of Settings]
-Monsta updates are designed to maintain the integrity of existing settings. Custom parameters on monitors — including collection frequency (interval), number of attempts (*retries*) and alert thresholds (*thresholds*) — are not changed during the platform update process.
+Monsta updates are designed to maintain the integrity of existing settings. Customized parameters in monitors — including collection frequency (interval), number of attempts (*retries*) and alert limits (*thresholds*) — are not altered during the platform update process.
 :::
