@@ -2,6 +2,8 @@
 title: Insights
 description: Resumo mensal por e-mail com insights sobre o desempenho da rede no
   início de cada mês.
+sidebar:
+  order: 16
 ---
 O recurso **Insights** gera automaticamente um relatório mensal com uma análise inteligente do ambiente monitorado. No início de cada mês, o Monsta consolida os dados do mês anterior (quando disponíveis) e utiliza inteligência artificial para identificar padrões, tendências e pontos de atenção, entregando um resumo claro e objetivo sobre o comportamento da infraestrutura.
 
