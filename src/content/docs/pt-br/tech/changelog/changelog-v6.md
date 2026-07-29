@@ -24,7 +24,7 @@ sidebar:
 
 🔧**Correção**: **Atualização no status de eventos.** Agora, quando um dispositivo ou monitor alterna de estado entre aviso e crítico, apenas o evento mais recente permanece marcado como não resolvido na linha do tempo, evitando o acúmulo de pendências para o mesmo incidente.
 
-**🔧Correção**: **Reconexão de Agentes Após Backup**. Corrigida a reconexao de agentes após a restauracao de backup da nuvem em novas instalacoes.
+**🔧Correção**: **Reconexão de Agentes Após Backup**. Corrigida a reconexão de agentes após a restauração de backup da nuvem em novas instalações.
 
 **🔧Correção**: **Ajuste no Disparo de Alarmes para Monitores**. Corrigido problema pontual que impedia o disparo de alarmes em alguns monitores.
 
