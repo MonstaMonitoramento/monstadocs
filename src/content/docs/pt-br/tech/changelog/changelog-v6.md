@@ -12,7 +12,7 @@ sidebar:
 
 ![image.png](/src/assets/images/image-10.png)
 
-**✨Novo**: **Execução Remota via PowerShell**. A Sonda permite a execução de comandos e *scripts* em PowerShell diretamente pelo console. Para garantir a segurança do seu ambiente, todos os comandos são processados utilizando um **usuário com privilégios restritos (não administrador)**.
+**✨Novo**: **Execução Remota via PowerShell**. A Sonda permite a execução de comandos e *scripts* em PowerShell diretamente pelo console. Por questões de segurança, esse recurso é disponibilizado somente quando o usuário autoriza sua utilização durante a instalação da Sonda. Além disso, todos os comandos são executados utilizando um **usuário com privilégios restritos (não administrador)**, reduzindo os riscos de alterações indevidas no sistema.
 
 ![image.png](/src/assets/images/image-5.png)
 
