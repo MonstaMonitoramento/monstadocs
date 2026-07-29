@@ -6,15 +6,7 @@ description: Acompanhe o Changelog da versão 6 do Monsta e conheça as novas
 sidebar:
   order: 2
 ---
-## Versão 6.0.17 Beta
-
-🔧**Correção**: **Atualização no status de eventos.** Agora, quando um dispositivo ou monitor alterna de estado entre aviso e crítico, apenas o evento mais recente permanece marcado como não resolvido na linha do tempo, evitando o acúmulo de pendências para o mesmo incidente.
-
-🔧**Correção**: **Correção em alertas com valores decimais.** Ajustada a leitura de limites para que os alertas considerem corretamente as casas decimais, evitando disparos incorretos em métricas fracionadas.
-
-**🔧Correção**: **Ajuste em alertas percentuais.** Corrigido o limite de configuração para permitir que a barra de percentual seja posicionada em **0%.**
-
-## Versão 6.0.16 Beta
+## Versão 6.0.17
 
 **✨Novo**: **Relatórios Mensais com Inteligência Artificial**. Agora, sua conta gera automaticamente relatórios mensais enriquecidos com *insights* baseados em IA.
 
@@ -30,13 +22,11 @@ sidebar:
 
 🔧**Correção**: Corrigido um comportamento inesperado onde as atualizações do sistema afetavam indevidamente o logotipo personalizado definido pelo usuário.
 
-## Versão 6.0.13 Beta
+🔧**Correção**: **Atualização no status de eventos.** Agora, quando um dispositivo ou monitor alterna de estado entre aviso e crítico, apenas o evento mais recente permanece marcado como não resolvido na linha do tempo, evitando o acúmulo de pendências para o mesmo incidente.
 
-**🔧Correção**: Otimizado o tempo de inicializacao da coleta de dados em novas instalacoes.
+**🔧Correção**: **Reconexão de Agentes Após Backup**. Corrigida a reconexao de agentes apos a restauracao de backup da nuvem em novas instalacoes.
 
-**🔧Correção**: Corrigida a reconexao de agentes apos a restauracao de backup da nuvem em novas instalacoes.
-
-**🔧Correção**: Corrigido problema pontual que impedia o disparo de alarmes em alguns monitores.
+**🔧Correção**: **Ajuste no Disparo de Alarmes para Monitores**. Corrigido problema pontual que impedia o disparo de alarmes em alguns monitores.
 
 ## Versão 6.0.9
 
