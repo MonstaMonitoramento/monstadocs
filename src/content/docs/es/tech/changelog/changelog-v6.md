@@ -1,7 +1,7 @@
 ---
 title: Registro de cambios v6
-description: Sigue el registro de cambios de la versión 6 de Monsta y conoce las nuevas
-  funcionalidades, mejoras, correcciones y cambios realizados en cada
+description: Sigue el registro de cambios de la versión 6 de Monsta y conoce las
+  nuevas funcionalidades, mejoras, correcciones y cambios realizados en cada
   actualización de la plataforma.
 sidebar:
   order: 2
@@ -40,7 +40,7 @@ sidebar:
 
 **✨Nuevo**: **Agentes** - Monitorización de redes remotas sin necesidad de VPNs o reenvío de puertos [Agente: Instalación Zero Conf](/es/start/instalacao/agente-instalacao-zero-conf).
 
-**✨Nuevo**: [Mapa para visualización jerárquica](/es/manual/dispositivos/visualizacao-em-mapa#mapa-dinâmico) con posibilidad de definir posiciones, añadir widgets y métricas.
+**✨Nuevo**: [Mapa para visualización jerárquica](/es/manual/dispositivos/visualizacao-em-mapa#mapa-dinámico) con posibilidad de definir posiciones, añadir widgets y métricas.
 
 **✨Nuevo**: Los paneles pueden estar disponibles para usuarios no administradores.
 
