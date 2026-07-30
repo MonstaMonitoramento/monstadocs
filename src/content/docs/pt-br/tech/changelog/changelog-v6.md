@@ -14,9 +14,21 @@ sidebar:
 
 **✨Novo**: **Execução Remota via PowerShell**. A Sonda permite a execução de comandos e *scripts* em PowerShell diretamente pelo console. Por questões de segurança, esse recurso é disponibilizado somente quando o usuário autoriza sua utilização durante a instalação da Sonda. Além disso, todos os comandos são executados utilizando um **usuário com privilégios restritos (não administrador)**.
 
+:::note
+
+Este recurso requer a instalação da versão mais recente da Sonda Monsta, disponível em nosso site.
+
+:::
+
 ![image.png](/src/assets/images/image-5.png)
 
-**✨Novo**: **Monitoramento S.M.A.R.T.**. Adicionamos suporte à coleta de dados S.M.A.R.T. (*Self-Monitoring, Analysis, and Reporting Technology*) de discos físicos, permitindo acompanhar a integridade, a vida útil e os indicadores de saúde do armazenamento para identificar possíveis falhas antes que elas afetem o ambiente.
+**✨Novo**: **Monitoramento S.M.A.R.T.**. Adicionamos suporte à coleta de dados S.M.A.R.T. (*Self-Monitoring, Analysis, and Reporting Technology*) de discos físicos, permitindo acompanhar a integridade, a vida útil e os indicadores de saúde do armazenamento para identificar possíveis falhas antes que elas afetem o ambiente. 
+
+:::note
+
+Este recurso requer a instalação da versão mais recente da Sonda do Monsta, disponível em nosso site.
+
+:::
 
 ![image.png](/src/assets/images/image-9.png)
 
