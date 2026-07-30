@@ -1,6 +1,7 @@
 ---
 title: Changelog v6
-description: Track the changelog for Monsta version 6 and learn about the new features, improvements, fixes, and changes applied in each platform update.
+description: Track the changelog for Monsta version 6 and learn about the new
+  features, improvements, fixes, and changes applied in each platform update.
 sidebar:
   order: 2
 ---
@@ -50,7 +51,7 @@ This feature requires installing the latest version of the Monsta Probe, availab
 
 **✨New**: **Agents** - Monitoring remote networks without the need for VPNs or port forwarding [Agent: Zero Conf Installation](/en/start/instalacao/agente-instalacao-zero-conf).
 
-**✨New**: [Map for hierarchical view](/en/manual/dispositivos/visualizacao-em-mapa#mapa-dinâmico) with the ability to set positions, add widgets, and metrics.
+**✨New**: [Map for hierarchical view](/en/manual/dispositivos/visualizacao-em-mapa#dynamic-map) with the ability to set positions, add widgets, and metrics.
 
 **✨New**: Dashboards can be made available to non-administrator users.
 
