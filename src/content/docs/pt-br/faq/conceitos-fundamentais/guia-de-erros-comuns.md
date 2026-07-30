@@ -109,10 +109,10 @@ Este documento é um guia rápido para identificar e corrigir falhas em scripts 
 
 
 | Campo | Descrição |
-| ----------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Erro** | *Command not supported on legacy WMI probe, please update to the latest version**Powershell is not available: no agent or probe with min version 1.2.8 detected**Powershell is not available: no agent or probe with min version 1.2.8 detected* |
+| ----------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Erro** | *Command not supported on legacy WMI probe, please update to the latest version* |
 | **Causa** | A sonda ou agente em execução está desatualizada e não possui suporte para o recurso ou comando solicitado. |
-| **Solução** | Para utilizar este recurso, é necessário atualizar a sonda. Acesse nosso site (https://www.monsta.com.br), faça o download do instalador da versão mais recente na seção de downloads e realize a instalação no equipamento monitorado. |
+| **Solução** | Para utilizar este recurso, é necessário atualizar a sonda. Acesse nosso site ([https://www.monsta.com.br](https://www.monsta.com.br)), faça o download do instalador da versão mais recente na seção de downloads e realize a instalação no equipamento monitorado. |
 
 
 ### Powershell is not available: no agent or probe with min version 1.2.8 detected
