@@ -4,7 +4,7 @@ description: Meios de pagamento
 ---
 **Formas de pagamento no Brasil:**
 
-No Brasil, aceitamos **Cartão de Crédito** e **Boleto Bancário**. O cartão oferece aprovação instantânea e renovação automática, enquanto o boleto possui vencimento em até 3 dias e prazo de compensação bancária de 1 a 3 dias úteis.
+No Brasil, aceitamos **Cartão de Crédito** e **Boleto Bancário**. O cartão oferece aprovação instantânea e renovação automática, enquanto o boleto possui vencimento em até 3 dias, prazo de compensação bancária de 1 a 3 dias úteis e renovação automática após sua baixa.
 
 **Formas de pagamento em outros países:**
 
