@@ -41,6 +41,7 @@ Logado como root no seu servidor, baixe o script de migração conforme exemplo 
 ```shell
 yum install -y wget
 wget https://www.monsta.com.br/monsta/download/migrate.sh
+chmod +x migrate.sh
 ```
 
 ## Iniciando a transferência
