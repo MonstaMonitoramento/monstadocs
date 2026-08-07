@@ -63,5 +63,5 @@ Para que o script do migrate seja executado com sucesso e garanta a cópia e cri
 
 Caso ocorra algum erro de **timeout** durante a execução do `migrate.sh`, verifique se a porta do SSH no servidor remoto está aberta no firewall para acesso do servidor local.  
 
-Em caso de falha, mesmo seguindo as instruções de uso do `migrate.sh`, **colete os logs exibidos na tela e entre em contato com nossa equipe de suporte**.
+Em caso de falha, mesmo seguindo as instruções de uso do `migrate.sh`, **envie o arquivo monsta_migration.log para nosso suporte**.  
 :::
