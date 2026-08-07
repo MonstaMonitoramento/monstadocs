@@ -39,7 +39,7 @@ Logado como root no seu servidor, baixe o script de migração conforme exemplo 
 ### Fedora/Red-Hat/Ubuntu/Debian
 
 ```shell
-yum install -y wget || apt-get install wget
+yum install -y wget || apt-get install -y wget
 wget https://www.monsta.com.br/monsta/download/migrate.sh
 chmod +x migrate.sh
 ```
