@@ -48,7 +48,9 @@ chmod +x migrate.sh
 
 Após baixar o script, execute-o com a seguinte sintaxe:
 
-`./migrate.sh`
+```shell
+./migrate.sh
+```
 
 Antes de iniciar o processo de migração e instalação do Monsta, o script solicitará as informações de acesso SSH ao servidor de origem: endereço IP/hostname, porta de conexão e usuário com privilégios de root.
 
