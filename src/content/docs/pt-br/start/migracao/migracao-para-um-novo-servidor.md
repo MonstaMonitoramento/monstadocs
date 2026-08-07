@@ -5,6 +5,12 @@ description: Aprenda como migrar o Monsta para um novo servidor preservando conf
 
 Este tutorial mostra como migrar o Monsta a partir da versão >5.0 para outro servidor.
 
+:::danger[Atenção]
+
+Não instale o Monsta no novo servidor! Este procedimento deve ser realizado em um Linux sem um Monsta instalado. O script de migração realiza todo o processo de cópia dos dados e instalação do Monsta.
+
+:::
+
 ## Requisitos mínimos
 
 Requisitos mínimos para a migração do Monsta:
