@@ -34,7 +34,7 @@ As configurações acima permitem, em geral, verificar aproximadamente 500 dispo
 
 ## Script de migração
 
-Logado como root no seu servidor, baixe o script de migração conforme exemplo abaixo:
+Logue em seu novo servidor como root e baixe o script de migração conforme exemplo abaixo:
 
 ### Fedora/Red-Hat/Ubuntu/Debian
 
