@@ -6,6 +6,10 @@ description: Acompanhe o Changelog da versão 6 do Monsta e conheça as novas
 sidebar:
   order: 2
 ---
+## Versão 6.0.18 Beta
+
+**🔧Correção**: **Alertas não enviados**. Alguns alertas não eram acionados mesmo com o valor acima do limite. Isso acontecia quando o valor monitorado raramente mudava: após a reinicialização do sistema, ele não estava disponível na memória e o alerta não conseguia confirmar o limite, permanecendo inativo.
+
 ## Versão 6.0.17
 
 **✨Novo**: **Relatórios Mensais com Inteligência Artificial**. Agora, sua conta gera automaticamente relatórios mensais enriquecidos com *insights* baseados em IA.
