@@ -274,6 +274,12 @@ export default defineConfig({
 							collapsed: true,
 							translations: { en: 'MikroTik', es: 'MikroTik' },
 							items: [{ autogenerate: { directory: 'extra/mikrotik' } }]
+						},
+						{
+							label: 'Fortinet',
+							collapsed: true,
+							translations: { en: 'Fortinet', es: 'Fortinet' },
+							items: [{ autogenerate: { directory: 'extra/fortinet' } }]
 						}
 					],
 				}
