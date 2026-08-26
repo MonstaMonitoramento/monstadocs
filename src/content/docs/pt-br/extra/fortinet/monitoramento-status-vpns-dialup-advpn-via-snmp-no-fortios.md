@@ -1,12 +1,17 @@
 ---
-title: Monitoramento de VPNs Dialup (ADVPN) via SNMP no FortiOS
+title: Monitoramento de Status das VPNs Dialup (ADVPN) via SNMP no FortiOS
 description: Entenda por que o monitor de status do Fortinet não exibe as VPNs do tipo Dialup (ADVPN) na tabela padrão (fgVpnTunTable) e consulte a estrutura da MIB fgVpn2DialupTable para monitoramento.
 ---
-**ADVPN é uma arquitetura Dial-up/Dynamic**: O **ADVPN** utiliza túneis pai do tipo *Dialup* (nos Hubs e Spokes) e cria atalhos dinâmicos (*shortcuts*) sob demanda entre os Spokes. Para o **FortiOS**, conexões que negociam Fase 1 e Fase 2 dinamicamente não são classificadas como "túneis estáticos", e por isso são omitidas da `fgVpnTunTable`.
+
+## Limitação do monitoramento de Status das VPNs Dialup (ADVPN)
+
+**ADVPN é uma arquitetura Dialup/Dynamic**: O **ADVPN** utiliza túneis pai do tipo *Dialup* (nos Hubs e Spokes) e cria atalhos dinâmicos (*shortcuts*) sob demanda entre os Spokes. Para o **FortiOS**, conexões que negociam Fase 1 e Fase 2 dinamicamente não são classificadas como "túneis estáticos", e por isso são omitidas da `fgVpnTunTable`.
 
 Os atalhos ADVPN nascem e fecham dinamicamente com base no fluxo de tráfego e nos cronômetros de ociosidade (*idle-timeout* / *holddown timer*). Como as SAs (*Security Associations*) de Fase 1 e Fase 2 desses atalhos são temporárias, a Fortinet não as mapeia na estrutura de MIB estática para evitar poluição de índices SNMP e inconsistências de varredura.
 
-**MIB da tabela Dial-up**
+Por essa razão, **não é possível monitorar o status operacional tradicional (Up/Down)** dessas VPNs via SNMP, pois a Fortinet não disponibiliza uma OID de estado de conexão para túneis dinâmicos. Veja a seguir a MIB da tabela *Dialup* com as informações que ela fornece.
+
+**MIB da tabela Dialup**
 
 | | | |
 | ------------------------ | --------------------------------- | ---------------------------------------------------------------------------------------- |
