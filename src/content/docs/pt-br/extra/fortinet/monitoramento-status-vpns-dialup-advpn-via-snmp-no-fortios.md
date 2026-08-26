@@ -11,7 +11,7 @@ Os atalhos ADVPN nascem e fecham dinamicamente com base no fluxo de tráfego e n
 
 Por essa razão, **não é possível monitorar o status operacional tradicional (Up/Down)** dessas VPNs via SNMP, pois a Fortinet não disponibiliza uma OID de estado de conexão para túneis dinâmicos. Veja a seguir a MIB da tabela *Dialup* com as informações que ela fornece.
 
-**MIB da tabela Dialup**
+## MIB da tabela Dialup
 
 | | | |
 | ------------------------ | --------------------------------- | ---------------------------------------------------------------------------------------- |
