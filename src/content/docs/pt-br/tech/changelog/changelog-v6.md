@@ -6,7 +6,9 @@ description: Acompanhe o Changelog da versão 6 do Monsta e conheça as novas
 sidebar:
   order: 2
 ---
-## Versão 6.0.20 Beta**🔧Correção**: **Falha em coletas com a sonda**. Determinados monitores da sonda para Windows congelam de forma aleatória e param de coletar dados.
+## Versão 6.0.20 Beta
+
+🔧**Correção**: **Falha em coletas com a sonda**. Determinados monitores da sonda para Windows congelam de forma aleatória e param de coletar dados.
 
 ## Versão 6.0.19 Beta
 
