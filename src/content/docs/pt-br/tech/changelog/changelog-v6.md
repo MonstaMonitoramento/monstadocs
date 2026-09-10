@@ -6,6 +6,12 @@ description: Acompanhe o Changelog da versão 6 do Monsta e conheça as novas
 sidebar:
   order: 2
 ---
+## Versão 6.0.21 Beta
+
+🔧**Correção**: **Falha ao adicionar um painel**. Resolvido o erro de kernel que impedia a inclusão/remoção de um painel a um usuário antigo na interface de gerenciamento.
+
+🔧**Correção**: **Listagem de painéis em branco**. Corrigido o problema que fazia com que a lista de painéis ficasse em branco logo após a adição de um novo registro na edição de usuários.
+
 ## Versão 6.0.20 Beta
 
 🔧**Correção**: **Falha em coletas com a sonda**. Determinados monitores da sonda para Windows congelam de forma aleatória e param de coletar dados.
