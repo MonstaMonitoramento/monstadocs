@@ -6,6 +6,12 @@ description: Acompanhe o Changelog da versão 6 do Monsta e conheça as novas
 sidebar:
   order: 2
 ---
+## Versão 6.0.22 Beta
+
+🔧**Correção**: **Métrica em estado crítico**. Corrigida uma falha onde métricas com limite máximo definido via leitura dinâmica do equipamento entravam indevidamente em estado crítico sob determinadas condições.
+
+🔧**Correção**: **Falhas na coleta WMI**. Corrigidas falhas de leitura e inconsistências pontuais nos dados coletados pela sonda do Monsta.
+
 ## Versão 6.0.21 Beta
 
 🔧**Correção**: **Falha ao adicionar um painel**. Resolvido o erro de kernel que impedia a inclusão/remoção de um painel a um usuário antigo na interface de gerenciamento.
