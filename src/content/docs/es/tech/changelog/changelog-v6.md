@@ -42,7 +42,7 @@ Este recurso requiere la instalación de la versión más reciente de la Sonda M
 
 ![image.png](/src/assets/images/image-5.png)
 
-**✨Nuevo**: **Monitorización S.M.A.R.T.**. Añadimos soporte para la recopilación de datos S.M.A.R.T. (*Self-Monitoring, Analysis, and Reporting Technology*) de discos físicos, permitiendo supervisar la integridad, la vida útil y los indicadores de salud del almacenamiento para identificar posibles fallos antes de que afecten al entorno. 
+**✨Nuevo**: **Monitorización S.M.A.R.T.**. Añadimos soporte para la recopilación de datos S.M.A.R.T. (*Self-Monitoring, Analysis, and Reporting Technology*) de discos físicos, permitiendo supervisar la integridad, la vida útil y los indicadores de salud del almacenamiento para identificar posibles fallos antes de que afecten al entorno.
 
 :::note
 
@@ -72,7 +72,7 @@ Este recurso requiere la instalación de la versión más reciente de la Sonda d
 
 **✨Nuevo**: **Agentes** - Monitorización de redes remotas sin necesidad de VPNs ni redireccionamiento de puertos [Agente: Instalación Zero Conf](/es/start/instalacao/agente-instalacao-zero-conf).
 
-**✨Nuevo**: [Mapa para vista jerárquica](/es/manual/dispositivos/visualizacao-em-mapa#mapa-dinamico) con posibilidad de definir posiciones, añadir widgets y métricas.
+**✨Nuevo**: [Mapa para vista jerárquica](/es/manual/dispositivos/visualizacao-em-mapa#mapa-dinámico) con posibilidad de definir posiciones, añadir widgets y métricas.
 
 **✨Nuevo**: Los paneles pueden estar disponibles para usuarios no administradores.
 
