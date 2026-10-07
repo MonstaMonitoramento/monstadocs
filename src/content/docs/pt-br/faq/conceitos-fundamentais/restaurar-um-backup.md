@@ -4,7 +4,7 @@ title: "Como Restaurar um Backup?"
 
 Este manual tem como objetivo instruir o usuário a restaurar um backup do Monsta.
 
-## Restaurar umm backup da nuvem do Monsta
+## Restaurar um backup da nuvem do Monsta
 
 
 
