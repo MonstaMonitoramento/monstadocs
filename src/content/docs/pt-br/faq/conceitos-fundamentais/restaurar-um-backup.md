@@ -6,33 +6,21 @@ Este manual tem como objetivo instruir o usuário a restaurar um backup do Monst
 
 ## Restaurar um backup da nuvem do Monsta
 
-
-
 :::note
 O Monsta necessita de acesso aos host `https://mind.monsta.com.br` e `https://store.monsta.com.br` para efetuar e restaurar backups.
 :::
 
-
-
 O Monsta efetua um backup automático das suas configurações em nossa nuvem diariamente caso existam modificações e mantém um histórico de até 10 backups.
-
-
 
 :::caution[Atenção]
 Alterações de status de dispositivos ou monitores não são consideradas mudanças de configuração.
 :::
 
-
-
 ### Vantagens e desvantagens desse método
-
-
 
 | Vantagens | Desvantagens |
 | --- | --- |
 | • Restauração leva poucos minutos;</br>• Não é necessário conhecimento técnico em Linux. | • Histórico existente dos monitores são reiniciados quando restaurado em uma nova instalação. |
-
-
 
 ### Restaurar o backup
 
@@ -53,15 +41,10 @@ Utilize este método para manter o histórico dos monitores em uma nova instala�
 
 ### Vantagens e desvantagens
 
-
-
 | Vantagens | Desvantagens |
 | --- | --- |
-| • Histórico dos monitores é mantido. | • O tempo de restauração depende da quantidade de dados armazenada nos bancos de dados;</br>  
-• É necessário conhecimento técnico em shell do Linux. |
-
+| • Histórico dos monitores é mantido. | • O tempo de restauração depende da quantidade de dados armazenada nos bancos de dados;</br>• É necessário conhecimento técnico em shell do Linux. |
 
 ### Efetuar o backup do servidor atual
 
 Para este procedimento, sugerimos que utilize o tutorial disponível em [Migração para outro servidor](/pt-br/start/migracao/migracao-para-um-novo-servidor) desta wiki pois o mesmo transferirá automaticamente o Monsta para um novo servidor.
-

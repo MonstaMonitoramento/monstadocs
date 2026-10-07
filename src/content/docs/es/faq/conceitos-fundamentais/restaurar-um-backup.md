@@ -6,33 +6,21 @@ Este manual tiene como objetivo instruir al usuario sobre cómo restaurar una co
 
 ## Restaurar una copia de seguridad en la nube de Monsta
 
-
-
 :::note
 Monsta necesita acceso a los hosts `https://mind.monsta.com.br` y `https://store.monsta.com.br` para realizar y restaurar copias de seguridad.
 :::
 
-
-
 Monsta realiza una copia de seguridad automática de sus configuraciones en nuestra nube diariamente si existen modificaciones y mantiene un historial de hasta 10 copias de seguridad.
-
-
 
 :::caution[Atención]
 Los cambios de estado de dispositivos o monitores no se consideran cambios de configuración.
 :::
 
-
-
 ### Ventajas y desventajas de este método
-
-
 
 | Ventajas | Desventajas |
 | --- | --- |
 | • La restauración tarda pocos minutos;</br>• No se necesita conocimiento técnico en Linux. | • El historial existente de los monitores se reinicia cuando se restaura en una nueva instalación. |
-
-
 
 ### Restaurar la copia de seguridad
 
@@ -53,13 +41,10 @@ Utilice este método para mantener el historial de los monitores en una nueva in
 
 ### Ventajas y desventajas
 
-
-
 | Ventajas | Desventajas |
 | --- | --- |
 | • El historial de los monitores se mantiene. | • El tiempo de restauración depende de la cantidad de datos almacenados en las bases de datos;</br>  
 • Se requiere conocimiento técnico de shell en Linux. |
-
 
 ### Realizar la copia de seguridad del servidor actual
 
