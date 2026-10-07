@@ -6,33 +6,21 @@ This manual aims to instruct the user on how to restore a Monsta backup.
 
 ## Restore a Monsta cloud backup
 
-
-
 :::note
 Monsta requires access to the hosts `https://mind.monsta.com.br` and `https://store.monsta.com.br` to create and restore backups.
 :::
 
-
-
 Monsta performs an automatic backup of your settings to our cloud daily if there are changes and keeps a history of up to 10 backups.
-
-
 
 :::caution[Attention]
 Changes in the status of devices or monitors are not considered configuration changes.
 :::
 
-
-
 ### Advantages and disadvantages of this method
-
-
 
 | Vantagens | Desvantagens |
 | --- | --- |
 | • Restoration takes a few minutes;</br>• No Linux technical knowledge required. | • Existing monitor history is reset when restored on a new installation. |
-
-
 
 ### Restore the backup
 
@@ -53,13 +41,9 @@ Use this method to keep the monitors' history in a new installation.
 
 ### Advantages and disadvantages
 
-
-
 | Vantagens | Desvantagens |
 | --- | --- |
-| • Monitor history is preserved. | • Restoration time depends on the amount of data stored in the databases;</br>  
-• Linux shell technical knowledge is required. |
-
+| • Monitor history is preserved. | • Restoration time depends on the amount of data stored in the databases;</br>• Linux shell technical knowledge is required. |
 
 ### Back up the current server
 

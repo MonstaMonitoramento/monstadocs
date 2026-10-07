@@ -43,8 +43,7 @@ Utilice este método para mantener el historial de los monitores en una nueva in
 
 | Ventajas | Desventajas |
 | --- | --- |
-| • El historial de los monitores se mantiene. | • El tiempo de restauración depende de la cantidad de datos almacenados en las bases de datos;</br>  
-• Se requiere conocimiento técnico de shell en Linux. |
+| • El historial de los monitores se mantiene. | • El tiempo de restauración depende de la cantidad de datos almacenados en las bases de datos;</br>• Se requiere conocimiento técnico de shell en Linux. |
 
 ### Realizar la copia de seguridad del servidor actual
 
