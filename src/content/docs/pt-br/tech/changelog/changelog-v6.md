@@ -6,6 +6,10 @@ description: Acompanhe o Changelog da versão 6 do Monsta e conheça as novas
 sidebar:
   order: 2
 ---
+## Versão 6.0.23 Beta
+
+🔧**Correção**: **Melhorias na coleta WMI**. Solucionados timeouts intermitentes de leitura.
+
 ## Versão 6.0.22 Beta
 
 🔧**Correção**: **Métrica em estado crítico**. Corrigida uma falha onde métricas com limite máximo definido via leitura dinâmica do equipamento entravam indevidamente em estado crítico sob determinadas condições.
