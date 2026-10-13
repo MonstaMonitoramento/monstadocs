@@ -10,7 +10,7 @@ sidebar:
 
 🔧**Correção**: **Melhorias na coleta WMI**. Solucionados timeouts intermitentes de leitura.
 
-🔧**Correção**: **Falhas na autenticação do snmp V3**. Resolvido problema de timeout em conexões SNMPv3 (authPriv e authNoPriv) causado por falha no handshake inicial de sincronização de tempo e cálculo de criptografia
+🔧**Correção**: **Falhas na autenticação do SNMPv3**. Resolvidas falhas em autenticações SNMPv3 (authPriv e authNoPriv) causadas por problema no handshake inicial de sincronização de tempo e cálculo de criptografia quando solicitado.
 
 ## Versão 6.0.22 Beta
 
