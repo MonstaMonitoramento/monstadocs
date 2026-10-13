@@ -6,9 +6,11 @@ description: Acompanhe o Changelog da versão 6 do Monsta e conheça as novas
 sidebar:
   order: 2
 ---
-## Versão 6.0.23 Beta
+## Versão 6.0.25 Beta
 
 🔧**Correção**: **Melhorias na coleta WMI**. Solucionados timeouts intermitentes de leitura.
+
+🔧**Correção**: **Falhas na autenticação do snmp V3**. Resolvido problema de timeout em conexões SNMPv3 (authPriv e authNoPriv) causado por falha no handshake inicial de sincronização de tempo e cálculo de criptografia
 
 ## Versão 6.0.22 Beta
 
