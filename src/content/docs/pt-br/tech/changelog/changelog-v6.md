@@ -6,29 +6,21 @@ description: Acompanhe o Changelog da versão 6 do Monsta e conheça as novas
 sidebar:
   order: 2
 ---
-## Versão 6.0.25 Beta
+## Versão 6.0.25 
 
 🔧**Correção**: **Melhorias na coleta WMI**. Solucionados timeouts intermitentes de leitura.
 
 🔧**Correção**: **Falhas na autenticação do SNMPv3**. Resolvidas falhas em autenticações SNMPv3 (authPriv e authNoPriv) causadas por problema no handshake inicial de sincronização de tempo e cálculo de criptografia quando solicitado.
 
-## Versão 6.0.22 Beta
-
 🔧**Correção**: **Métrica em estado crítico**. Corrigida uma falha onde métricas com limite máximo definido via leitura dinâmica do equipamento entravam indevidamente em estado crítico sob determinadas condições.
 
 🔧**Correção**: **Falhas na coleta WMI**. Corrigidas falhas de leitura e inconsistências pontuais nos dados coletados pela sonda do Monsta.
-
-## Versão 6.0.21 Beta
 
 🔧**Correção**: **Falha ao adicionar um painel**. Resolvido o erro de kernel que impedia a inclusão/remoção de um painel a um usuário antigo na interface de gerenciamento.
 
 🔧**Correção**: **Listagem de painéis em branco**. Corrigido o problema que fazia com que a lista de painéis ficasse em branco logo após a adição de um novo registro na edição de usuários.
 
-## Versão 6.0.20 Beta
-
 🔧**Correção**: **Falha em coletas com a sonda**. Determinados monitores da sonda para Windows congelam de forma aleatória e param de coletar dados.
-
-## Versão 6.0.19 Beta
 
 **🔧Correção**: **Alertas não enviados**. Alguns alertas não eram acionados mesmo com o valor acima do limite. Isso acontecia quando o valor monitorado raramente mudava: após a reinicialização do sistema, ele não estava disponível na memória e o alerta não conseguia confirmar o limite, permanecendo inativo.
 
