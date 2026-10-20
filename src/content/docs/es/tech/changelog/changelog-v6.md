@@ -1,97 +1,89 @@
 ---
 title: Registro de cambios v6
-description: Siga el Registro de cambios de la versión 6 de Monsta y conozca las nuevas
-  funcionalidades, mejoras, correcciones y cambios realizados en cada
+description: Sigue el registro de cambios de la versión 6 de Monsta y conoce las nuevas
+  funcionalidades, mejoras, correcciones y modificaciones realizadas en cada
   actualización de la plataforma.
 sidebar:
   order: 2
 ---
-## Versión 6.0.25 Beta
+## Versión 6.0.25 
 
-🔧**Corrección**: **Mejoras en la recolección WMI**. Solucionados tiempos de espera intermitentes de lectura.
+🔧**Corrección**: **Mejoras en la recolección WMI**. Solucionados timeouts intermitentes de lectura.
 
-🔧**Corrección**: **Fallos en la autenticación SNMPv3**. Resueltas fallas en autenticaciones SNMPv3 (authPriv e authNoPriv) causadas por un problema en el handshake inicial de sincronización de tiempo y cálculo de cifrado cuando se solicita.
+🔧**Corrección**: **Fallas en la autenticación de SNMPv3**. Resueltas fallas en autenticaciones SNMPv3 (authPriv y authNoPriv) causadas por un problema en el handshake inicial de sincronización de tiempo y cálculo de cifrado cuando se solicita.
 
-## Versión 6.0.22 Beta
+🔧**Corrección**: **Métrica en estado crítico**. Corregido un fallo donde métricas con límite máximo definido vía lectura dinámica del equipo entraban indebidamente en estado crítico bajo determinadas condiciones.
 
-🔧**Corrección**: **Métrica en estado crítico**. Corregida una falla donde métricas con límite máximo definido vía lectura dinámica del equipo entraban indebidamente en estado crítico bajo determinadas condiciones.
+🔧**Corrección**: **Fallas en la recolección WMI**. Corregidas fallas de lectura e inconsistencias puntuales en los datos recolectados por la Sonda de Monsta.
 
-🔧**Corrección**: **Fallos en la recolección WMI**. Corregidas fallas de lectura e inconsistencias puntuales en los datos recolectados por la sonda de Monsta.
-
-## Versión 6.0.21 Beta
-
-🔧**Corrección**: **Fallo al añadir un panel**. Resuelto el error de kernel que impedía la inclusión/remoción de un panel a un usuario antiguo en la interfaz de gestión.
+🔧**Corrección**: **Fallo al añadir un panel**. Resuelto el error de kernel que impedía la inclusión/eliminación de un panel a un usuario antiguo en la interfaz de gestión.
 
 🔧**Corrección**: **Listado de paneles en blanco**. Corregido el problema que hacía que la lista de paneles quedara en blanco justo después de la adición de un nuevo registro en la edición de usuarios.
 
-## Versión 6.0.20 Beta
+🔧**Corrección**: **Fallo en recopilaciones con la Sonda**. Determinados monitores de la Sonda para Windows se congelan de forma aleatoria y dejan de recopilar datos.
 
-🔧**Corrección**: **Fallo en recolecciones con la sonda**. Determinados monitores de la sonda para Windows se congelan de forma aleatoria y dejan de recolectar datos.
-
-## Versión 6.0.19 Beta
-
-**🔧Corrección**: **Alertas no enviadas**. Algunas alertas no se activaban incluso con el valor por encima del límite. Esto ocurría cuando el valor monitorizado cambiaba raramente: tras el reinicio del sistema, no estaba disponible en la memoria y la alerta no podía confirmar el límite, permaneciendo inactiva.
+**🔧Corrección**: **Alertas no enviadas**. Algunas alertas no se activaban incluso con el valor por encima del límite. Esto ocurría cuando el valor monitorizado raramente cambiaba: después del reinicio del sistema, no estaba disponible en la memoria y la alerta no conseguía confirmar el límite, permaneciendo inactiva.
 
 ## Versión 6.0.17
 
-**✨Nuevo**: **Informes mensuales con Inteligencia Artificial**. Ahora, su cuenta genera automáticamente informes mensuales enriquecidos con *insights* basados en IA.
+**✨Nuevo**: **Informes Mensuales con Inteligencia Artificial**. Ahora, su cuenta genera automáticamente informes mensuales enriquecidos con *insights* basados en IA.
 
 ![image.png](/src/assets/images/image-10.png)
 
-**✨Nuevo**: **Ejecución remota mediante PowerShell**. La Sonda permite la ejecución de comandos y *scripts* en PowerShell directamente desde la consola. Por razones de seguridad, esta funcionalidad solo está disponible cuando el usuario autoriza su uso durante la instalación de la Sonda. Además, todos los comandos se ejecutan utilizando un **usuario con privilegios restringidos (no administrador)**.
+**✨Nuevo**: **Ejecución Remota vía PowerShell**. La Sonda permite la ejecución de comandos y *scripts* en PowerShell directamente desde la consola. Por motivos de seguridad, este recurso se habilita solamente cuando el usuario autoriza su uso durante la instalación de la Sonda. Además, todos los comandos se ejecutan utilizando un **usuario con privilegios restringidos (no administrador)**.
 
 :::note
 
-Esta funcionalidad requiere la instalación de la versión más reciente de la Sonda Monsta, disponible en nuestro sitio web.
+Este recurso requiere la instalación de la versión más reciente de la Sonda Monsta, disponible en nuestro sitio web.
 
 :::
 
 ![image.png](/src/assets/images/image-5.png)
 
-**✨Nuevo**: **Monitorización S.M.A.R.T.**. Añadimos soporte para la recolección de datos S.M.A.R.T. (Tecnología de Auto-Monitoreo, Análisis e Informes) de discos físicos, permitiendo supervisar la integridad, la vida útil y los indicadores de salud del almacenamiento para identificar posibles fallos antes de que afecten al entorno. 
+**✨Nuevo**: **Monitorización S.M.A.R.T.**. Añadimos soporte para la recolección de datos S.M.A.R.T. (*Self-Monitoring, Analysis, and Reporting Technology*) de discos físicos, permitiendo seguir la integridad, la vida útil y los indicadores de salud del almacenamiento para identificar posibles fallos antes de que afecten el entorno. 
 
 :::note
 
-Esta funcionalidad requiere la instalación de la versión más reciente de la Sonda de Monsta, disponible en nuestro sitio web.
+Este recurso requiere la instalación de la versión más reciente de la Sonda de Monsta, disponible en nuestro sitio web.
 
 :::
 
 ![image.png](/src/assets/images/image-9.png)
 
-🔧**Corrección**: **Preservación del White Label en actualizaciones**. Corregido un comportamiento inesperado donde las actualizaciones del sistema devolvían el logotipo predeterminado.
+🔧**Corrección**: **Preservación del White Label en actualizaciones**. Corregido un comportamiento inesperado donde las actualizaciones del sistema devolvían el logotipo por defecto.
 
-🔧**Corrección**: **Actualización en el estado de eventos.** Ahora, cuando un dispositivo o monitor cambia de estado entre aviso y crítico, solo el evento más reciente permanece marcado como no resuelto en la línea de tiempo, evitando la acumulación de pendientes para el mismo incidente.
+🔧**Corrección**: **Actualización en el estado de eventos.** Ahora, cuando un dispositivo o monitor alterna su estado entre aviso y crítico, solo el evento más reciente permanece marcado como no resuelto en la línea de tiempo, evitando la acumulación de pendientes para el mismo incidente.
 
-**🔧Corrección**: **Reconexión de agentes tras copia de seguridad**. Corregida la reconexión de agentes tras la restauración de la copia de seguridad en la nube en nuevas instalaciones.
+**🔧Corrección**: **Reconexión de Agentes tras Backup**. Corregida la reconexión de agentes después de la restauración del backup en la nube en nuevas instalaciones.
 
-**🔧Corrección**: **Ajuste en el disparo de alarmas para monitores**. Corregido un problema puntual que impedía el disparo de alarmas en algunos monitores.
+**🔧Corrección**: **Ajuste en el Disparo de Alarmas para Monitores**. Corregido un problema puntual que impedía el disparo de alarmas en algunos monitores.
 
 ## Versión 6.0.9
 
-**🔧Corrección**: Se han habilitado botones para eliminar agentes desconectados y bloqueados en la pantalla de gestión.
+**🔧Corrección**: Disponibilizados botones para eliminar agentes desconectados y bloqueados en la pantalla de gestión.
 
-**🔧Corrección**: La información sobre la clave y la licencia aparece en blanco en algunos casos.
+**🔧Corrección**: Información sobre la clave y licencia aparece en blanco en algunos casos.
 
 **🔧Corrección**: Monsta solicita la pantalla de inicio de sesión del área del cliente para validar la clave en algunas situaciones.
 
 ## Versión 6.0.6
 
-**✨Nuevo**: **Agentes** - Monitorización de redes remotas sin necesidad de VPNs o redirección de puertos [Agente: Instalação Zero Conf](/es/start/instalacao/agente-instalacao-zero-conf).
+**✨Nuevo**: **Agentes** - Monitorización de redes remotas sin necesidad de VPNs o redirección de puertos [Agente: Instalación Zero Conf](/es/start/instalacao/agente-instalacao-zero-conf).
 
-**✨Nuevo**: [Mapa para visión jerárquica](/es/manual/dispositivos/visualizacao-em-mapa#mapa-dinâmico) con posibilidad de definir posiciones, añadir widgets y métricas.
+**✨Nuevo**: [Mapa para visualización jerárquica](/es/manual/dispositivos/visualizacao-em-mapa#mapa-dinâmico) con posibilidad de definir posiciones, añadir widgets y métricas.
 
 **✨Nuevo**: Los paneles pueden estar disponibles para usuarios no administradores.
 
-**✨Nuevo**: El informe de consumo puede calcular el área de cualquier unidad de medida.
+**✨Nuevo**: El informe de consumo puede calcular área de cualquier unidad de medida.
 
-**🔧Corrección**: Los dispositivos sin tiempo de actividad no enviaban alertas.
+**🔧Corrección**: Dispositivos sin tiempo de actividad no enviaban alertas.
 
 **🔧Corrección**: Las variables que informan el estado anterior en las plantillas de alerta no estaban habilitadas.
 
-**🔧Corrección**: El valor por defecto informado en los parámetros de un monitor devolvía nulo.
+**🔧Corrección**: El valor predeterminado informado en los parámetros de un monitor devolvía nulo.
 
 **🔧Corrección**: Mensaje de fallo general al añadir monitores automáticos con algunas plantillas.
 
-**🔧Corrección**: Monitor booleano generaba alarma con estado falso cuando los límites estaban invertidos.
+**🔧Corrección**: Monitor booleano alarmaba con estado falso cuando los límites estaban invertidos.
 
 **🔧Corrección**: El namespace no se envía en las recolecciones WMI.
