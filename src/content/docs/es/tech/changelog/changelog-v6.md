@@ -6,7 +6,7 @@ description: Sigue el registro de cambios de la versión 6 de Monsta y conoce la
 sidebar:
   order: 2
 ---
-## Versión 6.0.25 
+## Versión 6.0.25
 
 🔧**Corrección**: **Mejoras en la recolección WMI**. Solucionados timeouts intermitentes de lectura.
 
@@ -40,7 +40,7 @@ Este recurso requiere la instalación de la versión más reciente de la Sonda M
 
 ![image.png](/src/assets/images/image-5.png)
 
-**✨Nuevo**: **Monitorización S.M.A.R.T.**. Añadimos soporte para la recolección de datos S.M.A.R.T. (*Self-Monitoring, Analysis, and Reporting Technology*) de discos físicos, permitiendo seguir la integridad, la vida útil y los indicadores de salud del almacenamiento para identificar posibles fallos antes de que afecten el entorno. 
+**✨Nuevo**: **Monitorización S.M.A.R.T.**. Añadimos soporte para la recolección de datos S.M.A.R.T. (*Self-Monitoring, Analysis, and Reporting Technology*) de discos físicos, permitiendo seguir la integridad, la vida útil y los indicadores de salud del almacenamiento para identificar posibles fallos antes de que afecten el entorno.
 
 :::note
 
@@ -70,7 +70,7 @@ Este recurso requiere la instalación de la versión más reciente de la Sonda d
 
 **✨Nuevo**: **Agentes** - Monitorización de redes remotas sin necesidad de VPNs o redirección de puertos [Agente: Instalación Zero Conf](/es/start/instalacao/agente-instalacao-zero-conf).
 
-**✨Nuevo**: [Mapa para visualización jerárquica](/es/manual/dispositivos/visualizacao-em-mapa#mapa-dinâmico) con posibilidad de definir posiciones, añadir widgets y métricas.
+**✨Nuevo**: [Mapa para visualización jerárquica](/es/manual/dispositivos/visualizacao-em-mapa#mapa-dinámico) con posibilidad de definir posiciones, añadir widgets y métricas.
 
 **✨Nuevo**: Los paneles pueden estar disponibles para usuarios no administradores.
 
