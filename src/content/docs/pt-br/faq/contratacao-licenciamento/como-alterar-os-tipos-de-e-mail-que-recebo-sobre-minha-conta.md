@@ -2,7 +2,7 @@
 title: Como alterar os tipos de e-mail que recebo sobre minha conta?
 description: Veja como personalizar as notificações por e-mail da sua conta Monsta e escolha quais conteúdos, notícias e alertas de novas versões deseja receber.
 ---
-A [Área do Cliente do Monst](https://store.monsta.com.br/)a permite que você gerencie e personalize as comunicações e notificações que deseja receber por e-mail sobre a sua conta. Siga os passos abaixo para ajustar suas preferências:
+A [Área do Cliente do Monsta](https://store.monsta.com.br/) permite que você gerencie e personalize as comunicações e notificações que deseja receber por e-mail sobre a sua conta. Siga os passos abaixo para ajustar suas preferências:
 
 ## Passo a passo para alterar as notificações por e-mail
 
