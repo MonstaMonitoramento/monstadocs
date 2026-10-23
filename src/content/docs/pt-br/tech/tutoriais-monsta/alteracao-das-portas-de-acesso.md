@@ -16,7 +16,7 @@ Este guia descreve o procedimento para alterar as portas de escuta da interface 
 2. **Execute o utilitário de configuração**: Utilize o binário `monkerneld` com o parâmetro `port` para definir a nova porta HTTP e a porta SSL (HTTPS).
     
 ```shell
-/opt/monsta/bin/monkerneld port --port <porta http> 8090 --sslport <porta https>
+/opt/monsta/bin/monkerneld port --port <porta http> --sslport <porta https>
 ```
     
 **Exemplo**:
