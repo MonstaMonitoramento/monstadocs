@@ -14,17 +14,19 @@ Esta guía describe el procedimiento para cambiar los puertos de escucha de la i
 
 1. **Acceda al Terminal**: Abra la consola de su servidor.
 2. **Ejecute la utilidad de configuración**: Utilice el binario `monkerneld` con el parámetro `port` para definir el nuevo puerto HTTP y el puerto SSL (HTTPS).
-    
+
 ```shell
-/opt/monsta/bin/monkerneld port --port <porta http> 8090 --sslport <porta https>
+/opt/monsta/bin/monkerneld port --port <porta http> --sslport <porta https>
 ```
-    
+
 **Ejemplo**:
+
 ```shell
 /opt/monsta/bin/monkerneld port --port 8090 --sslport 8443  
-```      
+```
 
 **Parámetros del Comando**:
+
 - `--port`: Define el puerto para conexiones no cifradas (HTTP).
 - `--sslport`: Define el puerto para conexiones seguras (HTTPS).
 
