@@ -16,7 +16,7 @@ This guide describes the procedure to change the listening ports of the **Monsta
 2. **Run the configuration utility**: Use the `monkerneld` binary with the `port` parameter to set the new HTTP port and the SSL (HTTPS) port.
 
 ```shell
-/opt/monsta/bin/monkerneld port --port <porta http> --sslport <porta https>
+/opt/monsta/bin/monkerneld port --port <http port> --sslport <https port>
 ```
 
 **Example**:

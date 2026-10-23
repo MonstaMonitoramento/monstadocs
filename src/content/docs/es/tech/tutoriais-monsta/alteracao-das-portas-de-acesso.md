@@ -16,7 +16,7 @@ Esta guía describe el procedimiento para cambiar los puertos de escucha de la i
 2. **Ejecute la utilidad de configuración**: Utilice el binario `monkerneld` con el parámetro `port` para definir el nuevo puerto HTTP y el puerto SSL (HTTPS).
 
 ```shell
-/opt/monsta/bin/monkerneld port --port <porta http> --sslport <porta https>
+/opt/monsta/bin/monkerneld port --port <puerto http> --sslport <puerto https>
 ```
 
 **Ejemplo**:
