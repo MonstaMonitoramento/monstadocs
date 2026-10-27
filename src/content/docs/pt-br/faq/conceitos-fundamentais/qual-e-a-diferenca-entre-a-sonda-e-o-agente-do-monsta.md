@@ -16,15 +16,13 @@ A principal diferença entre a Sonda e o Agente é o propósito de cada um:
 | Característica | **Agente** | **Sonda** |
 | --- | --- | --- |
 | **Comportamento** | **Ativo** — inicia a conexão de saída para o servidor Monsta | **Passivo** — aguarda requisições do servidor Monsta |
-| **Sistemas suportados** | Windows, Linux e Raspberry PI | Somente Windows |
+| **Sistemas suportados** | Windows | Windows |
 | **Uso de VPN / Port Forwarding** | Não precisa | Necessário (o Monsta precisa alcançar a sonda) |
 | **Protocolo de comunicação** | QUIC (criptografado, ponta a ponta) | WMI (API da Microsoft) |
 | **Ambientes com NAT / IP dinâmico** | Suportado nativamente | Pode ser limitado |
 | **Cache de dados offline** | Sim — armazena métricas localmente se perder conexão | Não |
 | **Ideal para** | Redes remotas, filiais, ambientes distribuídos sem VPN | Monitoramento local de servidores/estações Windows |
 | **Custo** | Pago | Gratuito |
-
-
 
 ## Resumo
 
