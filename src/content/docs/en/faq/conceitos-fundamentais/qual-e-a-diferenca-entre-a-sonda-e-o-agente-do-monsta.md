@@ -16,15 +16,13 @@ The main difference between the Probe and the Agent is their purpose:
 | Feature | **Agent** | **Probe** |
 | --- | --- | --- |
 | **Behavior** | **Active** — initiates the outgoing connection to the Monsta server | **Passive** — waits for requests from the Monsta server |
-| **Supported systems** | Windows, Linux and Raspberry Pi | Windows only |
+| **Supported systems** | Windows | Windows |
 | **Use of VPN / Port Forwarding** | Not required | Required (Monsta needs to reach the probe) |
 | **Communication protocol** | QUIC (encrypted, end-to-end) | WMI (Microsoft API) |
 | **Environments with NAT / dynamic IP** | Natively supported | May be limited |
 | **Offline data cache** | Yes — stores metrics locally if the connection is lost | No |
 | **Ideal for** | Remote networks, branch offices, distributed environments without VPN | Local monitoring of Windows servers/workstations |
 | **Cost** | Paid | Free |
-
-
 
 ## Summary
 
