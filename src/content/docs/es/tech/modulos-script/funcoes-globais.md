@@ -4,9 +4,9 @@ sidebar:
   order: 2
 ---
 
-Esta sección describe las funciones globales disponibles en el entorno Lua de Monsta. Estas son funciones que no pertenecen a módulos específicos, pero están disponibles directamente en el ámbito global de Lua. Hay funcionalidades para control de flujo, manipulación del tiempo, entre otras.
+Esta sección describe las funciones globales disponibles en el entorno Lua de Monsta. Son funciones que no pertenecen a módulos específicos, pero están disponibles directamente en el ámbito global de Lua. Existen funcionalidades para control de flujo, manipulación del tiempo, entre otras.
 
-## Funciones disponibles
+## Funciones Disponibles
 
 ### `sleep(seconds)`
 
@@ -28,7 +28,7 @@ print("Execução retomada após 5 segundos")
 
 ### `signal(signal_name)`
 
-**Descripción**: Señaliza la finalización de la ejecución del script con un nombre de señal específico.
+**Descripción**: Señala la finalización de la ejecución del script con un nombre de señal específico.
 
 **Parámetros**:
 
@@ -44,13 +44,13 @@ print("Execução retomada após 5 segundos")
 
 - Útil para control de flujo y señalización de estados
 
-**Nota**: Actualmente, esta función tiene un único caso de uso específico: señalizar con el nombre `"RepeatPrevValue"`. Cuando un script emite esta señal, el sistema interpreta que la recolección actual debe repetir el último valor válido de la métrica, en lugar de generar un nuevo punto de datos. Esto es útil en situaciones donde la fuente de datos está temporalmente indisponible o la recolección falló, pero no se desea interrumpir la serie temporal.
+**Nota**: Actualmente, esta función tiene un único caso de uso específico: señalizar con el nombre `RepeatPrevValue`. Cuando un script emite esta señal, el sistema interpreta que la recolección actual debe repetir el último valor válido de la métrica, en lugar de generar un nuevo punto de datos. Esto es útil en situaciones donde la fuente de datos está temporalmente no disponible o la recolección falló, pero no se desea interrumpir la serie temporal.
 
 **Ejemplo de uso específico**:
 
 ```lua
 
--- Intentar obtener un valor
+-- Intentar recopilar un valor
 local value, err = collect_metric()
 if err then
     -- En caso de fallo, repetir el valor anterior
@@ -85,7 +85,7 @@ end)
 -- Ejecutar con argumentos
 local data = with_timeout(1000, http.get, "https://api.example.com/data")
 
--- Manejo usando with_coroutine (retorna result, err)
+-- Tratamiento usando with_coroutine (devuelve result, err)
 local result_crit, err = with_coroutine(function()
     return with_timeout(500, function()
         -- Operación que debe completarse rápidamente
@@ -104,21 +104,21 @@ end
 
 - Preserva los argumentos pasados a la función
 
-- Útil para operaciones de red o I/O que puedan colgarse
+- Útil para operaciones de red o I/O que pueden bloquear
 
 ### `now()`
 
-**Descripción**: Devuelve el número de segundos desde el 1 de enero de 1970 00:00:00 UTC (también conocido como "timestamp UNIX").
+**Descripción**: Devuelve el número de segundos (sin contar segundos intercalares) desde el 1 de enero de 1970 00:00:00 UTC (también conocido como "timestamp UNIX").
 
 **Parámetros**: Ninguno
 
-**Retorno**: Número que representa los segundos desde la época Unix
+**Retorno**: Número que representa segundos desde la época Unix
 
 **Ejemplo**:
 
 ```lua
 
--- Obtener timestamp actual
+-- Obter timestamp atual
 local current_time = now()
 print("Timestamp atual:", current_time)
 
@@ -180,7 +180,7 @@ print("Valor:", 42, "Status:", true, "Lista:", {1, 2, 3})
 
 - Si el resultado es negativo, emite la señal `"RepeatPrevValue"`
 
-- Usado internamente por `snmp.diff` y `wmi.diff` para el cálculo de diferencias en contadores
+- Usado internamente por `snmp.diff` y `wmi.diff` para cálculo de diferencias en contadores
 
 - Útil para métricas de contador que pueden sufrir rollover (como contadores de 32 o 64 bits)
 
@@ -188,14 +188,14 @@ print("Valor:", 42, "Status:", true, "Lista:", {1, 2, 3})
 
 ```lua
 
--- Calcular la diferencia entre lecturas de un contador
-local current_value = 4294967290  -- Valor actual (cercano al rollover de 32 bits)
+-- Calcular diferencia entre lecturas de contador
+local current_value = 4294967290  -- Valor actual (próximo al rollover de 32 bits)
 local previous_value = 4294967280  -- Valor anterior
 
 local difference = diff(current_value, previous_value)
 -- difference = 10 (4294967290 - 4294967280)
 
--- Caso con rollover (el valor disminuyó)
+-- Caso de rollover (el valor disminuyó)
 local current_with_rollover = 10  -- Tras el rollover
 local previous_before_rollover = 4294967295  -- Antes del rollover
 
@@ -204,7 +204,7 @@ local rollover_diff = diff(current_with_rollover, previous_before_rollover)
 
 ```
 
-## Variables globales
+## Variables Globales
 
 ### `EXEC_IDENT`
 
@@ -241,9 +241,9 @@ store.put("results_" .. EXEC_IDENT, processing_result)
 
 ## Limitaciones
 
-1. **`sleep` No es preciso**: Debido a la naturaleza asincrónica del sistema, `sleep` puede tener pequeñas variaciones.
+1. **`sleep` No es Preciso**: Debido a la naturaleza asíncrona del sistema, `sleep` puede tener pequeñas variaciones.
 
-2. **`signal` Interrumpe la ejecución**: Una vez llamada, la ejecución normal se interrumpe.
+2. **`signal` Interrumpe Ejecución**: Una vez llamada, la ejecución normal se interrumpe.
 
 ## Ejemplo
 
