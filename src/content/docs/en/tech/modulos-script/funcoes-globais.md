@@ -4,7 +4,7 @@ sidebar:
   order: 2
 ---
 
-This section describes the global functions available in Monsta's Lua environment. These are functions that do not belong to specific modules but are available directly in the Lua global scope. There are features for flow control, time manipulation, among others.
+This section describes the global functions available in Monsta's Lua environment. These are functions that do not belong to specific modules but are available directly in Lua's global scope. There are features for flow control, time handling, and others.
 
 ## Available Functions
 
@@ -16,7 +16,7 @@ This section describes the global functions available in Monsta's Lua environmen
 
 - `seconds` (number): Number of seconds to pause execution
 
-**Return**: `nil` (no return value)
+**Return**: `nil` (does not return a value)
 
 **Example**:
 
@@ -28,23 +28,23 @@ print("Execução retomada após 5 segundos")
 
 ### `signal(signal_name)`
 
-**Description**: Signals the termination of script execution with a specific signal name.
+**Description**: Signals the end of script execution with a specific signal name.
 
 **Parameters**:
 
 - `signal_name` (string): Name of the signal to be emitted
 
-**Return**: Aborts the script execution with the signal name
+**Return**: Aborts script execution with the signal name
 
 **Characteristics**:
 
-- Calls the `_execution_done` function if available in the global environment
+- Calls the function `_execution_done` if available in the global environment
 
 - Always raises an error, interrupting normal execution
 
-- Useful for flow control and state signaling
+- Useful for flow control and signaling states
 
-**Note**: Currently, this function has a single specific use case: signaling with the name `"RepeatPrevValue"`. When a script emits this signal, the system interprets that the current collection should repeat the last valid metric value instead of generating a new data point. This is useful in situations where the data source is temporarily unavailable or the collection failed, but you don't want to break the time series.
+**Note**: Currently, this function has a single specific use case: signaling with the name `RepeatPrevValue`. When a script emits this signal, the system interprets that the current collection should repeat the last valid metric value instead of producing a new data point. This is useful in situations where the data source is temporarily unavailable or the collection failed, but you do not want to interrupt the time series.
 
 **Specific usage example**:
 
@@ -76,7 +76,6 @@ end
 **Example**:
 
 ```lua
-
 -- Execute a function with a 2-second timeout
 local result = with_timeout(2000, function()
     -- Operation that may take long
@@ -86,18 +85,17 @@ end)
 -- Execute with arguments
 local data = with_timeout(1000, http.get, "https://api.example.com/data")
 
--- Timeout handling
-local success, result = pcall(function()
+-- Handling using with_coroutine (returns result, err)
+local result_crit, err = with_coroutine(function()
     return with_timeout(500, function()
         -- Operation that must complete quickly
         return critical_operation()
     end)
 end)
 
-if not success then
-    print("Operação excedeu o timeout de 500ms")
+if err then
+    print("Operação excedeu o timeout de 500ms ou ocorreu um erro: " .. tostring(err))
 end
-
 ```
 
 **Characteristics**:
@@ -110,7 +108,7 @@ end
 
 ### `now()`
 
-**Description**: Returns the number of non-leap seconds since January 1, 1970 00:00:00 UTC (also known as the "UNIX timestamp").
+**Description**: Returns the number of non-leap seconds since January 1, 1970 00:00:00 UTC (also known as the UNIX timestamp).
 
 **Parameters**: None
 
@@ -136,7 +134,7 @@ print("Operação levou", duration, "segundos")
 
 **Characteristics**:
 
-- Same function available as `time.now()`
+- Same function available in `time.now()`
 
 - Useful for performance measurement
 
@@ -148,7 +146,7 @@ print("Operação levou", duration, "segundos")
 
 - `...` (multiple values): Values to be printed
 
-**Return**: `nil` (no return value)
+**Return**: `nil` (does not return a value)
 
 **Example**:
 
@@ -166,7 +164,7 @@ print("Valor:", 42, "Status:", true, "Lista:", {1, 2, 3})
 
 ### `diff(lhs, rhs)`
 
-**Description**: Calculates the difference between two numeric values, with special handling for counters that may roll over.
+**Description**: Calculates the difference between two numeric values, with special handling for counters that may rollover.
 
 **Parameters**:
 
@@ -180,29 +178,29 @@ print("Valor:", 42, "Status:", true, "Lista:", {1, 2, 3})
 
 - Calculates `lhs - rhs`
 
-- If the result is negative, emits the `"RepeatPrevValue"` signal
+- If the result is negative, emits the signal `"RepeatPrevValue"`
 
-- Used internally by `snmp.diff` and `wmi.diff` for difference calculations on counters
+- Used internally by `snmp.diff` and `wmi.diff` for difference calculation on counters
 
-- Useful for counter metrics that may roll over (such as 32- or 64-bit counters)
+- Useful for counter metrics that may rollover (such as 32- or 64-bit counters)
 
 **Example**:
 
 ```lua
 
 -- Calculate difference between counter readings
-local current_value = 4294967290  -- Current value (near 32-bit rollover)
-local previous_value = 4294967280  -- Previous value
+local current_value = 4294967290  -- Valor atual (próximo do rollover de 32 bits)
+local previous_value = 4294967280  -- Valor anterior
 
 local difference = diff(current_value, previous_value)
 -- difference = 10 (4294967290 - 4294967280)
 
 -- Case with rollover (value decreased)
-local current_with_rollover = 10  -- After rollover
-local previous_before_rollover = 4294967295  -- Before rollover
+local current_with_rollover = 10  -- Após rollover
+local previous_before_rollover = 4294967295  -- Antes do rollover
 
 local rollover_diff = diff(current_with_rollover, previous_before_rollover)
--- Emits signal "RepeatPrevValue" because 10 - 4294967295 is negative
+-- Emite sinal "RepeatPrevValue" pois 10 - 4294967295 é negativo
 
 ```
 
@@ -228,18 +226,18 @@ local metrics = {
     value = collected_data
 }
 
--- Use as key for storage
+-- Use as a key for storage
 store.put("results_" .. EXEC_IDENT, processing_result)
 
 ```
 
 **Characteristics**:
 
-- Defined automatically by the environment
+- Automatically defined by the environment
 
 - Unique for each script execution
 
-- Useful for tracking and correlating logs
+- Useful for tracing and correlating logs
 
 ## Limitations
 
@@ -250,23 +248,27 @@ store.put("results_" .. EXEC_IDENT, processing_result)
 ## Example
 
 ```lua
-
--- Monitor service with backoff on failure
+-- Monitor a service with backoff on failure using with_coroutine
 local function monitor_with_backoff(service_url, max_attempts)
     local attempt = 1
     local backoff = 1  -- seconds
 
     while attempt <= max_attempts do
         log.info("Tentativa", attempt, "de", max_attempts)
-        local success, status = pcall(function()
+        
+        -- with_coroutine returns (result, err)
+        local status, err = with_coroutine(function()
             return with_timeout(5000, function()
                 return check_service(service_url)
             end)
         end)
 
-        if success and status == "healthy" then
+        -- If there was no error (err == nil) and the service status is healthy
+        if not err and status == "healthy" then
             log.info("Serviço saudável")
             return true
+        else
+            log.info("Tentativa falhou:", err or ("Status: " .. tostring(status)))
         end
 
         -- Increase exponential backoff
@@ -281,5 +283,4 @@ end
 
 -- Run monitoring
 monitor_with_backoff("https://api.example.com", 5)
-
 ```
