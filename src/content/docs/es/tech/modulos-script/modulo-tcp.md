@@ -44,7 +44,7 @@ Establece una conexión TCP simple con un servidor remoto.
 -- Conectar a un servidor en el puerto 8080 con timeout de 10 segundos
 local conn = tcp.connect("servidor.exemplo.com", 8080, 10)
 
--- Conectar con timeout predeterminado (5 segundos)
+-- Conectar con timeout por defecto (5 segundos)
 local conn2 = tcp.connect("192.168.1.100", 3000)
 ```
 
@@ -78,7 +78,7 @@ local conn2 = tcp.connect_tls("servidor-seguro.com", 8443, 15)
 
 ### `tcp.send(data)`
 
-Envía datos a través de la última conexión TCP abierta con la función `connect()`. Esta función se mantiene para compatibilidad con versiones anteriores. Para mayor claridad y control, prefiera la forma `local conn = connect("host", porta)` y use los métodos del objeto de conexión retornado (ej: `conn:write_json_packet()`).
+Envía datos a través de la última conexión TCP abierta con la función `connect()`. Esta función se mantiene por compatibilidad con versiones anteriores. Para mayor claridad y control, prefiera la forma `local conn = connect("host", porta)` y use los métodos del objeto de conexión devuelto (ej: `conn:write_json_packet()`).
 
 **Parámetros**:
 
@@ -95,16 +95,16 @@ Envía datos a través de la última conexión TCP abierta con la función `conn
 **Ejemplo**:
 
 ```lua
--- Primeiro estabelece uma conexão
+-- Primero establece una conexión
 local conn = tcp.connect("servidor.exemplo.com", 8080)
 
--- Envia dados
+-- Envia datos
 send("GET / HTTP/1.1\r\nHost: servidor.exemplo.com\r\n\r\n")
 ```
 
 ### `tcp.recv()`
 
-Recibe datos de la última conexión TCP abierta con la función `connect()` y almacenada en el registro Lua. Esta función se mantiene para compatibilidad con versiones anteriores. Para mayor claridad y control, prefiera la forma `local conn = connect("host", porta)` y use los métodos del objeto de conexión retornado (ej: `conn:read_str()` o `conn:read_json_packet()`).
+Recibe datos de la última conexión TCP abierta con la función `connect()` y almacenada en el registro Lua. Esta función se mantiene por compatibilidad con versiones anteriores. Para mayor claridad y control, prefiera la forma `local conn = connect("host", porta)` y use los métodos del objeto de conexión devuelto (ej: `conn:read_str()` o `conn:read_json_packet()`).
 
 **Parámetros**:
 
@@ -132,7 +132,7 @@ print("Resposta recebida:", resposta)
 
 ## Métodos de los Objetos Connection
 
-Los objetos retornados por `connect()` y `connect_tls()` poseen los siguientes métodos:
+Los objetos devueltos por `connect()` y `connect_tls()` poseen los siguientes métodos:
 
 ### `conn:read_str()`
 
@@ -154,11 +154,11 @@ print("Dados recebidos:", dados)
 
 ### `conn:read_json()`
 
-Lee una cadena del socket e interpreta su contenido como JSON.
+Lee una cadena del socket e interpreta como JSON.
 
 **Valor de retorno**:
 
-- Valor Lua decodificado desde el JSON
+- Valor Lua decodificado del JSON
 
 - Lanza error si los datos no son JSON válido
 
@@ -168,7 +168,7 @@ Lee una cadena del socket e interpreta su contenido como JSON.
 local conn = tcp.connect("api.exemplo.com", 3000)
 local dados_json = conn:read_json()
 
--- Acceder a los datos decodificados
+-- Acessar dados decodificados
 print("Status:", dados_json.status)
 print("Mensagem:", dados_json.message)
 ```
@@ -187,7 +187,7 @@ Lee un paquete JSON con tamaño prefijado (formato binario).
 
 **Valor de retorno**:
 
-- Valor Lua decodificado desde el JSON
+- Valor Lua decodificado del JSON
 
 - Lanza error si el paquete es demasiado grande o JSON inválido
 
@@ -216,7 +216,7 @@ Escribe un paquete JSON con tamaño prefijado (formato binario).
 **Ejemplo**:
 
 ```lua
-local conn = connect("servidor-binario.com", 9000)
+local conn = tcp.connect("servidor-binario.com", 9000)
 
 -- Enviar um pacote JSON
 local dados = {
@@ -231,7 +231,7 @@ conn:write_json_packet(dados)
 
 ### Timeout Configurable
 
-Todas las funciones de conexión aceptan timeout personalizado. Si no se especifica, usan 5 segundos por defecto.
+Todas las funciones de conexión aceptan timeout personalizado. Si no se especifica, usa 5 segundos por defecto.
 
 ### Resolución DNS Automática
 
@@ -247,21 +247,21 @@ Los paquetes JSON con tamaño prefijado tienen un límite de 512KB para prevenir
 
 ```lua
 function fazer_requisicao_http(host, porta, caminho)
-    local conn = connect(host, porta, 10)
+    local conn = tcp.connect(host, porta, 10)
 
-    -- Enviar petición HTTP
+    -- Enviar requisição HTTP
     local requisicao = string.format(
         "GET %s HTTP/1.1\r\nHost: %s\r\nConnection: close\r\n\r\n",
         caminho, host
     )
 
-    -- Usar el método send (la conexión está en el registro)
-    send(requisicao)
+    -- Usar o método send (conexão está no registro)
+    tcp.send(requisicao)
 
-    -- Leer respuesta
-    local resposta = recv()
+    -- Ler resposta
+    local resposta = tcp.recv()
 
-    -- Extraer cuerpo de la respuesta (simplificado)
+    -- Extrair corpo da resposta (simplificado)
     local corpo = resposta:match("\r\n\r\n(.+)$")
 
     return corpo
@@ -272,22 +272,22 @@ end
 
 ```lua
 function consultar_api_json(endpoint, dados)
-    local conn = connect_tls("api.exemplo.com", 443)
+    local conn = tcp.connect_tls("api.exemplo.com", 443)
 
-    -- Enviar datos como paquete JSON
+    -- Enviar dados como pacote JSON
     conn:write_json_packet({
         endpoint = endpoint,
         dados = dados,
         timestamp = os.time()
     })
 
-    -- Esperar respuesta
+    -- Aguardar resposta
     local resposta = conn:read_json_packet()
 
     return resposta
 end
 
--- Ejemplo de uso
+-- Exemplo de uso
 local resultado = consultar_api_json("/usuarios", {id = 123})
 if resultado.success then
     print("Usuário:", resultado.usuario.nome)
@@ -299,12 +299,13 @@ end
 ```lua
 function verificar_servico_tcp(host, porta)
     local inicio = os.time()
-    local sucesso, conn = pcall(connect, host, porta, 5)
+    -- with_coroutine aceita a função e seus argumentos, retornando (result, err)
+    local conn, err = with_coroutine(tcp.connect, host, porta, 5)
 
-    if sucesso then
+    if not err and conn then
         local tempo_resposta = os.time() - inicio
 
-        -- Probar comunicación básica
+        -- Testar comunicação básica
         conn:write_json_packet({ping = true})
         local resposta = conn:read_json_packet()
 
@@ -319,7 +320,7 @@ function verificar_servico_tcp(host, porta)
 
     return {
         status = "offline",
-        erro = conn  -- conn contiene el mensaje de error cuando pcall falla
+        erro = err  -- err contém a mensagem de erro quando with_coroutine falha
     }
 end
 ```
@@ -328,9 +329,9 @@ end
 
 ```lua
 function chat_client(host, porta)
-    local conn = connect(host, porta)
+    local conn = tcp.connect(host, porta)
 
-    -- Hilo para recibir mensajes
+    -- Thread para receber mensagens
     local function receber_mensagens()
         while true do
             local mensagem = conn:read_json_packet()
@@ -338,7 +339,7 @@ function chat_client(host, porta)
         end
     end
 
-    -- Hilo para enviar mensajes (simplificado)
+    -- Thread para enviar mensagens (simplificado)
     local function enviar_mensagens()
         while true do
             io.write("Digite mensagem: ")
@@ -353,7 +354,7 @@ function chat_client(host, porta)
         end
     end
 
-    -- En un entorno real, esto se haría con corutinas
-    -- Esta es una simplificación para demostración
+    -- Em um ambiente real, isso seria feito com corrotinas
+    -- Esta é uma simplificação para demonstração
 end
 ```

@@ -1,8 +1,8 @@
 ---
-title: "Módulo Cache"
+title: "Módulo de caché"
 ---
 
-El módulo **cache** proporciona un sistema de caché distribuido para scripts Lua. La caché admite operaciones de lectura/escritura con expiración automática (TTL) y mecanismos de sincronización para operaciones concurrentes.
+El módulo **caché** proporciona un sistema de caché distribuido para scripts Lua. El caché admite operaciones de lectura/escritura con expiración automática (TTL) y mecanismos de sincronización para operaciones concurrentes.
 
 El sistema de caché es especialmente útil para:
 
@@ -18,15 +18,15 @@ El sistema de caché es especialmente útil para:
 
 ### `cache.put(key, value, ttl)`
 
-Almacena un valor en la caché con un tiempo de vida específico.
+Almacena un valor en el caché con un tiempo de vida específico.
 
 **Parámetros**:
 
-- `key` (string): Clave única para identificar el valor en la caché
+- `key` (string): Clave única para identificar el valor en el caché
 
-- `value` (cualquier tipo Lua): Valor a almacenar (puede ser string, número, tabla, booleano, etc.)
+- `value` (cualquier tipo Lua): Valor que se almacenará (puede ser string, número, tabla, booleano, etc.)
 
-- `ttl` (number): Time To Live en segundos - cuánto tiempo permanecerá el valor en la caché
+- `ttl` (number): Time To Live en segundos - cuánto tiempo permanecerá el valor en el caché
 
 **Valor de retorno**:
 
@@ -37,11 +37,11 @@ Almacena un valor en la caché con un tiempo de vida específico.
 **Ejemplo**:
 
 ```lua
--- Almacenar el resultado de una API durante 5 minutos (300 segundos)
+-- Almacenar un resultado de API por 5 minutos (300 segundos)
 local resultado_api = {status = "ativo", usuarios = 150}
 cache.put("status_sistema", resultado_api, 300)
 
--- Almacenar una cadena simple durante 1 hora
+-- Almacenar una cadena simple por 1 hora
 cache.put("ultima_atualizacao", "2026-01-15T10:30:00Z", 3600)
 
 -- Almacenar un número
@@ -50,7 +50,7 @@ cache.put("contador_requisicoes", 42, 60)
 
 ### `cache.get(key)`
 
-Recupera un valor de la caché.
+Recupera un valor del caché.
 
 **Parámetros**:
 
@@ -65,7 +65,7 @@ Recupera un valor de la caché.
 **Ejemplo**:
 
 ```lua
--- Recuperar un valor de la caché
+-- Recuperar un valor del caché
 local status = cache.get("status_sistema")
 
 if status then
@@ -103,36 +103,37 @@ Marca una clave como "pendiente". Esta función se usa para sincronizar múltipl
 
 - El estado "pendiente" expira automáticamente después de 5 minutos (300 segundos)
 
-- Útil para evitar que múltiples workers recalcule n el mismo valor costoso simultáneamente
+- Útil para evitar que múltiples workers recalculeen el mismo valor costoso simultáneamente
 
 **Ejemplo**:
 
 ```lua
--- Patrón típico para evitar un cache stampede
+-- Padrão típico para evitar cache stampede
 local function obter_dados_caros(chave)
-    -- Primero intenta obtener del caché
+    -- Primeiro tenta obter do cache
     local dados = cache.get(chave)
 
     if dados then
         return dados
     end
 
-    -- Si no lo encuentra, marca como pendiente
-    local sucesso, erro = pcall(cache.mark_pending, chave)
+    -- Se não encontrou, marca como pendente usando with_coroutine
+    -- with_coroutine retorna (resultado, erro)
+    local _, err = with_coroutine(cache.mark_pending, chave)
 
-    if not sucesso then
-        -- Otro worker ya marcó como pendiente, espera el resultado
-        dados = cache.get(chave)  -- Esta llamada se bloqueará hasta que el valor esté disponible
+    if err then
+        -- Outro worker já marcou como pendente, espera pelo resultado
+        dados = cache.get(chave)  -- Esta chamada irá bloquear até o valor estar disponível
         if dados then
             return dados
         end
     end
 
-    -- Este worker es responsable de calcular el valor
-    -- ... cálculo costoso aquí ...
+    -- Este worker é responsável por calcular o valor
+    -- ... cálculo caro aqui ...
     local resultado = calcular_dados_caros()
 
-    -- Almacena en la caché para otros workers
+    -- Armazena no cache para outros workers
     cache.put(chave, resultado, 300)
 
     return resultado
@@ -141,7 +142,7 @@ end
 
 ### `cache.delete(key)`
 
-Elimina una clave de la caché de forma inmediata.
+Elimina una clave del caché inmediatamente.
 
 **Parámetros**:
 
@@ -156,10 +157,10 @@ Elimina una clave de la caché de forma inmediata.
 **Ejemplo**:
 
 ```lua
--- Eliminar un valor específico
+-- Remover um valor específico
 cache.delete("dados_expirados")
 
--- Limpiar caché relacionada con un usuario
+-- Limpar cache relacionado a um usuário
 cache.delete("usuario_123_perfil")
 cache.delete("usuario_123_preferencias")
 cache.delete("usuario_123_historico")
@@ -177,11 +178,11 @@ El mecanismo de "pendiente" permite que múltiples workers sincronicen el cálcu
 
 3. Cuando el primer worker termina, almacena el valor y todos los workers lo reciben
 
-### Tipos de datos compatibles
+### Tipos de Datos Soportados
 
-La caché puede almacenar cualquier tipo de valor Lua soportado por el sistema de serialización de Monsta, incluyendo:
+El caché puede almacenar cualquier tipo de valor Lua soportado por el sistema de serialización de Monsta, incluyendo:
 
-- Cadenas
+- Strings
 
 - Números
 
@@ -193,13 +194,13 @@ La caché puede almacenar cualquier tipo de valor Lua soportado por el sistema d
 
 ## Consideraciones de Rendimiento
 
-1. **Acceso rápido**: Las operaciones de caché son mucho más rápidas que recalcular valores o hacer solicitudes externas
+1. **Acceso rápido**: Las operaciones de caché son mucho más rápidas que recalcular valores o realizar solicitudes externas
 
-2. **Memoria**: La caché se mantiene en memoria, por lo que valores muy grandes pueden afectar al rendimiento
+2. **Memoria**: El caché se mantiene en memoria, por lo que valores muy grandes pueden impactar el rendimiento
 
 3. **Concurrencia**: El sistema es thread-safe y soporta acceso concurrente de múltiples workers
 
-4. **Red**: El caché es local al proceso, no hay sobrecarga de red
+4. **Network**: El caché es local al proceso, no hay overhead de red
 
 ## Limitaciones
 
@@ -207,16 +208,16 @@ La caché puede almacenar cualquier tipo de valor Lua soportado por el sistema d
 
 2. **Memoria limitada**: No usar para almacenar grandes volúmenes de datos
 
-3. **Distribución**: Este es un caché local, no distribuido entre varios servidores
+3. **Distribución**: Este es un caché local, no distribuido entre múltiples servidores
 
-## Buenas Prácticas
+## Mejores Prácticas
 
-1. **TTL adecuado**: Usa TTLs apropiados para el tipo de dato (corto para datos dinámicos, largo para datos estáticos)
+1. **TTL adecuado**: Usar TTLs apropiados para el tipo de dato (corto para datos dinámicos, largo para datos estáticos)
 
-2. **Claves descriptivas**: Usa nombres de clave que describan claramente el contenido
+2. **Claves descriptivas**: Usar nombres de clave que describan claramente el contenido
 
-3. **Espacio de nombres**: Usa prefijos para organizar claves (ej.: `api_`, `user_`, `config_`)
+3. **Namespace**: Usar prefijos para organizar claves (ej: `api_`, `user_`, `config_`)
 
-4. **Fallback**: Ten siempre un fallback en caso de que la caché esté vacía o haya expirado
+4. **Fallback**: Tener siempre un fallback por si el caché está vacío o ha expirado
 
-5. **Invalidación**: Usa `delete()` para invalidar la caché cuando los datos cambien
+5. **Invalidación**: Usar `delete()` para invalidar caché cuando los datos cambien

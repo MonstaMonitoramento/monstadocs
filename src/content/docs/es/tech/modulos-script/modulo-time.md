@@ -1,60 +1,60 @@
 ---
-title: "Módulo Time"
+title: "Módulo time"
 ---
 
-El módulo **time** proporciona funciones para la manipulación de tiempo y fechas. Este módulo es útil para scripts que necesitan medir intervalos, esperar periodos específicos, parsear fechas y implementar timeouts en operaciones asíncronas.
+El módulo **time** proporciona funciones para la manipulación de tiempo y fechas. Este módulo es útil para scripts que necesitan medir intervalos, esperar por periodos específicos, parsear fechas e implementar timeouts en operaciones asíncronas.
 
 **Características principales**:
 
 - Timestamps Unix en segundos
 
-- Parseo de fechas en formato RFC 3339
+- Parseo de fechas en el formato RFC 3339
 
 - Sleep asíncrono no bloqueante
 
 - Timeouts para operaciones asíncronas
 
-## Funciones Disponibles
+## Funciones disponibles
 
 ### 1. `time.now()`
 
 Devuelve el timestamp Unix actual en segundos.
 
-#### Parámetros:
+#### Parámetros
 
 - Ninguno
 
-#### Retorno:
+#### Retorno
 
-- **número**: Timestamp Unix actual (segundos desde el 1 de enero de 1970, 00:00:00 UTC)
+- **número**: Timestamp Unix actual (segundos desde 1 de enero de 1970, 00:00:00 UTC)
 
-#### Comportamiento:
+#### Comportamiento
 
 - Devuelve la hora actual en UTC
 
-- Precisión de segundos (no milisegundos)
+- Precisión a segundos (no milisegundos)
 
 - Mismo valor devuelto por `os.time()` en Lua estándar
 
 - Disponible como función global y en el módulo `time`
 
-#### Ejemplo de uso:
+#### Ejemplo de uso
 
 ```lua
 -- Usando el módulo time
 local timestamp_modulo = time.now()
 print("Timestamp módulo:", timestamp_modulo)
 
--- Usando la función global (misma função)
+-- Usando la función global (misma función)
 local timestamp_global = now()
 print("Timestamp global:", timestamp_global)
 
 -- Ambos devuelven el mismo valor
 print("São iguais?", timestamp_global == timestamp_modulo)  -- true
 
--- Calcular duración de la operación
+-- Calcular la duración de la operación
 local inicio = time.now()
--- ... operación demorada ...
+-- ... operación prolongada ...
 local fim = time.now()
 local duracao = fim - inicio
 print("Operação levou", duracao, "segundos")
@@ -68,7 +68,7 @@ local evento = {
 }
 
 -- Programar ejecución futura
-local proxima_execucao = time.now() + 3600  -- 1 hora a partir de agora
+local proxima_execucao = time.now() + 3600  -- 1 hora a partir de ahora
 print("Próxima execução em:", os.date("%H:%M:%S", proxima_execucao))
 ```
 
@@ -76,26 +76,26 @@ print("Próxima execução em:", os.date("%H:%M:%S", proxima_execucao))
 
 Espera de forma asíncrona durante un número específico de segundos.
 
-#### Parámetros:
+#### Parámetros
 
-- **segundos** (número): Número de segundos a esperar
+- **segundos** (número): Número de segundos para esperar
 
-#### Retorno:
+#### Retorno
 
-- **nil**: La función no devuelve un valor (tras la espera)
+- **nil**: La función no devuelve valor (tras la espera)
 
-#### Comportamiento:
+#### Comportamiento
 
 - Precisión dependiente del planificador del sistema
 
-#### Ejemplo de uso:
+#### Ejemplo de uso
 
 ```lua
 -- Esperar 5 segundos
 await(time.sleep(5))
 print("5 segundos se passaram")
 
--- Implementar polling con intervalo
+-- Implementar sondeo con intervalo
 local function poll_com_intervalo(url, intervalo_segundos, max_tentativas)
     for tentativa = 1, max_tentativas do
         log.info("Tentativa", tentativa, "de", max_tentativas)
@@ -108,7 +108,7 @@ local function poll_com_intervalo(url, intervalo_segundos, max_tentativas)
             return resposta
         end
 
-        -- Esperar antes del próximo intento
+        -- Esperar antes del siguiente intento
         if tentativa < max_tentativas then
             log.info("Aguardando", intervalo_segundos, "segundos...")
             time.sleep(intervalo_segundos)
@@ -122,14 +122,15 @@ end
 -- Uso
 local dados = poll_com_intervalo("https://api.exemplo.com/status", 10, 6)
 
--- Control de ejecución con backoff exponencial
+-- Control de execução con backoff exponencial
 local function executar_com_backoff(funcao, max_tentativas)
     local tentativa = 1
 
     while tentativa <= max_tentativas do
-        local ok, resultado = pcall(funcao)
+        -- with_coroutine devuelve (resultado, err)
+        local resultado, err = with_coroutine(funcao)
 
-        if ok then
+        if not err then
             return resultado
         end
 
@@ -150,17 +151,17 @@ end
 
 ### 3. `time.parse(string_data)`
 
-Parsea una cadena de fecha/hora en formato RFC 3339 y devuelve un objeto de fecha.
+Parsea una cadena de fecha/hora en el formato RFC 3339 y devuelve un objeto de fecha.
 
-#### Parámetros:
+#### Parámetros
 
-- **string_data** (string): Fecha/hora en formato RFC 3339 (ej: "2024-01-15T10:30:00Z")
+- **string_data** (string): Fecha/hora en el formato RFC 3339 (ej: "2024-01-15T10:30:00Z")
 
-#### Retorno:
+#### Retorno
 
-- **objeto LuaDateTime**: Objeto con método `seconds()` que devuelve el timestamp Unix
+- **objeto LuaDateTime**: Objeto con el método `seconds()` que devuelve el timestamp Unix
 
-#### Formato RFC 3339:
+#### Formato RFC 3339
 
 - `YYYY-MM-DDTHH:MM:SSZ` (UTC)
 
@@ -168,7 +169,7 @@ Parsea una cadena de fecha/hora en formato RFC 3339 y devuelve un objeto de fech
 
 - Ejemplos: "2024-01-15T10:30:00Z", "2024-01-15T07:30:00-03:00"
 
-#### Ejemplo de uso:
+#### Ejemplo de uso
 
 ```lua
 -- Parsear fecha UTC
@@ -179,7 +180,7 @@ print("Timestamp UTC:", timestamp_utc)  -- 1705314600
 -- Parsear fecha con offset de zona horaria
 local data_local = time.parse("2024-01-15T07:30:00-03:00")
 local timestamp_local = data_local:seconds()
-print("Timestamp local:", timestamp_local)  -- 1705314600 (mesmo momento)
+print("Timestamp local:", timestamp_local)  -- 1705314600 (mismo momento)
 
 -- Convertir a formato legible
 local function formatar_data_rfc3339(timestamp)
@@ -192,13 +193,15 @@ local data2 = time.parse("2024-01-15T11:45:00Z")
 local diferenca = data2:seconds() - data1:seconds()
 print("Diferença:", diferenca, "segundos (", diferenca/60, "minutos)")
 
--- Validar y parsear fecha de entrada
+-- Validar y parsear fecha de entrada usando with_coroutine
 local function parsear_data_segura(data_string)
-    local ok, data = pcall(time.parse, data_string)
-    if ok then
+    -- with_coroutine devuelve (result, err)
+    local data, err = with_coroutine(time.parse, data_string)
+    
+    if not err and data then
         return data:seconds()
     else
-        log.error("Data inválida:", data_string, "-", data)
+        log.error("Data inválida:", data_string, "-", err)
         return nil
     end
 end

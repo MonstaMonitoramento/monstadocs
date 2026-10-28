@@ -2,7 +2,7 @@
 title: "Módulo WS"
 ---
 
-El módulo **ws** proporciona funcionalidades para comunicación bidireccional en tiempo real a través del protocolo WebSocket. Este módulo es útil para scripts que necesiten conectarse a servicios que utilizan WebSockets.
+El módulo **ws** proporciona funcionalidades para comunicación bidireccional en tiempo real a través del protocolo WebSocket. Este módulo es útil para scripts que necesiten conectarse a servicios que utilicen WebSockets.
 
 **Características principales**:
 
@@ -22,25 +22,25 @@ El módulo **ws** proporciona funcionalidades para comunicación bidireccional e
 
 - Soportado por la mayoría de los navegadores y servidores modernos
 
-- Menor overhead en comparación con el polling HTTP
+- Menor overhead comparado con HTTP polling
 
-## Funciones disponibles
+## Funciones Disponibles
 
 ### 1. `ws.send_recv(url, dados)`
 
 Establece una conexión WebSocket, envía un mensaje y espera una respuesta.
 
-#### Parámetros:
+#### Parámetros
 
-- **url** (string): URL del servidor WebSocket (ej: "ws://exemplo.com/socket", "wss://exemplo.com/ws")
+- **url** (string): URL del servidor WebSocket (ej.: "ws://exemplo.com/socket", "wss://exemplo.com/ws")
 
 - **dados** (string): Mensaje de texto que se enviará al servidor
 
-#### Retorno:
+#### Retorno
 
 - **string**: Respuesta de texto recibida del servidor WebSocket
 
-#### Comportamiento:
+#### Comportamiento
 
 1. Establece conexión WebSocket con el servidor especificado
 
@@ -52,20 +52,20 @@ Establece una conexión WebSocket, envía un mensaje y espera una respuesta.
 
 5. Cierra la conexión después de recibir la respuesta
 
-6. Lanza un error si recibe un mensaje binario o si no hay respuesta
+6. Lanza error si recibe mensaje binario o si no hay respuesta
 
-#### Errores comunes:
+#### Erros Comuns
 
 - `"ws binary messages not supported"` - Servidor envió mensaje binario (no soportado)
 
 - `"no response from web socket"` - Servidor no respondió
 
-- Errores de conexión (servidor fuera de línea, URL inválida, etc.)
+- Errores de conexión (servidor offline, URL inválida, etc.)
 
-#### Ejemplo de uso:
+#### Ejemplo de Uso
 
 ```lua
--- Conexión básica con servidor WebSocket
+-- Conexão básica com servidor WebSocket
 local url = "ws://echo.websocket.org"
 local mensagem = "Olá, WebSocket!"
 local resposta = ws.send_recv(url, mensagem)
@@ -78,13 +78,14 @@ local dados = json.encode({acao = "ping", timestamp = now()})
 local resposta = ws.send_recv(url_segura, dados)
 print("Resposta segura:", resposta)
 
--- Com tratamento de erro
+-- Com tratamento de erro usando with_coroutine
 local function enviar_com_tratamento(url, dados)
-    local ok, resposta = pcall(ws.send_recv, url, dados)
-    if ok then
+    -- with_coroutine retorna (result, err)
+    local resposta, err = with_coroutine(ws.send_recv, url, dados)
+    if not err then
         return resposta
     else
-        log.error("Erro no WebSocket:", resposta)
+        log.error("Erro no WebSocket:", err)
         return nil
     end
 end
@@ -107,27 +108,28 @@ end
 
 ## Información adicional
 
-### Conexión segura (wss://):
+### Conexión segura (wss://)
 
 ```lua
 -- O módulo suporta tanto ws:// quanto wss://
 local conexoes = {
     "ws://localhost:8080/ws",      -- Não seguro (HTTP)
-    "wss://servidor.com/ws",       -- Seguro (HTTPS)
+    "wss://servidor.com/ws",        -- Seguro (HTTPS)
     "ws://192.168.1.100:3000/ws",  -- Local network
 }
 
 for _, url in ipairs(conexoes) do
-    local ok, resposta = pcall(ws.send_recv, url, "ping")
-    if ok then
+    -- with_coroutine retorna (result, err)
+    local resposta, err = with_coroutine(ws.send_recv, url, "ping")
+    if not err then
         print("Conexão bem-sucedida:", url)
     else
-        print("Falha na conexão:", url, "-", resposta)
+        print("Falha na conexão:", url, "-", err)
     end
 end
 ```
 
-### Solo mensajes de texto:
+### Solo mensajes de texto
 
 ```lua
 -- O módulo só suporta mensagens de texto

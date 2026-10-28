@@ -2,17 +2,17 @@
 title: "Cache Module"
 ---
 
-The **cache** module provides a distributed cache system for Lua scripts. The cache supports read/write operations with automatic expiration (TTL) and synchronization mechanisms for concurrent operations.
+The **cache** module provides a distributed caching system for Lua scripts. The cache supports read/write operations with automatic expiration (TTL) and synchronization mechanisms for concurrent operations.
 
 The cache system is especially useful for:
 
-- Storing results of expensive operations (such as HTTP requests, database queries)
+- Store results of expensive operations (such as HTTP requests, database queries)
 
-- Avoiding redundant calls to external APIs
+- Avoid redundant calls to external APIs
 
-- Synchronizing multiple workers that try to access the same resource simultaneously
+- Synchronize multiple workers that attempt to access the same resource simultaneously
 
-- Sharing data between different running Lua scripts
+- Share data between different running Lua scripts
 
 ## Available Functions
 
@@ -65,7 +65,7 @@ Retrieves a value from the cache.
 **Example**:
 
 ```lua
--- Retrieve a value from the cache
+-- Recuperar um valor do cache
 local status = cache.get("status_sistema")
 
 if status then
@@ -85,7 +85,7 @@ end
 
 ### `cache.mark_pending(key)`
 
-Marks a key as "pending". This function is used to synchronize multiple workers that try to compute the same value simultaneously.
+Marks a key as "pending". This function is used to synchronize multiple workers that attempt to compute the same value simultaneously.
 
 **Parameters**:
 
@@ -108,31 +108,32 @@ Marks a key as "pending". This function is used to synchronize multiple workers 
 **Example**:
 
 ```lua
--- Typical pattern to avoid cache stampede
+-- Padrão típico para evitar cache stampede
 local function obter_dados_caros(chave)
-    -- First try to get from cache
+    -- Primeiro tenta obter do cache
     local dados = cache.get(chave)
 
     if dados then
         return dados
     end
 
-    -- If not found, mark as pending
-    local sucesso, erro = pcall(cache.mark_pending, chave)
+    -- Se não encontrou, marca como pendente usando with_coroutine
+    -- with_coroutine retorna (resultado, erro)
+    local _, err = with_coroutine(cache.mark_pending, chave)
 
-    if not sucesso then
-        -- Another worker already marked as pending, wait for the result
+    if err then
+        -- Outro worker já marcou como pendente, espera pelo resultado
         dados = cache.get(chave)  -- Esta chamada irá bloquear até o valor estar disponível
         if dados then
             return dados
         end
     end
 
-    -- This worker is responsible for calculating the value
-    -- ... expensive calculation here ...
+    -- Este worker é responsável por calcular o valor
+    -- ... cálculo caro aqui ...
     local resultado = calcular_dados_caros()
 
-    -- Store it in the cache for other workers
+    -- Armazena no cache para outros workers
     cache.put(chave, resultado, 300)
 
     return resultado
@@ -156,10 +157,10 @@ Removes a key from the cache immediately.
 **Example**:
 
 ```lua
--- Remove a specific value
+-- Remover um valor específico
 cache.delete("dados_expirados")
 
--- Clear cache related to a user
+-- Limpar cache relacionado a um usuário
 cache.delete("usuario_123_perfil")
 cache.delete("usuario_123_preferencias")
 cache.delete("usuario_123_historico")
@@ -171,15 +172,15 @@ cache.delete("usuario_123_historico")
 
 The "pending" mechanism allows multiple workers to synchronize the computation of expensive values:
 
-1. The first worker marks the key as pending and computes the value
+1. First worker marks the key as pending and computes the value
 
-2. Other workers that try to access the same key wait for the result
+2. Other workers attempting to access the same key wait for the result
 
 3. When the first worker finishes, it stores the value and all workers receive it
 
 ### Supported Data Types
 
-The cache can store any Lua value supported by Monsta's serialization system, including:
+The cache can store any Lua value type supported by the Monsta serialization system, including:
 
 - Strings
 
@@ -193,30 +194,30 @@ The cache can store any Lua value supported by Monsta's serialization system, in
 
 ## Performance Considerations
 
-1. Fast access: Cache operations are much faster than recalculating values or making external requests
+1. **Fast access**: Cache operations are much faster than recalculating values or making external requests
 
-2. Memory: The cache is kept in memory, so very large values can impact performance
+2. **Memory**: The cache is kept in memory, so very large values may impact performance
 
-3. Concurrency: The system is thread-safe and supports concurrent access from multiple workers
+3. **Concurrency**: The system is thread-safe and supports concurrent access from multiple workers
 
-4. Network: The cache is local to the process, there is no network overhead
+4. **Network**: The cache is local to the process; there is no network overhead
 
 ## Limitations
 
-1. Volatile: Data is lost if the process is restarted
+1. **Volatile**: Data is lost if the process is restarted
 
-2. Limited memory: Do not use it to store large volumes of data
+2. **Limited memory**: Do not use it to store large volumes of data
 
-3. Distribution: This is a local cache, not distributed across multiple servers
+3. **Distribution**: This is a local cache, not distributed across multiple servers
 
 ## Best Practices
 
-1. Appropriate TTL: Use TTLs appropriate for the type of data (short for dynamic data, long for static data)
+1. **Appropriate TTL**: Use TTLs appropriate for the type of data (short for dynamic data, long for static data)
 
-2. Descriptive keys: Use key names that clearly describe the content
+2. **Descriptive keys**: Use key names that clearly describe the content
 
-3. Namespace: Use prefixes to organize keys (e.g., `api_`, `user_`, `config_`)
+3. **Namespace**: Use prefixes to organize keys (e.g., `api_`, `user_`, `config_`)
 
-4. Fallback: Always have a fallback in case the cache is empty or expired
+4. **Fallback**: Always have a fallback in case the cache is empty or expired
 
-5. Invalidation: Use `delete()` to invalidate cache when data changes
+5. **Invalidation**: Use `delete()` to invalidate cache when data changes
