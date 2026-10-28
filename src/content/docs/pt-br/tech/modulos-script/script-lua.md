@@ -35,7 +35,7 @@ local ativo = true                      -- Boolean
 
 ### Estruturas Condicionais (`if` / `else`)
 
-A sintaxe usa as palavras-chave then, elseif e fecha o bloco obrigatoriamente com um end.
+A sintaxe usa as palavras-chave `then`, `elseif` e fecha o bloco obrigatoriamente com um `end`.
 
 ```lua
 if latencia > 100 then
