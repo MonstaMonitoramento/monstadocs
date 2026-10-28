@@ -44,7 +44,7 @@ print("Execução retomada após 5 segundos")
 
 - Útil para controle de fluxo e sinalização de estados
 
-**Nota**: Atualmente, esta função tem um único caso de uso específico: sinalizar com o nome `"RepeatPrevValue"`. Quando um script emite este sinal, o sistema interpreta que a coleta atual deve repetir o último valor válido da métrica, em vez de gerar um novo ponto de dados. Isso é útil em situações onde a fonte de dados está temporariamente indisponível ou a coleta falhou, mas não se deseja interromper a série temporal.
+**Nota**: Atualmente, esta função tem um único caso de uso específico: sinalizar com o nome `RepeatPrevValue`. Quando um script emite este sinal, o sistema interpreta que a coleta atual deve repetir o último valor válido da métrica, em vez de gerar um novo ponto de dados. Isso é útil em situações onde a fonte de dados está temporariamente indisponível ou a coleta falhou, mas não se deseja interromper a série temporal.
 
 **Exemplo de uso específico**:
 
