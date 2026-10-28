@@ -2,7 +2,7 @@
 title: "Módulo UUID"
 ---
 
-El módulo **uuid** proporciona funciones para la generación de identificadores únicos universales (UUIDs) conforme al estándar RFC 4122. Este módulo es útil para scripts que necesitan crear identificadores únicos para el seguimiento de transacciones, la identificación de recursos y casos que requieren unicidad garantizada.
+El módulo **uuid** proporciona funciones para la generación de identificadores únicos universales (UUIDs) siguiendo el estándar RFC 4122. Este módulo es útil para scripts que necesitan crear identificadores únicos para el seguimiento de transacciones, identificación de recursos y casos que requieren unicidad garantizada.
 
 **Características principales**:
 
@@ -24,33 +24,33 @@ El módulo **uuid** proporciona funciones para la generación de identificadores
 
 - `y` es 8, 9, A o B (indicando variante)
 
-## Funciones disponibles
+## Funciones Disponibles
 
 ### 1. `uuid.uuid4()`
 
 Genera un UUID versión 4 (aleatorio) en el formato estándar RFC 4122.
 
-#### Parámetros:
+#### Parámetros
 
 - Ninguno
 
-#### Retorno:
+#### Retorno
 
 - **string**: UUID en el formato `xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx`
 
-#### Comportamiento:
+#### Comportamiento
 
-1. Genera 128 bits aleatorios usando un generador criptográficamente seguro
+1. Genera 128 bits aleatorios usando generador criptográficamente seguro
 
 2. Define los bits de versión a 4 (0100)
 
 3. Define los bits de variante para RFC 4122 (10)
 
-4. Formatea como cadena en el patrón 8-4-4-4-12
+4. Formatea como string en el patrón 8-4-4-4-12
 
 5. Garantiza unicidad estadística (probabilidad de colisión extremadamente baja)
 
-#### Ejemplo de uso:
+#### Ejemplo de uso
 
 ```lua
 -- Generar un UUID simple
@@ -87,13 +87,13 @@ print("Token de sessão:", sessao_token)
 
 ## Información adicional
 
-### Unicidad garantizada:
+### Unicidad garantizada
 
 ```lua
 -- Probabilidad de colisión extremadamente baja
 -- 2^128 posibilidades ≈ 3.4 × 10^38 UUIDs únicos
 -- Incluso generando 1.000 millones de UUIDs por segundo,
--- tomaría ~100 años para tener un 50% de probabilidad de colisión
+-- llevaría ~100 años para tener 50% de probabilidad de colisión
 
 local function testar_unicidade(iteracoes)
     local uuids = {}
@@ -120,7 +120,7 @@ end
 -- En pruebas prácticas, las colisiones son virtualmente inexistentes
 ```
 
-### Formato estándar:
+### Formato estándar
 
 ```lua
 -- UUID siempre en el formato RFC 4122
@@ -134,13 +134,13 @@ local function validar_uuid(uuid_str)
     return string.match(uuid_str:lower(), padrao) ~= nil
 end
 
-print("UUID válido?", validar_uuid(id))  -- true
-print("UUID válido?", validar_uuid("invalid"))  -- false
+print("UUID válido?", validar_uuid(id))  -- verdadero
+print("UUID válido?", validar_uuid("invalid"))  -- falso
 ```
 
 ## Ejemplos de uso
 
-### 1. Nombres de archivos temporales:
+### 1. Nombres de archivos temporales
 
 ```lua
 -- Generar nombres de archivos únicos para procesamiento
@@ -179,9 +179,9 @@ local function limpar_arquivos_temporarios()
         local arquivo = arquivos_temp[i]
 
         if agora > arquivo.expira_em then
-            -- Intentar eliminar archivo
-            local ok, _ = pcall(os.remove, arquivo.caminho)
-            if ok then
+            -- Intentar eliminar archivo usando with_coroutine
+            local ok, err = with_coroutine(os.remove, arquivo.caminho)
+            if not err and ok then
                 table.remove(arquivos_temp, i)
                 removidos = removidos + 1
                 log.debug("Arquivo temporário removido", "Caminho:", arquivo.caminho)

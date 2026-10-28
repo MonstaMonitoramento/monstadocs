@@ -2,7 +2,7 @@
 title: "Módulo WMI"
 ---
 
-El módulo **wmi** proporciona funciones para interactuar con Windows Management Instrumentation (WMI), permitiendo consultar información del sistema, hardware, software y configuraciones en máquinas Windows remotas o locales. Este módulo admite tanto la ejecución multiplataforma (usando la utilidad `wmic`) como la ejecución nativa en Windows (usando la API COM).
+El módulo **wmi** proporciona funciones para interactuar con Windows Management Instrumentation (WMI), permitiendo consultar información del sistema, hardware, software y configuraciones en máquinas Windows remotas o locales. Este módulo soporta tanto la ejecución cross-platform (usando la utilidad `wmic`) como la ejecución nativa en Windows (usando la API COM).
 
 ## Funciones Disponibles
 
@@ -26,7 +26,7 @@ Construye una consulta WQL (WMI Query Language) a partir de parámetros simplifi
 
 - Lanza error si ninguno de los parámetros `instance_id` o `table` es proporcionado
 
-- Lanza error si `instance_id` está en formato inválido
+- Lanza error si `instance_id` tiene un formato inválido
 
 **Ejemplos**:
 
@@ -52,13 +52,13 @@ Ejecuta una consulta WMI usando la utilidad `wmic`
 
 - `config` (tabla): Configuración de conexión que contiene:
 
-    - `net.address` (string): Dirección IP u hostname del objetivo
+  - `net.address` (string): Dirección IP u hostname del objetivo
 
-    - `wmi.username` (string): Nombre de usuario para autenticación
+  - `wmi.username` (string): Nombre de usuario para autenticación
 
-    - `wmi.password` (string): Contraseña para autenticación
+  - `wmi.password` (string): Contraseña para autenticación
 
-    - `wmi.timeout` (número opcional, por defecto: 10): Timeout en segundos
+  - `wmi.timeout` (número opcional, por defecto: 10): Timeout en segundos
 
 - `wql` (string): Consulta WQL a ejecutar
 
@@ -66,17 +66,21 @@ Ejecuta una consulta WMI usando la utilidad `wmic`
 
 **Retorno**:
 
-- `tabla`: Array de resultados, donde cada elemento es una tabla con pares campo-valor
+- `tabela`: Array de resultados, donde cada elemento es una tabla con pares campo-valor
 
-**Nota**: En lugar de crear manualmente una tabla de configuración, puedes usar la tabla global `params` que ya contiene todos los campos necesarios (`net.address`, `wmi.username`, `wmi.password`, etc.). Esta tabla se proporciona automáticamente por el sistema cuando el script se ejecuta en el contexto de un dispositivo gestionado.
+**Nota**: En lugar de crear manualmente una tabla de configuración, puede usar la tabla global `params` que ya contiene todos los campos necesarios (`net.address`, `wmi.username`, `wmi.password`, etc.). Esta tabla es automáticamente proporcionada por el sistema cuando el script se ejecuta en el contexto de un dispositivo gestionado.
 
 **Ejemplo usando `params`**:
 
 ```lua
--- La tabla 'device' ya contiene las credenciales y la dirección del dispositivo objetivo
-local success, results = pcall(function()
-    return wmi.exec(params, wql, "root\\cimv2")
-end)
+-- A tabela 'device' já contém as credenciais e endereço do dispositivo alvo
+-- with_coroutine aceita a função e seus argumentos, retornando (result, err)
+local results, err = with_coroutine(wmi.exec, params, wql, "root\\cimv2")
+local success = not err
+
+if not success then
+    print("Erro WMI: " .. tostring(err))
+end
 ```
 
 **Ejemplo práctico**:
@@ -88,7 +92,7 @@ local results = wmi.exec(device, wql)
 
 -- Para consultas locales en el propio dispositivo
 if device["net.address"] == "127.0.0.1" or device["net.address"] == "localhost" then
-    -- Se puede usar exec_native para mejor rendimiento
+    -- Puede usarse exec_native para mejor rendimiento
     if wmi.exec_native then
         results = wmi.exec_native(device, wql)
     end
@@ -99,14 +103,14 @@ end
 
 - Lanza error si la conexión falla
 
-- Lanza error "Timeout" si la consulta excede el tiempo límite
+- Lanza error "Timeout" si la consulta supera el tiempo límite
 
-- Lanza error si la utilidad `wmic` retorna código de error
+- Lanza error si la utilidad `wmic` devuelve código de error
 
 **Ejemplos**:
 
 ```lua
--- Configuración básica
+-- Configuração básica
 local config = {
     ["net.address"] = "192.168.1.100",
     ["wmi.username"] = "Administrator",
@@ -114,13 +118,11 @@ local config = {
     ["wmi.timeout"] = 15
 }
 
--- Consultar información del sistema operativo
+-- Consulta informações do sistema operacional usando with_coroutine
 local wql = "select Caption,Version,BuildNumber,OSArchitecture from Win32_OperatingSystem"
-local success, results = pcall(function()
-    return wmi.exec(config, wql, "root\\cimv2")
-end)
+local results, err = with_coroutine(wmi.exec, config, wql, "root\\cimv2")
 
-if success then
+if not err then
     for _, row in ipairs(results) do
         print("Sistema: " .. row.Caption)
         print("Versão: " .. row.Version)
@@ -128,10 +130,10 @@ if success then
         print("Arquitetura: " .. row.OSArchitecture)
     end
 else
-    print("Erro na consulta WMI: " .. results)
+    print("Erro na consulta WMI: " .. tostring(err))
 end
 
--- Consulta processos en ejecución
+-- Consulta processos em execução
 local process_wql = "select Name,ProcessId,WorkingSetSize,CommandLine from Win32_Process"
 local process_results = wmi.exec(config, process_wql)
 
@@ -141,7 +143,7 @@ select DeviceID,Size,FreeSpace,FileSystem
 from Win32_LogicalDisk
 where DriveType = 3
 ]]
-local disk_results = wmi.exec(config, disk_wql, nil)  -- namespace por defecto
+local disk_results = wmi.exec(config, disk_wql, nil)  -- namespace padrão
 ```
 
 ### 3. `wmi.exec_native(config, wql, namespace)` (Solo en el agente Windows)
@@ -150,7 +152,7 @@ Ejecuta una consulta WMI usando la API nativa de Windows (COM). Esta función es
 
 **Parámetros**:
 
-- `config` (tabla): Configuración de conexión (ignorada en la ejecución local)
+- `config` (tabla): Configuración de conexión (ignoradа en la ejecución local)
 
 - `wql` (string): Consulta WQL a ejecutar
 
@@ -158,9 +160,9 @@ Ejecuta una consulta WMI usando la API nativa de Windows (COM). Esta función es
 
 **Retorno**:
 
-- `tabla`: Array de resultados, donde cada elemento es una tabla con pares campo-valor
+- `tabela`: Array de resultados, donde cada elemento es una tabla con pares campo-valor
 
-**Excepciones**:
+**Excepeciones**:
 
 - Lanza error si la API COM falla
 
@@ -169,17 +171,16 @@ Ejecuta una consulta WMI usando la API nativa de Windows (COM). Esta función es
 **Ejemplos**:
 
 ```lua
--- Solo funciona en Windows
+-- Apenas funciona em Windows
 if wmi.exec_native then
-    -- Consulta local (config es ignorado)
-    local config = nil  -- Dejar vacío para consultas del agente
+    -- Consulta local (config é ignorado)
+    local config = nil  -- Deixar vazio para consultas do agente
     local wql = "select Name,Manufacturer,Model from Win32_ComputerSystem"
 
-    local success, results = pcall(function()
-        return wmi.exec_native(config, wql)
-    end)
+    -- with_coroutine aceita a função e seus argumentos, retornando (result, err)
+    local results, err = with_coroutine(wmi.exec_native, config, wql)
 
-    if success and #results > 0 then
+    if not err and results and #results > 0 then
         local computer = results[1]
         print("Computador: " .. computer.Name)
         print("Fabricante: " .. computer.Manufacturer)
@@ -190,13 +191,13 @@ end
 
 ## Información Adicional
 
-### 1. **Soporte Multiplataforma**
+### 1. **Soporte Cross-Platform**
 
 - La función `exec` usa la utilidad `wmic` que funciona en sistemas Linux
 
-- Permite consultar máquinas Windows de forma remota
+- Permite consultar máquinas Windows remotamente
 
-- Esta funcionalidad está en desuso, ya que versiones más recientes de Windows no permiten conexiones WMI remotas.
+- Esta funcionalidad es heredada, pues versiones más recientes de Windows no permiten conexiones WMI remotas.
 
 ### 2. **Ejecución Nativa en Windows**
 
@@ -210,20 +211,20 @@ end
 
 - Timeout por defecto de 10 segundos
 
-- Configurable mediante el parámetro `wmi.timeout` en la configuración
+- Configurable vía el parámetro `wmi.timeout` en la configuración
 
-## Mejores Prácticas
+## Buenas Prácticas
 
 ### 1. **Optimización de Consultas**
 
 ```lua
--- MAL: Selecciona todas las columnas
+-- RUIM: Seleciona todas as colunas
 local bad_wql = "select * from Win32_Process"
 
--- BUENO: Selecciona solo las columnas necesarias
+-- BOM: Seleciona apenas colunas necessárias
 local good_wql = "select Name,ProcessId,WorkingSetSize from Win32_Process"
 
--- MEJOR: Agrega filtros para reducir resultados
+-- MELHOR: Adiciona filtros para reduzir resultados
 local best_wql = [[
 select Name,ProcessId,WorkingSetSize
 from Win32_Process
@@ -233,9 +234,9 @@ where WorkingSetSize > 10485760  -- > 10MB
 
 ### 4. `wmi.exec(config, wql, namespace, replace_backslash)`
 
-Versión extendida de la función `exec` con soporte para timeout y opción para reemplazar barras invertidas.
+Versión extendida de la función `exec` con soporte a timeout y opción para reemplazar barras invertidas.
 
-#### Parámetros:
+#### Parámetros
 
 - **config** (tabla): Configuración de conexión
 
@@ -245,20 +246,20 @@ Versión extendida de la función `exec` con soporte para timeout y opción para
 
 - **replace_backslash** (booleano, opcional): Si `true`, reemplaza `\` por `\\` en la WQL (por defecto: `true`)
 
-#### Retorno:
+#### Retorno
 
-- **tabla**: Resultados de la consulta WMI
+- **tabela**: Resultados de la consulta WMI
 
-#### Comportamiento:
+#### Comportamiento
 
 - Soporta ejecución vía probe WMI cuando `params["wmi.type"] == 0`
 
 - Para localhost (`127.0.0.1`), usa ejecución nativa
 
-#### Ejemplo de Uso:
+#### Ejemplo de Uso
 
 ```lua
--- Ejecutar con timeout configurado
+-- Executar com timeout configurado
 -- params.wmiTimeout = 10 (10 segundos)
 
 local config = {
@@ -280,39 +281,39 @@ end
 
 Consulta simplificada a una tabla WMI sin instancia específica.
 
-#### Parámetros:
+#### Parámetros
 
 - **wmiobj** (string): Nombre de la tabla WMI
 
 - **...** (strings): Campos a seleccionar (puede incluir `namespace=...`)
 
-#### Retorno:
+#### Retorno
 
 - **cualquier tipo**: Valor único si solo se selecciona un campo, tabla si se seleccionan múltiples campos
 
-#### Comportamiento:
+#### Comportamiento
 
 - Construye WQL automáticamente con `wmi.buildwql`
 
-- Almacena el resultado internamente para uso con `prev` y `lapsed`
+- Almacena resultado internamente para uso con `prev` y `lapsed`
 
-- Soporta especificación de namespace mediante `namespace=` al inicio de los campos
+- Soporta especificación de namespace vía `namespace=` al inicio de los campos
 
-#### Ejemplo de Uso:
+#### Ejemplo de Uso
 
 ```lua
--- Consultar información del sistema operativo
+-- Consultar informações do sistema operacional
 local os_name = wmi.query("Win32_OperatingSystem", "Caption")
 print("Sistema Operacional:", os_name)
 
--- Consultar múltiples campos
+-- Consultar múltiplos campos
 local disk_info = wmi.query("Win32_LogicalDisk", "DeviceID", "Size", "FreeSpace")
 for _, disk in ipairs(disk_info) do
     local used_percent = 100 - (disk.FreeSpace / disk.Size * 100)
     print(string.format("Disco %s: %.1f%% usado", disk.DeviceID, used_percent))
 end
 
--- Consultar con namespace específico
+-- Consultar com namespace específico
 local cluster_info = wmi.query("MSCluster_Cluster", "namespace=root\\MSCluster", "Name", "State")
 ```
 
@@ -320,34 +321,34 @@ local cluster_info = wmi.query("MSCluster_Cluster", "namespace=root\\MSCluster",
 
 Consulta WMI para instancia específica definida en `params.InstanceId`.
 
-#### Parámetros:
+#### Parámetros
 
 - **...** (strings): Campos a seleccionar (puede incluir `namespace=...`)
 
-#### Retorno:
+#### Retorno
 
 - **cualquier tipo**: Valor único si solo se selecciona un campo, tabla si se seleccionan múltiples campos
 
-#### Comportamiento:
+#### Comportamiento
 
 - Usa `params.InstanceId` para construir consulta de instancia
 
-- Lanza error si la instancia no se encuentra
+- Lanza error si la instancia no es encontrada
 
-- Almacena el resultado en `_mem_store` para uso con `prev` y `lapsed`
+- Almacena resultado en `_mem_store` para uso con `prev` y `lapsed`
 
-#### Ejemplo de Uso:
+#### Ejemplo de Uso
 
 ```lua
 -- params.InstanceId = "Win32_Process|Name|explorer.exe"
 
--- Consultar información del proceso explorer.exe
+-- Consultar informações do processo explorer.exe
 local pid = wmi.queryinst("ProcessId")
 local memory = wmi.queryinst("WorkingSetSize")
 
 print(string.format("Explorer.exe - PID: %d, Memória: %d bytes", pid, memory))
 
--- Consultar múltiples campos
+-- Consultar múltiplos campos
 local process_info = wmi.queryinst("ProcessId", "WorkingSetSize", "ThreadCount", "Priority")
 ```
 
@@ -355,34 +356,34 @@ local process_info = wmi.queryinst("ProcessId", "WorkingSetSize", "ThreadCount",
 
 Obtiene el valor anterior de una consulta WMI.
 
-#### Parámetros:
+#### Parámetros
 
 - **wmiobj** (string): Nombre de la tabla WMI
 
 - **...** (strings): Campos de la consulta original
 
-#### Retorno:
+#### Retorno
 
 - **cualquier tipo**: Valor anterior almacenado
 
-#### Comportamiento:
+#### Comportamiento
 
 - Reconstruye la WQL original
 
 - Busca valor en `store.get("wmi.value." .. wql)`
 
-- Retorna valor único si la consulta original retornó un único valor
+- Retorna valor único si la consulta original devolvió un único valor
 
-#### Ejemplo de Uso:
+#### Ejemplo de Uso
 
 ```lua
--- Obtener valor actual
+-- Obter valor atual
 local current_memory = wmi.query("Win32_OperatingSystem", "TotalVisibleMemorySize")
 
--- Obtener valor anterior
+-- Obter valor anterior
 local previous_memory = wmi.prev("Win32_OperatingSystem", "TotalVisibleMemorySize")
 
--- Calcular diferencia
+-- Calcular diferença
 local memory_diff = current_memory - previous_memory
 print("Variação de memória:", memory_diff, "bytes")
 ```
@@ -391,26 +392,26 @@ print("Variação de memória:", memory_diff, "bytes")
 
 Obtiene el valor anterior de una consulta WMI de instancia.
 
-#### Parámetros:
+#### Parámetros
 
 - **...** (strings): Campos de la consulta original
 
-#### Retorno:
+#### Retorno
 
 - **cualquier tipo**: Valor anterior almacenado
 
-#### Ejemplo de Uso:
+#### Ejemplo de Uso
 
 ```lua
 -- params.InstanceId = "Win32_Process|Name|svchost.exe"
 
--- Obtener uso actual de CPU
+-- Obter uso atual de CPU
 local current_cpu = wmi.queryinst("PercentProcessorTime")
 
--- Obtener uso anterior
+-- Obter uso anterior
 local previous_cpu = wmi.previnst("PercentProcessorTime")
 
--- Calcular variación
+-- Calcular variação
 local cpu_change = current_cpu - previous_cpu
 print("Variação no uso de CPU:", cpu_change, "%")
 ```
@@ -419,20 +420,20 @@ print("Variação no uso de CPU:", cpu_change, "%")
 
 Obtiene el tiempo transcurrido desde la última consulta WMI.
 
-#### Parámetros:
+#### Parámetros
 
 - **wmiobj** (string): Nombre de la tabla WMI
 
 - **...** (strings): Campos de la consulta original
 
-#### Retorno:
+#### Retorno
 
 - **número**: Tiempo en segundos desde la última consulta
 
-#### Ejemplo de Uso:
+#### Ejemplo de Uso
 
 ```lua
--- Calcular tasa de transferencia de disco
+-- Calcular taxa de transferência de disco
 local current_reads = wmi.query("Win32_PerfRawData_PerfDisk_LogicalDisk", "DiskReadBytesPerSec")
 local previous_reads = wmi.prev("Win32_PerfRawData_PerfDisk_LogicalDisk", "DiskReadBytesPerSec")
 local time_elapsed = wmi.lapsed("Win32_PerfRawData_PerfDisk_LogicalDisk", "DiskReadBytesPerSec")
@@ -445,20 +446,20 @@ print("Taxa de leitura de disco:", read_rate, "bytes/segundo")
 
 Obtiene el tiempo transcurrido desde la última consulta WMI de instancia.
 
-#### Parámetros:
+#### Parámetros
 
 - **...** (strings): Campos de la consulta original
 
-#### Retorno:
+#### Retorno
 
 - **número**: Tiempo en segundos desde la última consulta
 
-#### Ejemplo de Uso:
+#### Ejemplo de Uso
 
 ```lua
 -- params.InstanceId = "Win32_PerfRawData_PerfDisk_LogicalDisk|Name|C:"
 
--- Calcular tasa de escritura para disco C:
+-- Calcular taxa de escrita para disco C:
 local current_writes = wmi.queryinst("DiskWriteBytesPerSec")
 local previous_writes = wmi.previnst("DiskWriteBytesPerSec")
 local time_elapsed = wmi.lapsedinst("DiskWriteBytesPerSec")
@@ -471,7 +472,7 @@ print("Taxa de escrita no disco C:", write_rate, "bytes/segundo")
 
 Calcula la diferencia entre dos valores WMI, manejando rollover de contadores.
 
-#### Parámetros:
+#### Parámetros
 
 - **typ** (número): Tipo del contador (32 o 64 bits)
 
@@ -479,11 +480,11 @@ Calcula la diferencia entre dos valores WMI, manejando rollover de contadores.
 
 - **rhs** (número): Valor anterior
 
-#### Retorno:
+#### Retorno
 
 - **número**: Diferencia entre los valores
 
-#### Comportamiento:
+#### Comportamiento
 
 - Usa la misma implementación que `snmp.diff`
 
@@ -491,10 +492,10 @@ Calcula la diferencia entre dos valores WMI, manejando rollover de contadores.
 
 - Señala `RepeatPrevValue` si la diferencia es negativa
 
-#### Ejemplo de Uso:
+#### Ejemplo de Uso
 
 ```lua
--- Calcular diferencia para contador de 64 bits
+-- Calcular diferença para contador de 64 bits
 local current_bytes = wmi.queryinst("DiskReadBytesPerSec")
 local prev_bytes = wmi.previnst("DiskReadBytesPerSec")
 local bytes_diff = wmi.diff(64, current_bytes, prev_bytes)
@@ -504,18 +505,18 @@ print("Bytes lidos desde última leitura:", bytes_diff)
 
 ## Ejemplos Completos
 
-### Monitorización de Proceso Específico:
+### Monitorización de Proceso Específico
 
 ```lua
--- Configurar instancia para monitorizar proceso específico
+-- Configurar instância para monitorar processo específico
 -- params.InstanceId = "Win32_PerfRawData_PerfProc_Process|Name|chrome.exe"
 
--- Obtener métricas actuales
+-- Obter métricas atuais
 local cpu_usage = wmi.queryinst("PercentProcessorTime")
 local memory_usage = wmi.queryinst("WorkingSetPrivate")
 local thread_count = wmi.queryinst("ThreadCount")
 
--- Calcular variaciones
+-- Calcular variações
 local prev_cpu = wmi.previnst("PercentProcessorTime")
 local prev_memory = wmi.previnst("WorkingSetPrivate")
 local time_elapsed = wmi.lapsedinst("PercentProcessorTime")
@@ -527,10 +528,10 @@ print(string.format("Chrome.exe - CPU: %d%%, Memória: %d bytes, Threads: %d",
                    cpu_delta / time_elapsed, memory_delta, thread_count))
 ```
 
-### Inventario de Hardware con Caché:
+### Inventario de Hardware con Caché
 
 ```lua
--- Función para obtener información de hardware con caché
+-- Função para obter informações de hardware com cache
 local function get_hardware_info()
     local cache_key = "hardware_info_" .. params.device.address
     local cached = cache.get(cache_key)
@@ -539,7 +540,7 @@ local function get_hardware_info()
         return cached
     end
 
-    -- Recopilar información diversa
+    -- Coletar informações diversas
     local hardware_info = {
         os = wmi.query("Win32_OperatingSystem", "Caption", "Version", "BuildNumber"),
         cpu = wmi.query("Win32_Processor", "Name", "NumberOfCores", "MaxClockSpeed"),
@@ -547,13 +548,13 @@ local function get_hardware_info()
         disks = wmi.query("Win32_LogicalDisk", "DeviceID", "Size", "FreeSpace", "FileSystem")
     }
 
-    -- Almacenar en caché por 1 hora
+    -- Armazenar em cache por 1 hora
     cache.put(cache_key, hardware_info, 3600)
 
     return hardware_info
 end
 
--- Usar información en caché
+-- Usar informações em cache
 local info = get_hardware_info()
 print("Sistema:", info.os.Caption, info.os.Version)
 print("Processador:", info.cpu.Name, "(" .. info.cpu.NumberOfCores .. " núcleos)")

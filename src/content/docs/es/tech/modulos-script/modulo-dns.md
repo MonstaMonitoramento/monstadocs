@@ -2,7 +2,7 @@
 title: "Módulo DNS"
 ---
 
-El módulo **DNS** proporciona funciones para probar el rendimiento y la disponibilidad de servidores DNS. Este módulo es útil para el monitoreo de la infraestructura DNS, el diagnóstico de problemas de resolución de nombres y la medición de la latencia en consultas DNS.
+El módulo **DNS** proporciona funciones para probar el rendimiento y la disponibilidad de servidores DNS. Este módulo es útil para la supervisión de la infraestructura DNS, el diagnóstico de problemas de resolución de nombres y la medición de la latencia en consultas DNS.
 
 ## Funciones Disponibles
 
@@ -10,17 +10,17 @@ El módulo **DNS** proporciona funciones para probar el rendimiento y la disponi
 
 Realiza una consulta DNS a un servidor específico y mide el tiempo de respuesta (RTT - Round Trip Time).
 
-#### Parámetros:
+#### Parámetros
 
 - **server** (string): Dirección del servidor DNS a probar (puede ser IP o nombre de dominio)
 
-- **domain** (string): Dominio que se consultará en el servidor DNS
+- **domain** (string): Dominio a consultar en el servidor DNS
 
-#### Retorno:
+#### Retorno
 
 - **número**: Tiempo de respuesta en milisegundos (latencia DNS)
 
-#### Comportamiento:
+#### Comportamiento
 
 1. Resuelve la dirección del servidor DNS (si es un nombre de dominio)
 
@@ -32,10 +32,10 @@ Realiza una consulta DNS a un servidor específico y mide el tiempo de respuesta
 
 5. Devuelve el tiempo en milisegundos
 
-#### Ejemplo de Uso:
+#### Ejemplo de uso
 
 ```lua
--- Probar la latencia del DNS de Google
+-- Probar latencia del DNS de Google
 local latencia = dns.ping("8.8.8.8", "google.com")
 -- latencia = 25 (ejemplo: 25 milisegundos)
 
@@ -61,9 +61,9 @@ for _, dns in ipairs(servidores_dns) do
 end
 ```
 
-## Información Adicional
+## Información adicional
 
-### Resolución Automática del Servidor DNS
+### Resolución automática del servidor DNS
 
 La función `dns.ping` resuelve automáticamente el nombre del servidor DNS si se proporciona como dominio:
 
@@ -76,20 +76,20 @@ dns.ping("dns.google", "exemplo.com")
 dns.ping("one.one.one.one", "exemplo.com")  -- DNS de Cloudflare
 ```
 
-### Consulta de Tipo A
+### Consulta de tipo A
 
 La función siempre realiza consultas de tipo A (IPv4).
 
 ### Protocolo UDP
 
-Las consultas se realizan vía UDP en el puerto 53, que es el protocolo estándar para consultas DNS.
+Las consultas se realizan por UDP en el puerto 53, que es el protocolo estándar para consultas DNS.
 
 ## Ejemplo de uso
 
-### Prueba de Propagación DNS
+### Prueba de propagación DNS
 
 ```lua
--- Comprobar si un dominio se resuelve correctamente en diferentes servidores
+-- Verificar si un dominio se resuelve correctamente en diferentes servidores
 local function testar_propagacao_dns(dominio, ip_esperado)
     local servidores = {
         "8.8.8.8",      -- Google
@@ -101,12 +101,14 @@ local function testar_propagacao_dns(dominio, ip_esperado)
 
     local resultados = {}
     for _, server in ipairs(servidores) do
-        local ok, latencia = pcall(dns.ping, server, dominio)
+        -- with_coroutine acepta la función y sus argumentos, retornando (resultado, error)
+        local latencia, err = with_coroutine(dns.ping, server, dominio)
+        local ok = (err == nil)
 
         resultados[server] = {
             latencia = ok and latencia or nil,
             acessivel = ok,
-            erro = not ok and latencia or nil
+            erro = not ok and err or nil
         }
     end
 

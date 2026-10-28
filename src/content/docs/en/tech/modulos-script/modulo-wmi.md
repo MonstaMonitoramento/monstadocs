@@ -2,7 +2,7 @@
 title: "WMI Module"
 ---
 
-The **wmi** module provides functions to interact with Windows Management Instrumentation (WMI), allowing queries for system, hardware, software and configuration information on remote or local Windows machines. This module supports both cross-platform execution (using the `wmic` utility) and native execution on Windows (using the COM API).
+The **wmi** module provides functions to interact with Windows Management Instrumentation (WMI), allowing you to query system, hardware, software and configuration information on remote or local Windows machines. This module supports both cross-platform execution (using the `wmic` utility) and native execution on Windows (using the COM API).
 
 ## Available Functions
 
@@ -24,24 +24,24 @@ Builds a WQL (WMI Query Language) query from simplified parameters.
 
 **Exceptions**:
 
-- Throws error if neither `instance_id` nor `table` is provided
+- Throws an error if neither `instance_id` nor `table` is provided
 
-- Throws error if `instance_id` is in an invalid format
+- Throws an error if `instance_id` is in an invalid format
 
 **Examples**:
 
 ```lua
 -- Simple query to a table
 local wql1 = wmi.buildwql(nil, "Win32_OperatingSystem", {"Caption", "Version", "BuildNumber"})
--- Resultado: "select Caption,Version,BuildNumber from Win32_OperatingSystem"
+-- Result: "select Caption,Version,BuildNumber from Win32_OperatingSystem"
 
--- Query to a specific instance
+-- Query for a specific instance
 local wql2 = wmi.buildwql("Win32_Process|Name|explorer.exe", nil, {"ProcessId", "WorkingSetSize"})
--- Resultado: "select ProcessId,WorkingSetSize from Win32_Process where Name = \"explorer.exe\""
+-- Result: "select ProcessId,WorkingSetSize from Win32_Process where Name = \"explorer.exe\""
 
 -- Query with multiple fields
 local wql3 = wmi.buildwql(nil, "Win32_LogicalDisk", {"DeviceID", "Size", "FreeSpace", "FileSystem"})
--- Resultado: "select DeviceID,Size,FreeSpace,FileSystem from Win32_LogicalDisk"
+-- Result: "select DeviceID,Size,FreeSpace,FileSystem from Win32_LogicalDisk"
 ```
 
 ### 2. `wmi.exec(config, wql, namespace)`
@@ -52,13 +52,13 @@ Executes a WMI query using the `wmic` utility.
 
 - `config` (table): Connection configuration containing:
 
-    - `net.address` (string): Target IP address or hostname
+  - `net.address` (string): IP address or hostname of the target
 
-    - `wmi.username` (string): Username for authentication
+  - `wmi.username` (string): Username for authentication
 
-    - `wmi.password` (string): Password for authentication
+  - `wmi.password` (string): Password for authentication
 
-    - `wmi.timeout` (optional number, default: 10): Timeout in seconds
+  - `wmi.timeout` (optional number, default: 10): Timeout in seconds
 
 - `wql` (string): WQL query to execute
 
@@ -66,17 +66,21 @@ Executes a WMI query using the `wmic` utility.
 
 **Return**:
 
-- `table`: Array of results, where each element is a table of field-value pairs
+- `table`: Array of results, where each element is a table with field-value pairs
 
-**Note**: Instead of creating a configuration table manually, you can use the global `params` table which already contains all required fields (`net.address`, `wmi.username`, `wmi.password`, etc.). This table is automatically provided by the system when the script runs in the context of a managed device.
+**Note**: Instead of building a config table manually, you can use the global `params` table which already contains all necessary fields (`net.address`, `wmi.username`, `wmi.password`, etc.). This table is automatically provided by the system when the script runs in the context of a managed device.
 
 **Example using `params`**:
 
 ```lua
--- The 'device' table already contains the target device credentials and address
-local success, results = pcall(function()
-    return wmi.exec(params, wql, "root\\cimv2")
-end)
+-- The 'device' table already contains the credentials and address of the target device
+-- with_coroutine accepts the function and its arguments, returning (result, err)
+local results, err = with_coroutine(wmi.exec, params, wql, "root\\cimv2")
+local success = not err
+
+if not success then
+    print("Erro WMI: " .. tostring(err))
+end
 ```
 
 **Practical example**:
@@ -97,11 +101,11 @@ end
 
 **Exceptions**:
 
-- Throws error if the connection fails
+- Throws an error if the connection fails
 
-- Throws error "Timeout" if the query exceeds the timeout
+- Throws a "Timeout" error if the query exceeds the timeout
 
-- Throws error if the `wmic` utility returns a non-zero exit code
+- Throws an error if the `wmic` utility returns an error code
 
 **Examples**:
 
@@ -114,13 +118,11 @@ local config = {
     ["wmi.timeout"] = 15
 }
 
--- Query operating system information
+-- Query operating system information using with_coroutine
 local wql = "select Caption,Version,BuildNumber,OSArchitecture from Win32_OperatingSystem"
-local success, results = pcall(function()
-    return wmi.exec(config, wql, "root\\cimv2")
-end)
+local results, err = with_coroutine(wmi.exec, config, wql, "root\\cimv2")
 
-if success then
+if not err then
     for _, row in ipairs(results) do
         print("Sistema: " .. row.Caption)
         print("Versão: " .. row.Version)
@@ -128,7 +130,7 @@ if success then
         print("Arquitetura: " .. row.OSArchitecture)
     end
 else
-    print("Erro na consulta WMI: " .. results)
+    print("Erro na consulta WMI: " .. tostring(err))
 end
 
 -- Query running processes
@@ -146,7 +148,7 @@ local disk_results = wmi.exec(config, disk_wql, nil)  -- default namespace
 
 ### 3. `wmi.exec_native(config, wql, namespace)` (Windows agent only)
 
-Executes a WMI query using the native Windows API (COM). This function is available only on Windows systems and provides better performance and integration.
+Executes a WMI query using the native Windows (COM) API. This function is available only on Windows systems and offers better performance and integration.
 
 **Parameters**:
 
@@ -158,13 +160,13 @@ Executes a WMI query using the native Windows API (COM). This function is availa
 
 **Return**:
 
-- `table`: Array of results, where each element is a table of field-value pairs
+- `table`: Array of results, where each element is a table with field-value pairs
 
 **Exceptions**:
 
-- Throws error if the COM API fails
+- Throws an error if the COM API fails
 
-- Throws error if the query is invalid
+- Throws an error if the query is invalid
 
 **Examples**:
 
@@ -175,11 +177,10 @@ if wmi.exec_native then
     local config = nil  -- Leave empty for agent queries
     local wql = "select Name,Manufacturer,Model from Win32_ComputerSystem"
 
-    local success, results = pcall(function()
-        return wmi.exec_native(config, wql)
-    end)
+    -- with_coroutine accepts the function and its arguments, returning (result, err)
+    local results, err = with_coroutine(wmi.exec_native, config, wql)
 
-    if success and #results > 0 then
+    if not err and results and #results > 0 then
         local computer = results[1]
         print("Computador: " .. computer.Name)
         print("Fabricante: " .. computer.Manufacturer)
@@ -200,7 +201,7 @@ end
 
 ### 2. Native Execution on Windows
 
-- The `exec_native` function offers better performance on Windows systems
+- The `exec_native` function provides better performance on Windows systems
 
 - Does not require authentication for local queries
 
@@ -208,7 +209,7 @@ end
 
 ### 3. Configurable Timeout
 
-- Default timeout of 10 seconds
+- Default timeout is 10 seconds
 
 - Configurable via the `wmi.timeout` parameter in the configuration
 
@@ -223,7 +224,7 @@ local bad_wql = "select * from Win32_Process"
 -- GOOD: Selects only necessary columns
 local good_wql = "select Name,ProcessId,WorkingSetSize from Win32_Process"
 
--- BEST: Adds filters to reduce results
+-- BETTER: Adds filters to reduce results
 local best_wql = [[
 select Name,ProcessId,WorkingSetSize
 from Win32_Process
@@ -233,9 +234,9 @@ where WorkingSetSize > 10485760  -- > 10MB
 
 ### 4. `wmi.exec(config, wql, namespace, replace_backslash)`
 
-Extended version of the `exec` function with timeout support and an option to replace backslashes.
+Extended version of `exec` with timeout support and option to replace backslashes.
 
-#### Parameters:
+#### Parameters
 
 - **config** (table): Connection configuration
 
@@ -245,17 +246,17 @@ Extended version of the `exec` function with timeout support and an option to re
 
 - **replace_backslash** (boolean, optional): If `true`, replaces `\` with `\\` in the WQL (default: `true`)
 
-#### Return:
+#### Return
 
-- **table**: WMI query results
+- **table**: Results of the WMI query
 
-#### Behavior:
+#### Behavior
 
 - Supports execution via WMI probe when `params["wmi.type"] == 0`
 
 - For localhost (`127.0.0.1`), uses native execution
 
-#### Usage Example:
+#### Usage Example
 
 ```lua
 -- Execute with configured timeout
@@ -280,25 +281,25 @@ end
 
 Simplified query to a WMI table without a specific instance.
 
-#### Parameters:
+#### Parameters
 
 - **wmiobj** (string): Name of the WMI table
 
-- **...** (strings): Fields to select (can include `namespace=...`)
+- **...** (strings): Fields to select (may include `namespace=...`)
 
-#### Return:
+#### Return
 
 - **any**: Single value if only one field is selected, table if multiple fields
 
-#### Behavior:
+#### Behavior
 
-- Automatically builds WQL using `wmi.buildwql`
+- Automatically builds WQL with `wmi.buildwql`
 
 - Stores result internally for use with `prev` and `lapsed`
 
-- Supports specifying namespace via `namespace=` at the start of the fields
+- Supports namespace specification via `namespace=` at the beginning of the fields
 
-#### Usage Example:
+#### Usage Example
 
 ```lua
 -- Query operating system information
@@ -320,23 +321,23 @@ local cluster_info = wmi.query("MSCluster_Cluster", "namespace=root\\MSCluster",
 
 WMI query for a specific instance defined in `params.InstanceId`.
 
-#### Parameters:
+#### Parameters
 
-- **...** (strings): Fields to select (can include `namespace=...`)
+- **...** (strings): Fields to select (may include `namespace=...`)
 
-#### Return:
+#### Return
 
 - **any**: Single value if only one field is selected, table if multiple fields
 
-#### Behavior:
+#### Behavior
 
-- Uses `params.InstanceId` to build the instance query
+- Uses `params.InstanceId` to build an instance query
 
-- Throws error if the instance is not found
+- Throws an error if the instance is not found
 
 - Stores result in `_mem_store` for use with `prev` and `lapsed`
 
-#### Usage Example:
+#### Usage Example
 
 ```lua
 -- params.InstanceId = "Win32_Process|Name|explorer.exe"
@@ -355,25 +356,25 @@ local process_info = wmi.queryinst("ProcessId", "WorkingSetSize", "ThreadCount",
 
 Gets the previous value of a WMI query.
 
-#### Parameters:
+#### Parameters
 
 - **wmiobj** (string): Name of the WMI table
 
 - **...** (strings): Fields of the original query
 
-#### Return:
+#### Return
 
 - **any**: Previously stored value
 
-#### Behavior:
+#### Behavior
 
 - Reconstructs the original WQL
 
-- Looks up the value in `store.get("wmi.value." .. wql)`
+- Fetches value from `store.get("wmi.value." .. wql)`
 
 - Returns a single value if the original query returned a single value
 
-#### Usage Example:
+#### Usage Example
 
 ```lua
 -- Get current value
@@ -391,15 +392,15 @@ print("Variação de memória:", memory_diff, "bytes")
 
 Gets the previous value of an instance WMI query.
 
-#### Parameters:
+#### Parameters
 
 - **...** (strings): Fields of the original query
 
-#### Return:
+#### Return
 
 - **any**: Previously stored value
 
-#### Usage Example:
+#### Usage Example
 
 ```lua
 -- params.InstanceId = "Win32_Process|Name|svchost.exe"
@@ -417,19 +418,19 @@ print("Variação no uso de CPU:", cpu_change, "%")
 
 ### 9. `wmi.lapsed(wmiobj, ...)`
 
-Gets the elapsed time since the last WMI query.
+Gets the time elapsed since the last WMI query.
 
-#### Parameters:
+#### Parameters
 
 - **wmiobj** (string): Name of the WMI table
 
 - **...** (strings): Fields of the original query
 
-#### Return:
+#### Return
 
 - **number**: Time in seconds since the last query
 
-#### Usage Example:
+#### Usage Example
 
 ```lua
 -- Calculate disk throughput
@@ -443,17 +444,17 @@ print("Taxa de leitura de disco:", read_rate, "bytes/segundo")
 
 ### 10. `wmi.lapsedinst(...)`
 
-Gets the elapsed time since the last instance WMI query.
+Gets the time elapsed since the last instance WMI query.
 
-#### Parameters:
+#### Parameters
 
 - **...** (strings): Fields of the original query
 
-#### Return:
+#### Return
 
 - **number**: Time in seconds since the last query
 
-#### Usage Example:
+#### Usage Example
 
 ```lua
 -- params.InstanceId = "Win32_PerfRawData_PerfDisk_LogicalDisk|Name|C:"
@@ -469,9 +470,9 @@ print("Taxa de escrita no disco C:", write_rate, "bytes/segundo")
 
 ### 11. `wmi.diff(typ, lhs, rhs)`
 
-Calculates the difference between two WMI values, handling counter rollover.
+Calculates the difference between two WMI values, handling counter rollovers.
 
-#### Parameters:
+#### Parameters
 
 - **typ** (number): Counter type (32 or 64 bits)
 
@@ -479,19 +480,19 @@ Calculates the difference between two WMI values, handling counter rollover.
 
 - **rhs** (number): Previous value
 
-#### Return:
+#### Return
 
 - **number**: Difference between the values
 
-#### Behavior:
+#### Behavior
 
 - Uses the same implementation as `snmp.diff`
 
-- Handles rollover for 32-bit and 64-bit counters
+- Handles 32-bit and 64-bit counter rollovers
 
-- Flags `RepeatPrevValue` if the difference is negative
+- Signals `RepeatPrevValue` if the difference is negative
 
-#### Usage Example:
+#### Usage Example
 
 ```lua
 -- Calculate difference for a 64-bit counter
@@ -504,7 +505,7 @@ print("Bytes lidos desde última leitura:", bytes_diff)
 
 ## Complete Examples
 
-### Monitoring a Specific Process:
+### Monitoring a Specific Process
 
 ```lua
 -- Configure instance to monitor a specific process
@@ -515,7 +516,7 @@ local cpu_usage = wmi.queryinst("PercentProcessorTime")
 local memory_usage = wmi.queryinst("WorkingSetPrivate")
 local thread_count = wmi.queryinst("ThreadCount")
 
--- Calculate variations
+-- Calculate deltas
 local prev_cpu = wmi.previnst("PercentProcessorTime")
 local prev_memory = wmi.previnst("WorkingSetPrivate")
 local time_elapsed = wmi.lapsedinst("PercentProcessorTime")
@@ -527,10 +528,10 @@ print(string.format("Chrome.exe - CPU: %d%%, Memória: %d bytes, Threads: %d",
                    cpu_delta / time_elapsed, memory_delta, thread_count))
 ```
 
-### Hardware Inventory with Cache:
+### Hardware Inventory with Cache
 
 ```lua
--- Function to get hardware information with cache
+-- Function to get hardware information with caching
 local function get_hardware_info()
     local cache_key = "hardware_info_" .. params.device.address
     local cached = cache.get(cache_key)

@@ -8,25 +8,25 @@ The **ssh** module provides functions to execute remote commands on servers via 
 
 ### 1. `ssh.exec(opts)`
 
-Executes a remote command over SSH asynchronously and returns the command output.
+Executes a remote command via SSH asynchronously and returns the command output.
 
 **Parameters**:
 
 - `opts` (table): Connection and execution options containing:
 
-    - `host` (string): Server address (hostname or IP)
+  - `host` (string): Server address (hostname or IP)
 
-    - `username` (string): Username for authentication
+  - `username` (string): Username for authentication
 
-    - `password` (string): Password for authentication
+  - `password` (string): Password for authentication
 
-    - `command` (string): Command to be executed on the remote server
+  - `command` (string): Command to be executed on the remote server
 
-    - `port` (number, optional, default: 22): SSH port
+  - `port` (optional number, default: 22): SSH port
 
-    - `timeout` (number, optional, default: 60): Timeout in seconds for the connection
+  - `timeout` (optional number, default: 60): Timeout in seconds for the connection
 
-**Returns**:
+**Return**:
 
 - `string`: Standard output (stdout) of the executed command
 
@@ -53,17 +53,16 @@ local opts = {
     timeout = 30
 }
 
-local success, output = pcall(function()
-    return ssh.exec(opts)
-end)
+-- with_coroutine aceita a função e seus argumentos, retornando (result, err)
+local output, err = with_coroutine(ssh.exec, opts)
 
-if success then
-    print("Saída do comando: " .. output)
+if not err then
+    print("Saída do comando: " .. tostring(output))
 else
-    print("Erro SSH: " .. output)
+    print("Erro SSH: " .. tostring(err))
 end
 
--- Verificar uso de disco
+-- Check disk usage
 local disk_opts = {
     host = "192.168.1.100",
     username = "monitor",
@@ -73,7 +72,7 @@ local disk_opts = {
 
 local disk_usage = ssh.exec(disk_opts)
 
--- Verificar serviços em execução
+-- Check running services
 local service_opts = {
     host = "app-server",
     username = "root",
@@ -94,19 +93,19 @@ Establishes a persistent SSH connection and returns a client object that can exe
 
 - `opts` (table): Connection options containing:
 
-    - `host` (string): Server address (hostname or IP)
+  - `host` (string): Server address (hostname or IP)
 
-    - `username` (string): Username for authentication
+  - `username` (string): Username for authentication
 
-    - `password` (string): Password for authentication
+  - `password` (string): Password for authentication
 
-    - `port` (number, optional, default: 22): SSH port
+  - `port` (optional number, default: 22): SSH port
 
-    - `timeout` (number, optional, default: `params.sshTimeout` or 60): Timeout in seconds for the connection
+  - `timeout` (optional number, default: `params.sshTimeout` or 60): Timeout in seconds for the connection
 
-**Returns**:
+**Return**:
 
-- `SshClient`: SSH client object with an `exec()` method to run commands
+- `SshClient`: SSH client object with method `exec()` to execute commands
 
 **Exceptions**:
 
@@ -119,7 +118,7 @@ Establishes a persistent SSH connection and returns a client object that can exe
 **Examples**:
 
 ```lua
--- Criar conexão persistente
+-- Create persistent connection
 local connect_opts = {
     host = "banco-de-dados.exemplo.com",
     username = "dba",
@@ -128,16 +127,15 @@ local connect_opts = {
     timeout = 45
 }
 
-local success, client = pcall(function()
-    return ssh.connect(connect_opts)
-end)
+-- with_coroutine aceita a função e seus argumentos, retornando (result, err)
+local client, err = with_coroutine(ssh.connect, connect_opts)
 
-if not success then
-    print("Falha na conexão SSH: " .. client)
+if err then
+    print("Falha na conexão SSH: " .. tostring(err))
     return
 end
 
--- Executar múltiplos comandos na mesma conexão
+-- Execute multiple commands on the same connection
 local cmd1_output = client:exec("pg_isready")
 local cmd2_output = client:exec("psql -c 'SELECT version();'")
 local cmd3_output = client:exec("df -h /var/lib/postgresql")
@@ -155,7 +153,7 @@ Method of the client object returned by `ssh.connect()` to execute commands on t
 
 - `command` (string): Command to be executed on the remote server
 
-**Returns**:
+**Return**:
 
 - `string`: Standard output (stdout) of the executed command
 
@@ -168,7 +166,7 @@ Method of the client object returned by `ssh.connect()` to execute commands on t
 **Examples**:
 
 ```lua
--- Usage with multiple related commands
+-- Use with multiple related commands
 -- Example using explicit values
 local client = ssh.connect({
     host = "monitor-server",
@@ -176,7 +174,7 @@ local client = ssh.connect({
     password = "metrics_pass"
 })
 
--- Exemplo usando valores do params configurado no dispositivo
+-- Example using values from the device-configured params
 -- params.sshUsername = "admin"
 -- params.sshPassword = "admin123"
 -- params.address = "servidor.local"
@@ -184,7 +182,7 @@ local client = ssh.connect({
 -- params.sshTimeout = 30
 
 local client_simplificado = ssh.connect({})
--- Equivalente a: ssh.connect({
+-- Equivalent to: ssh.connect({
 --     host = "servidor.local",
 --     username = "admin",
 --     password = "admin123",
@@ -192,21 +190,21 @@ local client_simplificado = ssh.connect({})
 --     timeout = 30
 -- })
 
--- Exemplo misto (alguns valores explícitos, outros do params)
+-- Mixed example (some explicit values, others from params)
 local client_misto = ssh.connect({
     host = "backup-server",
     port = 2222
 })
--- Usa: host = "backup-server", port = 2222
--- Usa do params: username = "admin", password = "admin123", timeout = 30
+-- Uses: host = "backup-server", port = 2222
+-- Uses from params: username = "admin", password = "admin123", timeout = 30
 
--- Coletar métricas do sistema
+-- Collect system metrics
 local uptime = client:exec("uptime")
 local memory = client:exec("free -m")
 local cpu = client:exec("top -bn1 | grep 'Cpu(s)'")
 local disk = client:exec("iostat -x 1 1")
 
--- Processar resultados
+-- Process results
 print("Uptime: " .. uptime)
 print("Memória: " .. memory)
 print("CPU: " .. cpu)
@@ -237,11 +235,11 @@ print("Disk I/O: " .. disk)
 
 - Configurable per connection via the `timeout` parameter
 
-- Prevents hung/stuck connections
+- Prevents hung connections
 
 ## Limitations
 
-### 1. **Password-Only Authentication**
+### 1. **Password-only Authentication**
 
 - Does not support public key (SSH key) authentication
 

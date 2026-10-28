@@ -6,7 +6,7 @@ The **uuid** module provides functions for generating universally unique identif
 
 **Key features**:
 
-- Generation of version 4 UUIDs (random)
+- Generation of version 4 UUID (random)
 
 - RFC 4122 standard format (8-4-4-4-12)
 
@@ -22,7 +22,7 @@ The **uuid** module provides functions for generating universally unique identif
 
 - `4` indicates version 4 (random)
 
-- `y` is 8, 9, A or B (indicating variant)
+- `y` is 8, 9, A, or B (indicating variant)
 
 ## Available Functions
 
@@ -30,15 +30,15 @@ The **uuid** module provides functions for generating universally unique identif
 
 Generates a version 4 UUID (random) in the RFC 4122 standard format.
 
-#### Parameters:
+#### Parameters
 
 - None
 
-#### Return:
+#### Return
 
 - **string**: UUID in the format `xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx`
 
-#### Behavior:
+#### Behavior
 
 1. Generates 128 random bits using a cryptographically secure generator
 
@@ -48,9 +48,9 @@ Generates a version 4 UUID (random) in the RFC 4122 standard format.
 
 4. Formats as a string in the 8-4-4-4-12 pattern
 
-5. Ensures statistical uniqueness (extremely low probability of collision)
+5. Ensures statistical uniqueness (extremely low collision probability)
 
-#### Example Usage:
+#### Example Usage
 
 ```lua
 -- Generate a simple UUID
@@ -87,10 +87,10 @@ print("Token de sessão:", sessao_token)
 
 ## Additional Information
 
-### Guaranteed Uniqueness:
+### Guaranteed Uniqueness
 
 ```lua
--- Extremely low collision probability
+-- Extremely low probability of collision
 -- 2^128 possibilities ≈ 3.4 × 10^38 unique UUIDs
 -- Even generating 1 billion UUIDs per second,
 -- it would take ~100 years to have a 50% chance of collision
@@ -117,10 +117,10 @@ local function testar_unicidade(iteracoes)
     }
 end
 
--- In practical tests, collisions are virtually non-existent
+-- In practical tests, collisions are virtually nonexistent
 ```
 
-### Standard Format:
+### Standard Format
 
 ```lua
 -- UUID always in RFC 4122 format
@@ -140,7 +140,7 @@ print("UUID válido?", validar_uuid("invalid"))  -- false
 
 ## Usage Examples
 
-### 1. Temporary File Names:
+### 1. Temporary File Names
 
 ```lua
 -- Generate unique file names for processing
@@ -179,9 +179,9 @@ local function limpar_arquivos_temporarios()
         local arquivo = arquivos_temp[i]
 
         if agora > arquivo.expira_em then
-            -- Attempt to remove file
-            local ok, _ = pcall(os.remove, arquivo.caminho)
-            if ok then
+            -- Try to remove file using with_coroutine
+            local ok, err = with_coroutine(os.remove, arquivo.caminho)
+            if not err and ok then
                 table.remove(arquivos_temp, i)
                 removidos = removidos + 1
                 log.debug("Arquivo temporário removido", "Caminho:", arquivo.caminho)

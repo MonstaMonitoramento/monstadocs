@@ -2,7 +2,7 @@
 title: "WS Module"
 ---
 
-The **ws** module provides functionality for real-time bidirectional communication over the WebSocket protocol. This module is useful for scripts that need to connect to services using WebSockets.
+The **ws** module provides functionality for real-time bidirectional communication via the WebSocket protocol. This module is useful for scripts that need to connect to services using WebSockets.
 
 **Key features**:
 
@@ -12,7 +12,7 @@ The **ws** module provides functionality for real-time bidirectional communicati
 
 - Support for secure (wss://) and non-secure (ws://) URLs
 
-- Implicit timeout based on the system
+- Implicit system-based timeout
 
 **WebSocket Protocol**:
 
@@ -28,21 +28,21 @@ The **ws** module provides functionality for real-time bidirectional communicati
 
 ### 1. `ws.send_recv(url, dados)`
 
-Establishes a WebSocket connection, sends a message and waits for a response.
+Establishes a WebSocket connection, sends a message, and waits for a response.
 
-#### Parameters:
+#### Parameters
 
-- **url** (string): WebSocket server URL (ex: "ws://exemplo.com/socket", "wss://exemplo.com/ws")
+- **url** (string): WebSocket server URL (e.g., "ws://exemplo.com/socket", "wss://exemplo.com/ws")
 
-- **dados** (string): Text message to send to the server
+- **dados** (string): Text message to be sent to the server
 
-#### Return:
+#### Return
 
 - **string**: Text response received from the WebSocket server
 
-#### Behavior:
+#### Behavior
 
-1. Establishes a WebSocket connection to the specified server
+1. Establishes a WebSocket connection with the specified server
 
 2. Sends the provided text message
 
@@ -52,9 +52,9 @@ Establishes a WebSocket connection, sends a message and waits for a response.
 
 5. Closes the connection after receiving the response
 
-6. Throws an error if a binary message is received or if there is no response
+6. Raises an error if a binary message is received or if there is no response
 
-#### Common Errors:
+#### Common Errors
 
 - `"ws binary messages not supported"` - Server sent a binary message (not supported)
 
@@ -62,7 +62,7 @@ Establishes a WebSocket connection, sends a message and waits for a response.
 
 - Connection errors (server offline, invalid URL, etc.)
 
-#### Usage Example:
+#### Usage Example
 
 ```lua
 -- Basic connection to WebSocket server
@@ -72,19 +72,20 @@ local resposta = ws.send_recv(url, mensagem)
 print("Resposta do servidor:", resposta)
 -- Saída: "Olá, WebSocket!" (servidor echo)
 
--- Conexão segura (wss://)
+-- Secure connection (wss://)
 local url_segura = "wss://servidor.producao.com/ws"
 local dados = json.encode({acao = "ping", timestamp = now()})
 local resposta = ws.send_recv(url_segura, dados)
 print("Resposta segura:", resposta)
 
--- With error handling
+-- Error handling using with_coroutine
 local function enviar_com_tratamento(url, dados)
-    local ok, resposta = pcall(ws.send_recv, url, dados)
-    if ok then
+    -- with_coroutine retorna (result, err)
+    local resposta, err = with_coroutine(ws.send_recv, url, dados)
+    if not err then
         return resposta
     else
-        log.error("Erro no WebSocket:", resposta)
+        log.error("Erro no WebSocket:", err)
         return nil
     end
 end
@@ -107,27 +108,28 @@ end
 
 ## Additional Information
 
-### Secure Connection (wss://):
+### Secure Connection (wss://)
 
 ```lua
 -- The module supports both ws:// and wss://
 local conexoes = {
-    "ws://localhost:8080/ws",      -- Not secure (HTTP)
-    "wss://servidor.com/ws",       -- Secure (HTTPS)
+    "ws://localhost:8080/ws",      -- Não seguro (HTTP)
+    "wss://servidor.com/ws",        -- Seguro (HTTPS)
     "ws://192.168.1.100:3000/ws",  -- Local network
 }
 
 for _, url in ipairs(conexoes) do
-    local ok, resposta = pcall(ws.send_recv, url, "ping")
-    if ok then
+    -- with_coroutine retorna (result, err)
+    local resposta, err = with_coroutine(ws.send_recv, url, "ping")
+    if not err then
         print("Conexão bem-sucedida:", url)
     else
-        print("Falha na conexão:", url, "-", resposta)
+        print("Falha na conexão:", url, "-", err)
     end
 end
 ```
 
-### Text Messages Only:
+### Text Messages Only
 
 ```lua
 -- The module only supports text messages

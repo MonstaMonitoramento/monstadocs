@@ -2,7 +2,7 @@
 title: "Módulo SSH"
 ---
 
-El módulo **ssh** proporciona funciones para ejecutar comandos remotos en servidores a través del protocolo Secure Shell (SSH). Ofrece dos enfoques principales: ejecución única de comandos y conexiones persistentes para múltiples comandos. El módulo soporta autenticación por contraseña e incluye resolución DNS automática.
+El módulo **ssh** proporciona funciones para ejecutar comandos remotos en servidores a través del protocolo Secure Shell (SSH). Ofrece dos enfoques principales: ejecución única de comandos y conexiones persistentes para múltiples comandos. El módulo admite autenticación por contraseña e incluye resolución DNS automática.
 
 ## Funciones disponibles
 
@@ -14,17 +14,17 @@ Ejecuta un comando remoto vía SSH de forma asíncrona y devuelve la salida del 
 
 - `opts` (tabla): Opciones de conexión y ejecución que contienen:
 
-    - `host` (string): Dirección del servidor (hostname o IP)
+  - `host` (string): Dirección del servidor (hostname o IP)
 
-    - `username` (string): Nombre de usuario para la autenticación
+  - `username` (string): Nombre de usuario para autenticación
 
-    - `password` (string): Contraseña para la autenticación
+  - `password` (string): Contraseña para autenticación
 
-    - `command` (string): Comando a ejecutar en el servidor remoto
+  - `command` (string): Comando a ejecutar en el servidor remoto
 
-    - `port` (número opcional, por defecto: 22): Puerto SSH
+  - `port` (número opcional, por defecto: 22): Puerto SSH
 
-    - `timeout` (número opcional, por defecto: 60): Tiempo de espera en segundos para la conexión
+  - `timeout` (número opcional, por defecto: 60): Timeout en segundos para la conexión
 
 **Retorno**:
 
@@ -53,17 +53,16 @@ local opts = {
     timeout = 30
 }
 
-local success, output = pcall(function()
-    return ssh.exec(opts)
-end)
+-- with_coroutine aceita a função e seus argumentos, retornando (result, err)
+local output, err = with_coroutine(ssh.exec, opts)
 
-if success then
-    print("Saída do comando: " .. output)
+if not err then
+    print("Saída do comando: " .. tostring(output))
 else
-    print("Erro SSH: " .. output)
+    print("Erro SSH: " .. tostring(err))
 end
 
--- Comprobar uso de disco
+-- Verificar uso de disco
 local disk_opts = {
     host = "192.168.1.100",
     username = "monitor",
@@ -88,25 +87,25 @@ local services = ssh.exec(service_opts)
 
 Establece una conexión SSH persistente y devuelve un objeto cliente que puede ejecutar múltiples comandos.
 
-**Nota**: Esta función usa valores predeterminados de la tabla `params` cuando no se proporcionan los parámetros.
+**Nota**: Esta función usa valores por defecto de la tabla `params` cuando los parámetros no son proporcionados.
 
 **Parámetros**:
 
 - `opts` (tabla): Opciones de conexión que contienen:
 
-    - `host` (string): Dirección del servidor (hostname o IP)
+  - `host` (string): Dirección del servidor (hostname o IP)
 
-    - `username` (string): Nombre de usuario para la autenticación
+  - `username` (string): Nombre de usuario para autenticación
 
-    - `password` (string): Contraseña para la autenticación
+  - `password` (string): Contraseña para autenticación
 
-    - `port` (número opcional, por defecto: 22): Puerto SSH
+  - `port` (número opcional, por defecto: 22): Puerto SSH
 
-    - `timeout` (número opcional, por defecto: `params.sshTimeout` o 60): Tiempo de espera en segundos para la conexión
+  - `timeout` (número opcional, por defecto: `params.sshTimeout` o 60): Timeout en segundos para la conexión
 
 **Retorno**:
 
-- `SshClient`: Objeto cliente SSH con el método `exec()` para ejecutar comandos
+- `SshClient`: Objeto cliente SSH con método `exec()` para ejecutar comandos
 
 **Excepciones**:
 
@@ -128,12 +127,11 @@ local connect_opts = {
     timeout = 45
 }
 
-local success, client = pcall(function()
-    return ssh.connect(connect_opts)
-end)
+-- with_coroutine aceita a função e seus argumentos, retornando (result, err)
+local client, err = with_coroutine(ssh.connect, connect_opts)
 
-if not success then
-    print("Falha na conexão SSH: " .. client)
+if err then
+    print("Falha na conexão SSH: " .. tostring(err))
     return
 end
 
@@ -143,7 +141,7 @@ local cmd2_output = client:exec("psql -c 'SELECT version();'")
 local cmd3_output = client:exec("df -h /var/lib/postgresql")
 
 print("PostgreSQL status: " .. cmd1_output)
-print("Versão PostgreSQL: " .. cmd2_output)
+print("Versión PostgreSQL: " .. cmd2_output)
 print("Espaço em disco: " .. cmd3_output)
 ```
 
@@ -176,7 +174,7 @@ local client = ssh.connect({
     password = "metrics_pass"
 })
 
--- Exemplo usando valores do params configurado no dispositivo
+-- Ejemplo usando valores de params configurado en el dispositivo
 -- params.sshUsername = "admin"
 -- params.sshPassword = "admin123"
 -- params.address = "servidor.local"
@@ -206,7 +204,7 @@ local memory = client:exec("free -m")
 local cpu = client:exec("top -bn1 | grep 'Cpu(s)'")
 local disk = client:exec("iostat -x 1 1")
 
--- Procesar resultados
+-- Processar resultados
 print("Uptime: " .. uptime)
 print("Memória: " .. memory)
 print("CPU: " .. cpu)
@@ -231,9 +229,9 @@ print("Disk I/O: " .. disk)
 
 - Mejora el rendimiento en operaciones por lotes
 
-### 3. **Tiempo de espera configurable**
+### 3. **Timeout configurable**
 
-- Tiempo de espera por defecto de 60 segundos para las conexiones
+- Timeout por defecto de 60 segundos para conexiones
 
 - Configurable por conexión mediante el parámetro `timeout`
 
@@ -243,7 +241,7 @@ print("Disk I/O: " .. disk)
 
 ### 1. **Autenticación solo por contraseña**
 
-- No soporta autenticación por clave pública (SSH key)
+- No admite autenticación por clave pública (SSH key)
 
 ### 2. **Rendimiento**
 

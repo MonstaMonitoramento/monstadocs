@@ -2,9 +2,9 @@
 title: "Time Module"
 ---
 
-The **time** module provides functions for time and date manipulation. This module is useful for scripts that need to measure intervals, wait for specific periods, parse dates, and implement timeouts in asynchronous operations.
+The **time** module provides functions for manipulating time and dates. This module is useful for scripts that need to measure intervals, wait for specific periods, parse dates, and implement timeouts in asynchronous operations.
 
-**Key features**:
+**Main features**:
 
 - Unix timestamps in seconds
 
@@ -20,15 +20,15 @@ The **time** module provides functions for time and date manipulation. This modu
 
 Returns the current Unix timestamp in seconds.
 
-#### Parameters:
+#### Parameters
 
 - None
 
-#### Return:
+#### Return
 
 - **number**: Current Unix timestamp (seconds since January 1, 1970, 00:00:00 UTC)
 
-#### Behavior:
+#### Behavior
 
 - Returns the current time in UTC
 
@@ -38,14 +38,14 @@ Returns the current Unix timestamp in seconds.
 
 - Available as a global function and in the `time` module
 
-#### Example Usage:
+#### Usage Example
 
 ```lua
 -- Using the time module
 local timestamp_modulo = time.now()
 print("Timestamp módulo:", timestamp_modulo)
 
--- Usando a função global (mesma função)
+-- Using the global function (same function)
 local timestamp_global = now()
 print("Timestamp global:", timestamp_global)
 
@@ -54,12 +54,12 @@ print("São iguais?", timestamp_global == timestamp_modulo)  -- true
 
 -- Calculate operation duration
 local inicio = time.now()
--- ... long-running operation ...
+-- ... operação demorada ...
 local fim = time.now()
 local duracao = fim - inicio
 print("Operação levou", duracao, "segundos")
 
--- Record events with timestamp
+-- Log events with timestamp
 local evento = {
     tipo = "login",
     usuario = "admin",
@@ -72,23 +72,23 @@ local proxima_execucao = time.now() + 3600  -- 1 hora a partir de agora
 print("Próxima execução em:", os.date("%H:%M:%S", proxima_execucao))
 ```
 
-### 2. `time.sleep(seconds)`
+### 2. `time.sleep(segundos)`
 
-Asynchronously waits for a specified number of seconds.
+Asynchronously waits for a specific number of seconds.
 
-#### Parameters:
+#### Parameters
 
-- **seconds** (number): Number of seconds to wait
+- **segundos** (number): Number of seconds to wait
 
-#### Return:
+#### Return
 
-- **nil**: The function does not return a value (after the wait)
+- **nil**: The function does not return a value (after waiting)
 
-#### Behavior:
+#### Behavior
 
-- Accuracy dependent on the system scheduler
+- Precision depends on the system scheduler
 
-#### Example Usage:
+#### Usage Example
 
 ```lua
 -- Wait 5 seconds
@@ -108,7 +108,7 @@ local function poll_com_intervalo(url, intervalo_segundos, max_tentativas)
             return resposta
         end
 
-        -- Wait before the next attempt
+        -- Wait before next attempt
         if tentativa < max_tentativas then
             log.info("Aguardando", intervalo_segundos, "segundos...")
             time.sleep(intervalo_segundos)
@@ -119,7 +119,7 @@ local function poll_com_intervalo(url, intervalo_segundos, max_tentativas)
     return nil
 end
 
--- Uso
+-- Usage
 local dados = poll_com_intervalo("https://api.exemplo.com/status", 10, 6)
 
 -- Execution control with exponential backoff
@@ -127,13 +127,14 @@ local function executar_com_backoff(funcao, max_tentativas)
     local tentativa = 1
 
     while tentativa <= max_tentativas do
-        local ok, resultado = pcall(funcao)
+        -- with_coroutine returns (result, err)
+        local resultado, err = with_coroutine(funcao)
 
-        if ok then
+        if not err then
             return resultado
         end
 
-        -- Exponential backoff: 2^(tentativa-1) seconds
+        -- Exponential backoff: 2^(attempt-1) seconds
         local wait_time = math.pow(2, tentativa - 1)
         log.warn("Tentativa", tentativa, "falhou. Aguardando", wait_time, "segundos")
 
@@ -152,15 +153,15 @@ end
 
 Parses a date/time string in RFC 3339 format and returns a date object.
 
-#### Parameters:
+#### Parameters
 
-- **string_data** (string): Date/time in RFC 3339 format (ex: "2024-01-15T10:30:00Z")
+- **string_data** (string): Date/time in RFC 3339 format (e.g., "2024-01-15T10:30:00Z")
 
-#### Return:
+#### Return
 
-- **LuaDateTime object**: Object with method `seconds()` that returns Unix timestamp
+- **LuaDateTime object**: Object with a `seconds()` method that returns the Unix timestamp
 
-#### RFC 3339 format:
+#### RFC 3339 Format
 
 - `YYYY-MM-DDTHH:MM:SSZ` (UTC)
 
@@ -168,7 +169,7 @@ Parses a date/time string in RFC 3339 format and returns a date object.
 
 - Examples: "2024-01-15T10:30:00Z", "2024-01-15T07:30:00-03:00"
 
-#### Example Usage:
+#### Usage Example
 
 ```lua
 -- Parse UTC date
@@ -179,7 +180,7 @@ print("Timestamp UTC:", timestamp_utc)  -- 1705314600
 -- Parse date with timezone offset
 local data_local = time.parse("2024-01-15T07:30:00-03:00")
 local timestamp_local = data_local:seconds()
-print("Timestamp local:", timestamp_local)  -- 1705314600 (same moment)
+print("Timestamp local:", timestamp_local)  -- 1705314600 (mesmo momento)
 
 -- Convert to readable format
 local function formatar_data_rfc3339(timestamp)
@@ -192,13 +193,15 @@ local data2 = time.parse("2024-01-15T11:45:00Z")
 local diferenca = data2:seconds() - data1:seconds()
 print("Diferença:", diferenca, "segundos (", diferenca/60, "minutos)")
 
--- Validate and parse input date
+-- Validate and parse input date using with_coroutine
 local function parsear_data_segura(data_string)
-    local ok, data = pcall(time.parse, data_string)
-    if ok then
+    -- with_coroutine returns (result, err)
+    local data, err = with_coroutine(time.parse, data_string)
+    
+    if not err and data then
         return data:seconds()
     else
-        log.error("Data inválida:", data_string, "-", data)
+        log.error("Data inválida:", data_string, "-", err)
         return nil
     end
 end

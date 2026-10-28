@@ -2,7 +2,7 @@
 title: "DNS Module"
 ---
 
-The **DNS** module provides functions to test the performance and availability of DNS servers. This module is useful for monitoring DNS infrastructure, diagnosing name resolution issues, and measuring latency in DNS queries.
+The **DNS** module provides functions to test the performance and availability of DNS servers. This module is useful for DNS infrastructure monitoring, diagnosing name resolution issues, and measuring latency in DNS queries.
 
 ## Available Functions
 
@@ -10,32 +10,32 @@ The **DNS** module provides functions to test the performance and availability o
 
 Performs a DNS query to a specific server and measures the response time (RTT - Round Trip Time).
 
-#### Parameters:
+#### Parameters
 
 - **server** (string): Address of the DNS server to test (can be an IP or domain name)
 
 - **domain** (string): Domain to be queried on the DNS server
 
-#### Return:
+#### Return
 
 - **number**: Response time in milliseconds (DNS latency)
 
-#### Behavior:
+#### Behavior
 
 1. Resolves the DNS server address (if it's a domain name)
 
 2. Connects to the DNS server on port 53 (UDP)
 
-3. Performs an A-type query for the specified domain
+3. Performs an A record query for the specified domain
 
 4. Measures the time between sending the query and receiving the response
 
 5. Returns the time in milliseconds
 
-#### Usage Example:
+#### Usage Example
 
 ```lua
--- Test DNS latency of Google DNS
+-- Test Google DNS latency
 local latencia = dns.ping("8.8.8.8", "google.com")
 -- latencia = 25 (example: 25 milliseconds)
 
@@ -65,7 +65,7 @@ end
 
 ### Automatic DNS Server Resolution
 
-The function `dns.ping` automatically resolves the DNS server name if provided as a domain:
+The `dns.ping` function automatically resolves the DNS server name if provided as a domain:
 
 ```lua
 -- Works with IP
@@ -76,20 +76,20 @@ dns.ping("dns.google", "exemplo.com")
 dns.ping("one.one.one.one", "exemplo.com")  -- Cloudflare DNS
 ```
 
-### A-Type Query
+### A Record Query
 
-The function always performs A-type queries (IPv4).
+The function always performs A record (IPv4) queries.
 
 ### UDP Protocol
 
 Queries are performed via UDP on port 53, which is the standard protocol for DNS queries.
 
-## Example Usage
+## Usage Example
 
 ### DNS Propagation Test
 
 ```lua
--- Check if a domain is resolving correctly across different servers
+-- Check if a domain is resolving correctly on different servers
 local function testar_propagacao_dns(dominio, ip_esperado)
     local servidores = {
         "8.8.8.8",      -- Google
@@ -101,12 +101,14 @@ local function testar_propagacao_dns(dominio, ip_esperado)
 
     local resultados = {}
     for _, server in ipairs(servidores) do
-        local ok, latencia = pcall(dns.ping, server, dominio)
+        -- with_coroutine accepts the function and its arguments, returning (result, error)
+        local latencia, err = with_coroutine(dns.ping, server, dominio)
+        local ok = (err == nil)
 
         resultados[server] = {
             latencia = ok and latencia or nil,
             acessivel = ok,
-            erro = not ok and latencia or nil
+            erro = not ok and err or nil
         }
     end
 
