@@ -216,7 +216,7 @@ Escreve um pacote JSON com tamanho prefixado (formato binário).
 **Exemplo**:
 
 ```lua
-local conn = connect("servidor-binario.com", 9000)
+local conn = tcp.connect("servidor-binario.com", 9000)
 
 -- Enviar um pacote JSON
 local dados = {
@@ -247,7 +247,7 @@ Pacotes JSON com tamanho prefixado têm um limite de 512KB para prevenir ataques
 
 ```lua
 function fazer_requisicao_http(host, porta, caminho)
-    local conn = connect(host, porta, 10)
+    local conn = tcp.connect(host, porta, 10)
 
     -- Enviar requisição HTTP
     local requisicao = string.format(
@@ -256,10 +256,10 @@ function fazer_requisicao_http(host, porta, caminho)
     )
 
     -- Usar o método send (conexão está no registro)
-    send(requisicao)
+    tcp.send(requisicao)
 
     -- Ler resposta
-    local resposta = recv()
+    local resposta = tcp.recv()
 
     -- Extrair corpo da resposta (simplificado)
     local corpo = resposta:match("\r\n\r\n(.+)$")
@@ -272,7 +272,7 @@ end
 
 ```lua
 function consultar_api_json(endpoint, dados)
-    local conn = connect_tls("api.exemplo.com", 443)
+    local conn = tcp.connect_tls("api.exemplo.com", 443)
 
     -- Enviar dados como pacote JSON
     conn:write_json_packet({
@@ -299,9 +299,10 @@ end
 ```lua
 function verificar_servico_tcp(host, porta)
     local inicio = os.time()
-    local sucesso, conn = pcall(connect, host, porta, 5)
+    -- with_coroutine aceita a função e seus argumentos, retornando (result, err)
+    local conn, err = with_coroutine(tcp.connect, host, porta, 5)
 
-    if sucesso then
+    if not err and conn then
         local tempo_resposta = os.time() - inicio
 
         -- Testar comunicação básica
@@ -319,7 +320,7 @@ function verificar_servico_tcp(host, porta)
 
     return {
         status = "offline",
-        erro = conn  -- conn contém a mensagem de erro quando pcall falha
+        erro = err  -- err contém a mensagem de erro quando with_coroutine falha
     }
 end
 ```
@@ -328,7 +329,7 @@ end
 
 ```lua
 function chat_client(host, porta)
-    local conn = connect(host, porta)
+    local conn = tcp.connect(host, porta)
 
     -- Thread para receber mensagens
     local function receber_mensagens()

@@ -6,35 +6,19 @@ sidebar:
 
 This section describes the global functions available in Monsta's Lua environment. These are functions that do not belong to specific modules but are available directly in the Lua global scope. There are features for flow control, time manipulation, among others.
 
-
-
 ## Available Functions
-
-
 
 ### `sleep(seconds)`
 
-
-
 **Description**: Pauses script execution for a specified number of seconds.
-
-
 
 **Parameters**:
 
-
-
 - `seconds` (number): Number of seconds to pause execution
-
-
 
 **Return**: `nil` (no return value)
 
-
-
 **Example**:
-
-
 
 ```lua
 -- Pause for 5 seconds
@@ -42,31 +26,17 @@ sleep(5)
 print("Execução retomada após 5 segundos")
 ```
 
-
-
 ### `signal(signal_name)`
-
-
 
 **Description**: Signals the termination of script execution with a specific signal name.
 
-
-
 **Parameters**:
-
-
 
 - `signal_name` (string): Name of the signal to be emitted
 
-
-
 **Return**: Aborts the script execution with the signal name
 
-
-
 **Characteristics**:
-
-
 
 - Calls the `_execution_done` function if available in the global environment
 
@@ -74,15 +44,9 @@ print("Execução retomada após 5 segundos")
 
 - Useful for flow control and state signaling
 
-
-
 **Note**: Currently, this function has a single specific use case: signaling with the name `"RepeatPrevValue"`. When a script emits this signal, the system interprets that the current collection should repeat the last valid metric value instead of generating a new data point. This is useful in situations where the data source is temporarily unavailable or the collection failed, but you don't want to break the time series.
 
-
-
 **Specific usage example**:
-
-
 
 ```lua
 
@@ -95,19 +59,11 @@ end
 
 ```
 
-
-
 ### `with_timeout(timeout_ms, func, ...)`
-
-
 
 **Description**: Executes a function with a time limit (timeout).
 
-
-
 **Parameters**:
-
-
 
 - `timeout_ms` (number): Timeout in milliseconds
 
@@ -115,15 +71,9 @@ end
 
 - `...` (optional): Arguments to pass to the function
 
-
-
 **Return**: Returns the result of the executed function
 
-
-
 **Example**:
-
-
 
 ```lua
 
@@ -150,11 +100,7 @@ end
 
 ```
 
-
-
 **Characteristics**:
-
-
 
 - Raises an error if the timeout is exceeded
 
@@ -162,27 +108,15 @@ end
 
 - Useful for network or I/O operations that may hang
 
-
-
 ### `now()`
-
-
 
 **Description**: Returns the number of non-leap seconds since January 1, 1970 00:00:00 UTC (also known as the "UNIX timestamp").
 
-
-
 **Parameters**: None
-
-
 
 **Return**: Number representing seconds since the Unix epoch
 
-
-
 **Example**:
-
-
 
 ```lua
 
@@ -200,41 +134,23 @@ print("Operação levou", duration, "segundos")
 
 ```
 
-
-
 **Characteristics**:
-
-
 
 - Same function available as `time.now()`
 
 - Useful for performance measurement
 
-
-
 ### `print(...)`
-
-
 
 **Description**: Print function that formats multiple arguments.
 
-
-
 **Parameters**:
-
-
 
 - `...` (multiple values): Values to be printed
 
-
-
 **Return**: `nil` (no return value)
 
-
-
 **Example**:
-
-
 
 ```lua
 
@@ -242,43 +158,25 @@ print("Valor:", 42, "Status:", true, "Lista:", {1, 2, 3})
 
 ```
 
-
-
 **Characteristics**:
-
-
 
 - Separates multiple arguments with a tab
 
 - Useful for debugging
 
-
-
 ### `diff(lhs, rhs)`
-
-
 
 **Description**: Calculates the difference between two numeric values, with special handling for counters that may roll over.
 
-
-
 **Parameters**:
-
-
 
 - `lhs` (number): Current value (left-hand side)
 
 - `rhs` (number): Previous value (right-hand side)
 
-
-
 **Return**: Number representing the difference between the values
 
-
-
 **Behavior**:
-
-
 
 - Calculates `lhs - rhs`
 
@@ -288,11 +186,7 @@ print("Valor:", 42, "Status:", true, "Lista:", {1, 2, 3})
 
 - Useful for counter metrics that may roll over (such as 32- or 64-bit counters)
 
-
-
 **Example**:
-
-
 
 ```lua
 
@@ -312,27 +206,15 @@ local rollover_diff = diff(current_with_rollover, previous_before_rollover)
 
 ```
 
-
-
 ## Global Variables
-
-
 
 ### `EXEC_IDENT`
 
-
-
 **Description**: Unique identifier of the current script execution.
-
-
 
 **Type**: String
 
-
-
 **Example**:
-
-
 
 ```lua
 
@@ -351,11 +233,7 @@ store.put("results_" .. EXEC_IDENT, processing_result)
 
 ```
 
-
-
 **Characteristics**:
-
-
 
 - Defined automatically by the environment
 
@@ -363,21 +241,13 @@ store.put("results_" .. EXEC_IDENT, processing_result)
 
 - Useful for tracking and correlating logs
 
-
-
 ## Limitations
-
-
 
 1. **`sleep` Is Not Precise**: Due to the asynchronous nature of the system, `sleep` may have small variations.
 
 2. **`signal` Interrupts Execution**: Once called, normal execution is interrupted.
 
-
-
 ## Example
-
-
 
 ```lua
 

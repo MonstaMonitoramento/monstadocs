@@ -117,10 +117,11 @@ local function obter_dados_caros(chave)
         return dados
     end
 
-    -- Se não encontrou, marca como pendente
-    local sucesso, erro = pcall(cache.mark_pending, chave)
+    -- Se não encontrou, marca como pendente usando with_coroutine
+    -- with_coroutine retorna (resultado, erro)
+    local _, err = with_coroutine(cache.mark_pending, chave)
 
-    if not sucesso then
+    if err then
         -- Outro worker já marcou como pendente, espera pelo resultado
         dados = cache.get(chave)  -- Esta chamada irá bloquear até o valor estar disponível
         if dados then

@@ -52,13 +52,13 @@ Executa uma consulta WMI usando o utilitário `wmic`
 
 - `config` (tabela): Configuração de conexão contendo:
 
-    - `net.address` (string): Endereço IP ou hostname do alvo
+  - `net.address` (string): Endereço IP ou hostname do alvo
 
-    - `wmi.username` (string): Nome de usuário para autenticação
+  - `wmi.username` (string): Nome de usuário para autenticação
 
-    - `wmi.password` (string): Senha para autenticação
+  - `wmi.password` (string): Senha para autenticação
 
-    - `wmi.timeout` (número opcional, padrão: 10): Timeout em segundos
+  - `wmi.timeout` (número opcional, padrão: 10): Timeout em segundos
 
 - `wql` (string): Consulta WQL a ser executada
 
@@ -74,9 +74,13 @@ Executa uma consulta WMI usando o utilitário `wmic`
 
 ```lua
 -- A tabela 'device' já contém as credenciais e endereço do dispositivo alvo
-local success, results = pcall(function()
-    return wmi.exec(params, wql, "root\\cimv2")
-end)
+-- with_coroutine aceita a função e seus argumentos, retornando (result, err)
+local results, err = with_coroutine(wmi.exec, params, wql, "root\\cimv2")
+local success = not err
+
+if not success then
+    print("Erro WMI: " .. tostring(err))
+end
 ```
 
 **Exemplo prático**:
@@ -114,13 +118,11 @@ local config = {
     ["wmi.timeout"] = 15
 }
 
--- Consulta informações do sistema operacional
+-- Consulta informações do sistema operacional usando with_coroutine
 local wql = "select Caption,Version,BuildNumber,OSArchitecture from Win32_OperatingSystem"
-local success, results = pcall(function()
-    return wmi.exec(config, wql, "root\\cimv2")
-end)
+local results, err = with_coroutine(wmi.exec, config, wql, "root\\cimv2")
 
-if success then
+if not err then
     for _, row in ipairs(results) do
         print("Sistema: " .. row.Caption)
         print("Versão: " .. row.Version)
@@ -128,7 +130,7 @@ if success then
         print("Arquitetura: " .. row.OSArchitecture)
     end
 else
-    print("Erro na consulta WMI: " .. results)
+    print("Erro na consulta WMI: " .. tostring(err))
 end
 
 -- Consulta processos em execução
@@ -175,11 +177,10 @@ if wmi.exec_native then
     local config = nil  -- Deixar vazio para consultas do agente
     local wql = "select Name,Manufacturer,Model from Win32_ComputerSystem"
 
-    local success, results = pcall(function()
-        return wmi.exec_native(config, wql)
-    end)
+    -- with_coroutine aceita a função e seus argumentos, retornando (result, err)
+    local results, err = with_coroutine(wmi.exec_native, config, wql)
 
-    if success and #results > 0 then
+    if not err and results and #results > 0 then
         local computer = results[1]
         print("Computador: " .. computer.Name)
         print("Fabricante: " .. computer.Manufacturer)
@@ -235,7 +236,7 @@ where WorkingSetSize > 10485760  -- > 10MB
 
 Versão estendida da função `exec` com suporte a timeout e opção para substituir barras invertidas.
 
-#### Parâmetros:
+#### Parâmetros
 
 - **config** (tabela): Configuração de conexão
 
@@ -245,17 +246,17 @@ Versão estendida da função `exec` com suporte a timeout e opção para substi
 
 - **replace_backslash** (booleano, opcional): Se `true`, substitui `\` por `\\` na WQL (padrão: `true`)
 
-#### Retorno:
+#### Retorno
 
 - **tabela**: Resultados da consulta WMI
 
-#### Comportamento:
+#### Comportamento
 
 - Suporta execução via probe WMI quando `params["wmi.type"] == 0`
 
 - Para localhost (`127.0.0.1`), usa execução nativa
 
-#### Exemplo de Uso:
+#### Exemplo de Uso
 
 ```lua
 -- Executar com timeout configurado
@@ -280,17 +281,17 @@ end
 
 Consulta simplificada a uma tabela WMI sem instância específica.
 
-#### Parâmetros:
+#### Parâmetros
 
 - **wmiobj** (string): Nome da tabela WMI
 
 - **...** (strings): Campos a serem selecionados (pode incluir `namespace=...`)
 
-#### Retorno:
+#### Retorno
 
 - **qualquer tipo**: Valor único se apenas um campo for selecionado, tabela se múltiplos campos
 
-#### Comportamento:
+#### Comportamento
 
 - Constrói WQL automaticamente com `wmi.buildwql`
 
@@ -298,7 +299,7 @@ Consulta simplificada a uma tabela WMI sem instância específica.
 
 - Suporta especificação de namespace via `namespace=` no início dos campos
 
-#### Exemplo de Uso:
+#### Exemplo de Uso
 
 ```lua
 -- Consultar informações do sistema operacional
@@ -320,15 +321,15 @@ local cluster_info = wmi.query("MSCluster_Cluster", "namespace=root\\MSCluster",
 
 Consulta WMI para instância específica definida em `params.InstanceId`.
 
-#### Parâmetros:
+#### Parâmetros
 
 - **...** (strings): Campos a serem selecionados (pode incluir `namespace=...`)
 
-#### Retorno:
+#### Retorno
 
 - **qualquer tipo**: Valor único se apenas um campo for selecionado, tabela se múltiplos campos
 
-#### Comportamento:
+#### Comportamento
 
 - Usa `params.InstanceId` para construir consulta de instância
 
@@ -336,7 +337,7 @@ Consulta WMI para instância específica definida em `params.InstanceId`.
 
 - Armazena resultado em `_mem_store` para uso com `prev` e `lapsed`
 
-#### Exemplo de Uso:
+#### Exemplo de Uso
 
 ```lua
 -- params.InstanceId = "Win32_Process|Name|explorer.exe"
@@ -355,17 +356,17 @@ local process_info = wmi.queryinst("ProcessId", "WorkingSetSize", "ThreadCount",
 
 Obtém o valor anterior de uma consulta WMI.
 
-#### Parâmetros:
+#### Parâmetros
 
 - **wmiobj** (string): Nome da tabela WMI
 
 - **...** (strings): Campos da consulta original
 
-#### Retorno:
+#### Retorno
 
 - **qualquer tipo**: Valor anterior armazenado
 
-#### Comportamento:
+#### Comportamento
 
 - Reconstrói a WQL original
 
@@ -373,7 +374,7 @@ Obtém o valor anterior de uma consulta WMI.
 
 - Retorna valor único se consulta original retornou único valor
 
-#### Exemplo de Uso:
+#### Exemplo de Uso
 
 ```lua
 -- Obter valor atual
@@ -391,15 +392,15 @@ print("Variação de memória:", memory_diff, "bytes")
 
 Obtém o valor anterior de uma consulta WMI de instância.
 
-#### Parâmetros:
+#### Parâmetros
 
 - **...** (strings): Campos da consulta original
 
-#### Retorno:
+#### Retorno
 
 - **qualquer tipo**: Valor anterior armazenado
 
-#### Exemplo de Uso:
+#### Exemplo de Uso
 
 ```lua
 -- params.InstanceId = "Win32_Process|Name|svchost.exe"
@@ -419,17 +420,17 @@ print("Variação no uso de CPU:", cpu_change, "%")
 
 Obtém o tempo decorrido desde a última consulta WMI.
 
-#### Parâmetros:
+#### Parâmetros
 
 - **wmiobj** (string): Nome da tabela WMI
 
 - **...** (strings): Campos da consulta original
 
-#### Retorno:
+#### Retorno
 
 - **número**: Tempo em segundos desde última consulta
 
-#### Exemplo de Uso:
+#### Exemplo de Uso
 
 ```lua
 -- Calcular taxa de transferência de disco
@@ -445,15 +446,15 @@ print("Taxa de leitura de disco:", read_rate, "bytes/segundo")
 
 Obtém o tempo decorrido desde a última consulta WMI de instância.
 
-#### Parâmetros:
+#### Parâmetros
 
 - **...** (strings): Campos da consulta original
 
-#### Retorno:
+#### Retorno
 
 - **número**: Tempo em segundos desde última consulta
 
-#### Exemplo de Uso:
+#### Exemplo de Uso
 
 ```lua
 -- params.InstanceId = "Win32_PerfRawData_PerfDisk_LogicalDisk|Name|C:"
@@ -471,7 +472,7 @@ print("Taxa de escrita no disco C:", write_rate, "bytes/segundo")
 
 Calcula a diferença entre dois valores WMI, tratando rollover de contadores.
 
-#### Parâmetros:
+#### Parâmetros
 
 - **typ** (número): Tipo do contador (32 ou 64 bits)
 
@@ -479,11 +480,11 @@ Calcula a diferença entre dois valores WMI, tratando rollover de contadores.
 
 - **rhs** (número): Valor anterior
 
-#### Retorno:
+#### Retorno
 
 - **número**: Diferença entre os valores
 
-#### Comportamento:
+#### Comportamento
 
 - Usa a mesma implementação que `snmp.diff`
 
@@ -491,7 +492,7 @@ Calcula a diferença entre dois valores WMI, tratando rollover de contadores.
 
 - Sinaliza `RepeatPrevValue` se a diferença for negativa
 
-#### Exemplo de Uso:
+#### Exemplo de Uso
 
 ```lua
 -- Calcular diferença para contador de 64 bits
@@ -504,7 +505,7 @@ print("Bytes lidos desde última leitura:", bytes_diff)
 
 ## Exemplos Completos
 
-### Monitoramento de Processo Específico:
+### Monitoramento de Processo Específico
 
 ```lua
 -- Configurar instância para monitorar processo específico
@@ -527,7 +528,7 @@ print(string.format("Chrome.exe - CPU: %d%%, Memória: %d bytes, Threads: %d",
                    cpu_delta / time_elapsed, memory_delta, thread_count))
 ```
 
-### Inventário de Hardware com Cache:
+### Inventário de Hardware com Cache
 
 ```lua
 -- Função para obter informações de hardware com cache

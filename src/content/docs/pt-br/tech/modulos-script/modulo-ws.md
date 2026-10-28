@@ -30,17 +30,17 @@ O módulo **ws** fornece funcionalidades para comunicação bidirecional em temp
 
 Estabelece uma conexão WebSocket, envia uma mensagem e aguarda uma resposta.
 
-#### Parâmetros:
+#### Parâmetros
 
 - **url** (string): URL do servidor WebSocket (ex: "ws://exemplo.com/socket", "wss://exemplo.com/ws")
 
 - **dados** (string): Mensagem de texto a ser enviada para o servidor
 
-#### Retorno:
+#### Retorno
 
 - **string**: Resposta de texto recebida do servidor WebSocket
 
-#### Comportamento:
+#### Comportamento
 
 1. Estabelece conexão WebSocket com o servidor especificado
 
@@ -54,7 +54,7 @@ Estabelece uma conexão WebSocket, envia uma mensagem e aguarda uma resposta.
 
 6. Lança erro se receber mensagem binária ou se não houver resposta
 
-#### Erros Comuns:
+#### Erros Comuns
 
 - `"ws binary messages not supported"` - Servidor enviou mensagem binária (não suportada)
 
@@ -62,7 +62,7 @@ Estabelece uma conexão WebSocket, envia uma mensagem e aguarda uma resposta.
 
 - Erros de conexão (servidor offline, URL inválida, etc.)
 
-#### Exemplo de Uso:
+#### Exemplo de Uso
 
 ```lua
 -- Conexão básica com servidor WebSocket
@@ -78,13 +78,14 @@ local dados = json.encode({acao = "ping", timestamp = now()})
 local resposta = ws.send_recv(url_segura, dados)
 print("Resposta segura:", resposta)
 
--- Com tratamento de erro
+-- Com tratamento de erro usando with_coroutine
 local function enviar_com_tratamento(url, dados)
-    local ok, resposta = pcall(ws.send_recv, url, dados)
-    if ok then
+    -- with_coroutine retorna (result, err)
+    local resposta, err = with_coroutine(ws.send_recv, url, dados)
+    if not err then
         return resposta
     else
-        log.error("Erro no WebSocket:", resposta)
+        log.error("Erro no WebSocket:", err)
         return nil
     end
 end
@@ -107,27 +108,28 @@ end
 
 ## Informações Adicionais
 
-### Conexão Segura (wss://):
+### Conexão Segura (wss://)
 
 ```lua
 -- O módulo suporta tanto ws:// quanto wss://
 local conexoes = {
     "ws://localhost:8080/ws",      -- Não seguro (HTTP)
-    "wss://servidor.com/ws",       -- Seguro (HTTPS)
+    "wss://servidor.com/ws",        -- Seguro (HTTPS)
     "ws://192.168.1.100:3000/ws",  -- Local network
 }
 
 for _, url in ipairs(conexoes) do
-    local ok, resposta = pcall(ws.send_recv, url, "ping")
-    if ok then
+    -- with_coroutine retorna (result, err)
+    local resposta, err = with_coroutine(ws.send_recv, url, "ping")
+    if not err then
         print("Conexão bem-sucedida:", url)
     else
-        print("Falha na conexão:", url, "-", resposta)
+        print("Falha na conexão:", url, "-", err)
     end
 end
 ```
 
-### Mensagens de Texto Apenas:
+### Mensagens de Texto Apenas
 
 ```lua
 -- O módulo só suporta mensagens de texto

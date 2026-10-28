@@ -20,15 +20,15 @@ O módulo **time** fornece funções para manipulação de tempo e datas. Este m
 
 Retorna o timestamp Unix atual em segundos.
 
-#### Parâmetros:
+#### Parâmetros
 
 - Nenhum
 
-#### Retorno:
+#### Retorno
 
 - **número**: Timestamp Unix atual (segundos desde 1 de Janeiro de 1970, 00:00:00 UTC)
 
-#### Comportamento:
+#### Comportamento
 
 - Retorna o tempo atual em UTC
 
@@ -38,7 +38,7 @@ Retorna o timestamp Unix atual em segundos.
 
 - Disponível como função global e no módulo `time`
 
-#### Exemplo de Uso:
+#### Exemplo de Uso
 
 ```lua
 -- Usando o módulo time
@@ -76,19 +76,19 @@ print("Próxima execução em:", os.date("%H:%M:%S", proxima_execucao))
 
 Aguarda assincronamente por um número específico de segundos.
 
-#### Parâmetros:
+#### Parâmetros
 
 - **segundos** (número): Número de segundos para aguardar
 
-#### Retorno:
+#### Retorno
 
 - **nil**: A função não retorna valor (após a espera)
 
-#### Comportamento:
+#### Comportamento
 
 - Precisão dependente do scheduler do sistema
 
-#### Exemplo de Uso:
+#### Exemplo de Uso
 
 ```lua
 -- Aguardar 5 segundos
@@ -127,9 +127,10 @@ local function executar_com_backoff(funcao, max_tentativas)
     local tentativa = 1
 
     while tentativa <= max_tentativas do
-        local ok, resultado = pcall(funcao)
+        -- with_coroutine retorna (resultado, err)
+        local resultado, err = with_coroutine(funcao)
 
-        if ok then
+        if not err then
             return resultado
         end
 
@@ -152,15 +153,15 @@ end
 
 Parseia uma string de data/hora no formato RFC 3339 e retorna um objeto de data.
 
-#### Parâmetros:
+#### Parâmetros
 
 - **string_data** (string): Data/hora no formato RFC 3339 (ex: "2024-01-15T10:30:00Z")
 
-#### Retorno:
+#### Retorno
 
 - **objeto LuaDateTime**: Objeto com método `seconds()` que retorna timestamp Unix
 
-#### Formato RFC 3339:
+#### Formato RFC 3339
 
 - `YYYY-MM-DDTHH:MM:SSZ` (UTC)
 
@@ -168,7 +169,7 @@ Parseia uma string de data/hora no formato RFC 3339 e retorna um objeto de data.
 
 - Exemplos: "2024-01-15T10:30:00Z", "2024-01-15T07:30:00-03:00"
 
-#### Exemplo de Uso:
+#### Exemplo de Uso
 
 ```lua
 -- Parsear data UTC
@@ -192,13 +193,15 @@ local data2 = time.parse("2024-01-15T11:45:00Z")
 local diferenca = data2:seconds() - data1:seconds()
 print("Diferença:", diferenca, "segundos (", diferenca/60, "minutos)")
 
--- Validar e parsear data de entrada
+-- Validar e parsear data de entrada usando with_coroutine
 local function parsear_data_segura(data_string)
-    local ok, data = pcall(time.parse, data_string)
-    if ok then
+    -- with_coroutine retorna (result, err)
+    local data, err = with_coroutine(time.parse, data_string)
+    
+    if not err and data then
         return data:seconds()
     else
-        log.error("Data inválida:", data_string, "-", data)
+        log.error("Data inválida:", data_string, "-", err)
         return nil
     end
 end

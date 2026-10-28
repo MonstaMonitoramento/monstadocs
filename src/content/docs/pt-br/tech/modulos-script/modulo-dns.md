@@ -10,17 +10,17 @@ O módulo **DNS** fornece funções para testar a performance e disponibilidade 
 
 Realiza uma consulta DNS a um servidor específico e mede o tempo de resposta (RTT - Round Trip Time).
 
-#### Parâmetros:
+#### Parâmetros
 
 - **server** (string): Endereço do servidor DNS a testar (pode ser IP ou nome de domínio)
 
 - **domain** (string): Domínio a ser consultado no servidor DNS
 
-#### Retorno:
+#### Retorno
 
 - **número**: Tempo de resposta em milissegundos (latência DNS)
 
-#### Comportamento:
+#### Comportamento
 
 1. Resolve o endereço do servidor DNS (se for um nome de domínio)
 
@@ -32,7 +32,7 @@ Realiza uma consulta DNS a um servidor específico e mede o tempo de resposta (R
 
 5. Retorna o tempo em milissegundos
 
-#### Exemplo de Uso:
+#### Exemplo de Uso
 
 ```lua
 -- Testar latência do DNS do Google
@@ -101,12 +101,14 @@ local function testar_propagacao_dns(dominio, ip_esperado)
 
     local resultados = {}
     for _, server in ipairs(servidores) do
-        local ok, latencia = pcall(dns.ping, server, dominio)
+        -- with_coroutine aceita a função e seus argumentos, retornando (resultado, erro)
+        local latencia, err = with_coroutine(dns.ping, server, dominio)
+        local ok = (err == nil)
 
         resultados[server] = {
             latencia = ok and latencia or nil,
             acessivel = ok,
-            erro = not ok and latencia or nil
+            erro = not ok and err or nil
         }
     end
 

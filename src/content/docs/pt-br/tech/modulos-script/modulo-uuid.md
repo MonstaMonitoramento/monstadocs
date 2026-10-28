@@ -30,15 +30,15 @@ O módulo **uuid** fornece funções para geração de identificadores únicos u
 
 Gera um UUID versão 4 (aleatório) no formato padrão RFC 4122.
 
-#### Parâmetros:
+#### Parâmetros
 
 - Nenhum
 
-#### Retorno:
+#### Retorno
 
 - **string**: UUID no formato `xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx`
 
-#### Comportamento:
+#### Comportamento
 
 1. Gera 128 bits aleatórios usando gerador criptograficamente seguro
 
@@ -50,7 +50,7 @@ Gera um UUID versão 4 (aleatório) no formato padrão RFC 4122.
 
 5. Garante unicidade estatística (probabilidade de colisão extremamente baixa)
 
-#### Exemplo de Uso:
+#### Exemplo de Uso
 
 ```lua
 -- Gerar um UUID simples
@@ -87,7 +87,7 @@ print("Token de sessão:", sessao_token)
 
 ## Informações Adicionais
 
-### Unicidade Garantida:
+### Unicidade Garantida
 
 ```lua
 -- Probabilidade de colisão extremamente baixa
@@ -120,7 +120,7 @@ end
 -- Em testes práticos, colisões são virtualmente inexistentes
 ```
 
-### Formato Padrão:
+### Formato Padrão
 
 ```lua
 -- UUID sempre no formato RFC 4122
@@ -140,7 +140,7 @@ print("UUID válido?", validar_uuid("invalid"))  -- false
 
 ## Exemplos de Uso
 
-### 1. Nomes de Arquivos Temporários:
+### 1. Nomes de Arquivos Temporários
 
 ```lua
 -- Gerar nomes de arquivos únicos para processamento
@@ -179,9 +179,9 @@ local function limpar_arquivos_temporarios()
         local arquivo = arquivos_temp[i]
 
         if agora > arquivo.expira_em then
-            -- Tentar remover arquivo
-            local ok, _ = pcall(os.remove, arquivo.caminho)
-            if ok then
+            -- Tentar remover arquivo usando with_coroutine
+            local ok, err = with_coroutine(os.remove, arquivo.caminho)
+            if not err and ok then
                 table.remove(arquivos_temp, i)
                 removidos = removidos + 1
                 log.debug("Arquivo temporário removido", "Caminho:", arquivo.caminho)

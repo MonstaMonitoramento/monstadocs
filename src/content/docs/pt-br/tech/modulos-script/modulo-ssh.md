@@ -14,17 +14,17 @@ Executa um comando remoto via SSH de forma assíncrona e retorna a saída do com
 
 - `opts` (tabela): Opções de conexão e execução contendo:
 
-    - `host` (string): Endereço do servidor (hostname ou IP)
+  - `host` (string): Endereço do servidor (hostname ou IP)
 
-    - `username` (string): Nome de usuário para autenticação
+  - `username` (string): Nome de usuário para autenticação
 
-    - `password` (string): Senha para autenticação
+  - `password` (string): Senha para autenticação
 
-    - `command` (string): Comando a ser executado no servidor remoto
+  - `command` (string): Comando a ser executado no servidor remoto
 
-    - `port` (número opcional, padrão: 22): Porta SSH
+  - `port` (número opcional, padrão: 22): Porta SSH
 
-    - `timeout` (número opcional, padrão: 60): Timeout em segundos para a conexão
+  - `timeout` (número opcional, padrão: 60): Timeout em segundos para a conexão
 
 **Retorno**:
 
@@ -53,14 +53,13 @@ local opts = {
     timeout = 30
 }
 
-local success, output = pcall(function()
-    return ssh.exec(opts)
-end)
+-- with_coroutine aceita a função e seus argumentos, retornando (result, err)
+local output, err = with_coroutine(ssh.exec, opts)
 
-if success then
-    print("Saída do comando: " .. output)
+if not err then
+    print("Saída do comando: " .. tostring(output))
 else
-    print("Erro SSH: " .. output)
+    print("Erro SSH: " .. tostring(err))
 end
 
 -- Verificar uso de disco
@@ -94,15 +93,15 @@ Estabelece uma conexão SSH persistente e retorna um objeto cliente que pode exe
 
 - `opts` (tabela): Opções de conexão contendo:
 
-    - `host` (string): Endereço do servidor (hostname ou IP)
+  - `host` (string): Endereço do servidor (hostname ou IP)
 
-    - `username` (string): Nome de usuário para autenticação
+  - `username` (string): Nome de usuário para autenticação
 
-    - `password` (string): Senha para autenticação
+  - `password` (string): Senha para autenticação
 
-    - `port` (número opcional, padrão: 22): Porta SSH
+  - `port` (número opcional, padrão: 22): Porta SSH
 
-    - `timeout` (número opcional, padrão: `params.sshTimeout` ou 60): Timeout em segundos para a conexão
+  - `timeout` (número opcional, padrão: `params.sshTimeout` ou 60): Timeout em segundos para a conexão
 
 **Retorno**:
 
@@ -128,12 +127,11 @@ local connect_opts = {
     timeout = 45
 }
 
-local success, client = pcall(function()
-    return ssh.connect(connect_opts)
-end)
+-- with_coroutine aceita a função e seus argumentos, retornando (result, err)
+local client, err = with_coroutine(ssh.connect, connect_opts)
 
-if not success then
-    print("Falha na conexão SSH: " .. client)
+if err then
+    print("Falha na conexão SSH: " .. tostring(err))
     return
 end
 
