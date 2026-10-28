@@ -3,7 +3,7 @@ title: Scripting com LUA
 sidebar:
   order: 1
 ---
-O Monsta permite que você crie lógicas personalizadas de coleta de dados, processamento de métricas e regras complexas de alertas utilizando a linguagem de programação **Lua**. 
+O Monsta permite que você crie lógicas personalizadas de coleta de dados, processamento de métricas e regras complexas de alertas utilizando a linguagem de programação **Lua**.
 
 Se os templates padrão ou as expressões nativas não forem suficientes para a sua necessidade (como parsing de strings complexas, cálculos matemáticos avançados ou loops), o motor de scripting em Lua oferece total flexibilidade para estender a plataforma.
 
@@ -82,13 +82,11 @@ O `return` também pode definir o status da métrica. Para retornar um status, o
 
 Os valores aceitos para `status` são:
 
-
 | status | Cor | Status da Métrica |
 | ---------------- | -------- | ----------------- |
-| "MetricOk" | Verde | Normal |
-| "MetricWarning" | Laranja | Aviso |
-| "MetricCritical" | Vermelho | Crítico |
-
+| `MetricOk` | Verde | Normal |
+| `MetricWarning` | Laranja | Aviso |
+| `MetricCritical` | Vermelho | Crítico |
 
 ```lua
 -- Exemplo de uma consulta de SNMP com tratamento do status
@@ -108,7 +106,7 @@ end
 
 :::caution[Atenção!]
 
-Quando o status é definido dentro do script, não é possível configurar o status de alerta através das configurações do monitor, pois o script definirá essa informação. 
+Quando o status é definido dentro do script, não é possível configurar o status de alerta através das configurações do monitor, pois o script definirá essa informação.
 
 :::
 
