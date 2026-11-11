@@ -1,7 +1,6 @@
 ---
-title: "Alteração das Portas de Acesso"
+title: Alteração das Portas de Acesso
 ---
-
 Este guia descreve o procedimento para alterar as portas de escuta da interface web do **Monsta**. Por padrão, o sistema utiliza portas específicas que podem ser customizadas via linha de comando no servidor Linux.
 
 ## Pré-requisitos
@@ -22,7 +21,7 @@ Este guia descreve o procedimento para alterar as portas de escuta da interface 
 **Exemplo**:
 
 ```shell
-/opt/monsta/bin/monkerneld port --port 8090 --sslport 8443  
+/opt/monsta/bin/monkerneld port --port 8080 --sslport 8443  
 ```
 
 **Parâmetros do Comando**:
