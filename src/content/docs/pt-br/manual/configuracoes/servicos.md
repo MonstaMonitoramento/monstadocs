@@ -13,12 +13,12 @@ A tela **Gerenciar Serviços** oferece uma visão geral do estado dos serviços 
 Nesta tela, você verá uma lista de serviços, cada um com as seguintes informações:
 
 - **Nome do Serviço**: O nome do serviço em execução.
-- **Status**: O estado atual do serviço, indicado por um ícone de status. Os status mais comuns são:    
-    - **Verde**: O serviço está **ativo** e funcionando corretamente.
-    - **Vermelho**: O serviço está **inativo** ou com algum problema.
+- **Status**: O estado atual do serviço, indicado por um ícone de status. Os status mais comuns são:
+  - **Verde**: O serviço está **ativo** e funcionando corretamente.
+  - **Vermelho**: O serviço está **inativo** ou com algum problema.
 - **Horário de Início**: Informa a data e hora em que o serviço foi iniciado.
-- **Ações**: Nesta coluna, você encontra o botão para **reiniciar** o serviço.    
-    - **Reiniciar**: Clique neste botão para reiniciar um serviço específico. Isso pode ser útil para resolver problemas pontuais sem precisar reiniciar todo o sistema.
+- **Ações**: Nesta coluna, você encontra o botão para **reiniciar** o serviço.
+  - **Reiniciar**: Clique neste botão para reiniciar um serviço específico. Isso pode ser útil para resolver problemas pontuais sem precisar reiniciar todo o sistema.
 
 ## Serviços
 
@@ -26,6 +26,10 @@ Nesta tela, você verá uma lista de serviços, cada um com as seguintes informa
 | --- | --- |
 | `monkernel` | É o core do sistema, responsável pelos logs e a interface entre os demais serviços e o banco de dados. |
 | `monagent` | Responsável pela coleta de informações dos equipamentos. |
-| `monstaupd` | É o subsistemas que verifica periodicamente por novas atualizações do Monsta. |
+| `monstaupd` | É o subsistema que verifica periodicamente por novas atualizações do Monsta. |
 | `monrouter` | É o servidor http responsável por fornecer a interface http para o usuário. |
 | `monstadb` | Banco de dados das coletas de informações. |
+
+:::tip
+Caso necessite reiniciar os serviços via linha de comando (Linux), veja o artigo [Gerenciamento de Serviços do Monsta via Linha de Comando (Linux)](/pt-br/tech/guias-tecnicos/gerenciamento-de-servicos-do-monsta-via-linha-de-comando).
+:::
